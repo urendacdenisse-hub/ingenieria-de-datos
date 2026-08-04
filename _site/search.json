@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "recursos/syllabus.html",
+    "href": "recursos/syllabus.html",
+    "title": "Ingeniería de datos",
+    "section": "",
+    "text": "Campo\nInformación\n\n\n\n\nNombre\nIngeniería de datos\n\n\nClave\nCDI-000624\n\n\nSemestre\nAgosto – Diciembre 2026\n\n\nCréditos\n8\n\n\nHoras\n4.00\n\n\nGrupo\nA, B\n\n\nHorario\nMartes y jueves9:00 am – 11:00 am, 11:00 am - 1:00 pm\n\n\nLugar\nSalón C-202, C-213"
+  },
+  {
+    "objectID": "recursos/syllabus.html#sobre-los-laboratorios",
+    "href": "recursos/syllabus.html#sobre-los-laboratorios",
+    "title": "Ingeniería de datos",
+    "section": "Sobre los laboratorios",
+    "text": "Sobre los laboratorios\nLos laboratorios están pensados para realizarse durante la clase, después de introducir un nuevo concepto o tema. Sin embargo, podrán entregarse hasta un día después de haber sido asignados."
+  },
+  {
+    "objectID": "recursos/syllabus.html#sobre-los-proyectos",
+    "href": "recursos/syllabus.html#sobre-los-proyectos",
+    "title": "Ingeniería de datos",
+    "section": "Sobre los proyectos",
+    "text": "Sobre los proyectos\nLos proyectos integran los contenidos de cada unidad y están orientados a la aplicación práctica de los conocimientos adquiridos. La fecha de entrega de cada proyecto corresponderá al domingo de la semana en que concluya la unidad respectiva."
+  },
+  {
+    "objectID": "recursos/syllabus.html#sobre-el-puntaje-extra",
+    "href": "recursos/syllabus.html#sobre-el-puntaje-extra",
+    "title": "Ingeniería de datos",
+    "section": "Sobre el puntaje extra",
+    "text": "Sobre el puntaje extra\nLa asistencia no forma parte de la calificación ordinaria del curso. Sin embargo, como reconocimiento al compromiso y la participación constante, se otorgará un porcentaje adicional sobre la calificación final conforme a los siguientes criterios:\n\nAsistencia perfecta: +5% sobre la calificación final.\nHasta dos faltas o cuatro retardos: +3% sobre la calificación final."
+  },
+  {
+    "objectID": "recursos/syllabus.html#fundamentals-of-data-engineering-fde",
+    "href": "recursos/syllabus.html#fundamentals-of-data-engineering-fde",
+    "title": "Ingeniería de datos",
+    "section": "Fundamentals of Data Engineering (FDE)",
+    "text": "Fundamentals of Data Engineering (FDE)\nReis, J., & Housley, M. (2022). Fundamentals of data engineering: Plan and build robust data systems. O’Reilly Media."
+  },
+  {
+    "objectID": "recursos/syllabus.html#data-pipelines-pocket-reference-dppr",
+    "href": "recursos/syllabus.html#data-pipelines-pocket-reference-dppr",
+    "title": "Ingeniería de datos",
+    "section": "Data Pipelines Pocket Reference (DPPR)",
+    "text": "Data Pipelines Pocket Reference (DPPR)\nDensmore, J. (2021). Data pipelines pocket reference: Moving and processing data for analytics. O’Reilly Media."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Bienvenido al repositorio oficial del curso Ingeniería de Datos.\nEn este sitio se publicarán gradualmente las lecciones, notebooks, conjuntos de datos, laboratorios y recursos utilizados durante el semestre.\n\n\n\n\n\n\nNoteAntes de comenzar\n\n\n\nSe recomienda revisar el syllabus para conocer los objetivos, la metodología, el esquema de evaluación y el cronograma del curso.\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\nBibliografía\nConjuntos de datos\nMaterial complementario\n\n\n\n\nLas diapositivas, laboratorios y notebooks se publicarán conforme avance el semestre.\n\n\n\nLa información específica de cada proyecto se publicarán durante el curso.\n\n\n\n\n\nTodo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
+  },
+  {
+    "objectID": "index.html#material-del-curso",
+    "href": "index.html#material-del-curso",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Syllabus\n\n\n\n\n\nBibliografía\nConjuntos de datos\nMaterial complementario\n\n\n\n\nLas diapositivas, laboratorios y notebooks se publicarán conforme avance el semestre.\n\n\n\nLa información específica de cada proyecto se publicarán durante el curso."
+  },
+  {
+    "objectID": "index.html#repositorio",
+    "href": "index.html#repositorio",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Todo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
+  }
+]
