@@ -42,6 +42,20 @@
     "text": "Data Pipelines Pocket Reference (DPPR)\nDensmore, J. (2021). Data pipelines pocket reference: Moving and processing data for analytics. O’Reilly Media."
   },
   {
+    "objectID": "lecciones/index.html",
+    "href": "lecciones/index.html",
+    "title": "Lecciones",
+    "section": "",
+    "text": "Lección 1. Introducción al curso"
+  },
+  {
+    "objectID": "lecciones/index.html#unidad-i.-introducción-a-la-ingeniería-de-datos",
+    "href": "lecciones/index.html#unidad-i.-introducción-a-la-ingeniería-de-datos",
+    "title": "Lecciones",
+    "section": "",
+    "text": "Lección 1. Introducción al curso"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Ingeniería de Datos",
@@ -61,5 +75,19 @@
     "title": "Ingeniería de Datos",
     "section": "",
     "text": "Todo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
+  },
+  {
+    "objectID": "lecciones/unidad-1/leccion-01.html#material-en-desarrollo",
+    "href": "lecciones/unidad-1/leccion-01.html#material-en-desarrollo",
+    "title": "Lección 1. Introducción al curso",
+    "section": "Material en desarrollo",
+    "text": "Material en desarrollo\n\n\n\n\n\n\nNote\n\n\nEsta presentación forma parte del material del curso y se encuentra actualmente en proceso de elaboración.\nEl contenido, la organización de las diapositivas y los recursos asociados podrán modificarse y ampliarse conforme avance el semestre."
+  },
+  {
+    "objectID": "lecciones/unidad-1/leccion-01.html#este-es-un-buen-momento-para-aclarar-cualquier-duda.",
+    "href": "lecciones/unidad-1/leccion-01.html#este-es-un-buen-momento-para-aclarar-cualquier-duda.",
+    "title": "Lección 1. Introducción al curso",
+    "section": "Este es un buen momento para aclarar cualquier duda.",
+    "text": "Este es un buen momento para aclarar cualquier duda.\nSi aún tienes preguntas después de la clase, también puedes preguntarle a ChatGPT… pero no olvides cuestionar sus respuestas."
   }
 ]
