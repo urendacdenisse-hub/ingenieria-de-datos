@@ -9,6 +9,8 @@ website:
         text: Inicio
       - href: recursos/syllabus.qmd
         text: Syllabus
+      - href: lecciones/index.qmd
+        text: Lecciones
 
 format:
   html:

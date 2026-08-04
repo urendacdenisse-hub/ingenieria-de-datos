@@ -1,0 +1,5 @@
+# Lecciones
+
+## Unidad I. Introducción a la ingeniería de datos
+
+- [Lección 1. Introducción al curso](unidad-1/leccion-01.qmd)
