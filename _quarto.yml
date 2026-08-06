@@ -11,6 +11,10 @@ website:
         text: Syllabus
       - href: lecciones/index.qmd
         text: Lecciones
+      - href: notebooks/index.qmd
+        text: Notebooks
+      - href: actividades/index.qmd
+        text: Actividades
 
 format:
   html:

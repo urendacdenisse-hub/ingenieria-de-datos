@@ -1,0 +1,9 @@
+id_cliente,nombre,edad,fecha_registro,ciudad,latitud,longitud,cliente_premium,saldo,correo,foto_perfil,comentario,audio_llamada,video_visita
+1001,Ana Martínez,28,2025-01-15,Ciudad Juárez,31.6904,-106.4245,True,1520.75,ana.martinez@empresa.com,ana.jpg,"Excelente atención y entrega rápida.",llamada_1001.mp3,visita_1001.mp4
+1002,Luis Hernández,41,2025-02-03,Chihuahua,28.6353,-106.0889,False,320.40,luis.hernandez@empresa.com,luis.jpg,"Solicitó cambio de domicilio.",llamada_1002.mp3,visita_1002.mp4
+1003,María López,35,2025-02-20,Monterrey,25.6866,-100.3161,True,9870.00,maria.lopez@empresa.com,maria.jpg,"Cliente frecuente desde 2022.",llamada_1003.mp3,visita_1003.mp4
+1004,Carlos Ramírez,52,2025-03-01,Torreón,25.5390,-103.4483,False,0.00,carlos.ramirez@empresa.com,carlos.jpg,"Pendiente de confirmar pedido.",llamada_1004.mp3,visita_1004.mp4
+1005,Sofía Torres,24,2025-03-18,Hermosillo,29.0729,-110.9559,True,2450.90,sofia.torres@empresa.com,sofia.jpg,"Compró durante la promoción de primavera.",llamada_1005.mp3,visita_1005.mp4
+1006,Jorge Castillo,30,2025-04-10,Culiacán,24.8091,-107.3940,False,560.35,jorge.castillo@empresa.com,jorge.jpg,"Reportó un problema con el envío.",llamada_1006.mp3,visita_1006.mp4
+1007,Elena García,46,2025-04-28,Mérida,20.9674,-89.5926,True,11340.80,elena.garcia@empresa.com,elena.jpg,"Solicitó factura electrónica.",llamada_1007.mp3,visita_1007.mp4
+1008,Ricardo Flores,39,2025-05-12,Puebla,19.0414,-98.2063,False,129.99,ricardo.flores@empresa.com,ricardo.jpg,"Primera compra realizada.",llamada_1008.mp3,visita_1008.mp4

@@ -1,0 +1,11 @@
+
+Bienvenido al curso de Ingeniería de Datos.
+
+Los archivos de texto son una de las formas más sencillas de almacenar
+información. A diferencia de otros formatos, contienen únicamente texto
+plano, por lo que son fáciles de crear, leer y compartir entre diferentes
+programas y sistemas operativos.
+
+En este ejemplo, Python creará un archivo de texto con este mensaje.
+
+Este archivo fue creado desde Python por Escribe aquí tu nombre.

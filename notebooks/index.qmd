@@ -1,11 +1,11 @@
 ---
-title: "Lecciones"
+title: "Notebooks"
 ---
 
 # Unidad I. Introducción a la ingeniería de datos
 
-- [Introducción a los datos](unidad-01/leccion-01.qmd)
-- Formato de datos
+- [Introducción a los datos](unidad-01/notebook-01.qmd)
+- Formatos de datos
 - Organización de los datos
 - Ciclo de vida de los datos
 - Roles en el ecosistema de datos

@@ -1,0 +1,77 @@
+[
+    {
+        "fecha": "2026-07-05",
+        "hora": "09:14:32",
+        "usuario": "Laura",
+        "mensaje": "Hola, ¿todavía tienen disponible la cafetera Express Pro?"
+    },
+    {
+        "fecha": "2026-07-05",
+        "hora": "09:15:18",
+        "usuario": "Asesor",
+        "mensaje": "Sí, tenemos existencias en color negro y plateado."
+    },
+    {
+        "fecha": "2026-07-05",
+        "hora": "09:16:04",
+        "usuario": "Laura",
+        "mensaje": "Perfecto, muchas gracias."
+    },
+
+    {
+        "fecha": "2026-07-07",
+        "hora": "16:42:51",
+        "usuario": "Miguel",
+        "mensaje": "Buenas tardes, ¿la sucursal abre los domingos?"
+    },
+    {
+        "fecha": "2026-07-07",
+        "hora": "16:43:20",
+        "usuario": "Asesor",
+        "mensaje": "Sí, nuestro horario es de 9:00 a 21:00 horas."
+    },
+    {
+        "fecha": "2026-07-07",
+        "hora": "16:44:02",
+        "usuario": "Miguel",
+        "mensaje": "Excelente, pasaré mañana."
+    },
+
+    {
+        "fecha": "2026-07-09",
+        "hora": "10:08:15",
+        "usuario": "Ana",
+        "mensaje": "Hola, ¿los tenis deportivos siguen en promoción?"
+    },
+    {
+        "fecha": "2026-07-09",
+        "hora": "10:09:01",
+        "usuario": "Asesor",
+        "mensaje": "Sí, tienen un 20% de descuento este fin de semana."
+    },
+    {
+        "fecha": "2026-07-09",
+        "hora": "10:10:46",
+        "usuario": "Ana",
+        "mensaje": "Perfecto, iré por la tarde."
+    },
+
+    {
+        "fecha": "2026-07-12",
+        "hora": "18:31:54",
+        "usuario": "Carlos",
+        "mensaje": "¿Aceptan pagos con tarjeta de crédito?"
+    },
+    {
+        "fecha": "2026-07-12",
+        "hora": "18:32:11",
+        "usuario": "Asesor",
+        "mensaje": "Sí, aceptamos tarjetas de crédito, débito y pagos sin contacto."
+    },
+    {
+        "fecha": "2026-07-12",
+        "hora": "18:33:27",
+        "usuario": "Carlos",
+        "mensaje": "Muchas gracias por la información."
+    }
+]

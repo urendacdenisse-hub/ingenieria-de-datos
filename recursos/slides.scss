@@ -1,0 +1,260 @@
+/*-- scss:defaults --*/
+
+/* Paleta */
+$primary:       #4F79A5;
+$primary-dark:  #344E70;
+$primary-light: #DCE6ED;
+
+$body-bg:       #FFFFFF;
+$body-color:    #2B3137;
+
+$secondary:     #74808A;
+$light:         #F6F8FA;
+$border-color:  #D9E1E6;
+
+$selection-bg:  $primary-light;
+
+/* Tipografía */
+$font-family-sans-serif:
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Arial,
+  sans-serif;
+
+$presentation-heading-font:
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Arial,
+  sans-serif;
+
+$presentation-heading-color: $primary-dark;
+$presentation-heading-font-weight: 650;
+$presentation-heading-line-height: 1.05;
+
+$presentation-font-size-root: 32px;
+$presentation-line-height: 1.35;
+
+/* Enlaces */
+$link-color: $primary;
+
+/* Código */
+$code-block-bg: $light;
+$code-block-border-color: $border-color;
+$code-color: $body-color;
+
+$code-block-font-size: 0.72em;
+$code-inline-bg: $primary-light;
+$code-inline-color: $primary-dark;
+
+
+/*-- scss:rules --*/
+
+/* General */
+
+.reveal {
+  font-size: 34px;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  box-sizing: border-box;
+  padding: 0.8em 1.1em;
+}
+
+.reveal p,
+.reveal li {
+  color: $body-color;
+}
+
+.reveal .columns {
+  align-items: center !important;
+}
+
+.reveal strong {
+  color: $primary-dark;
+  font-weight: 650;
+}
+
+/* Títulos */
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  text-transform: none;
+  letter-spacing: -0.03em;
+}
+
+.reveal h1 {
+  color: $primary-dark;
+  font-size: 2.8em;
+}
+
+.reveal h2 {
+  color: $primary-dark;
+  font-size: 2.2em;
+  margin-bottom: 0.7em;
+  padding-bottom: 0.7em;
+  border-bottom: 2px solid $primary-light;
+}
+
+.reveal h3 {
+  color: $primary;
+  font-size: 1.6em;
+}
+
+/* Portada */
+
+.reveal .title-slide {
+  text-align: left;
+  padding: 1.5em 2em;
+}
+
+.reveal .title-slide h1 {
+  color: $primary-dark;
+  font-size: 2.45em;
+  max-width: 75%;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+.reveal .title-slide .subtitle {
+  color: $primary;
+  font-size: 1em;
+  max-width: 65%;
+}
+
+.reveal .title-slide .author,
+.reveal .title-slide .date,
+.reveal .title-slide .institute {
+  color: $secondary;
+  font-size: 0.58em;
+}
+
+/* Listas */
+
+.reveal ul,
+.reveal ol {
+  margin-left: 1.15em;
+}
+
+.reveal li {
+  margin-bottom: 0.3em;
+}
+
+.reveal ul li::marker,
+.reveal ol li::marker {
+  color: $primary;
+}
+
+/* Enlaces */
+
+.reveal a {
+  color: $link-color;
+  text-decoration: none;
+  font-weight: 550;
+}
+
+.reveal a:hover {
+  text-decoration: underline;
+}
+
+/* Código */
+
+.reveal pre {
+  background: $code-block-bg;
+  border: 1px solid $code-block-border-color;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.reveal pre code {
+  padding: 1em;
+  line-height: 1.45;
+}
+
+.reveal p code,
+.reveal li code {
+  color: $code-inline-color;
+  background: $code-inline-bg;
+  padding: 0.08em 0.3em;
+  border-radius: 4px;
+}
+
+/* Tablas */
+
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72em;
+}
+
+.reveal table th {
+  color: $primary-dark;
+  background: $primary-light;
+  border-bottom: 2px solid $primary;
+  font-weight: 650;
+}
+
+.reveal table td {
+  border-bottom: 1px solid $border-color;
+}
+
+.reveal table th,
+.reveal table td {
+  padding: 0.55em 0.7em;
+}
+
+/* Callouts */
+
+.reveal .callout {
+  background: $light;
+  border: none;
+  border-left: 4px solid $primary;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+/* Texto auxiliar */
+
+.reveal .muted {
+  color: $secondary;
+}
+
+.reveal .accent {
+  color: $primary;
+}
+
+/* Imágenes */
+
+.reveal img {
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+/* Pie y progreso */
+
+.reveal .slide-number,
+.reveal .footer {
+  color: $secondary;
+  background: transparent;
+}
+
+.reveal .progress {
+  height: 3px;
+  color: $primary;
+}
+
+
+
+.real-example {
+  margin-top: 1em;
+  padding: 0.8em 1em;
+  border-left: 5px solid var(--accent-color);
+  background: rgba(0,0,0,0.04);
+  border-radius: 8px;
+}
