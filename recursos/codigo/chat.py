@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 
 RUTA_CHAT = (
-    Path(__file__).resolve().parent.parent
+    Path(__file__).resolve().parent.parent.parent
     / "datos"
     / "Entrada"
     / "chats.json"
