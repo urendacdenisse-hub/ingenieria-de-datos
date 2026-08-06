@@ -4,7 +4,7 @@ title: "Notebooks"
 
 # Unidad I. Introducción a la ingeniería de datos
 
-- [Introducción a los datos](unidad-01/notebook-01.qmd)
+- [Introducción a los datos](unidad-01/notebook-01.ipynb)
 - Formatos de datos
 - Organización de los datos
 - Ciclo de vida de los datos
