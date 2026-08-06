@@ -15,9 +15,10 @@ EXTENSIONES_IMAGEN = (
     ".webp",
 )
 
-CARPETA_ENTRADA = Path(__file__).parent.parent / "Datos" / "Entrada"
-CARPETA_SALIDA = Path(__file__).parent.parent / "Datos" / "Salida"
+BASE_RECURSOS = Path(__file__).resolve().parent.parent
 
+CARPETA_ENTRADA = BASE_RECURSOS / "Datos" / "Entrada"
+CARPETA_SALIDA = BASE_RECURSOS / "Datos" / "Salida"
 
 def cargar_imagen(ruta: str) -> PILImage.Image | None:
     """

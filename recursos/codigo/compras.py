@@ -21,7 +21,11 @@ from .utils import (
     leer_correo
 )
 
-CARPETA_SALIDA = Path(__file__).parent.parent / "Datos" / "Salida"
+RECURSOS = Path(__file__).resolve().parent.parent
+
+CARPETA_SALIDA = RECURSOS / "Datos" / "Salida"
+RUTA_CHAT = RECURSOS / "Datos" / "Entrada" / "chats.json"
+RUTA_IMAGEN = RECURSOS / "imagenes" / "logo.png"
 
 def iniciar_compra():
 
