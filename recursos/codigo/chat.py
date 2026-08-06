@@ -6,7 +6,7 @@ from pathlib import Path
 
 RUTA_CHAT = (
     Path(__file__).resolve().parent.parent
-    / "Datos"
+    / "datos"
     / "Entrada"
     / "chats.json"
 )
