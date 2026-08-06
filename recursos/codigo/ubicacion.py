@@ -1,4 +1,5 @@
 import webbrowser
+from IPython.display import HTML, display
 
 def mostrar_ubicacion(latitud: float, longitud: float) -> None:
     """
@@ -27,4 +28,4 @@ def mostrar_ubicacion(latitud: float, longitud: float) -> None:
         f"#map=10/{latitud}/{longitud}"
     )
 
-    webbrowser.open(url)
+    display(HTML(f'<a href="{url}" target="_blank">🗺️ Abrir mapa</a>'))
