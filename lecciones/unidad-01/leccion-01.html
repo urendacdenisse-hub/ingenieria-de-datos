@@ -465,7 +465,6 @@ Dra. Denisse Urenda Castañeda
 <li><strong>Todos generamos datos</strong> en nuestras actividades diarias.</li>
 <li><strong>Los datos pueden representar distintos tipos de información</strong>, como números, texto, fechas, imágenes, audio, video o ubicaciones.</li>
 <li><strong>Identificar el tipo de dato es el primer paso</strong> para almacenarlo, procesarlo y analizarlo correctamente.</li>
-<li></li>
 </ul>
 <!-- ===================================================== -->
 <!-- REFERENCIAS -->
@@ -503,7 +502,7 @@ Pregúntale a <a href="https://chatgpt.com">ChatGPT</a> pues.
 <section id="laboratorio" class="title-slide slide level1 center">
 <h1>Laboratorio</h1>
 <p>En el laboratorio pondremos en práctica los conceptos vistos en esta lección mediante ejemplos y actividades guiadas.</p>
-<p>👉 <strong>Abrir Lab 1. Introducción a los datos en Google Colab</strong></p>
+<p><a href="../../notebooks/unidad-01/notebook-01.html"><strong>Ir al Notebook →</strong></a></p>
 
 
 </section>
@@ -792,7 +791,7 @@ Pregúntale a <a href="https://chatgpt.com">ChatGPT</a> pues.
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/urendacdenisse-hub\.github\.io\/ingenieria-de-datos\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
