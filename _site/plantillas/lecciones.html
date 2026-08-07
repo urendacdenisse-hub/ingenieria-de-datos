@@ -51,7 +51,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-41368feca28557579f1ebedcadee980c.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-548132fe41743edfdc57115b81fa09fb.css">
   <link rel="stylesheet" href="../recursos/slides.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -198,23 +198,8 @@ Dra. Denisse Urenda Castañeda
 </section>
 <section id="preguntas" class="slide level2">
 <h2>Preguntas</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><img data-src="../imagenes/mister.jpg" style="width:95.0%"></p>
-</div><div class="column" style="width:55%;">
-<div class="vcenter">
-<div class="fragment">
-¿Seguro? 🤨
-</div>
-<div class="fragment">
-Bueno…
-</div>
-<div class="fragment">
-Pregúntale a <a href="https://chatgpt.com">ChatGPT</a> pues.
-</div>
-</div>
-</div></div>
-</section>
+
+<img data-src="../imagenes/mister.jpg" style="width:95.0%" class="r-stretch"></section>
 <section id="qué-sigue" class="slide level2">
 <h2>¿Qué sigue?</h2>
 <p>Descripcion breve</p>
@@ -507,7 +492,7 @@ Pregúntale a <a href="https://chatgpt.com">ChatGPT</a> pues.
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/urendacdenisse-hub\.github\.io\/ingenieria-de-datos\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

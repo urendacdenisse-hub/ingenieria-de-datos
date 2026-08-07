@@ -1,6 +1,8 @@
 project:
   type: website
 
+lang: es
+
 website:
   title: "Ingeniería de Datos"
   navbar:

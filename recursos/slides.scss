@@ -54,7 +54,7 @@ $code-inline-color: $primary-dark;
 /* General */
 
 .reveal {
-  font-size: 34px;
+  font-size: 32px;
 }
 
 .reveal .slides {
@@ -80,6 +80,11 @@ $code-inline-color: $primary-dark;
   font-weight: 650;
 }
 
+.reveal .references {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 /* Títulos */
 
 .reveal h1,
@@ -97,9 +102,9 @@ $code-inline-color: $primary-dark;
 .reveal h2 {
   color: $primary-dark;
   font-size: 2.2em;
-  margin-bottom: 0.7em;
-  padding-bottom: 0.7em;
-  border-bottom: 2px solid $primary-light;
+  margin-bottom: 0.4em;
+  padding-bottom: 0.15em;
+  border-bottom: 4px solid $primary-light;
 }
 
 .reveal h3 {
@@ -248,8 +253,6 @@ $code-inline-color: $primary-dark;
   height: 3px;
   color: $primary;
 }
-
-
 
 .real-example {
   margin-top: 1em;

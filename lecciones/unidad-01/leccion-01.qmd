@@ -8,12 +8,13 @@ date-format: "MMMM YYYY"
 
 bibliography: ../../recursos/referencias.bib
 csl: ../../recursos/ieee.csl
+reference-location: document
 
 nocite: |
 
 format:
   revealjs:
-    css: ../../recursos/slides.css
+    auto-stretch: false
     include-after-body: 
       text: |
         <a href="../index.html" class="home-button">
@@ -107,7 +108,7 @@ Los datos son información que podemos almacenar, organizar y analizar para resp
 
 ## ¿Quién genera datos?
 
-![](../imagenes/empresas.png)
+![](../imagenes/empresas.png){width=90%}
 
 
 ## ¿Quién genera datos?
@@ -448,10 +449,6 @@ Los **datos de video** representan una secuencia de imágenes, generalmente acom
 :::
 :::
 
-
-
-
-
 <!-- ===================================================== -->
 <!-- IDEA CLAVE -->
 <!-- ===================================================== -->
@@ -480,11 +477,13 @@ Los datos pueden representarse de muchas formas.
 
 # Referencias
 
+::: {#refs}
+:::
 
-# Preguntas
+# Pregunta
 
 
-![](../imagenes/mister.png){width=95%}
+![](../imagenes/mister.png){width=50%}
 
 
 <!-- ===================================================== -->
