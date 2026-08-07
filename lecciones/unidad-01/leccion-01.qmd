@@ -1,33 +1,6 @@
 ---
 title: "Introducción a la ingeniería de datos"
 subtitle: "Introducción a los datos"
-author: "Dra. Denisse Urenda Castañeda"
-institute: "Universidad Autónoma de Ciudad Juárez"
-date: today
-date-format: "MMMM YYYY"
-
-bibliography: ../../recursos/referencias.bib
-csl: ../../recursos/ieee.csl
-reference-location: document
-
-nocite: |
-
-format:
-  revealjs:
-    auto-stretch: false
-    include-after-body: 
-      text: |
-        <a href="../index.html" class="home-button">
-        📖 Lecciones
-        </a>
-    theme: [default, ../../recursos/slides.scss]
-    slide-number: c/t
-    transition: fade
-    toc: true
-    toc-depth: 1
-    incremental: false
-    center: false
-    footer: "Ingeniería de Datos · UACJ"
 ---
 
 <!-- ===================================================== -->
@@ -494,4 +467,4 @@ Los datos pueden representarse de muchas formas.
 
 En el laboratorio pondremos en práctica los conceptos vistos en esta lección mediante ejemplos y actividades guiadas.
 
-[**Ir al Notebook →**](../../notebooks/unidad-01/notebook-01.ipynb)
+[**Ir al Notebook →**](https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb)
