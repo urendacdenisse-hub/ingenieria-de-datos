@@ -4,7 +4,7 @@ title: "Notebooks"
 
 # Unidad I. Introducción a la ingeniería de datos
 
-- [Introducción a los datos](unidad-01/notebook-01.ipynb)
+- [Introducción a los datos](https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb)
 - Formatos de datos
 - Organización de los datos
 - Ciclo de vida de los datos
