@@ -46,7 +46,7 @@
     "href": "notebooks/plantilla.html",
     "title": "Laboratorio x. Tema",
     "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-xx/notebook-xx.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
   },
   {
     "objectID": "notebooks/plantilla.html#configuración-inicial",
@@ -235,7 +235,7 @@
     "href": "actividades/unidad-01/actividad-01.html",
     "title": "Reporte de Información Personal",
     "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividad/unidad-01/actividad-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
   },
   {
     "objectID": "actividades/unidad-01/actividad-01.html#introducción",
@@ -268,30 +268,30 @@
   {
     "objectID": "actividades/plantilla.html",
     "href": "actividades/plantilla.html",
-    "title": "Reporte de Información Personal",
+    "title": "Titulo de actividad",
     "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividad/unidad-01/actividad-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
   },
   {
     "objectID": "actividades/plantilla.html#introducción",
     "href": "actividades/plantilla.html#introducción",
-    "title": "Reporte de Información Personal",
+    "title": "Titulo de actividad",
     "section": "Introducción",
-    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para capturar información personal y generar un reporte automáticamente. El objetivo es observar cómo un conjunto de datos introducidos por el usuario puede procesarse para producir un resultado útil.\nNo es necesario comprender cómo está programada la aplicación; por ahora, simplemente úsala como si fuera otra aplicación."
+    "text": "Introducción\n…"
   },
   {
     "objectID": "actividades/plantilla.html#objetivo",
     "href": "actividades/plantilla.html#objetivo",
-    "title": "Reporte de Información Personal",
+    "title": "Titulo de actividad",
     "section": "Objetivo",
-    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nIdentificar diferentes tipos de datos introducidos por el usuario.\nComprender que una aplicación puede recibir y procesar distintos tipos de datos.\nComprender que el procesamiento de los datos permite generar un resultado útil para el usuario."
+    "text": "Objetivo\n…\n\n…\n…\n…"
   },
   {
     "objectID": "actividades/plantilla.html#instrucciones",
     "href": "actividades/plantilla.html#instrucciones",
-    "title": "Reporte de Información Personal",
+    "title": "Titulo de actividad",
     "section": "Instrucciones",
-    "text": "Instrucciones\n\nPara preparar el entorno de trabajo, ejecuta la celda que contiene:\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\nPara comenzar con el cuestionario y obtener el reporte, ejecuta la celda que contiene:\nreporte = capturar_datos()\nResponde cada una de las preguntas que aparecerán en pantalla. Si algún dato no cumple con el formato esperado, el sistema solicitará que lo ingreses nuevamente.\nEspera a que el sistema complete el procesamiento y aparezca un mensaje como el siguiente\n\"Reporte generado correctamente.\"\nPara visualizar el reporte, ejecuta la celda que contiene:\nprint(reporte)\nCopia el contenido completo del reporte mostrado en pantalla.\nPega el reporte en un documento de Microsoft Word.\nGuarda el documento en formato PDF.\nSube el archivo PDF como evidencia de la actividad.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\n\n\n# =======================================\n# Captura los datos personales\n# Regresa: reporte en formato de texto\n# =======================================\n\nreporte = capturar_datos()\n\n\n# =======================================\n# Visualiza el reporte en pantalla\n# =======================================\n\nprint(reporte)"
+    "text": "Instrucciones\n\n…\n…\n…\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\n# from ... import ..."
   },
   {
     "objectID": "index.html",
@@ -347,7 +347,7 @@
     "href": "notebooks/unidad-01/notebook-01.html",
     "title": "Laboratorio 1. Introduccion a los datos",
     "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
   },
   {
     "objectID": "notebooks/unidad-01/notebook-01.html#configuración-inicial",
