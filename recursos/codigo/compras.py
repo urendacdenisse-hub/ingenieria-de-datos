@@ -9,6 +9,7 @@ from reportlab.pdfgen import canvas
 from email.message import EmailMessage
 from email.policy import default
 
+from rutas import RUTA_SALIDA
 
 from .utils import (
     barra,
@@ -20,12 +21,6 @@ from .utils import (
     leer_codigo_postal,
     leer_correo
 )
-
-RECURSOS = Path(__file__).resolve().parent.parent
-
-CARPETA_SALIDA = RECURSOS / "Datos" / "Salida"
-RUTA_CHAT = RECURSOS / "Datos" / "Entrada" / "chats.json"
-RUTA_IMAGEN = RECURSOS / "imagenes" / "logo.png"
 
 def iniciar_compra():
 
@@ -205,11 +200,11 @@ def generar_factura(ticket):
 
     barra("Generando factura...")
 
-    CARPETA_SALIDA.mkdir(parents=True, exist_ok=True)
+    RUTA_SALIDA.mkdir(parents=True, exist_ok=True)
 
     fecha = datetime.now()
     nombre_archivo = fecha.strftime("factura_%Y%m%d_%H%M%S.pdf")
-    ruta_factura = CARPETA_SALIDA / nombre_archivo
+    ruta_factura = RUTA_SALIDA / nombre_archivo
 
     documento = canvas.Canvas(str(ruta_factura), pagesize=letter)
 
@@ -383,11 +378,11 @@ def enviar_factura(ruta_factura):
         filename=ruta_factura.name
     )
 
-    CARPETA_SALIDA.mkdir(parents=True, exist_ok=True)
+    RUTA_SALIDA.mkdir(parents=True, exist_ok=True)
 
     fecha = datetime.now()
     nombre_archivo = fecha.strftime("correo_factura_%Y%m%d_%H%M%S.eml")
-    ruta_correo = CARPETA_SALIDA / nombre_archivo
+    ruta_correo = RUTA_SALIDA / nombre_archivo
 
     ruta_correo.write_bytes(mensaje.as_bytes(policy=default))
 

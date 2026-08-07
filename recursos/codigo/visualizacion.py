@@ -9,7 +9,6 @@ from pandas.api.types import (
     is_object_dtype,
 )
 
-
 def visualizar_resultados(datos, max_categorias=10):
 
     columnas_categoricas = []

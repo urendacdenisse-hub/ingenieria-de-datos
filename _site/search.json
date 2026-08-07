@@ -42,307 +42,6 @@
     "text": "Data Pipelines Pocket Reference (DPPR)\nDensmore, J. (2021). Data pipelines pocket reference: Moving and processing data for analytics. O’Reilly Media."
   },
   {
-    "objectID": "lecciones/index.html",
-    "href": "lecciones/index.html",
-    "title": "Lecciones",
-    "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormato de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
-  },
-  {
-    "objectID": "lecciones/index.html#unidad-i.-introducción-a-la-ingeniería-de-datos",
-    "href": "lecciones/index.html#unidad-i.-introducción-a-la-ingeniería-de-datos",
-    "title": "Lecciones",
-    "section": "",
-    "text": "Lección 1. Introducción al curso"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ingeniería de Datos",
-    "section": "",
-    "text": "Bienvenido al repositorio oficial del curso Ingeniería de Datos.\nEn este sitio se publicarán gradualmente las lecciones, notebooks, conjuntos de datos, laboratorios y recursos utilizados durante el semestre.\n\n\n\n\n\n\nNoteAntes de comenzar\n\n\n\nSe recomienda revisar el syllabus para conocer los objetivos, la metodología, el esquema de evaluación y el cronograma del curso.\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\nBibliografía\nConjuntos de datos\nMaterial complementario\n\n\n\n\nLas diapositivas, laboratorios y notebooks se publicarán conforme avance el semestre.\n\n\n\nLa información específica de cada proyecto se publicarán durante el curso.\n\n\n\n\n\nTodo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
-  },
-  {
-    "objectID": "index.html#material-del-curso",
-    "href": "index.html#material-del-curso",
-    "title": "Ingeniería de Datos",
-    "section": "",
-    "text": "Syllabus\n\n\n\n\n\nBibliografía\nConjuntos de datos\nMaterial complementario\n\n\n\n\nLas diapositivas, laboratorios y notebooks se publicarán conforme avance el semestre.\n\n\n\nLa información específica de cada proyecto se publicarán durante el curso."
-  },
-  {
-    "objectID": "index.html#repositorio",
-    "href": "index.html#repositorio",
-    "title": "Ingeniería de Datos",
-    "section": "",
-    "text": "Todo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#material-en-desarrollo",
-    "href": "lecciones/unidad-1/leccion-01.html#material-en-desarrollo",
-    "title": "Lección 1. Introducción al curso",
-    "section": "Material en desarrollo",
-    "text": "Material en desarrollo\n\n\n\n\n\n\nNote\n\n\nEsta presentación forma parte del material del curso y se encuentra actualmente en proceso de elaboración.\nEl contenido, la organización de las diapositivas y los recursos asociados podrán modificarse y ampliarse conforme avance el semestre."
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#este-es-un-buen-momento-para-aclarar-cualquier-duda.",
-    "href": "lecciones/unidad-1/leccion-01.html#este-es-un-buen-momento-para-aclarar-cualquier-duda.",
-    "title": "Lección 1. Introducción al curso",
-    "section": "Este es un buen momento para aclarar cualquier duda.",
-    "text": "Este es un buen momento para aclarar cualquier duda.\nSi aún tienes preguntas después de la clase, también puedes preguntarle a ChatGPT… pero no olvides cuestionar sus respuestas."
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-02.html",
-    "href": "notebooks/unidad-01/notebook-02.html",
-    "title": "Laboratorio 2. Preparación de datos",
-    "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/modelado-de-datos/blob/main/notebooks/unidad-01/notebook-02.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/modelado-de-datos.git"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-02.html#objetivo",
-    "href": "notebooks/unidad-01/notebook-02.html#objetivo",
-    "title": "Laboratorio 2. Preparación de datos",
-    "section": "Objetivo",
-    "text": "Objetivo\nEn este notebook aplicaremos las técnicas vistas en la lección para explorar, limpiar y transformar un conjunto de datos utilizando Python y pandas.\n\nExplorar un conjunto de datos.\nLimpiar datos.\nTransformar variables.\nPreparar un conjunto de datos para su análisis."
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-02.html#exploración-inicial",
-    "href": "notebooks/unidad-01/notebook-02.html#exploración-inicial",
-    "title": "Laboratorio 2. Preparación de datos",
-    "section": "Exploración inicial",
-    "text": "Exploración inicial\nCarguemos un conjunto de datos y realicemos una exploración inicial de su contenido.\n\nimport pandas as pd\n\ndf = pd.read_csv(\"../../datos/sales.csv\")\n\nLibrería: pandas\npandas proporciona herramientas para explorar y resumir la información contenida en un DataFrame.\nFunciones utilizadas\n\ninfo(): Muestra la estructura del DataFrame, incluyendo el tipo de datos y los valores no nulos de cada columna.\nshape: Devuelve el número de filas y columnas del DataFrame.\nisna(): Identifica los valores faltantes en el DataFrame.\nsum(): Suma los valores de cada columna.\ndescribe(): Calcula estadísticas descriptivas de las variables numéricas.\n\n\ndf.info()\n\n\ndf.shape\n\n\ndf.isna().sum()\n\n\ndf.describe()"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-02.html#limpieza-de-datos",
-    "href": "notebooks/unidad-01/notebook-02.html#limpieza-de-datos",
-    "title": "Laboratorio 2. Preparación de datos",
-    "section": "Limpieza de datos",
-    "text": "Limpieza de datos\nEliminemos algunos problemas comunes antes de comenzar el análisis del conjunto de datos.\nFunciones utilizadas\n\ndrop_duplicates(): Elimina los registros duplicados.\nfillna(): Reemplaza los valores faltantes por un valor especificado.\ndropna(): Elimina los registros que contienen valores faltantes.\nclip(): Limita los valores de una columna a un intervalo definido.\n\n\ndf.drop_duplicates()\n\n\ndf.fillna(0)\n\n\ndf.dropna()\n\n\ndf[\"unit_price\"].clip(lower=0)"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-02.html#transformación-de-datos",
-    "href": "notebooks/unidad-01/notebook-02.html#transformación-de-datos",
-    "title": "Laboratorio 2. Preparación de datos",
-    "section": "Transformación de datos",
-    "text": "Transformación de datos\nTransformemos las variables del conjunto de datos para prepararlas para su análisis.\nFunciones utilizadas\n\nastype(): Convierte una columna al tipo de dato especificado.\nmean(): Calcula la media de una columna.\nstd(): Calcula la desviación estándar de una columna.\npd.to_datetime(): Convierte una columna al tipo de dato fecha y hora (datetime).\n\n\ndf.info()\n\n\ndf[\"quantity\"].astype(int)\n\n\n(df[\"unit_price\"] - df[\"unit_price\"].mean()) / df[\"unit_price\"].std()\n\n\ndf[\"quantity\"] * df[\"unit_price\"]\n\n\npd.to_datetime(df[\"date\"])"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-02.html#datos-listos-para-analizar",
-    "href": "notebooks/unidad-01/notebook-02.html#datos-listos-para-analizar",
-    "title": "Laboratorio 2. Preparación de datos",
-    "section": "Datos listos para analizar",
-    "text": "Datos listos para analizar\nGuardemos el conjunto de datos preparado para utilizarlo en etapas posteriores del análisis.\nFunciones utilizadas\n\nto_csv(): Guarda el contenido del DataFrame en un archivo CSV.\n\n\ndf.to_csv(\"../../datos/clean_data.csv\", index=False)"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-02.html#siguiente-lección",
-    "href": "notebooks/unidad-01/notebook-02.html#siguiente-lección",
-    "title": "Laboratorio 2. Preparación de datos",
-    "section": "Siguiente lección",
-    "text": "Siguiente lección\nUna vez completado este laboratorio, continúa con la siguiente lección del curso:\n➡️ Análisis exploratorio de datos"
-  },
-  {
-    "objectID": "notebooks/index.html",
-    "href": "notebooks/index.html",
-    "title": "Notebooks",
-    "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#objetivo",
-    "href": "lecciones/unidad-1/leccion-01.html#objetivo",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Objetivo",
-    "text": "Objetivo\nAl finalizar esta lección serás capaz de:\n\nDefinir qué es un dato.\nIdentificar los principales tipos de datos primitivos.\nReconocer ejemplos de cada tipo de dato en situaciones cotidianas."
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#pregunta",
-    "href": "lecciones/unidad-1/leccion-01.html#pregunta",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Pregunta",
-    "text": "Pregunta\n¿Qué tienen en común una fotografía, un mensaje de WhatsApp y la temperatura de una ciudad?"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#definición-de-datos",
-    "href": "lecciones/unidad-1/leccion-01.html#definición-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Definición de datos",
-    "text": "Definición de datos\n\n\nLos datos son un conjunto de hechos, números, palabras, observaciones u otra información útil.  A través del procesamiento de datos y análisis de datos, las organizaciones transforman datos sin procesar en insights valiosos que mejoran la toma de decisiones e impulsan mejores resultados comerciales. ibm_data_2026?"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#dicho-de-otra-forma",
-    "href": "lecciones/unidad-1/leccion-01.html#dicho-de-otra-forma",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Dicho de otra forma…",
-    "text": "Dicho de otra forma…\n\n\nLos datos son información que podemos almacenar, organizar y analizar para responder preguntas o tomar decisiones."
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#quién-genera-datos",
-    "href": "lecciones/unidad-1/leccion-01.html#quién-genera-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#quién-genera-datos-1",
-    "href": "lecciones/unidad-1/leccion-01.html#quién-genera-datos-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?\nLa pregunta importante no es quién genera datos, sino quién no los genera.\n\nEmpresas, gobiernos, hospitales, bancos, aplicaciones, videojuegos e incluso nosotros generamos datos constantemente.\n\n\nPor ejemplo, cada día generamos datos de ubicación, mensajes, compras, música, navegación y redes sociales.\n\n\nTodos generan datos."
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#quién-genera-datos-2",
-    "href": "lecciones/unidad-1/leccion-01.html#quién-genera-datos-2",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?\nSegún un estudio realizado por el INEGI sobre los hábitos de usuarios de Internet en México durante 2024 inegi_habitos_internet_2024?, las actividades que realizamos todos los días generan una enorme cantidad de datos."
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#quién-genera-datos-3",
-    "href": "lecciones/unidad-1/leccion-01.html#quién-genera-datos-3",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#quién-genera-datos-4",
-    "href": "lecciones/unidad-1/leccion-01.html#quién-genera-datos-4",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?\nDe hecho, esto dice Internet:\n\nGoogle maneja cerca de 40,000 petabytes de datos diariamente. google_data_2024?\nWhatsApp entrega alrededor de 100 billones de mensajes al día. whatsapp_messages_2020?\nEn TikTok se suben más de 23 millones de videos cada día, es decir, aproximadamente 16,000 videos por minuto.tiktok_statistics_2025?"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#qué-datos-generan",
-    "href": "lecciones/unidad-1/leccion-01.html#qué-datos-generan",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Qué datos generan?",
-    "text": "¿Qué datos generan?\n\n\n\n\n\nMensajes enviados\nHora del mensaje\nDestinatario\nArchivos compartidos\nLlamadas realizadas\nTiempo de conexión"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#qué-datos-generan-1",
-    "href": "lecciones/unidad-1/leccion-01.html#qué-datos-generan-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Qué datos generan?",
-    "text": "¿Qué datos generan?\n\n\n\n\n\nPelículas y series reproducidas\nTiempo de reproducción\nBúsquedas realizadas\nCalificaciones\nListas personales\nDispositivo utilizado"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#qué-datos-generan-2",
-    "href": "lecciones/unidad-1/leccion-01.html#qué-datos-generan-2",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Qué datos generan?",
-    "text": "¿Qué datos generan?\n\n\n\n\n\nUbicación de origen y destino\nTiempo del viaje\nCosto del viaje\nConductor asignado\nCalificación del viaje\nMétodo de pago"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#idea-clave",
-    "href": "lecciones/unidad-1/leccion-01.html#idea-clave",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Idea clave",
-    "text": "Idea clave\nTodos generamos datos… pero no todos los datos son iguales."
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#no-todos-los-datos-son-iguales",
-    "href": "lecciones/unidad-1/leccion-01.html#no-todos-los-datos-son-iguales",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "No todos los datos son iguales",
-    "text": "No todos los datos son iguales\nYa vimos que los organismos generan muchos datos y de muchos tipos:\n\nNuméricos: precios, temperatura, edades, venta\nTexto: mensajes, correos, comentarios, búsquedas\nFecha y hora: fechas de compra, horarios, duración, registros de acceso.\nUbicación: GPS, rutas, direcciones\nImágenes: fotografías, radiografías, publicaciones\nAudio: canciones, notas de voz, llamadas\nVideo: películas, videollamadas, TikToks"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#datos-numéricos",
-    "href": "lecciones/unidad-1/leccion-01.html#datos-numéricos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos numéricos",
-    "text": "Datos numéricos\nLos datos numéricos representan cantidades que pueden medirse o contarse. Se utilizan para realizar operaciones matemáticas y análisis estadísticos.\nEjemplos:\n\nEdad de una persona.\nTemperatura de una ciudad.\nPrecio de un producto.\nNúmero de estudiantes.\n\n\n\nEjemplo real\n25 años · 18 °C · $350.00 · 12 km · 150 estudiantes"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#datos-de-texto",
-    "href": "lecciones/unidad-1/leccion-01.html#datos-de-texto",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de texto",
-    "text": "Datos de texto\nLos datos de texto representan información formada por letras, palabras, símbolos o frases. Se utilizan para describir, identificar o comunicar información.\nEjemplos:\n\nNombre de una persona.\nDirección de correo electrónico.\nComentario de un usuario.\nMensaje de WhatsApp.\n\n\n\nEjemplo real\n“Denisse Urenda” · “ingenieria.datos@uacj.mx”"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#datos-de-fecha-y-hora",
-    "href": "lecciones/unidad-1/leccion-01.html#datos-de-fecha-y-hora",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de fecha y hora",
-    "text": "Datos de fecha y hora\nLos datos de fecha y hora representan momentos específicos en el tiempo. Se utilizan para registrar cuándo ocurre un evento y analizar su secuencia o duración.\nEjemplos:\n\nFecha de nacimiento.\nHora de una compra.\nFecha de un examen.\nHora de inicio de una llamada.\n\n\n\nEjemplo real\n15/08/2026 · 08:30 a.m. · 2026-07-13 14:25:36 · 12:00 p.m."
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#datos-de-ubicación",
-    "href": "lecciones/unidad-1/leccion-01.html#datos-de-ubicación",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de ubicación",
-    "text": "Datos de ubicación\nLos datos de ubicación representan un lugar o una posición geográfica. Se utilizan para localizar personas, objetos o eventos.\nEjemplos:\n\nDirección de un domicilio.\nCoordenadas GPS.\nRuta de un viaje.\nUbicación de un restaurante.\n\n\n\nEjemplo real\n31.6904, -106.4245 · Av. Tecnológico 1340 · Ciudad Juárez, Chihuahua"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#datos-de-imagen",
-    "href": "lecciones/unidad-1/leccion-01.html#datos-de-imagen",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de imagen",
-    "text": "Datos de imagen\nLos datos de imagen representan información visual capturada mediante fotografías, dibujos, radiografías o ilustraciones.\nEjemplos:\n\nFotografía.\nRadiografía.\nImagen satelital.\nCaptura de pantalla.\n\n\n\nEjemplo real\n📷 selfie.jpg · 🩻 radiografia.png · 🌎 satelite.tif"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#datos-de-audio",
-    "href": "lecciones/unidad-1/leccion-01.html#datos-de-audio",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de audio",
-    "text": "Datos de audio\nLos datos de audio representan sonidos o grabaciones que pueden almacenarse y reproducirse digitalmente.\nEjemplos:\n\nCanción.\nNota de voz.\nLlamada telefónica.\nPodcast.\n\n\n\nEjemplo real\n🎵 musica.mp3 · 🎙️ nota_de_voz.m4a · 📞 llamada.wav"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#datos-de-video",
-    "href": "lecciones/unidad-1/leccion-01.html#datos-de-video",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de video",
-    "text": "Datos de video\nLos datos de video representan una secuencia de imágenes, generalmente acompañadas de audio, que permiten registrar o reproducir movimiento.\nEjemplos:\n\nPelícula.\nVideollamada.\nVideo de seguridad.\nTikTok.\n\n\n\nEjemplo real\n🎬 pelicula.mp4 · 📹 reunion.mp4 · 🎥 tiktok.mp4"
-  },
-  {
-    "objectID": "lecciones/unidad-1/leccion-01.html#idea-clave-1",
-    "href": "lecciones/unidad-1/leccion-01.html#idea-clave-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Idea clave",
-    "text": "Idea clave\nLos datos pueden representarse de muchas formas.\nY cada una requiere una manera distinta de almacenarse."
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html",
-    "href": "notebooks/unidad-01/notebook-01.html",
-    "title": "Laboratorio 1. Introduccion a los datos",
-    "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#archivos",
-    "href": "notebooks/unidad-01/notebook-01.html#archivos",
-    "title": "Laboratorio 1. Introducción a los datos",
-    "section": "Archivos",
-    "text": "Archivos\nUtiliza las funciones de pandas para leer archivos CSV, Excel y JSON.\nLibrería: pandas\nProporciona herramientas para leer, manipular y analizar datos tabulares en Python.\nFunciones utilizadas\n\npd.read_csv(): Lee un archivo CSV y devuelve un DataFrame.\nhead(): Muestra las primeras filas del DataFrame.\n\n\nimport pandas as pd\n\ndf = pd.read_csv(\"../../datos/sales.csv\")\ndf.head()\n\nFunciones utilizadas\n\npd.read_excel(): Lee un archivo de Excel y devuelve un DataFrame.\n\n\ndf = pd.read_excel(\"../../datos/students.xlsx\")\ndf.head()\n\nFunciones utilizadas\n\npd.read_json(): Lee un archivo JSON y devuelve un DataFrame.\n\n\ndf = pd.read_json(\"../../datos/books.json\")\ndf.head()"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#bases-de-datos",
-    "href": "notebooks/unidad-01/notebook-01.html#bases-de-datos",
-    "title": "Laboratorio 1. Introducción a los datos",
-    "section": "Bases de datos",
-    "text": "Bases de datos\nConectémonos a una base de datos SQLite y ejecutemos una consulta para cargar los resultados en un DataFrame.\nLibrería: sqlite3\nsqlite3 permite conectarse y ejecutar consultas sobre bases de datos SQLite desde Python.\nFunciones utilizadas\n\nsqlite3.connect(): Abre una conexión con una base de datos SQLite.\ncursor(): Crea un cursor para ejecutar instrucciones SQL.\nexecute(): Ejecuta una instrucción SQL.\nfetchall(): Recupera todos los resultados de la consulta.\n\n\nimport sqlite3\n\nconn = sqlite3.connect(\"../../datos/chinook.sqlite\")\ncursor = conn.cursor()\n\ncursor.execute(\n    \"SELECT name FROM sqlite_master WHERE type='table';\"\n)\nprint(cursor.fetchall())\n\nFunciones utilizadas\n\npd.read_sql_query(): Ejecuta una consulta SQL y devuelve el resultado como un DataFrame.\n\n\nartists = pd.read_sql_query(\n    \"SELECT * FROM Artist;\",\n    conn\n)\n\nartists.head()\n\nFunciones utilizadas\n\nclose(): Cierra la conexión con la base de datos y libera los recursos asociados.\n\n\nconn.close()"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#apis",
-    "href": "notebooks/unidad-01/notebook-01.html#apis",
-    "title": "Laboratorio 1. Introducción a los datos",
-    "section": "APIs",
-    "text": "APIs\nEnviemos una solicitud a una API y recuperemos la información en formato JSON.\nLibrería: requests\nrequests permite enviar solicitudes a servicios web y APIs desde Python.\nFunciones utilizadas\n\nrequests.get(): Solicita información desde la URL especificada.\njson(): Convierte la respuesta de la API en un objeto de Python (diccionario o lista).\n\n\nimport requests\n\nurl = (\n    \"https://api.open-meteo.com/v1/forecast\"\n    \"?latitude=31.74&longitude=-106.49&current=temperature_2m\"\n)\n\nresponse = requests.get(url)\ndata = response.json()\n\n\ndata"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#sitios-web",
-    "href": "notebooks/unidad-01/notebook-01.html#sitios-web",
-    "title": "Laboratorio 1. Introducción a los datos",
-    "section": "Sitios web",
-    "text": "Sitios web\nExtraigamos tablas publicadas en un sitio web y carguemos su contenido en un DataFrame.\nFunciones utilizadas\n\npd.read_html(): Extrae las tablas encontradas en una página web y las devuelve como una lista de DataFrames.\n\n\nurl = \"https://www.w3schools.com/html/html_tables.asp\"\ntables = pd.read_html(url)\n\n\ntables[0]"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#siguiente-lección",
-    "href": "notebooks/unidad-01/notebook-01.html#siguiente-lección",
-    "title": "Laboratorio 1. Introducción a los datos",
-    "section": "Siguiente lección",
-    "text": "Siguiente lección\nUna vez completado este laboratorio, continúa con la siguiente lección del curso:\n➡️ Preparación de datos"
-  },
-  {
     "objectID": "plantillas/lecciones.html#introducción",
     "href": "plantillas/lecciones.html#introducción",
     "title": "Título de la unidad",
@@ -399,95 +98,74 @@
     "text": "¿Qué sigue?\nDescripcion breve\nIr a la siguiente sección →"
   },
   {
-    "objectID": "notebooks/unidad-01/notebook-01.html#en-este-laboratorio",
-    "href": "notebooks/unidad-01/notebook-01.html#en-este-laboratorio",
-    "title": "💻 Introduccion a los datos",
+    "objectID": "notebooks/index.html",
+    "href": "notebooks/index.html",
+    "title": "Notebooks",
     "section": "",
-    "text": "Comenzaremos explorando qué entendemos por datos y conoceremos algunos de los tipos de datos más comunes que encontramos en aplicaciones del mundo real. Mediante funciones previamente desarrolladas, utilizaremos esos datos como entrada para generar distintos productos y observar cómo una misma aplicación puede transformar información en resultados útiles para el usuario."
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
   },
   {
-    "objectID": "notebooks/unidad-01/notebook-01.html#al-finalizar-este-laboratorio-podrás",
-    "href": "notebooks/unidad-01/notebook-01.html#al-finalizar-este-laboratorio-podrás",
-    "title": "💻 Introduccion a los datos",
-    "section": "Al finalizar este laboratorio podrás…",
-    "text": "Al finalizar este laboratorio podrás…\n\nIdentificar diferentes tipos de datos y reconocer algunos ejemplos de cada uno.\nComprender que las transformaciones que pueden realizarse sobre los datos dependen de su tipo.\nComprender que los datos pueden utilizarse para generar nuevos datos o distintos productos mediante procesos de transformación."
+    "objectID": "lecciones/index.html",
+    "href": "lecciones/index.html",
+    "title": "Lecciones",
+    "section": "",
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormato de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
   },
   {
-    "objectID": "notebooks/unidad-01/notebook-01.html#configuración-inicial",
-    "href": "notebooks/unidad-01/notebook-01.html#configuración-inicial",
-    "title": "Laboratorio 1. Introduccion a los datos",
-    "section": "Configuración inicial",
-    "text": "Configuración inicial\nEjecuta la siguiente celda. Esta configura el entorno de trabajo y carga los recursos necesarios para que los ejemplos funcionen correctamente.\n⚠️ Importante: No modifiques esta celda.\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#plan-de-contingencia",
-    "href": "notebooks/unidad-01/notebook-01.html#plan-de-contingencia",
-    "title": "Laboratorio 1. Introduccion a los datos",
-    "section": "🛠️ Plan de contingencia",
-    "text": "🛠️ Plan de contingencia\n¡No tengas miedo de experimentar! Si algo deja de funcionar, no pasa nada; es parte del aprendizaje.\nAntes de pedir ayuda, intenta lo siguiente:\n\nVuelve a ejecutar el notebook desde el inicio.\nSi modificaste una celda por accidente, intenta recuperarla con Ctrl + Z.\nSi ya no es posible recuperarla, vuelve a abrir el notebook original y comienza de nuevo.\nSi el problema persiste, pregúntame (aunque probablemente termine haciendo lo mismo que el siguiente paso).\nPregúntale a ChatGPT. Comparte el mensaje de error, explica qué intentabas hacer y, si es posible, incluye el código relacionado.\n\n\n💡 Recuerda: Es muy difícil “romper” algo de forma permanente. Lo peor que puede pasar es que tengas que volver a empezar el notebook."
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#dato-numérico",
-    "href": "notebooks/unidad-01/notebook-01.html#dato-numérico",
-    "title": "Laboratorio 1. Introduccion a los datos",
-    "section": "Dato numérico",
-    "text": "Dato numérico\nLos datos numéricos representan cantidades que pueden medirse o contarse. Algunos ejemplos son la edad de una persona, la temperatura de una ciudad o el precio de un producto.\n\nedad = 22\ntemperatura = 36.8\nprecio = 1499.99\n\nprint(edad, type(edad))\nprint(temperatura, type(temperatura))\nprint(precio, type(precio))\n\nObservación: Aunque ambos representan valores numéricos, Python distingue entre dos tipos principales:\n\nint (integer): representa números enteros.\nfloat (floating point): representa números con parte decimal.\n\nUna de las principales características de los datos numéricos es que permiten realizar operaciones matemáticas como sumas, restas, multiplicaciones y divisiones.\nPor ejemplo, podemos calcular el precio total de una compra o la temperatura promedio de una ciudad.\n\ncamisa = 350.00\npantalon = 620.00\ntenis = 1299.99\n\nsubtotal = camisa + pantalon + tenis\niva = subtotal * 0.16\ntotal = subtotal + iva\n\nprint(f\"Subtotal: ${subtotal}\")\nprint(f\"Iva: ${iva}\")\nprint(f\"Total: ${total}\")\n\n\nfrom recursos.codigo.tickets import generar_ticket\n\nproductos = [\n    (\"Camisa\", 3, 350.00),\n    (\"Pantalón\", 3, 620.00),\n    (\"Tenis deportivos\", 1, 1299.99),\n    (\"Calcetines\", 3, 89.90),\n    (\"Celular\", 10, 5700.00)\n]\n\nticket = generar_ticket(productos)\nprint(ticket)"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#dato-de-tipo-texto",
-    "href": "notebooks/unidad-01/notebook-01.html#dato-de-tipo-texto",
-    "title": "Laboratorio 1. Introduccion a los datos",
-    "section": "Dato de tipo texto",
-    "text": "Dato de tipo texto\nLos datos de texto permiten representar palabras, frases o cualquier secuencia de caracteres. Son ampliamente utilizados para almacenar nombres, direcciones, correos electrónicos, comentarios y otra información descriptiva.\nObservemos algunos ejemplos utilizando Python.\n\nnombre = \"Ana Martínez\"\nciudad = \"Ciudad Juárez\"\ncorreo = \"ana@email.com\"\n\nprint(nombre, type(nombre))\nprint(ciudad, type(ciudad))\nprint(correo, type(correo))\n\nObservación\nPython identifica los datos de tipo texto como str (abreviatura de string). Aunque suelen representar texto, también pueden utilizarse para almacenar cualquier secuencia de caracteres, como números telefónicos, códigos postales o identificadores.\n\nfrom recursos.codigo.promocion import generar_correo_promocional\n\nmensaje = generar_correo_promocional(\n    nombre = \"Marcos Jiménez\",\n    correo = \"marcos.jimenez@email.com\",\n    ciudad = \"Ciudad Juárez\"\n)\nprint(mensaje)"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#datos-tipo-fecha-y-hora",
-    "href": "notebooks/unidad-01/notebook-01.html#datos-tipo-fecha-y-hora",
-    "title": "Laboratorio 1. Introduccion a los datos",
-    "section": "Datos tipo fecha y hora",
-    "text": "Datos tipo fecha y hora\nLos datos de tipo fecha y hora permiten representar momentos específicos en el tiempo, como una fecha, una hora o ambas combinadas. Son fundamentales para registrar cuándo ocurrió un evento.\n\n\n\nValor\nDescripción\n\n\n\n\n2026-07-09\nFecha\n\n\n14:35:20\nHora\n\n\n2026-07-09 14:35:20\nFecha y hora\n\n\n\n\nfrom datetime import datetime\n\nahora = datetime.now()\n\nprint(ahora)\nprint(ahora.date())\nprint(ahora.time())\n\nObservación\nEn Python, el tipo datetime almacena tanto la fecha como la hora. Cuando es necesario, pueden obtenerse por separado utilizando los métodos .date() y .time().\n\nfrom recursos.codigo.chat import buscar_chat\n\nhistorial = buscar_chat(fecha = \"2026-07-08\")\nprint(historial)\n\n\nhistorial = buscar_chat(fecha = \"2026-07-09\")\nprint(historial)"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#datos-geográficos",
-    "href": "notebooks/unidad-01/notebook-01.html#datos-geográficos",
-    "title": "Laboratorio 1. Introduccion a los datos",
-    "section": "Datos geográficos",
-    "text": "Datos geográficos\nLos datos geográficos permiten representar la ubicación física de personas, objetos o lugares. Son ampliamente utilizados en aplicaciones de navegación, logística, transporte, comercio electrónico y análisis espacial.\nObservación\nLa latitud y la longitud permiten representar una ubicación con gran precisión y son el formato utilizado por sistemas como Google Maps, GPS y aplicaciones de navegación.\n\nfrom recursos.codigo.ubicacion import mostrar_ubicacion\n\nmostrar_ubicacion(latitud = 31.6908, longitud = -106.4253)"
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#datos-multimedia",
-    "href": "notebooks/unidad-01/notebook-01.html#datos-multimedia",
-    "title": "Laboratorio 1. Introduccion a los datos",
-    "section": "Datos multimedia",
-    "text": "Datos multimedia\nLos datos multimedia permiten almacenar información visual o auditiva. A diferencia de los datos numéricos o de texto, suelen ocupar un mayor espacio de almacenamiento y requieren herramientas especializadas para su procesamiento y análisis.\n\n\n\nTipo\nEjemplo\n\n\n\n\nImagen\nFotografía, radiografía, logotipo\n\n\nAudio\nCanción, nota de voz, llamada telefónica\n\n\nVideo\nGrabación de seguridad, película, videoconferencia\n\n\n\nObservación\nAunque imágenes, audios y videos pueden visualizarse como contenido multimedia, internamente también son datos digitales y pueden ser procesados mediante programas para aplicar filtros, modificar su tamaño, extraer información o realizar análisis.\n\nfrom recursos.codigo.imagenes import descargar_imagen, mostrar_imagen\n\n# Asegurate de que la direccion url termine alguna de las siguientes extensiones\n# \".jpg\", \".jpeg\", \".png\", \".gif\", \".bmp\", \".webp\"\n\nruta_original = descargar_imagen(\n    url = \"https://upload.wikimedia.org/wikipedia/commons/e/ed/Cynomys_ludovicianus.005_-_Faunia.JPG\",\n    nombre_archivo = \"perro_pradera.png\"\n)\n\nprint(ruta_original)\n\n\nmostrar_imagen(origen = ruta_original)\n\n\nurl = \"https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg\"\n\nmostrar_imagen(origen = url)\n\nLas imágenes también pueden procesarse mediante software. Es posible aplicar transformaciones como filtros, rotaciones o cambios de tamaño para adaptarlas a diferentes necesidades.\n\nfrom recursos.codigo.imagenes import aplicar_filtro\n\nruta_modificada = aplicar_filtro(\n    ruta_imagen = ruta_original,\n    filtro = \"contorno\",\n    nombre_salida = \"perro_contorno.png\"\n)\n\nmostrar_imagen(origen = ruta_modificada)\n\n\nruta_modificada = aplicar_filtro(\n    ruta_imagen = ruta_original,\n    filtro = \"bordes\",\n    nombre_salida = \"perro_bordes.png\"\n)\n\nmostrar_imagen(origen = ruta_modificada)\n\n\nfrom recursos.codigo.imagenes import redimensionar_imagen\n\nruta_modificada = redimensionar_imagen(\n    ruta_imagen = ruta_original,\n    ancho = 350,\n    alto = 500,\n    nombre_salida = \"perro_escalado.png\"\n)\n\nmostrar_imagen(origen = ruta_modificada)\n\n\nfrom recursos.codigo.imagenes import rotar_imagen\n\nruta_modificada = rotar_imagen(\n    ruta_imagen = ruta_original,\n    grados = 90,\n    nombre_salida = \"perro_rotado.png\"\n)\n\nmostrar_imagen(origen = ruta_modificada)\n\nObservación\nEn este apartado se utilizaron imágenes como ejemplo de datos multimedia. Los mismos principios pueden aplicarse a otros tipos de archivos, como audio y video, utilizando herramientas especializadas."
-  },
-  {
-    "objectID": "notebooks/unidad-01/notebook-01.html#ideas-clave",
-    "href": "notebooks/unidad-01/notebook-01.html#ideas-clave",
-    "title": "Laboratorio 1. Introduccion a los datos",
-    "section": "Ideas clave",
-    "text": "Ideas clave\n\nLos datos pueden representarse de diferentes formas, como números, texto, fechas, ubicaciones geográficas o contenido multimedia.\nEl tipo de dato determina las operaciones que pueden realizarse con él.\nLos datos pueden procesarse y transformarse para generar nuevos datos, información o productos con un propósito específico.\nIdentificar correctamente el tipo de dato es el primer paso para poder trabajar con él de manera adecuada."
-  },
-  {
-    "objectID": "actividades/unidad-01/01-Reporte-de-Informacion-Personal.html",
-    "href": "actividades/unidad-01/01-Reporte-de-Informacion-Personal.html",
+    "objectID": "actividades/unidad-01/actividad-01.html",
+    "href": "actividades/unidad-01/actividad-01.html",
     "title": "📝 Reporte de Información Personal",
     "section": "",
-    "text": "En esta actividad utilizarás una pequeña aplicación desarrollada en Python para capturar información personal y generar un reporte automáticamente. El objetivo es observar cómo un conjunto de datos introducidos por el usuario puede procesarse para producir un resultado útil.\nNo es necesario comprender cómo está programada la aplicación; por ahora, simplemente úsala como si fuera otra aplicación."
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividad/unidad-01/actividad-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git"
   },
   {
-    "objectID": "actividades/unidad-01/01-Reporte-de-Informacion-Personal.html#objetivo",
-    "href": "actividades/unidad-01/01-Reporte-de-Informacion-Personal.html#objetivo",
+    "objectID": "actividades/unidad-01/actividad-01.html#introducción",
+    "href": "actividades/unidad-01/actividad-01.html#introducción",
+    "title": "📝 Reporte de Información Personal",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para capturar información personal y generar un reporte automáticamente. El objetivo es observar cómo un conjunto de datos introducidos por el usuario puede procesarse para producir un resultado útil.\nNo es necesario comprender cómo está programada la aplicación; por ahora, simplemente úsala como si fuera otra aplicación."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-01.html#objetivo",
+    "href": "actividades/unidad-01/actividad-01.html#objetivo",
     "title": "📝 Reporte de Información Personal",
     "section": "Objetivo",
     "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nIdentificar diferentes tipos de datos introducidos por el usuario.\nComprender que una aplicación puede recibir y procesar distintos tipos de datos.\nComprender que el procesamiento de los datos permite generar un resultado útil para el usuario."
   },
   {
-    "objectID": "actividades/unidad-01/01-Reporte-de-Informacion-Personal.html#instrucciones",
-    "href": "actividades/unidad-01/01-Reporte-de-Informacion-Personal.html#instrucciones",
+    "objectID": "actividades/unidad-01/actividad-01.html#instrucciones",
+    "href": "actividades/unidad-01/actividad-01.html#instrucciones",
     "title": "📝 Reporte de Información Personal",
     "section": "Instrucciones",
-    "text": "Instrucciones\n\nPara preparar el entorno de trabajo, ejecuta la celda que contiene: &gt;python  &gt;import sys  &gt;from pathlib import Path  &gt;  &gt;sys.path.append(str(Path.cwd().parent.parent))  &gt;  &gt;from Recursos.reporte import capturar_datos  &gt;\nPara comenzar con el cuestionario y obtener el reporte, ejecuta la celda que contiene: &gt;python  &gt;reporte = capturar_datos()  &gt;\nResponde cada una de las preguntas que aparecerán en pantalla. Si algún dato no cumple con el formato esperado, el sistema solicitará que lo ingreses nuevamente.\nEspera a que el sistema complete el procesamiento y aparezca un mensaje como el siguiente &gt;text  &gt;\"Reporte generado correctamente.\"  &gt;\nPara visualizar el reporte, ejecuta la celda que contiene: &gt;python  &gt;print(reporte)  &gt;\nCopia el contenido completo del reporte mostrado en pantalla.\nPega el reporte en un documento de Microsoft Word.\nGuarda el documento en formato PDF.\nSube el archivo PDF como evidencia de la actividad.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\n\n\n# =======================================\n# Captura los datos personales\n# Regresa: reporte en formato de texto\n# =======================================\n\nreporte = capturar_datos()\n\n\n# =======================================\n# Visualiza el reporte en pantalla\n# =======================================\n\nprint(reporte)"
+    "text": "Instrucciones\n\nPara preparar el entorno de trabajo, ejecuta la celda que contiene: &gt;python  &gt;import sys  &gt;from pathlib import Path  &gt;  &gt;sys.path.append(str(Path.cwd().parent.parent))  &gt;  &gt;from recursos.codigo.reporte import capturar_datos  &gt;\nPara comenzar con el cuestionario y obtener el reporte, ejecuta la celda que contiene: &gt;python  &gt;reporte = capturar_datos()  &gt;\nResponde cada una de las preguntas que aparecerán en pantalla. Si algún dato no cumple con el formato esperado, el sistema solicitará que lo ingreses nuevamente.\nEspera a que el sistema complete el procesamiento y aparezca un mensaje como el siguiente &gt;text  &gt;\"Reporte generado correctamente.\"  &gt;\nPara visualizar el reporte, ejecuta la celda que contiene: &gt;python  &gt;print(reporte)  &gt;\nCopia el contenido completo del reporte mostrado en pantalla.\nPega el reporte en un documento de Microsoft Word.\nGuarda el documento en formato PDF.\nSube el archivo PDF como evidencia de la actividad.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\n\n\n# =======================================\n# Captura los datos personales\n# Regresa: reporte en formato de texto\n# =======================================\n\nreporte = capturar_datos()\n\n\n# =======================================\n# Visualiza el reporte en pantalla\n# =======================================\n\nprint(reporte)"
+  },
+  {
+    "objectID": "actividades/index.html",
+    "href": "actividades/index.html",
+    "title": "Actividades",
+    "section": "",
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Bienvenido al repositorio oficial del curso Ingeniería de Datos.\nEn este sitio se publicarán gradualmente las lecciones, notebooks, conjuntos de datos, laboratorios y recursos utilizados durante el semestre.\n\n\n\n\n\n\nNoteAntes de comenzar\n\n\n\nSe recomienda revisar el syllabus para conocer los objetivos, la metodología, el esquema de evaluación y el cronograma del curso.\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\nBibliografía\nConjuntos de datos\nMaterial complementario\n\n\n\n\nLas diapositivas, laboratorios y notebooks se publicarán conforme avance el semestre.\n\n\n\nLa información específica de cada proyecto se publicarán durante el curso.\n\n\n\n\n\nTodo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
+  },
+  {
+    "objectID": "index.html#material-del-curso",
+    "href": "index.html#material-del-curso",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Syllabus\n\n\n\n\n\nBibliografía\nConjuntos de datos\nMaterial complementario\n\n\n\n\nLas diapositivas, laboratorios y notebooks se publicarán conforme avance el semestre.\n\n\n\nLa información específica de cada proyecto se publicarán durante el curso."
+  },
+  {
+    "objectID": "index.html#repositorio",
+    "href": "index.html#repositorio",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Todo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
   },
   {
     "objectID": "lecciones/unidad-01/leccion-01.html#objetivo",
@@ -644,38 +322,59 @@
     "text": "Idea clave\nLos datos pueden representarse de muchas formas.\nY cada una requiere una manera distinta de almacenarse."
   },
   {
-    "objectID": "actividades/index.html",
-    "href": "actividades/index.html",
-    "title": "Actividades",
+    "objectID": "notebooks/unidad-01/notebook-01.html",
+    "href": "notebooks/unidad-01/notebook-01.html",
+    "title": "Laboratorio 1. Introduccion a los datos",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos"
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
   },
   {
-    "objectID": "actividades/unidad-01/actividad-01.html",
-    "href": "actividades/unidad-01/actividad-01.html",
-    "title": "📝 Reporte de Información Personal",
-    "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividad/unidad-01/actividad-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git"
+    "objectID": "notebooks/unidad-01/notebook-01.html#configuración-inicial",
+    "href": "notebooks/unidad-01/notebook-01.html#configuración-inicial",
+    "title": "Laboratorio 1. Introduccion a los datos",
+    "section": "Configuración inicial",
+    "text": "Configuración inicial\nEjecuta la siguiente celda. Esta configura el entorno de trabajo y carga los recursos necesarios para que los ejemplos funcionen correctamente.\n⚠️ Importante: No modifiques esta celda.\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))"
   },
   {
-    "objectID": "actividades/unidad-01/actividad-01.html#objetivo",
-    "href": "actividades/unidad-01/actividad-01.html#objetivo",
-    "title": "📝 Reporte de Información Personal",
-    "section": "Objetivo",
-    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nIdentificar diferentes tipos de datos introducidos por el usuario.\nComprender que una aplicación puede recibir y procesar distintos tipos de datos.\nComprender que el procesamiento de los datos permite generar un resultado útil para el usuario."
+    "objectID": "notebooks/unidad-01/notebook-01.html#dato-numérico",
+    "href": "notebooks/unidad-01/notebook-01.html#dato-numérico",
+    "title": "Laboratorio 1. Introduccion a los datos",
+    "section": "Dato numérico",
+    "text": "Dato numérico\nLos datos numéricos representan cantidades que pueden medirse o contarse. Algunos ejemplos son la edad de una persona, la temperatura de una ciudad o el precio de un producto.\n\nedad = 22\ntemperatura = 36.8\nprecio = 1499.99\n\nprint(edad, type(edad))\nprint(temperatura, type(temperatura))\nprint(precio, type(precio))\n\nObservación: Aunque ambos representan valores numéricos, Python distingue entre dos tipos principales:\n\nint (integer): representa números enteros.\nfloat (floating point): representa números con parte decimal.\n\nUna de las principales características de los datos numéricos es que permiten realizar operaciones matemáticas como sumas, restas, multiplicaciones y divisiones.\nPor ejemplo, podemos calcular el precio total de una compra o la temperatura promedio de una ciudad.\n\ncamisa = 350.00\npantalon = 620.00\ntenis = 1299.99\n\nsubtotal = camisa + pantalon + tenis\niva = subtotal * 0.16\ntotal = subtotal + iva\n\nprint(f\"Subtotal: ${subtotal}\")\nprint(f\"Iva: ${iva}\")\nprint(f\"Total: ${total}\")\n\n\nfrom recursos.codigo.tickets import generar_ticket\n\nproductos = [\n    (\"Camisa\", 3, 350.00),\n    (\"Pantalón\", 3, 620.00),\n    (\"Tenis deportivos\", 1, 1299.99),\n    (\"Calcetines\", 3, 89.90),\n    (\"Celular\", 10, 5700.00)\n]\n\nticket = generar_ticket(productos)\nprint(ticket)"
   },
   {
-    "objectID": "actividades/unidad-01/actividad-01.html#instrucciones",
-    "href": "actividades/unidad-01/actividad-01.html#instrucciones",
-    "title": "📝 Reporte de Información Personal",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\nPara preparar el entorno de trabajo, ejecuta la celda que contiene: &gt;python  &gt;import sys  &gt;from pathlib import Path  &gt;  &gt;sys.path.append(str(Path.cwd().parent.parent))  &gt;  &gt;from recursos.codigo.reporte import capturar_datos  &gt;\nPara comenzar con el cuestionario y obtener el reporte, ejecuta la celda que contiene: &gt;python  &gt;reporte = capturar_datos()  &gt;\nResponde cada una de las preguntas que aparecerán en pantalla. Si algún dato no cumple con el formato esperado, el sistema solicitará que lo ingreses nuevamente.\nEspera a que el sistema complete el procesamiento y aparezca un mensaje como el siguiente &gt;text  &gt;\"Reporte generado correctamente.\"  &gt;\nPara visualizar el reporte, ejecuta la celda que contiene: &gt;python  &gt;print(reporte)  &gt;\nCopia el contenido completo del reporte mostrado en pantalla.\nPega el reporte en un documento de Microsoft Word.\nGuarda el documento en formato PDF.\nSube el archivo PDF como evidencia de la actividad.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\n\n\n# =======================================\n# Captura los datos personales\n# Regresa: reporte en formato de texto\n# =======================================\n\nreporte = capturar_datos()\n\n\n# =======================================\n# Visualiza el reporte en pantalla\n# =======================================\n\nprint(reporte)"
+    "objectID": "notebooks/unidad-01/notebook-01.html#dato-de-tipo-texto",
+    "href": "notebooks/unidad-01/notebook-01.html#dato-de-tipo-texto",
+    "title": "Laboratorio 1. Introduccion a los datos",
+    "section": "Dato de tipo texto",
+    "text": "Dato de tipo texto\nLos datos de texto permiten representar palabras, frases o cualquier secuencia de caracteres. Son ampliamente utilizados para almacenar nombres, direcciones, correos electrónicos, comentarios y otra información descriptiva.\nObservemos algunos ejemplos utilizando Python.\n\nnombre = \"Ana Martínez\"\nciudad = \"Ciudad Juárez\"\ncorreo = \"ana@email.com\"\n\nprint(nombre, type(nombre))\nprint(ciudad, type(ciudad))\nprint(correo, type(correo))\n\nObservación\nPython identifica los datos de tipo texto como str (abreviatura de string). Aunque suelen representar texto, también pueden utilizarse para almacenar cualquier secuencia de caracteres, como números telefónicos, códigos postales o identificadores.\n\nfrom recursos.codigo.promocion import generar_correo_promocional\n\nmensaje = generar_correo_promocional(\n    nombre = \"Marcos Jiménez\",\n    correo = \"marcos.jimenez@email.com\",\n    ciudad = \"Ciudad Juárez\"\n)\nprint(mensaje)"
   },
   {
-    "objectID": "actividades/unidad-01/actividad-01.html#introducción",
-    "href": "actividades/unidad-01/actividad-01.html#introducción",
-    "title": "📝 Reporte de Información Personal",
-    "section": "Introducción",
-    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para capturar información personal y generar un reporte automáticamente. El objetivo es observar cómo un conjunto de datos introducidos por el usuario puede procesarse para producir un resultado útil.\nNo es necesario comprender cómo está programada la aplicación; por ahora, simplemente úsala como si fuera otra aplicación."
+    "objectID": "notebooks/unidad-01/notebook-01.html#datos-tipo-fecha-y-hora",
+    "href": "notebooks/unidad-01/notebook-01.html#datos-tipo-fecha-y-hora",
+    "title": "Laboratorio 1. Introduccion a los datos",
+    "section": "Datos tipo fecha y hora",
+    "text": "Datos tipo fecha y hora\nLos datos de tipo fecha y hora permiten representar momentos específicos en el tiempo, como una fecha, una hora o ambas combinadas. Son fundamentales para registrar cuándo ocurrió un evento.\n\n\n\nValor\nDescripción\n\n\n\n\n2026-07-09\nFecha\n\n\n14:35:20\nHora\n\n\n2026-07-09 14:35:20\nFecha y hora\n\n\n\n\nfrom datetime import datetime\n\nahora = datetime.now()\n\nprint(ahora)\nprint(ahora.date())\nprint(ahora.time())\n\nObservación\nEn Python, el tipo datetime almacena tanto la fecha como la hora. Cuando es necesario, pueden obtenerse por separado utilizando los métodos .date() y .time().\n\nfrom recursos.codigo.chat import buscar_chat\n\nhistorial = buscar_chat(fecha = \"2026-07-08\")\nprint(historial)\n\n\nhistorial = buscar_chat(fecha = \"2026-07-09\")\nprint(historial)"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-01.html#datos-geográficos",
+    "href": "notebooks/unidad-01/notebook-01.html#datos-geográficos",
+    "title": "Laboratorio 1. Introduccion a los datos",
+    "section": "Datos geográficos",
+    "text": "Datos geográficos\nLos datos geográficos permiten representar la ubicación física de personas, objetos o lugares. Son ampliamente utilizados en aplicaciones de navegación, logística, transporte, comercio electrónico y análisis espacial.\nObservación\nLa latitud y la longitud permiten representar una ubicación con gran precisión y son el formato utilizado por sistemas como Google Maps, GPS y aplicaciones de navegación.\n\nfrom recursos.codigo.ubicacion import mostrar_ubicacion\n\nmostrar_ubicacion(latitud = 31.6908, longitud = -106.4253)"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-01.html#datos-multimedia",
+    "href": "notebooks/unidad-01/notebook-01.html#datos-multimedia",
+    "title": "Laboratorio 1. Introduccion a los datos",
+    "section": "Datos multimedia",
+    "text": "Datos multimedia\nLos datos multimedia permiten almacenar información visual o auditiva. A diferencia de los datos numéricos o de texto, suelen ocupar un mayor espacio de almacenamiento y requieren herramientas especializadas para su procesamiento y análisis.\n\n\n\nTipo\nEjemplo\n\n\n\n\nImagen\nFotografía, radiografía, logotipo\n\n\nAudio\nCanción, nota de voz, llamada telefónica\n\n\nVideo\nGrabación de seguridad, película, videoconferencia\n\n\n\nObservación\nAunque imágenes, audios y videos pueden visualizarse como contenido multimedia, internamente también son datos digitales y pueden ser procesados mediante programas para aplicar filtros, modificar su tamaño, extraer información o realizar análisis.\n\nfrom recursos.codigo.imagenes import descargar_imagen, mostrar_imagen\n\n# Asegurate de que la direccion url termine alguna de las siguientes extensiones\n# \".jpg\", \".jpeg\", \".png\", \".gif\", \".bmp\", \".webp\"\n\nruta_original = descargar_imagen(\n    url = \"https://upload.wikimedia.org/wikipedia/commons/e/ed/Cynomys_ludovicianus.005_-_Faunia.JPG\",\n    nombre_archivo = \"perro_pradera.png\"\n)\n\nprint(ruta_original)\n\n\nmostrar_imagen(origen = ruta_original)\n\n\nurl = \"https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg\"\n\nmostrar_imagen(origen = url)\n\nLas imágenes también pueden procesarse mediante software. Es posible aplicar transformaciones como filtros, rotaciones o cambios de tamaño para adaptarlas a diferentes necesidades.\n\nfrom recursos.codigo.imagenes import aplicar_filtro\n\nruta_modificada = aplicar_filtro(\n    ruta_imagen = ruta_original,\n    filtro = \"contorno\",\n    nombre_salida = \"perro_contorno.png\"\n)\n\nmostrar_imagen(origen = ruta_modificada)\n\n\nruta_modificada = aplicar_filtro(\n    ruta_imagen = ruta_original,\n    filtro = \"bordes\",\n    nombre_salida = \"perro_bordes.png\"\n)\n\nmostrar_imagen(origen = ruta_modificada)\n\n\nfrom recursos.codigo.imagenes import redimensionar_imagen\n\nruta_modificada = redimensionar_imagen(\n    ruta_imagen = ruta_original,\n    ancho = 350,\n    alto = 500,\n    nombre_salida = \"perro_escalado.png\"\n)\n\nmostrar_imagen(origen = ruta_modificada)\n\n\nfrom recursos.codigo.imagenes import rotar_imagen\n\nruta_modificada = rotar_imagen(\n    ruta_imagen = ruta_original,\n    grados = 90,\n    nombre_salida = \"perro_rotado.png\"\n)\n\nmostrar_imagen(origen = ruta_modificada)\n\nObservación\nEn este apartado se utilizaron imágenes como ejemplo de datos multimedia. Los mismos principios pueden aplicarse a otros tipos de archivos, como audio y video, utilizando herramientas especializadas."
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-01.html#ideas-clave",
+    "href": "notebooks/unidad-01/notebook-01.html#ideas-clave",
+    "title": "Laboratorio 1. Introduccion a los datos",
+    "section": "Ideas clave",
+    "text": "Ideas clave\n\nLos datos pueden representarse de diferentes formas, como números, texto, fechas, ubicaciones geográficas o contenido multimedia.\nEl tipo de dato determina las operaciones que pueden realizarse con él.\nLos datos pueden procesarse y transformarse para generar nuevos datos, información o productos con un propósito específico.\nIdentificar correctamente el tipo de dato es el primer paso para poder trabajar con él de manera adecuada."
   }
 ]

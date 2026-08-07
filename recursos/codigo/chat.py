@@ -1,16 +1,8 @@
-from pathlib import Path
+
 import json
 from datetime import datetime
 
-from pathlib import Path
-
-RUTA_CHAT = (
-    Path(__file__).resolve().parent.parent.parent
-    / "datos"
-    / "Entrada"
-    / "chats.json"
-)
-
+from rutas import RUTA_ENTRADA
 
 def buscar_chat(fecha: str) -> str:
     try:
@@ -18,7 +10,7 @@ def buscar_chat(fecha: str) -> str:
     except ValueError:
         return "Formato de fecha inválido. Utilice el formato AAAA-MM-DD."
     
-    with open(RUTA_CHAT, "r", encoding="utf-8") as archivo:
+    with open(RUTA_ENTRADA /"chats.json", "r", encoding="utf-8") as archivo:
         historial = json.load(archivo)
 
     conversaciones = [

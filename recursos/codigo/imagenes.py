@@ -6,6 +6,8 @@ from IPython.display import display
 from PIL import Image as PILImage
 from PIL import ImageFilter
 
+from rutas import RUTA_ENTRADA, RUTA_SALIDA
+
 EXTENSIONES_IMAGEN = (
     ".jpg",
     ".jpeg",
@@ -14,11 +16,6 @@ EXTENSIONES_IMAGEN = (
     ".bmp",
     ".webp",
 )
-
-BASE_RECURSOS = Path(__file__).resolve().parent.parent
-
-CARPETA_ENTRADA = BASE_RECURSOS / "Datos" / "Entrada"
-CARPETA_SALIDA = BASE_RECURSOS / "Datos" / "Salida"
 
 def cargar_imagen(ruta: str) -> PILImage.Image | None:
     """
@@ -39,7 +36,7 @@ def cargar_imagen(ruta: str) -> PILImage.Image | None:
 
     # Si solo recibió un nombre de archivo, buscar en Datos/Entrada.
     if ruta.parent == Path("."):
-        ruta = CARPETA_ENTRADA / ruta
+        ruta = RUTA_ENTRADA / ruta
 
     if not ruta.exists():
         print("No se encontró la imagen.")
@@ -84,8 +81,8 @@ def descargar_imagen(
         print("El nombre del archivo debe tener una extensión de imagen.")
         return None
 
-    CARPETA_SALIDA.mkdir(parents=True, exist_ok=True)
-    ruta = CARPETA_SALIDA / nombre_archivo
+    RUTA_SALIDA.mkdir(parents=True, exist_ok=True)
+    ruta = RUTA_SALIDA / nombre_archivo
 
     try:
         request = Request(
@@ -98,8 +95,7 @@ def descargar_imagen(
 
             if not tipo_contenido.startswith("image/"):
                 print(
-                    "La dirección proporcionada "
-                    "no corresponde a una imagen."
+                    "La dirección proporcionada no corresponde a una imagen."
                 )
                 return None
 
@@ -184,8 +180,8 @@ def aplicar_filtro(
         print("El nombre de salida debe tener una extensión de imagen.")
         return None
 
-    CARPETA_SALIDA.mkdir(parents=True, exist_ok=True)
-    ruta_salida = CARPETA_SALIDA / nombre_salida
+    RUTA_SALIDA.mkdir(parents=True, exist_ok=True)
+    ruta_salida = RUTA_SALIDA / nombre_salida
 
     filtros = {
         "bordes": ImageFilter.FIND_EDGES,
@@ -234,8 +230,8 @@ def redimensionar_imagen(
         print("El nombre de salida debe tener una extensión de imagen.")
         return None
 
-    CARPETA_SALIDA.mkdir(parents=True, exist_ok=True)
-    ruta_salida = CARPETA_SALIDA / nombre_salida
+    RUTA_SALIDA.mkdir(parents=True, exist_ok=True)
+    ruta_salida = RUTA_SALIDA / nombre_salida
 
     try:
         imagen_modificada = imagen.resize((ancho, alto))
@@ -280,8 +276,8 @@ def rotar_imagen(
         print("El nombre de salida debe tener una extensión de imagen.")
         return None
 
-    CARPETA_SALIDA.mkdir(parents=True, exist_ok=True)
-    ruta_salida = CARPETA_SALIDA / nombre_salida
+    RUTA_SALIDA.mkdir(parents=True, exist_ok=True)
+    ruta_salida = RUTA_SALIDA / nombre_salida
 
     imagen = cargar_imagen(ruta_imagen)
 
