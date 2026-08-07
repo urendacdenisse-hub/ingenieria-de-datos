@@ -42,130 +42,32 @@
     "text": "Data Pipelines Pocket Reference (DPPR)\nDensmore, J. (2021). Data pipelines pocket reference: Moving and processing data for analytics. O’Reilly Media."
   },
   {
-    "objectID": "plantillas/lecciones.html#introducción",
-    "href": "plantillas/lecciones.html#introducción",
-    "title": "Título de la unidad",
-    "section": "Introducción",
-    "text": "Introducción\n…"
-  },
-  {
-    "objectID": "plantillas/lecciones.html#tema-1",
-    "href": "plantillas/lecciones.html#tema-1",
-    "title": "Título de la unidad",
-    "section": "Tema 1",
-    "text": "Tema 1\n…"
-  },
-  {
-    "objectID": "plantillas/lecciones.html#tema-2",
-    "href": "plantillas/lecciones.html#tema-2",
-    "title": "Título de la unidad",
-    "section": "Tema 2",
-    "text": "Tema 2\n…"
-  },
-  {
-    "objectID": "plantillas/lecciones.html#tema-3",
-    "href": "plantillas/lecciones.html#tema-3",
-    "title": "Título de la unidad",
-    "section": "Tema 3",
-    "text": "Tema 3\n…"
-  },
-  {
-    "objectID": "plantillas/lecciones.html#resumen",
-    "href": "plantillas/lecciones.html#resumen",
-    "title": "Título de la unidad",
-    "section": "Resumen",
-    "text": "Resumen\n\nIdea clave 1.\nIdea clave 2.\nIdea clave 3."
-  },
-  {
-    "objectID": "plantillas/lecciones.html#referencias",
-    "href": "plantillas/lecciones.html#referencias",
-    "title": "Título de la unidad",
-    "section": "Referencias",
-    "text": "Referencias"
-  },
-  {
-    "objectID": "plantillas/lecciones.html#preguntas",
-    "href": "plantillas/lecciones.html#preguntas",
-    "title": "Título de la unidad",
-    "section": "Preguntas",
-    "text": "Preguntas\n\n\n\n\n\n\n¿Seguro? 🤨\n\n\nBueno…\n\n\nPregúntale a ChatGPT pues."
-  },
-  {
-    "objectID": "plantillas/lecciones.html#qué-sigue",
-    "href": "plantillas/lecciones.html#qué-sigue",
-    "title": "Título de la unidad",
-    "section": "¿Qué sigue?",
-    "text": "¿Qué sigue?\nDescripcion breve\nIr a la siguiente sección →"
-  },
-  {
-    "objectID": "notebooks/index.html",
-    "href": "notebooks/index.html",
-    "title": "Notebooks",
+    "objectID": "notebooks/plantilla.html",
+    "href": "notebooks/plantilla.html",
+    "title": "Laboratorio x. Tema",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-xx/notebook-xx.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
   },
   {
-    "objectID": "lecciones/index.html",
-    "href": "lecciones/index.html",
-    "title": "Lecciones",
-    "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormato de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
+    "objectID": "notebooks/plantilla.html#configuración-inicial",
+    "href": "notebooks/plantilla.html#configuración-inicial",
+    "title": "Laboratorio x. Tema",
+    "section": "Configuración inicial",
+    "text": "Configuración inicial\nEjecuta la siguiente celda. Esta configura el entorno de trabajo y carga los recursos necesarios para que los ejemplos funcionen correctamente.\n⚠️ Importante: No modifiques esta celda.\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))"
   },
   {
-    "objectID": "actividades/unidad-01/actividad-01.html",
-    "href": "actividades/unidad-01/actividad-01.html",
-    "title": "📝 Reporte de Información Personal",
-    "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividad/unidad-01/actividad-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git"
+    "objectID": "notebooks/plantilla.html#subtema",
+    "href": "notebooks/plantilla.html#subtema",
+    "title": "Laboratorio x. Tema",
+    "section": "Subtema",
+    "text": "Subtema\n…\n\n# Codigo\n\nObservación: …"
   },
   {
-    "objectID": "actividades/unidad-01/actividad-01.html#introducción",
-    "href": "actividades/unidad-01/actividad-01.html#introducción",
-    "title": "📝 Reporte de Información Personal",
-    "section": "Introducción",
-    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para capturar información personal y generar un reporte automáticamente. El objetivo es observar cómo un conjunto de datos introducidos por el usuario puede procesarse para producir un resultado útil.\nNo es necesario comprender cómo está programada la aplicación; por ahora, simplemente úsala como si fuera otra aplicación."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-01.html#objetivo",
-    "href": "actividades/unidad-01/actividad-01.html#objetivo",
-    "title": "📝 Reporte de Información Personal",
-    "section": "Objetivo",
-    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nIdentificar diferentes tipos de datos introducidos por el usuario.\nComprender que una aplicación puede recibir y procesar distintos tipos de datos.\nComprender que el procesamiento de los datos permite generar un resultado útil para el usuario."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-01.html#instrucciones",
-    "href": "actividades/unidad-01/actividad-01.html#instrucciones",
-    "title": "📝 Reporte de Información Personal",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\nPara preparar el entorno de trabajo, ejecuta la celda que contiene: &gt;python  &gt;import sys  &gt;from pathlib import Path  &gt;  &gt;sys.path.append(str(Path.cwd().parent.parent))  &gt;  &gt;from recursos.codigo.reporte import capturar_datos  &gt;\nPara comenzar con el cuestionario y obtener el reporte, ejecuta la celda que contiene: &gt;python  &gt;reporte = capturar_datos()  &gt;\nResponde cada una de las preguntas que aparecerán en pantalla. Si algún dato no cumple con el formato esperado, el sistema solicitará que lo ingreses nuevamente.\nEspera a que el sistema complete el procesamiento y aparezca un mensaje como el siguiente &gt;text  &gt;\"Reporte generado correctamente.\"  &gt;\nPara visualizar el reporte, ejecuta la celda que contiene: &gt;python  &gt;print(reporte)  &gt;\nCopia el contenido completo del reporte mostrado en pantalla.\nPega el reporte en un documento de Microsoft Word.\nGuarda el documento en formato PDF.\nSube el archivo PDF como evidencia de la actividad.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\n\n\n# =======================================\n# Captura los datos personales\n# Regresa: reporte en formato de texto\n# =======================================\n\nreporte = capturar_datos()\n\n\n# =======================================\n# Visualiza el reporte en pantalla\n# =======================================\n\nprint(reporte)"
-  },
-  {
-    "objectID": "actividades/index.html",
-    "href": "actividades/index.html",
-    "title": "Actividades",
-    "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ingeniería de Datos",
-    "section": "",
-    "text": "Bienvenido al repositorio oficial del curso Ingeniería de Datos.\nEn este sitio se publicarán gradualmente las lecciones, notebooks, conjuntos de datos, laboratorios y recursos utilizados durante el semestre.\n\n\n\n\n\n\nNoteAntes de comenzar\n\n\n\nSe recomienda revisar el syllabus para conocer los objetivos, la metodología, el esquema de evaluación y el cronograma del curso.\n\n\n\n\n\n\n\n\nSyllabus\n\n\n\n\n\nBibliografía\nConjuntos de datos\nMaterial complementario\n\n\n\n\nLas diapositivas, laboratorios y notebooks se publicarán conforme avance el semestre.\n\n\n\nLa información específica de cada proyecto se publicarán durante el curso.\n\n\n\n\n\nTodo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
-  },
-  {
-    "objectID": "index.html#material-del-curso",
-    "href": "index.html#material-del-curso",
-    "title": "Ingeniería de Datos",
-    "section": "",
-    "text": "Syllabus\n\n\n\n\n\nBibliografía\nConjuntos de datos\nMaterial complementario\n\n\n\n\nLas diapositivas, laboratorios y notebooks se publicarán conforme avance el semestre.\n\n\n\nLa información específica de cada proyecto se publicarán durante el curso."
-  },
-  {
-    "objectID": "index.html#repositorio",
-    "href": "index.html#repositorio",
-    "title": "Ingeniería de Datos",
-    "section": "",
-    "text": "Todo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
+    "objectID": "notebooks/plantilla.html#ideas-clave",
+    "href": "notebooks/plantilla.html#ideas-clave",
+    "title": "Laboratorio x. Tema",
+    "section": "Ideas clave",
+    "text": "Ideas clave\n\n…\n…\n…"
   },
   {
     "objectID": "lecciones/unidad-01/leccion-01.html#objetivo",
@@ -186,7 +88,7 @@
     "href": "lecciones/unidad-01/leccion-01.html#definición-de-datos",
     "title": "Introducción a la ingeniería de datos",
     "section": "Definición de datos",
-    "text": "Definición de datos\n\n\nLos datos son un conjunto de hechos, números, palabras, observaciones u otra información útil.  A través del procesamiento de datos y análisis de datos, las organizaciones transforman datos sin procesar en insights valiosos que mejoran la toma de decisiones e impulsan mejores resultados comerciales. ibm_data_2026?"
+    "text": "Definición de datos\n\n\nLos datos son un conjunto de hechos, números, palabras, observaciones u otra información útil.  A través del procesamiento de datos y análisis de datos, las organizaciones transforman datos sin procesar en insights valiosos que mejoran la toma de decisiones e impulsan mejores resultados comerciales. [1]"
   },
   {
     "objectID": "lecciones/unidad-01/leccion-01.html#dicho-de-otra-forma",
@@ -214,7 +116,7 @@
     "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-2",
     "title": "Introducción a la ingeniería de datos",
     "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?\nSegún un estudio realizado por el INEGI sobre los hábitos de usuarios de Internet en México durante 2024 inegi_habitos_internet_2024?, las actividades que realizamos todos los días generan una enorme cantidad de datos."
+    "text": "¿Quién genera datos?\nSegún un estudio realizado por el INEGI sobre los hábitos de usuarios de Internet en México durante 2024 [2], las actividades que realizamos todos los días generan una enorme cantidad de datos."
   },
   {
     "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-3",
@@ -228,7 +130,7 @@
     "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-4",
     "title": "Introducción a la ingeniería de datos",
     "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?\nDe hecho, esto dice Internet:\n\nGoogle maneja cerca de 40,000 petabytes de datos diariamente. google_data_2024?\nWhatsApp entrega alrededor de 100 billones de mensajes al día. whatsapp_messages_2020?\nEn TikTok se suben más de 23 millones de videos cada día, es decir, aproximadamente 16,000 videos por minuto.tiktok_statistics_2025?"
+    "text": "¿Quién genera datos?\nDe hecho, esto dice Internet:\n\nGoogle maneja cerca de 40,000 petabytes de datos diariamente. [3]\nWhatsApp entrega alrededor de 100 billones de mensajes al día. [4]\nEn TikTok se suben más de 23 millones de videos cada día, es decir, aproximadamente 16,000 videos por minuto.[5]"
   },
   {
     "objectID": "lecciones/unidad-01/leccion-01.html#qué-datos-generan",
@@ -320,6 +222,125 @@
     "title": "Introducción a la ingeniería de datos",
     "section": "Idea clave",
     "text": "Idea clave\nLos datos pueden representarse de muchas formas.\nY cada una requiere una manera distinta de almacenarse."
+  },
+  {
+    "objectID": "lecciones/index.html",
+    "href": "lecciones/index.html",
+    "title": "Lecciones",
+    "section": "",
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-01.html",
+    "href": "actividades/unidad-01/actividad-01.html",
+    "title": "Reporte de Información Personal",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividad/unidad-01/actividad-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-01.html#introducción",
+    "href": "actividades/unidad-01/actividad-01.html#introducción",
+    "title": "Reporte de Información Personal",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para capturar información personal y generar un reporte automáticamente. El objetivo es observar cómo un conjunto de datos introducidos por el usuario puede procesarse para producir un resultado útil.\nNo es necesario comprender cómo está programada la aplicación; por ahora, simplemente úsala como si fuera otra aplicación."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-01.html#objetivo",
+    "href": "actividades/unidad-01/actividad-01.html#objetivo",
+    "title": "Reporte de Información Personal",
+    "section": "Objetivo",
+    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nIdentificar diferentes tipos de datos introducidos por el usuario.\nComprender que una aplicación puede recibir y procesar distintos tipos de datos.\nComprender que el procesamiento de los datos permite generar un resultado útil para el usuario."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-01.html#instrucciones",
+    "href": "actividades/unidad-01/actividad-01.html#instrucciones",
+    "title": "Reporte de Información Personal",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nPara preparar el entorno de trabajo, ejecuta la celda que contiene:\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\nPara comenzar con el cuestionario y obtener el reporte, ejecuta la celda que contiene:\nreporte = capturar_datos()\nResponde cada una de las preguntas que aparecerán en pantalla. Si algún dato no cumple con el formato esperado, el sistema solicitará que lo ingreses nuevamente.\nEspera a que el sistema complete el procesamiento y aparezca un mensaje como el siguiente\n\"Reporte generado correctamente.\"\nPara visualizar el reporte, ejecuta la celda que contiene:\nprint(reporte)\nCopia el contenido completo del reporte mostrado en pantalla.\nPega el reporte en un documento de Microsoft Word.\nGuarda el documento en formato PDF.\nSube el archivo PDF como evidencia de la actividad.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\n\n\n# =======================================\n# Captura los datos personales\n# Regresa: reporte en formato de texto\n# =======================================\n\nreporte = capturar_datos()\n\n\n# =======================================\n# Visualiza el reporte en pantalla\n# =======================================\n\nprint(reporte)"
+  },
+  {
+    "objectID": "actividades/index.html",
+    "href": "actividades/index.html",
+    "title": "Actividades",
+    "section": "",
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos"
+  },
+  {
+    "objectID": "actividades/plantilla.html",
+    "href": "actividades/plantilla.html",
+    "title": "Reporte de Información Personal",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nAbra el notebook desde el siguiente enlace:\n🔗 https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividad/unidad-01/actividad-01.ipynb\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/plantilla.html#introducción",
+    "href": "actividades/plantilla.html#introducción",
+    "title": "Reporte de Información Personal",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para capturar información personal y generar un reporte automáticamente. El objetivo es observar cómo un conjunto de datos introducidos por el usuario puede procesarse para producir un resultado útil.\nNo es necesario comprender cómo está programada la aplicación; por ahora, simplemente úsala como si fuera otra aplicación."
+  },
+  {
+    "objectID": "actividades/plantilla.html#objetivo",
+    "href": "actividades/plantilla.html#objetivo",
+    "title": "Reporte de Información Personal",
+    "section": "Objetivo",
+    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nIdentificar diferentes tipos de datos introducidos por el usuario.\nComprender que una aplicación puede recibir y procesar distintos tipos de datos.\nComprender que el procesamiento de los datos permite generar un resultado útil para el usuario."
+  },
+  {
+    "objectID": "actividades/plantilla.html#instrucciones",
+    "href": "actividades/plantilla.html#instrucciones",
+    "title": "Reporte de Información Personal",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nPara preparar el entorno de trabajo, ejecuta la celda que contiene:\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\nPara comenzar con el cuestionario y obtener el reporte, ejecuta la celda que contiene:\nreporte = capturar_datos()\nResponde cada una de las preguntas que aparecerán en pantalla. Si algún dato no cumple con el formato esperado, el sistema solicitará que lo ingreses nuevamente.\nEspera a que el sistema complete el procesamiento y aparezca un mensaje como el siguiente\n\"Reporte generado correctamente.\"\nPara visualizar el reporte, ejecuta la celda que contiene:\nprint(reporte)\nCopia el contenido completo del reporte mostrado en pantalla.\nPega el reporte en un documento de Microsoft Word.\nGuarda el documento en formato PDF.\nSube el archivo PDF como evidencia de la actividad.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\n\n\n# =======================================\n# Captura los datos personales\n# Regresa: reporte en formato de texto\n# =======================================\n\nreporte = capturar_datos()\n\n\n# =======================================\n# Visualiza el reporte en pantalla\n# =======================================\n\nprint(reporte)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Bienvenido al repositorio oficial del curso Ingeniería de Datos.\nEn este sitio se publicarán gradualmente las lecciones, notebooks, conjuntos de datos, laboratorios y recursos utilizados durante el semestre.\n\n\n\n\n\n\nNotaAntes de comenzar\n\n\n\nSe recomienda revisar el syllabus para conocer los objetivos, la metodología, el esquema de evaluación y el cronograma del curso.\n\n\n\n\nTodo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
+  },
+  {
+    "objectID": "index.html#repositorio",
+    "href": "index.html#repositorio",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Todo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
+  },
+  {
+    "objectID": "lecciones/plantilla.html#concepto-1",
+    "href": "lecciones/plantilla.html#concepto-1",
+    "title": "Tema",
+    "section": "Concepto 1",
+    "text": "Concepto 1"
+  },
+  {
+    "objectID": "lecciones/plantilla.html#idea-clave",
+    "href": "lecciones/plantilla.html#idea-clave",
+    "title": "Tema",
+    "section": "Idea clave",
+    "text": "Idea clave"
+  },
+  {
+    "objectID": "lecciones/plantilla.html#concepto-1-1",
+    "href": "lecciones/plantilla.html#concepto-1-1",
+    "title": "Tema",
+    "section": "Concepto 1",
+    "text": "Concepto 1"
+  },
+  {
+    "objectID": "lecciones/plantilla.html#idea-clave-1",
+    "href": "lecciones/plantilla.html#idea-clave-1",
+    "title": "Tema",
+    "section": "Idea clave",
+    "text": "Idea clave"
+  },
+  {
+    "objectID": "notebooks/index.html",
+    "href": "notebooks/index.html",
+    "title": "Notebooks",
+    "section": "",
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
   },
   {
     "objectID": "notebooks/unidad-01/notebook-01.html",
