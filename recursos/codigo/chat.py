@@ -2,7 +2,7 @@
 import json
 from datetime import datetime
 
-from rutas import RUTA_ENTRADA
+from .rutas import RUTA_ENTRADA
 
 def buscar_chat(fecha: str) -> str:
     try:

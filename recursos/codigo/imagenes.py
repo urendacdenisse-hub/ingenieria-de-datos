@@ -6,7 +6,7 @@ from IPython.display import display
 from PIL import Image as PILImage
 from PIL import ImageFilter
 
-from rutas import RUTA_ENTRADA, RUTA_SALIDA
+from .rutas import RUTA_ENTRADA, RUTA_SALIDA
 
 EXTENSIONES_IMAGEN = (
     ".jpg",

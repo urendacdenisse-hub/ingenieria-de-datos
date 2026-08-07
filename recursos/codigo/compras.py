@@ -9,7 +9,7 @@ from reportlab.pdfgen import canvas
 from email.message import EmailMessage
 from email.policy import default
 
-from rutas import RUTA_SALIDA
+from .rutas import RUTA_SALIDA
 
 from .utils import (
     barra,

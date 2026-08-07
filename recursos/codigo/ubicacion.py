@@ -1,4 +1,4 @@
-import webbrowser
+
 from IPython.display import HTML, display
 
 def mostrar_ubicacion(latitud: float, longitud: float) -> None:
