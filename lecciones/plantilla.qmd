@@ -102,4 +102,4 @@ subtitle: "Subtema"
 
 En el laboratorio pondremos en práctica los conceptos vistos en esta lección mediante ejemplos y actividades guiadas.
 
-[**Ir al Notebook →**](../../notebooks/unidad-xx/notebook-xx.ipynb)
+[**Ir al Notebook →**](https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-xx/notebook-xx.ipynb)

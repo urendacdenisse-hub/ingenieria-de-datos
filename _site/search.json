@@ -397,5 +397,446 @@
     "title": "Laboratorio 1. Introduccion a los datos",
     "section": "Ideas clave",
     "text": "Ideas clave\n\nLos datos pueden representarse de diferentes formas, como números, texto, fechas, ubicaciones geográficas o contenido multimedia.\nEl tipo de dato determina las operaciones que pueden realizarse con él.\nLos datos pueden procesarse y transformarse para generar nuevos datos, información o productos con un propósito específico.\nIdentificar correctamente el tipo de dato es el primer paso para poder trabajar con él de manera adecuada."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#objetivo",
+    "href": "lecciones/unidad-01/leccion-02.html#objetivo",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nComprender qué es un formato de datos, reconocer algunos de los formatos más comunes e identificar cómo sus características influyen en la forma de almacenar y utilizar la información."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#pregunta",
+    "href": "lecciones/unidad-01/leccion-02.html#pregunta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Pregunta",
+    "text": "Pregunta\n¿Podemos leer y modificar de la misma manera un archivo CSV, una imagen y un PDF?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#qué-es-un-formato-de-datos",
+    "href": "lecciones/unidad-01/leccion-02.html#qué-es-un-formato-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Qué es un formato de datos?",
+    "text": "¿Qué es un formato de datos?\nUn formato de datos establece una forma específica de representar y organizar información.\nAlgunos formatos comunes son:\n\n\n\nFormato\nUso común\n\n\n\n\n.txt\nTexto plano\n\n\n.csv\nDatos tabulares\n\n\n.xlsx\nHojas de cálculo\n\n\n.json\nDatos organizados mediante claves y valores\n\n\n.jpg, .png\nImágenes\n\n\n.html\nPáginas web\n\n\n.pdf\nDocumentos\n\n\n\nLa extensión de un archivo suele indicar el formato utilizado."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#idea-clave",
+    "href": "lecciones/unidad-01/leccion-02.html#idea-clave",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\n\nEl formato define cómo se organiza y representa la información almacenada.\n\nLa misma información puede almacenarse utilizando diferentes formatos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#datos-estructurados",
+    "href": "lecciones/unidad-01/leccion-02.html#datos-estructurados",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos estructurados",
+    "text": "Datos estructurados\nLos datos estructurados siguen una organización claramente definida, generalmente mediante filas, columnas y variables conocidas.\nPor ejemplo:\n\n\n\nnombre\nedad\nciudad\n\n\n\n\nAna\n25\nJuárez\n\n\nLuis\n32\nChihuahua\n\n\n\nLos archivos CSV y las hojas de cálculo son ejemplos comunes de esta forma de organización."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#datos-semiestructurados",
+    "href": "lecciones/unidad-01/leccion-02.html#datos-semiestructurados",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos semiestructurados",
+    "text": "Datos semiestructurados\nLos datos semiestructurados contienen elementos que permiten organizar e identificar la información, pero no necesariamente siguen una estructura tabular.\nPor ejemplo, JSON utiliza claves y valores:\n{\n  \"nombre\": \"Ana\",\n  \"edad\": 25,\n  \"ciudad\": \"Juárez\",\n  \"telefono\": {\n    \"fijo\": \"656-123-4567\",\n    \"movil\": \"656-123-0000\"\n  }\n}\nFormatos como JSON y HTML contienen información sobre su propia estructura mediante claves, etiquetas u otros elementos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#datos-no-estructurados",
+    "href": "lecciones/unidad-01/leccion-02.html#datos-no-estructurados",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos no estructurados",
+    "text": "Datos no estructurados\nLos datos no estructurados no siguen necesariamente una organización tabular o un esquema fijo.\nAlgunos ejemplos son:\n\nDocumentos de texto\nArchivos PDF\nImágenes\nAudio\nVideo\n\nSu contenido no sigue un esquema predefinido, por lo que identificar y extraer elementos específicos puede requerir un procesamiento adicional."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#idea-clave-1",
+    "href": "lecciones/unidad-01/leccion-02.html#idea-clave-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\nLos datos pueden tener diferentes niveles de estructura y no todos se organizan en filas y columnas.\nLa estructura determina cómo está organizada la información y qué tan sencillo es identificar sus diferentes elementos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#la-misma-información-en-diferentes-formatos",
+    "href": "lecciones/unidad-01/leccion-02.html#la-misma-información-en-diferentes-formatos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "La misma información en diferentes formatos",
+    "text": "La misma información en diferentes formatos\nUna misma información puede representarse de distintas maneras.\nPor ejemplo:\n\n\n\nnombre\nedad\nciudad\n\n\n\n\nAna\n25\nJuárez\n\n\nLuis\n32\nChihuahua\n\n\n\nEn CSV:\nnombre,edad,ciudad\nAna,25,Juárez\nEn JSON:\n{\n  \"nombre\": \"Ana\",\n  \"edad\": 25,\n  \"ciudad\": \"Juárez\"\n}\nLa información es esencialmente la misma, pero su representación cambia."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#por-qué-existen-diferentes-formatos",
+    "href": "lecciones/unidad-01/leccion-02.html#por-qué-existen-diferentes-formatos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Por qué existen diferentes formatos?",
+    "text": "¿Por qué existen diferentes formatos?\nNo existe un formato adecuado para todas las situaciones.\nLa elección depende de factores como:\n\nLa estructura de los datos.\nEl tipo de información que queremos almacenar.\nEl tamaño de los datos.\nLa facilidad para intercambiarlos.\nLa compatibilidad con diferentes herramientas.\nLa necesidad de conservar la presentación.\n\nPor ejemplo, una tabla de millones de registros tiene necesidades diferentes a una fotografía o un reporte diseñado para ser leído por una persona."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#section",
+    "href": "lecciones/unidad-01/leccion-02.html#section",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "¿Cómo se almacena una imagen?\nUna imagen digital está formada por una matriz de píxeles. Cada píxel contiene valores numéricos que representan su color.\nEn una imagen RGB, cada píxel se representa mediante tres valores:\n\n\n\nColor\nR\nG\nB\n\n\n\n\nRojo\n255\n0\n0\n\n\nVerde\n0\n255\n0\n\n\nAzul\n0\n0\n255\n\n\nBlanco\n255\n255\n255\n\n\nNegro\n0\n0\n0"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#section-1",
+    "href": "lecciones/unidad-01/leccion-02.html#section-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "¿Cómo se almacena una imagen?\nDependiendo del tipo de imagen, cada píxel puede contener uno o varios valores.\nEscala de grises: un valor de intensidad por píxel.\nEjemplo: 1080 x 1920\nRGB: tres canales de color por píxel: rojo, verde y azul.\nEjemplo: 1080 x 1920 x 3\nRGBA: cuatro canales por píxel: rojo, verde, azul y transparencia.\nEjemplo: 1080 x 1920 x 4\nFormatos como JPEG y PNG utilizan diferentes métodos para codificar y comprimir esta información."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#objetivo",
+    "href": "lecciones/unidad-01/leccion-03.html#objetivo",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nReconocer diferentes fuentes y sistemas de almacenamiento de datos e identificar los mecanismos utilizados para acceder a la información que contienen."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#pregunta",
+    "href": "lecciones/unidad-01/leccion-03.html#pregunta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Pregunta",
+    "text": "Pregunta\n¿Todos los datos se obtienen de la misma manera?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#dónde-podemos-encontrar-datos",
+    "href": "lecciones/unidad-01/leccion-03.html#dónde-podemos-encontrar-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Dónde podemos encontrar datos?",
+    "text": "¿Dónde podemos encontrar datos?\n\n\n\n\n\n\n\n\nFuente\n¿Qué es?\n¿Cómo accedemos?\n\n\n\n\nArchivos\nDatos almacenados en archivos\nSistema de archivos\n\n\nBase de datos\nSistema organizado para almacenar y gestionar datos\nConsultas / conexión\n\n\nData warehouse\nAlmacenamiento orientado al análisis\nConsultas\n\n\nData lake\nRepositorio de grandes volúmenes de datos\nHerramientas/plataformas de datos\n\n\nPágina web\nInformación publicada en la web\nHTTP / extracción\n\n\nPágina web\nInformación publicada en la web\nHTTP / extracción\n\n\nAPI\nInterfaz que proporciona acceso a datos o servicios\nSolicitudes HTTP"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#archivos",
+    "href": "lecciones/unidad-01/leccion-03.html#archivos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Archivos",
+    "text": "Archivos\nLos archivos son una de las formas más simples de almacenar e intercambiar datos.\nPueden contener datos estructurados, semiestructurados o no estructurados utilizando diferentes formatos.\n\nCSV\nJSON\nExcel\nHTML\nPDF\nImágenes"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#base-de-datos",
+    "href": "lecciones/unidad-01/leccion-03.html#base-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Base de datos",
+    "text": "Base de datos\nUna base de datos es un sistema diseñado para almacenar, organizar y gestionar datos.\nA diferencia de un archivo individual, permite consultar y administrar información de manera eficiente.\nPor ejemplo, utilizando SQL podemos consultar los datos almacenados:\nSELECT nombre, edad\nFROM clientes\nWHERE edad &gt; 30;"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section",
+    "href": "lecciones/unidad-01/leccion-03.html#section",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Bases de datos relacionales\n\n\nLas bases de datos relacionales organizan la información principalmente mediante tablas relacionadas entre sí.\n\n\n\n\nSistema\nDescripción\n\n\n\n\nSQLite\nBase de datos local y ligera.\n\n\nMySQL\nBase de datos relacional popular.\n\n\nPostgreSQL\nRelacional avanzada y extensible.\n\n\nSQL Server\nPlataforma empresarial de Microsoft.\n\n\n\n\n\n\nFuente: Frank Kodie — LinkedIn"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-1",
+    "href": "lecciones/unidad-01/leccion-03.html#section-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Bases de datos no relacionales\nLas bases de datos NoSQL pueden utilizar diferentes modelos para organizar la información.\n\n\n\nTipo\nDescripción\nEjemplo\n\n\n\n\nClave-valor\nPares de claves y valores.\nRedis\n\n\nDocumentos\nDocumentos con estructuras similares a JSON.\nMongoDB\n\n\nColumnas\nDatos organizados en familias de columnas.\nApache Cassandra\n\n\nGrafos\nNodos y relaciones.\nNeo4j"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-2",
+    "href": "lecciones/unidad-01/leccion-03.html#section-2",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "SQL vs. NoSQL\n\n\n\n\nFuente: Pronetic — Geeknetic\n\n\n\n\n\n\n\n\n\nBases de datos SQL\nBases de datos NoSQL\n\n\n\n\nModelo relacional\nModelos no relacionales\n\n\nOrganizadas en tablas\nDiferentes formas de organización\n\n\nRelaciones entre tablas\nEstructuras más flexibles\n\n\nUtilizan SQL para consultas\nEl mecanismo de consulta depende del sistema"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#apis",
+    "href": "lecciones/unidad-01/leccion-03.html#apis",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "APIs",
+    "text": "APIs\nUna API (Application Programming Interface) es una interfaz que permite que diferentes aplicaciones o sistemas se comuniquen entre sí.\nUna aplicación puede solicitar información y recibir una respuesta sin necesidad de acceder directamente al sistema donde los datos están almacenados.\n\n\nFuente: Akamai Technologies"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-3",
+    "href": "lecciones/unidad-01/leccion-03.html#section-3",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Acceso a una API\nCada API define qué información ofrece, cómo solicitarla y cómo estructura sus respuestas.\nTambién puede establecer:\n\nParámetros disponibles.\nMétodos de autenticación.\nLímites o condiciones de acceso.\n\nPor ello, es necesario consultar su documentación.\nAlgunas APIs son públicas; otras requieren autenticación, por ejemplo mediante una API key."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-4",
+    "href": "lecciones/unidad-01/leccion-03.html#section-4",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Integración de datos\nUn data warehouse integra información proveniente de diferentes sistemas bajo una estructura común.\n\nSistema de ventas.\nSistema de inventarios.\nBase de datos de clientes.\nSistema financiero.\n\nEsto permite relacionar y analizar conjuntamente datos que originalmente se encontraban separados."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#páginas-web",
+    "href": "lecciones/unidad-01/leccion-03.html#páginas-web",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Páginas web",
+    "text": "Páginas web\nLas páginas web contienen información representada principalmente mediante documentos HTML.\nAunque podemos visualizar esta información en un navegador, también podemos obtener y procesar el documento HTML.\nWeb scraping\nEl web scraping consiste en extraer información de una página web a partir de su contenido y estructura.\nA diferencia de una API, los datos de una página web no necesariamente fueron preparados para ser consumidos directamente por otra aplicación."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-5",
+    "href": "lecciones/unidad-01/leccion-03.html#section-5",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Consulta de datos\nUna vez que los datos se encuentran organizados dentro del data warehouse, normalmente se consultan utilizando SQL (Structured Query Language).\nSQL permite seleccionar, filtrar, agrupar y relacionar los datos almacenados.\nSELECT producto, SUM(total_venta)\nFROM ventas\nGROUP BY producto;"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#data-warehouse",
+    "href": "lecciones/unidad-01/leccion-03.html#data-warehouse",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Data warehouse",
+    "text": "Data warehouse\nUn data warehouse es un repositorio centralizado que integra y organiza datos provenientes de diferentes fuentes para facilitar su consulta y análisis.\nA diferencia del almacenamiento de datos crudos, contiene datos procesados, limpios y estructurados, listos para ser utilizados.\n\n\n\n\n\n\nFuente: LinkedIn"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#data-lake",
+    "href": "lecciones/unidad-01/leccion-03.html#data-lake",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Data lake",
+    "text": "Data lake\nUn data lake almacena grandes volúmenes de datos en su formato original o con poco procesamiento, sin requerir una estructura previa. Puede contener:\n\nEstructurados: tablas, CSV.\nSemiestructurados: JSON, XML, logs.\nNo estructurados: imágenes, audio, video, documentos.\n\n\n\n\n\n\n\nFuente: Hewlett Packard Enterprise (HPE)"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#data-warehouse-vs.-data-lake",
+    "href": "lecciones/unidad-01/leccion-03.html#data-warehouse-vs.-data-lake",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Data warehouse vs. data lake",
+    "text": "Data warehouse vs. data lake\n\n\n\n\n\n\n\nData warehouse\nData lake\n\n\n\n\nDatos preparados y organizados\nDatos crudos o cercanos al original\n\n\nPrincipalmente estructurados\nEstructurados, semiestructurados y no estructurados\n\n\nSchema-on-write\nSchema-on-read\n\n\nEstructura definida antes de almacenar\nEstructura aplicada al consultar\n\n\nConsumo principalmente con SQL\nConsumo según el tipo de datos\n\n\nOrientado al análisis\nOrientado al almacenamiento flexible\n\n\n\n\nWarehouse: datos listos para usar.\nLake: datos almacenados para procesarlos cuando se necesiten."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#de-dónde-podemos-tomar-datos",
+    "href": "lecciones/unidad-01/leccion-03.html#de-dónde-podemos-tomar-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿De dónde podemos tomar datos?",
+    "text": "¿De dónde podemos tomar datos?\n\n\n\n\n\n\n\n\nFuente\n¿Qué es?\n¿Cómo accedemos?\n\n\n\n\nArchivos\nDatos almacenados en archivos\nSistema de archivos\n\n\nBase de datos\nSistema organizado para almacenar y gestionar datos\nConsultas / conexión\n\n\nPágina web\nInformación publicada en la web\nHTTP / extracción\n\n\nPágina web\nInformación publicada en la web\nHTTP / extracción\n\n\nAPI\nInterfaz que proporciona acceso a datos o servicios\nSolicitudes HTTP\n\n\nData warehouse\nAlmacenamiento orientado al análisis\nConsultas\n\n\nData lake\nRepositorio de grandes volúmenes de datos\nHerramientas/plataformas de datos"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-6",
+    "href": "lecciones/unidad-01/leccion-03.html#section-6",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Ejemplos\n\n\n\nData warehouse\nProveedor\n\n\n\n\nBigQuery\nGoogle Cloud\n\n\nAmazon Redshift\nAmazon Web Services (AWS)\n\n\nSnowflake\nSnowflake\n\n\nAzure Synapse Analytics\nMicrosoft Azure\n\n\nTeradata\nTeradata"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-7",
+    "href": "lecciones/unidad-01/leccion-03.html#section-7",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Acceso a los datos\nEn un data lake, la forma de acceder a los datos depende de su formato:\n\nCSV / Parquet: Python, Spark o motores de consulta.\nJSON / XML: herramientas que interpreten su estructura.\nImágenes, audio y video: herramientas especializadas.\nDocumentos y texto: herramientas de procesamiento de texto.\n\n\nA diferencia de un data warehouse, donde los datos estructurados suelen consultarse mediante SQL, un data lake puede requerir distintas herramientas según el tipo de dato."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-8",
+    "href": "lecciones/unidad-01/leccion-03.html#section-8",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Acceso a los datos\nEn un data lake, la forma de acceder a los datos depende de su formato:\n\nCSV / Parquet: Python, Spark o motores de consulta.\nJSON / XML: herramientas que interpreten su estructura.\nImágenes, audio y video: herramientas especializadas.\nDocumentos y texto: herramientas de procesamiento de texto.\n\n\nA diferencia de un data warehouse, donde los datos estructurados suelen consultarse mediante SQL, un data lake puede requerir distintas herramientas según el tipo de dato."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-9",
+    "href": "lecciones/unidad-01/leccion-03.html#section-9",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Procesamiento y consumo\nLa forma de acceder y utilizar los datos de un data lake depende del tipo y formato de los datos almacenados.\nPor ejemplo:\n\nArchivos CSV o Parquet pueden procesarse con herramientas como Python, Spark o motores de consulta.\nArchivos JSON o XML pueden requerir herramientas capaces de interpretar su estructura.\nImágenes, audio y video requieren herramientas específicas para procesar este tipo de información.\nDocumentos y texto pueden analizarse mediante herramientas de procesamiento de texto.\n\nA diferencia de un data warehouse, donde los datos ya se encuentran estructurados y pueden consultarse principalmente mediante SQL, en un data lake la forma de consumir los datos puede variar dependiendo de su formato y del análisis que se desea realizar."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-10",
+    "href": "lecciones/unidad-01/leccion-03.html#section-10",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Procesamiento y consumo\nLa forma de acceder y utilizar los datos de un data lake depende del tipo y formato de los datos almacenados.\nPor ejemplo:\n\nArchivos CSV o Parquet pueden procesarse con herramientas como Python, Spark o motores de consulta.\nArchivos JSON o XML pueden requerir herramientas capaces de interpretar su estructura.\nImágenes, audio y video requieren herramientas específicas para procesar este tipo de información.\nDocumentos y texto pueden analizarse mediante herramientas de procesamiento de texto.\n\nA diferencia de un data warehouse, donde los datos ya se encuentran estructurados y pueden consultarse principalmente mediante SQL, en un data lake la forma de consumir los datos puede variar dependiendo de su formato y del análisis que se desea realizar."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html",
+    "href": "lecciones/unidad-01/leccion-03.html",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Reconocer diferentes fuentes y sistemas de almacenamiento de datos e identificar los mecanismos utilizados para acceder a la información que contienen.\n\n\n\n¿Todos los datos se obtienen de la misma manera?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#objetivo",
+    "href": "lecciones/unidad-01/leccion-04.html#objetivo",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nIdentificar las principales etapas del ciclo de vida de los datos y comprender cómo los datos se transforman desde su obtención hasta su conservación o eliminación."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#pregunta",
+    "href": "lecciones/unidad-01/leccion-04.html#pregunta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Pregunta",
+    "text": "Pregunta\n¿Qué ocurre con los datos desde que son obtenidos hasta que dejan de utilizarse?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#el-ciclo-de-vida-de-los-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#el-ciclo-de-vida-de-los-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "El ciclo de vida de los datos",
+    "text": "El ciclo de vida de los datos\n\n\nEl ciclo de vida de los datos describe las distintas etapas por las que pasan los datos, desde su obtención hasta su conservación o eliminación.\nDurante este ciclo, los datos pueden ser almacenados, procesados, analizados y utilizados para generar nueva información."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#captura-de-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#captura-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Captura de datos",
+    "text": "Captura de datos\nLa captura de datos consiste en obtener datos desde una fuente.\nLos datos pueden provenir de:\n\nPersonas: formularios, encuestas, registros o interacciones.\nSensores: temperatura, ubicación, movimiento, imágenes, etc.\nAplicaciones y sistemas: transacciones, actividad de usuarios o registros del sistema.\nOtros datos: bases de datos, archivos, APIs o conjuntos de datos existentes."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#ingesta-de-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#ingesta-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ingesta de datos",
+    "text": "Ingesta de datos\nLa ingesta de datos consiste en transferir o incorporar datos desde una fuente hacia el sistema donde serán utilizados.\nPor ejemplo:\n\nLeer datos desde un archivo.\nConsultar una base de datos.\nObtener datos mediante una API.\nRecibir datos generados por sensores o aplicaciones.\n\n\nCaptura = obtener o generar el dato.\nIngesta = llevarlo al sistema donde será utilizado."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#almacenamiento",
+    "href": "lecciones/unidad-01/leccion-04.html#almacenamiento",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Almacenamiento",
+    "text": "Almacenamiento\nEl almacenamiento consiste en conservar los datos para que puedan ser utilizados posteriormente.\nLos datos pueden almacenarse en:\n\nArchivos: CSV, JSON, Excel, imágenes, etc.\nBases de datos: SQL o NoSQL.\nData warehouses: datos procesados y estructurados para análisis.\nData lakes: grandes volúmenes de datos en su formato original.\n\n\nMantener los datos originales permite recuperar su estado inicial cuando sea necesario."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#procesamiento-de-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#procesamiento-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Procesamiento de datos",
+    "text": "Procesamiento de datos\nEl procesamiento consiste en preparar y modificar los datos para que puedan ser utilizados.\nPuede incluir:\n\nInspección: conocer su estructura y contenido.\nLimpieza: corregir errores, duplicados o valores faltantes.\nTransformación: cambiar formatos, unidades o representaciones.\nIntegración: combinar datos de diferentes fuentes.\nSelección: conservar únicamente los datos necesarios.\nValidación: verificar que los datos sean correctos y consistentes."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#análisis-de-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#análisis-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Análisis de datos",
+    "text": "Análisis de datos\nEl análisis de datos consiste en examinar los datos para responder preguntas, identificar patrones o resolver problemas.\nPuede incluir:\n\nDescribir: ¿qué ocurrió?\nComparar: ¿qué diferencias existen?\nRelacionar: ¿cómo se relacionan las variables?\nExplicar: ¿por qué ocurrió?\nPredecir: ¿qué podría ocurrir?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#comunicación",
+    "href": "lecciones/unidad-01/leccion-04.html#comunicación",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Comunicación",
+    "text": "Comunicación\nLa comunicación consiste en presentar los resultados del análisis de forma que puedan ser interpretados y utilizados por otras personas.\nLos resultados pueden comunicarse mediante:\n\nTablas y gráficas.\nReportes.\nPresentaciones.\nDashboards.\nPáginas web.\n\n\nLa forma de comunicar los resultados depende del objetivo y la audiencia."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#conservación-y-eliminación",
+    "href": "lecciones/unidad-01/leccion-04.html#conservación-y-eliminación",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Conservación y eliminación",
+    "text": "Conservación y eliminación\nLa conservación consiste en mantener los datos mientras puedan ser necesarios para su uso futuro.\nEl tiempo durante el cual se conservan puede depender de:\n\nUtilidad futura: posibilidad de reutilizar los datos.\nPrivacidad: protección de información sensible.\nAlmacenamiento: espacio y costo de conservarlos.\nPolíticas y regulaciones: requisitos de la organización o legales.\n\nCuando los datos dejan de ser necesarios, pueden archivarse o eliminarse."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#idea-clave",
+    "href": "lecciones/unidad-01/leccion-04.html#idea-clave",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\nLos resultados de un análisis también pueden convertirse en nuevos datos y comenzar su propio ciclo de vida."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html",
+    "href": "lecciones/unidad-01/leccion-04.html",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Identificar las principales etapas del ciclo de vida de los datos y comprender cómo los datos se transforman desde su obtención hasta su conservación o eliminación.\n\n\n\n¿Qué ocurre con los datos desde que son obtenidos hasta que dejan de utilizarse?\n\n\n\n\n\nEl ciclo de vida de los datos describe las distintas etapas por las que pasan los datos, desde su obtención hasta su conservación o eliminación.\nDurante este ciclo, los datos pueden ser almacenados, procesados, analizados y utilizados para generar nueva información."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#objetivo",
+    "href": "lecciones/unidad-01/leccion-05.html#objetivo",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Identificar los principales roles relacionados con los datos y comprender la participación del ingeniero de datos dentro del ciclo de vida de los datos.\nReconocer las etapas que conforman el ciclo de vida de la ingeniería de datos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#pregunta",
+    "href": "lecciones/unidad-01/leccion-05.html#pregunta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "¿Quiénes participan en el ciclo de vida de los datos y cuál es el papel de la ingeniería de datos?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#ingeniero-analista-y-científico-de-datos",
+    "href": "lecciones/unidad-01/leccion-05.html#ingeniero-analista-y-científico-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ingeniero, analista y científico de datos",
+    "text": "Ingeniero, analista y científico de datos\nDiferentes profesionales trabajan con los datos dependiendo del objetivo y la etapa del ciclo.\n\nIngeniero de datos: construye y mantiene los sistemas que permiten obtener, almacenar, transformar y disponibilizar los datos.\nAnalista de datos: utiliza los datos para responder preguntas, identificar patrones y comunicar resultados.\nCientífico de datos: utiliza los datos para realizar análisis, experimentación y desarrollar modelos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#participación-en-el-ciclo-de-vida",
+    "href": "lecciones/unidad-01/leccion-05.html#participación-en-el-ciclo-de-vida",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Participación en el ciclo de vida",
+    "text": "Participación en el ciclo de vida\n\n\n\nEtapa\nIngeniero de datos\nAnalista de datos\nCientífico de datos\n\n\n\n\nCaptura\n●\n\n\n\n\nIngesta\n●\n\n\n\n\nAlmacenamiento\n●\n\n\n\n\nProcesamiento\n●\n●\n●\n\n\nAnálisis\n\n●\n●\n\n\nVisualización y comunicación\n\n●\n●\n\n\nConservación y eliminación\n●\n\n\n\n\n\n\nLa participación de cada rol puede variar dependiendo de la organización y del problema."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#idea-clave",
+    "href": "lecciones/unidad-01/leccion-05.html#idea-clave",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\nLa ingeniería de datos, el análisis de datos y la ciencia de datos son disciplinas diferentes pero complementarias.\nLa ingeniería de datos se encuentra generalmente antes del análisis y la ciencia de datos, proporcionando los datos que estos necesitan para realizar su trabajo."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#qué-es-la-ingeniería-de-datos",
+    "href": "lecciones/unidad-01/leccion-05.html#qué-es-la-ingeniería-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Qué es la ingeniería de datos?",
+    "text": "¿Qué es la ingeniería de datos?\nLa ingeniería de datos desarrolla y mantiene sistemas y procesos que permiten convertir datos crudos en datos consistentes, accesibles y útiles para otros usuarios y sistemas.\nEl ingeniero de datos gestiona este proceso desde que los datos se obtienen de los sistemas de origen hasta que están disponibles para ser utilizados."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos",
+    "href": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ciclo de vida de la ingeniería de datos",
+    "text": "Ciclo de vida de la ingeniería de datos\nReis y Housley dividen el ciclo de vida de la ingeniería de datos en cinco etapas principales:\n\nGeneración\nAlmacenamiento\nIngesta\nTransformación\nServicio de datos"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#generación",
+    "href": "lecciones/unidad-01/leccion-05.html#generación",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Generación",
+    "text": "Generación\nLa generación ocurre en los sistemas donde se producen originalmente los datos.\nUn sistema de origen puede ser, por ejemplo:\n\nUna aplicación.\nUna base de datos transaccional.\nUn dispositivo IoT.\n\nEl ingeniero de datos necesita comprender cómo se generan los datos para poder utilizarlos posteriormente."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#almacenamiento",
+    "href": "lecciones/unidad-01/leccion-05.html#almacenamiento",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Almacenamiento",
+    "text": "Almacenamiento\nEl almacenamiento determina cómo y dónde se guardan los datos.\nA diferencia de otras etapas, el almacenamiento puede aparecer en diferentes puntos del ciclo de ingeniería de datos.\nLa forma en que los datos son almacenados influye en cómo podrán ser ingeridos, transformados y utilizados."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#ingesta",
+    "href": "lecciones/unidad-01/leccion-05.html#ingesta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ingesta",
+    "text": "Ingesta\nLa ingesta consiste en obtener los datos desde los sistemas de origen e incorporarlos al sistema de datos.\nEsta etapa conecta los sistemas que generan los datos con las siguientes etapas del ciclo."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#transformación",
+    "href": "lecciones/unidad-01/leccion-05.html#transformación",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Transformación",
+    "text": "Transformación\nLa transformación modifica los datos desde su forma original para convertirlos en datos útiles.\nPuede incluir operaciones como:\n\nConversión de tipos.\nEstandarización de formatos.\nEliminación de datos incorrectos.\nNormalización.\nAgregación."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#servicio-de-datos",
+    "href": "lecciones/unidad-01/leccion-05.html#servicio-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Servicio de datos",
+    "text": "Servicio de datos\nEl servicio de datos consiste en poner los datos preparados a disposición de quienes los necesitan.\nLos datos pueden ser utilizados posteriormente para:\n\nAnálisis de datos.\nReportes y dashboards.\nMachine learning.\nOtros sistemas y aplicaciones."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#idea-clave-1",
+    "href": "lecciones/unidad-01/leccion-05.html#idea-clave-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\nEl ciclo de vida de la ingeniería de datos puede representarse como:\ncon el almacenamiento presente a lo largo de diferentes etapas del ciclo.\nEstas etapas no necesariamente ocurren de forma completamente lineal: pueden repetirse, superponerse o ejecutarse en diferente orden."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos-1",
+    "href": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ciclo de vida de la ingeniería de datos",
+    "text": "Ciclo de vida de la ingeniería de datos"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#elementos-transversales",
+    "href": "lecciones/unidad-01/leccion-05.html#elementos-transversales",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Elementos transversales",
+    "text": "Elementos transversales\nEl ciclo de ingeniería de datos también está acompañado por una serie de elementos transversales (undercurrents) que intervienen a lo largo de todas sus etapas.\n\nSeguridad: protección de los datos y control de acceso.\nGestión de datos: organización, calidad y gobierno de los datos.\nDataOps: automatización, monitoreo y confiabilidad de los procesos.\nArquitectura de datos: diseño y organización de los sistemas de datos.\nOrquestación: coordinación de tareas y dependencias.\nIngeniería de software: desarrollo y mantenimiento de los sistemas que procesan datos.\n\n\nNo son etapas adicionales del ciclo: son prácticas que dan soporte a todo el ciclo de ingeniería de datos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html",
+    "href": "lecciones/unidad-01/leccion-05.html",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Identificar los principales roles relacionados con los datos y comprender la participación del ingeniero de datos dentro del ciclo de vida de los datos.\nReconocer las etapas que conforman el ciclo de vida de la ingeniería de datos.\n\n\n\n¿Quiénes participan en el ciclo de vida de los datos y cuál es el papel de la ingeniería de datos?"
   }
 ]

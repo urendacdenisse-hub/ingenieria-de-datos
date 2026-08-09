@@ -5,11 +5,12 @@ title: "Lecciones"
 # Unidad I. Introducción a la ingeniería de datos
 
 - [Introducción a los datos](unidad-01/leccion-01.qmd)
-- Formatos de datos
-- Organización de los datos
-- Ciclo de vida de los datos
-- Roles en el ecosistema de datos
+- [Formatos de datos](unidad-01/leccion-02.qmd)
+- [Sistemas y fuentes de datos](unidad-01/leccion-03.qmd)
+- [Ciclo de vida de los datos](unidad-01/leccion-04.qmd)
+- [Roles en el ecosistema de datos](unidad-01/leccion-05.qmd)
 
+<!--
 # Unidad II. Tecnologías de almacenamiento de datos
 
 - Introducción al almacenamiento de datos
@@ -43,3 +44,5 @@ title: "Lecciones"
 - Fundamentos de seguridad
 - Riesgos y protección de datos
 - Buenas prácticas de seguridad
+
+-->

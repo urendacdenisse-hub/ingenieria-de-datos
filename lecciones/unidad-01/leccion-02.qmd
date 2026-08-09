@@ -1,0 +1,226 @@
+---
+title: "Introducción a la ingeniería de datos"
+subtitle: "Formatos de datos"
+
+nocite: |
+    @ibm_unstructured_data
+    @dzoom_formatos_imagenes
+---
+
+
+# Introduccion
+
+Los datos pueden almacenarse y representarse de diferentes maneras. Una tabla, un documento, una imagen o una página web pueden contener información, pero no la organizan de la misma forma.
+
+El **formato de datos** determina cómo se representa y organiza esa información para poder almacenarla, intercambiarla e interpretarla.
+
+
+
+## Objetivo
+
+Comprender qué es un formato de datos, reconocer algunos de los formatos más comunes e identificar cómo sus características influyen en la forma de almacenar y utilizar la información.
+
+
+## Pregunta
+
+¿Podemos leer y modificar de la misma manera un archivo CSV, una imagen y un PDF?
+
+# Formato de datos
+
+## ¿Qué es un formato de datos?
+
+Un **formato de datos** establece una forma específica de representar y organizar información.
+
+Algunos formatos comunes son:
+
+| Formato | Uso común |
+|---|---|
+| `.txt` | Texto plano |
+| `.csv` | Datos tabulares |
+| `.xlsx` | Hojas de cálculo |
+| `.json` | Datos organizados mediante claves y valores |
+| `.jpg`, `.png` | Imágenes |
+| `.html` | Páginas web |
+| `.pdf` | Documentos |
+
+La extensión de un archivo suele indicar el formato utilizado.
+
+
+## Idea clave
+
+> **El formato define cómo se organiza y representa la información almacenada.**
+
+La misma información puede almacenarse utilizando diferentes formatos.
+
+
+
+# Estructura de los datos
+
+## Datos estructurados
+
+Los **datos estructurados** siguen una organización claramente definida, generalmente mediante filas, columnas y variables conocidas.
+
+Por ejemplo:
+
+| nombre | edad | ciudad |
+|---|---:|---|
+| Ana | 25 | Juárez |
+| Luis | 32 | Chihuahua |
+
+Los archivos CSV y las hojas de cálculo son ejemplos comunes de esta forma de organización.
+
+## Datos semiestructurados
+
+Los **datos semiestructurados** contienen elementos que permiten organizar e identificar la información, pero no necesariamente siguen una estructura tabular.
+
+Por ejemplo, JSON utiliza claves y valores:
+
+```json
+{
+  "nombre": "Ana",
+  "edad": 25,
+  "ciudad": "Juárez",
+  "telefono": {
+    "fijo": "656-123-4567",
+    "movil": "656-123-0000"
+  }
+}
+```
+
+Formatos como JSON y HTML contienen información sobre su propia estructura mediante claves, etiquetas u otros elementos.
+
+
+## Datos no estructurados
+
+Los **datos no estructurados** no siguen necesariamente una organización tabular o un esquema fijo.
+
+Algunos ejemplos son:
+
+- Documentos de texto
+- Archivos PDF
+- Imágenes
+- Audio
+- Video
+
+Su contenido no sigue un esquema predefinido, por lo que identificar y extraer elementos específicos puede requerir un procesamiento adicional.
+
+## {.unnumbered}
+### ¿Cómo se almacena una imagen?
+
+Una imagen digital está formada por una **matriz de píxeles**. Cada píxel contiene valores numéricos que representan su color.
+
+En una imagen RGB, cada píxel se representa mediante tres valores:
+
+| Color | R | G | B |
+|---|---:|---:|---:|
+| Rojo | 255 | 0 | 0 |
+| Verde | 0 | 255 | 0 |
+| Azul | 0 | 0 | 255 |
+| Blanco | 255 | 255 | 255 |
+| Negro | 0 | 0 | 0 |
+
+## {.unnumbered}
+### ¿Cómo se almacena una imagen?
+
+Dependiendo del tipo de imagen, cada píxel puede contener uno o varios valores.
+
+**Escala de grises:** un valor de intensidad por píxel.
+
+*Ejemplo*: 1080 x 1920
+
+**RGB**: tres canales de color por píxel: rojo, verde y azul.
+
+*Ejemplo*: 1080 x 1920 x 3
+
+**RGBA**: cuatro canales por píxel: rojo, verde, azul y transparencia.
+
+*Ejemplo*: 1080 x 1920 x 4
+
+Formatos como **JPEG** y **PNG** utilizan diferentes métodos para codificar y comprimir esta información.
+
+
+## Idea clave
+
+Los datos pueden tener diferentes niveles de estructura y no todos se organizan en filas y columnas.
+
+La estructura determina cómo está organizada la información y qué tan sencillo es identificar sus diferentes elementos.
+
+
+# Representación de la información
+
+## La misma información en diferentes formatos
+
+Una misma información puede representarse de distintas maneras.
+
+Por ejemplo:
+
+| nombre | edad | ciudad |
+|---|---:|---|
+| Ana | 25 | Juárez |
+| Luis | 32 | Chihuahua |
+
+En CSV:
+
+```text
+nombre,edad,ciudad
+Ana,25,Juárez
+```
+
+En JSON:
+
+```json
+{
+  "nombre": "Ana",
+  "edad": 25,
+  "ciudad": "Juárez"
+}
+```
+
+La información es esencialmente la misma, pero su **representación cambia**.
+
+# Elección del formato
+
+## ¿Por qué existen diferentes formatos?
+
+No existe un formato adecuado para todas las situaciones.
+
+La elección depende de factores como:
+
+- La estructura de los datos.
+- El tipo de información que queremos almacenar.
+- El tamaño de los datos.
+- La facilidad para intercambiarlos.
+- La compatibilidad con diferentes herramientas.
+- La necesidad de conservar la presentación.
+
+Por ejemplo, una tabla de millones de registros tiene necesidades diferentes a una fotografía o un reporte diseñado para ser leído por una persona.
+
+# Resumen
+
+- Un formato de datos define cómo se representa y organiza la información.
+- Los datos pueden encontrarse en formatos estructurados, semiestructurados y no estructurados.
+- La misma información puede representarse utilizando diferentes formatos.
+- La elección del formato depende del propósito y de las características de los datos.
+
+
+# Referencias
+
+::: {#refs}
+:::
+
+# Preguntas
+
+
+![](../imagenes/mister.png){width=50%}
+
+
+<!-- ===================================================== -->
+<!-- LABORATORIO -->
+<!-- ===================================================== -->
+
+# Laboratorio
+
+En el laboratorio exploraremos diferentes formatos de datos para observar cómo cambia la forma de acceder, modificar y almacenar su contenido.
+
+
+[**Ir al Notebook →**](https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-02.ipynb)

@@ -5,8 +5,7 @@ title: "Actividades"
 # Unidad I. Introducción a la ingeniería de datos
 
 - [Introducción a los datos](https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividades/unidad-01/actividad-01.ipynb)
-- Formatos de datos
-- Organización de los datos
-- Ciclo de vida de los datos
-- Roles en el ecosistema de datos
+- [Formatos de datos](https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividades/unidad-01/actividad-02.ipynb)
+- [Sistemas y fuentes de datos](https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividades/unidad-01/actividad-03.ipynb)
+- [Ciclo de vida de los datos](https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/actividades/unidad-01/actividad-04.ipynb)
 

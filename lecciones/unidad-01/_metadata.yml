@@ -7,8 +7,6 @@ bibliography: ../../recursos/referencias.bib
 csl: ../../recursos/ieee.csl
 reference-location: document
 
-nocite: |
-
 format:
   revealjs:
     auto-stretch: false
