@@ -228,7 +228,7 @@
     "href": "lecciones/index.html",
     "title": "Lecciones",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos"
   },
   {
     "objectID": "actividades/unidad-01/actividad-01.html",
@@ -263,7 +263,7 @@
     "href": "actividades/index.html",
     "title": "Actividades",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos"
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos"
   },
   {
     "objectID": "actividades/plantilla.html",
@@ -340,7 +340,7 @@
     "href": "notebooks/index.html",
     "title": "Notebooks",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nOrganización de los datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos\n\n\n\nUnidad V. Calidad y gobernanza de datos\n\nImportancia de la calidad y gobernanza de datos\nCalidad de los datos\nGestión de la calidad de datos\nGobernanza de datos\n\n\n\nUnidad VI. Seguridad en ingeniería de datos\n\nImportancia de la seguridad de los datos\nFundamentos de seguridad\nRiesgos y protección de datos\nBuenas prácticas de seguridad"
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos"
   },
   {
     "objectID": "notebooks/unidad-01/notebook-01.html",
@@ -838,5 +838,229 @@
     "title": "Introducción a la ingeniería de datos",
     "section": "",
     "text": "Identificar los principales roles relacionados con los datos y comprender la participación del ingeniero de datos dentro del ciclo de vida de los datos.\nReconocer las etapas que conforman el ciclo de vida de la ingeniería de datos.\n\n\n\n¿Quiénes participan en el ciclo de vida de los datos y cuál es el papel de la ingeniería de datos?"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-04.html",
+    "href": "notebooks/unidad-01/notebook-04.html",
+    "title": "Laboratorio 4. Ciclo de vida de los datos",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-04.html#configuración-inicial",
+    "href": "notebooks/unidad-01/notebook-04.html#configuración-inicial",
+    "title": "Laboratorio 4. Ciclo de vida de los datos",
+    "section": "Configuración inicial",
+    "text": "Configuración inicial\nEjecuta la siguiente celda. Esta configura el entorno de trabajo y carga los recursos necesarios para que los ejemplos funcionen correctamente.\n⚠️ Importante: No modifiques esta celda.\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nCARPETA_SALIDA = Path(\"ingenieria-de-datos/datos/salida\")\nCARPETA_SALIDA.mkdir(parents=True, exist_ok=True)"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-04.html#en-este-laboratorio",
+    "href": "notebooks/unidad-01/notebook-04.html#en-este-laboratorio",
+    "title": "Laboratorio 4. Ciclo de vida de los datos",
+    "section": "En este laboratorio…",
+    "text": "En este laboratorio…\nAhora seguiremos el recorrido de esos datos desde el momento en que son capturados hasta que se convierten en información útil para la toma de decisiones. A través de una actividad práctica utilizaremos datos reales recopilados por el grupo para explorar cada una de las etapas del ciclo de vida de los datos."
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-04.html#inspección",
+    "href": "notebooks/unidad-01/notebook-04.html#inspección",
+    "title": "Laboratorio 4. Ciclo de vida de los datos",
+    "section": "Inspección",
+    "text": "Inspección\nRevisaremos la estructura, tipos de datos y posibles inconsistencias.\n\n# ==========================================================\n# Conocer la estructura del conjunto de datos:\n# - primeros registros\n# ==========================================================\n\ndatos.head()\n\n\n# ==========================================================\n# Conocer la estructura del conjunto de datos:\n# - Numero de filas (registros) y columns (campos)\n# ==========================================================\n\nprint(f\"Filas: {datos.shape[0]}\")\nprint(f\"Columnas: {datos.shape[1]}\")\n\n\n# ==========================================================\n# Identificar los tipos de datos\n# ==========================================================\n\ndatos.info()\n\n\n# ==========================================================\n# Detectar posibles inconsistencias:\n# - registros duplicados\n# ==========================================================\n\nprint(\"Registros duplicados:\", datos.duplicated().sum())\n\n\n# ==========================================================\n# Detectar posibles inconsistencias:\n# - número de valores faltantes (NaN/NA)\n# ==========================================================\n\ndatos.isna().sum()\n\n\n# ==========================================================\n# Columnas con datos faltantes\n# ==========================================================\n\ncuenta_datos_faltantes = datos.isna().sum()\ncuenta_datos_faltantes[cuenta_datos_faltantes &gt; 0]"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-04.html#limpieza",
+    "href": "notebooks/unidad-01/notebook-04.html#limpieza",
+    "title": "Laboratorio 4. Ciclo de vida de los datos",
+    "section": "Limpieza",
+    "text": "Limpieza\nEl tratamiento de valores faltantes depende de su significado y contexto.\n\ncuenta_datos_faltantes[cuenta_datos_faltantes &gt; 0]\n\nNo todos los valores faltantes requieren el mismo tratamiento. En este ejemplo conservaremos algunos y reemplazaremos otros según el contexto.\n\n# ==================================================\n# Tratando algunos valores faltantes\n# ==================================================\n\ndatos_limpios = datos.copy()\n\ndatos_limpios[\"¿Hay algún comentario o sugerencia adicional?\"] = (\n    datos_limpios[\"¿Hay algún comentario o sugerencia adicional?\"].fillna(\"Ninguno\")\n)\n\ndatos_limpios.isna().sum()\n\nEn este caso no modificaremos los valores faltantes de preguntas como:\n\n¿Qué fue lo que más te gustó de esta lección?\nSi pudieras mejorar algo de esta lección, ¿qué cambiarías?\n\nNo existe una forma de inferir esa información, por lo que es preferible conservar los valores faltantes.\nEn cambio, para la pregunta:\n¿Hay algún comentario o sugerencia adicional?\npodemos interpretar que un valor faltante significa que el participante no tenía comentarios adicionales, por lo que reemplazarlo por un valor como “Ninguno” o “Sin comentarios” puede facilitar análisis posteriores sin alterar el significado de la respuesta."
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-04.html#selección",
+    "href": "notebooks/unidad-01/notebook-04.html#selección",
+    "title": "Laboratorio 4. Ciclo de vida de los datos",
+    "section": "Selección",
+    "text": "Selección\nSeleccionaremos únicamente las variables necesarias para responder nuestra pregunta.\n\nPregunta: ¿Cuál es la opinión general de los estudiantes sobre la lección?\n\n\n# ================================================\n# Selección de variables de interés\n# ================================================\n\ncolumnas = [\n    \"¿Qué tan interesante te pareció esta lección?\",\n    \"¿Qué tan claras fueron las explicaciones presentadas en la lección?\",\n    \"¿Qué tan útiles te parecieron los ejemplos utilizados durante la lección?\",\n    \"¿La actividad final te ayudó a relacionar los conceptos vistos durante la lección?\"\n]\n\ndatos_opinion = datos_limpios[columnas]\n\ndatos_opinion.head()\n\nObservacion\nEl conjunto de datos original permanece intacto. Únicamente hemos creado una nueva vista con las variables necesarias para este objetivo."
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-04.html#por-si-tienes-curiosidad",
+    "href": "notebooks/unidad-01/notebook-04.html#por-si-tienes-curiosidad",
+    "title": "Laboratorio 4. Ciclo de vida de los datos",
+    "section": "💡 Por si tienes curiosidad…",
+    "text": "💡 Por si tienes curiosidad…\nAsí como es posible guardar archivos desde Python, también es posible eliminarlos de forma automática.\n\n# =====================================================\n# ⚠️ Corre bajo tu propio riesgo.\n# =====================================================\n\nruta = CARPETA_SALIDA / \"resultados_encuesta.png\"\n\nif ruta.exists():\n    ruta.unlink()\n    print(\"🗑️ La imagen fue eliminada.\")\nelse:\n    print(\"⚠️ La imagen ya no existe.\")\n\n\nprint(ruta.exists())"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-04.html#ideas-clave",
+    "href": "notebooks/unidad-01/notebook-04.html#ideas-clave",
+    "title": "Laboratorio 4. Ciclo de vida de los datos",
+    "section": "Ideas clave:",
+    "text": "Ideas clave:\n\nEl ciclo de vida de los datos está formado por diferentes etapas, cada una con un propósito específico.\nLos datos se transforman continuamente para responder preguntas o resolver problemas.\nLos resultados de un análisis también son datos que pueden almacenarse, compartirse o eliminarse."
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-02.html",
+    "href": "notebooks/unidad-01/notebook-02.html",
+    "title": "Laboratorio 2. Formato de datos",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-02.html#configuración-inicial",
+    "href": "notebooks/unidad-01/notebook-02.html#configuración-inicial",
+    "title": "Laboratorio 2. Formato de datos",
+    "section": "Configuración inicial",
+    "text": "Configuración inicial\nEjecuta la siguiente celda. Esta configura el entorno de trabajo y carga los recursos necesarios para que los ejemplos funcionen correctamente.\n⚠️ Importante: No modifiques esta celda.\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-02.html#ideas-clave",
+    "href": "notebooks/unidad-01/notebook-02.html#ideas-clave",
+    "title": "Laboratorio 2. Formato de datos",
+    "section": "Ideas clave",
+    "text": "Ideas clave\n\nLos datos pueden almacenarse y representarse en diferentes formatos.\nUn mismo archivo puede contener distintos tipos de datos.\nCada formato organiza la información de manera diferente.\nEl formato utilizado influye en la forma en que los datos pueden leerse, modificarse y almacenarse."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html",
+    "href": "actividades/unidad-01/actividad-03.html",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#introducción",
+    "href": "actividades/unidad-01/actividad-03.html#introducción",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad practicarás diferentes formas de acceder a datos utilizando archivos, bases de datos y APIs.\nCada fuente requiere un mecanismo de acceso diferente. A lo largo de la actividad utilizarás los ejemplos vistos en el laboratorio para obtener datos desde cada una de ellas."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#objetivo",
+    "href": "actividades/unidad-01/actividad-03.html#objetivo",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nObtener datos desde diferentes fuentes utilizando Python.\n\nLeer datos almacenados en un archivo.\nConsultar información almacenada en una base de datos.\nInvestigar y utilizar una API pública para obtener datos."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#entregable",
+    "href": "actividades/unidad-01/actividad-03.html#entregable",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Entregable",
+    "text": "Entregable\nCompleta las tres partes de la actividad directamente en el notebook.\nAntes de entregar:\n\nEjecuta todas las celdas y verifica que no existan errores.\nAsegúrate de que los resultados obtenidos sean visibles.\nGuarda el notebook con un nombre apropiado.\nSube a la plataforma únicamente el archivo .ipynb.\n\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#parte-1.-archivo",
+    "href": "actividades/unidad-01/actividad-03.html#parte-1.-archivo",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Parte 1. Archivo",
+    "text": "Parte 1. Archivo\nEn el repositorio que acabas de clonar se encuentra el archivo fifa.csv, que contiene datos relacionados con la Copa Mundial de la FIFA.\nEl archivo se encuentra en la carpeta entrada, dentro de datos, en la carpeta ingenieria-de-datos.\n\nConstruir la ruta al archivo.\nLeer el archivo CSV.\nElegir un número de filas a mostrar y muestra esa cantidad de registros del archivo.\n\n\n# Importa la biblioteca necesarias\n\n# Construye la ruta al archivo\nruta = \"\"\n\n# Lee el archivo CSV\n\n# Muestra los primeros x registros"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#parte-2.-base-de-datos",
+    "href": "actividades/unidad-01/actividad-03.html#parte-2.-base-de-datos",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Parte 2. Base de datos",
+    "text": "Parte 2. Base de datos\nEn el repositorio que acabas de clonar se encuentra la base de datos chinook.sqlite, que contiene información sobre una tienda digital de música.\nLa base de datos está en la carpeta entrada, dentro de datos, que a su vez se encuentra en ingenieria-de-datos.\n\nConstruye la ruta a la base de datos.\nEstablece una conexión utilizando SQLite.\nConsulta las tablas disponibles en la base de datos.\nElige una de las tablas y consulta todos sus registros.\nMuestra los datos obtenidos.\nCierra la conexión.\n\n\n# Importa las bibliotecas necesarias\nimport sqlite3\nimport pandas as pd\n\n# Construye la ruta a la base de datos\n\n\n# Establece la conexión\n\n\n# Consulta las tablas disponibles\n\n\n# Muestra las tablas disponibles\n\n\n# Elige una tabla y realiza la consulta\n\n\n# Obtén los datos\n\n\n# Muestra los datos\n\n\n\n# Cierra la conexión"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#parte-3.-api",
+    "href": "actividades/unidad-01/actividad-03.html#parte-3.-api",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Parte 3. API",
+    "text": "Parte 3. API\nSelecciona una API pública y gratuita diferente a las utilizadas en el laboratorio.\nLa API seleccionada debe poder utilizarse sin crear una cuenta, proporcionar información de pago o solicitar una API key.\nInvestiga su documentación para identificar cómo realizar una consulta desde Python y obtén información utilizando la API seleccionada.\n\nSelecciona una API pública y gratuita.\nConsulta su documentación.\nIdentifica cómo realizar una solicitud y qué información puedes consultar.\nRealiza una consulta desde Python.\nMuestra el resultado obtenido.\n\nPuedes elegir alguna de las siguientes APIs o utilizar otra que cumpla con los requisitos:\n\n\n\nAPI\nDatos disponibles\n\n\n\n\nPokéAPI\nPokémon, habilidades, tipos y características\n\n\nRick and Morty API\nPersonajes, episodios y ubicaciones\n\n\nDog API\nRazas e imágenes de perros\n\n\nNager.Date\nDías festivos de diferentes países\n\n\nUniversities API\nUniversidades, países, dominios y sitios web\n\n\n\nImportante: No utilices JSONPlaceholder, Open-Meteo Weather API ni NASA Open APIs, ya que fueron utilizadas en el laboratorio.\n\n# Importa las bibliotecas necesarias\n\n\n# Define la información necesaria para realizar la consulta\n\n\n# Realiza la consulta a la API\n\n\n# Obtén los datos de la respuesta\n\n\n# Muestra el resultado"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-02.html",
+    "href": "actividades/unidad-01/actividad-02.html",
+    "title": "Simulación de un Sistema de Compras",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-02.html#introducción",
+    "href": "actividades/unidad-01/actividad-02.html#introducción",
+    "title": "Simulación de un Sistema de Compras",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para simular el proceso de compra de una tienda. A lo largo de la actividad observarás cómo la información capturada por el usuario se almacena en distintos formatos y cómo esos archivos pueden utilizarse para generar otros nuevos."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-02.html#objetivo",
+    "href": "actividades/unidad-01/actividad-02.html#objetivo",
+    "title": "Simulación de un Sistema de Compras",
+    "section": "Objetivo",
+    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nComprender que una misma información puede almacenarse en diferentes formatos de archivo.\nReconocer que un archivo puede utilizarse como entrada para generar otros archivos o productos.\nIdentificar el flujo de los datos desde su captura hasta la generación de distintos productos."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-02.html#instrucciones",
+    "href": "actividades/unidad-01/actividad-02.html#instrucciones",
+    "title": "Simulación de un Sistema de Compras",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nPara configurar todo lo necesario para la actividad, ejecuta la primera celda del notebook. No modifiques su contenido, ya que la actividad depende de ella. La celda se ve así:\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent))\n\nfrom Recursos.compras import (\n     iniciar_compra, procesar_compra, generar_factura, enviar_factura\n)\nPara comenzar con la captura de datos, ejecuta la siguiente celda. Se te solicitará la información necesaria para registrar una compra, como los artículos, sus cantidades y sus precios. La celda contiene algo así:\ncompra = iniciar_compra()\nUna vez capturada la información, ejecuta la siguiente celda para procesar la compra y generar el ticket correspondiente. La celda contiene algo así:\nticket = procesar_compra(compra)\nDespués, ejecuta la celda que genera la factura. El archivo se guardará automáticamente en formato PDF dentro de la carpeta correspondiente. La celda contiene algo así:\nruta_factura = generar_factura(ticket)\nA continuación, ejecuta la celda que genera el correo electrónico. Se creará un archivo .eml con la factura adjunta, el cual también se guardará automáticamente.\nruta_correo = enviar_factura(ruta_factura)\nLocaliza el archivo .eml generado y súbelo a la plataforma como evidencia de tu trabajo.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.compras import (\n    iniciar_compra, procesar_compra, generar_factura, enviar_factura\n)\n\n\n# =================================================\n# Captura los datos de la compra\n# Regresa: diccionario con la información capturada\n# =================================================\n\ncompra = iniciar_compra()\n\n\n# =================================================\n# Genera el ticket de compra\n# Regresa: texto (str) con el contenido del ticket\n# =================================================\n\nticket = procesar_compra(compra)\n\n\n# =================================================\n# Genera y guarda la factura en formato PDF\n# Regresa: ruta del archivo PDF generado\n# =================================================\n\nruta_factura = generar_factura(ticket)\n\n\n# =================================================\n# Genera y guarda el correo electrónico (.eml)\n# Regresa: ruta del archivo .eml generado\n# =================================================\n\nruta_correo = enviar_factura(ruta_factura)"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-04.html",
+    "href": "actividades/unidad-01/actividad-04.html",
+    "title": "Generación de Reporte de Resultados",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-04.html#introducción",
+    "href": "actividades/unidad-01/actividad-04.html#introducción",
+    "title": "Generación de Reporte de Resultados",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad aplicarás nuevamente las etapas del ciclo de vida de los datos utilizando un conjunto de datos proveniente de una encuesta.\nEsta vez deberás seleccionar tu propio conjunto de datos y recorrer el mismo proceso visto en el laboratorio, desde la ingesta hasta la generación de un reporte."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-04.html#objetivo",
+    "href": "actividades/unidad-01/actividad-04.html#objetivo",
+    "title": "Generación de Reporte de Resultados",
+    "section": "Objetivo",
+    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nAplicar las principales etapas del ciclo de vida de los datos a un nuevo conjunto de datos.\nSeleccionar y analizar variables de interés.\nComunicar los resultados mediante una gráfica y un reporte."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-04.html#instrucciones",
+    "href": "actividades/unidad-01/actividad-04.html#instrucciones",
+    "title": "Generación de Reporte de Resultados",
+    "section": "Instrucciones",
+    "text": "Instrucciones\nDurante la actividad deberás:\n\nBuscar y seleccionar en Kaggle un conjunto de datos proveniente de una encuesta:\n\nDebe contener respuestas individuales.\nDebe incluir varias preguntas o variables.\nNo debe contener información personal identificable.\n\nDescargar el conjunto de datos seleccionado desde Kaggle en formato CSV.\nCargar el archivo CSV en Google Colab.\nGuardar una copia del conjunto de datos original en formato CSV.\nInspeccionar el contenido del conjunto de datos identificando:\n\nnúmero de registros,\ntipos de datos,\nvalores faltantes.\n\nLimpiar y preparar el conjunto de datos para el análisis:\n\ntratar los valores faltantes cuando sea necesario,\ncorregir tipos de datos cuando sea necesario,\nidentificar y corregir posibles inconsistencias.\n\nPlantear una pregunta de análisis que pueda responderse utilizando los datos de la encuesta.\nSeleccionar las variables necesarias para responder la pregunta planteada.\nRealizar las operaciones o estadísticas necesarias para responder la pregunta.\nGenerar una gráfica que permita comunicar los resultados y guardarla como imagen.\nElaborar un reporte en Microsoft Word que incluya:\n\nnombre de la actividad,\ntu nombre,\nnombre y enlace del dataset seleccionado,\npregunta de análisis,\ngráfica generada,\nbreve interpretación de los resultados (entre 5 y 10 líneas).\n\nExportar el documento a formato PDF.\nUna vez confirmado que la imagen fue incorporada al reporte, ejecutar la última celda del notebook para eliminar el archivo PNG generado.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nCARPETA_SALIDA = Path(\"ingenieria-de-datos/datos/salida\")\nCARPETA_SALIDA.mkdir(parents=True, exist_ok=True)\n\nfrom recursos.codigo.visualizacion import visualizar_resultados\n\n\n# ==========================================================\n# 3. Carga de datos\n#    Cargar el archivo CSV descargado desde Kaggle\n#    en un DataFrame llamado `datos`\n# ==========================================================\n\nimport pandas as pd\n\nruta = \"&lt;ruta completa de archivo&gt;\"\n# datos = pd.read_csv(...)\n# datos.info()\n\n\n# ==========================================================\n# 4. Almacenamiento de datos\n#    Guardar una copia de los datos originales en formato CSV\n#    dentro de la carpeta de salida\n# ==========================================================\n\nruta = CARPETA_SALIDA / \"&lt;nombre de archivo&gt;\"\n\n# datos.to_csv(...)\n\n\n# ==========================================================\n# 5. Inspección de datos\n#    Examinar el conjunto de datos e identificar:\n#    - número de registros\n#    - tipos de datos\n#    - valores faltantes\n# ==========================================================\n\n# datos.&lt;metodo&gt;(&lt;argumentos&gt;)\n\n\n# ==========================================================\n# 6. Limpieza de datos\n#    Preparar los datos para el análisis:\n#    - tratar valores faltantes\n#    - corregir tipos de datos\n#    - corregir inconsistencias cuando sea necesario\n# ==========================================================\n\n# datos_limpios = datos.copy()\n# datos_limpios...\n\n\n# ==========================================================\n# 8. Selección de datos\n#    Seleccionar las variables necesarias para responder\n#    la pregunta de análisis\n# ==========================================================\n\ncolumnas = [\n    \"&lt;columna 1&gt;\",\n    \"&lt;columna 2&gt;\",\n    \"&lt;columna 3&gt;\",\n    \"&lt;columna 4&gt;\"\n]\n\n# datos_analisis = datos_limpios[...]\n\n\n# ==========================================================\n# 9. Análisis de datos\n#    Realizar las operaciones o estadísticas necesarias\n#    para responder la pregunta planteada\n# ==========================================================\n\n# datos_analisis.&lt;metodo&gt;(...)\n\n\n# ==========================================================\n# 10. Visualización de resultados\n#    Generar una gráfica que permita comunicar los resultados\n#    del análisis y guardarla como imagen\n# ==========================================================\n\n# Puedes hacer tu propia grafica o intentar usar la funcion\n# ya creada, solo asegurate de que los datos que ingresas tenga\n# variables categoricas (tipo texto).\n\n# figura = visualizar_resultados(datos_analisis)\n\n\nruta = CARPETA_SALIDA / \"&lt;nombre de imagen&gt;.png\"\n\n\n# ==========================================\n#    Crear ruta de imagen\n# ==========================================\n\nruta = CARPETA_SALIDA / \"&lt;nombre de imagen&gt;.png\"\n\n# ==========================================\n#    Guardar los resultados para uso posterior\n# ==========================================\n\n#figura.savefig(\n#    fname=ruta,\n#    dpi=300,\n#    bbox_inches=\"tight\"\n#)\n\nprint(f\"Guardado en: {ruta.resolve()}\")\n\n\n# =====================================================\n# 13. Conservacion y eliminacion de datos\n#    Eliminar gráfico\n#    ⚠️ Corre una vez realizado el reporte final.\n# =====================================================\n\nif ruta.exists():\n    ruta.unlink()\n    print(\"🗑️ La imagen fue eliminada.\")\nelse:\n    print(\"⚠️ La imagen ya no existe.\")"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-03.html",
+    "href": "notebooks/unidad-01/notebook-03.html",
+    "title": "Laboratorio 3. Sistemas y fuentes de datos",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-03.html#configuración-inicial",
+    "href": "notebooks/unidad-01/notebook-03.html#configuración-inicial",
+    "title": "Laboratorio 3. Sistemas y fuentes de datos",
+    "section": "Configuración inicial",
+    "text": "Configuración inicial\nEjecuta la siguiente celda. Esta configura el entorno de trabajo y carga los recursos necesarios para que los ejemplos funcionen correctamente.\n⚠️ Importante: No modifiques esta celda.\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nEn este laboratorio exploraremos diferentes formas de obtener datos y convertirlos en información que podamos utilizar para su posterior procesamiento.\nTrabajaremos con:\n\nArchivos\nBases de datos\nAPIs\nPáginas web"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-03.html#jsonplaceholder",
+    "href": "notebooks/unidad-01/notebook-03.html#jsonplaceholder",
+    "title": "Laboratorio 3. Sistemas y fuentes de datos",
+    "section": "JSONPlaceholder",
+    "text": "JSONPlaceholder\nJSONPlaceholder es un servicio web gratuito que simula una API real utilizando datos ficticios.\nContiene recursos como usuarios, publicaciones, comentarios y tareas, y permite realizar solicitudes para obtener estos datos en formato JSON.\nEn este ejemplo consultaremos la información de los usuarios disponibles.\n\nimport requests\n\nurl = \"https://jsonplaceholder.typicode.com/users\"\n\n# Hacemos la solicitud\nrespuesta = requests.get(url)\n\n# Convertimos la respuesta a JSON\ndatos = respuesta.json()\n\ndatos\n\n\n# Convertimos el JSON en DataFrame de pandas\nusuarios = pd.DataFrame(datos)\n\nusuarios.head()"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-03.html#open-meteo",
+    "href": "notebooks/unidad-01/notebook-03.html#open-meteo",
+    "title": "Laboratorio 3. Sistemas y fuentes de datos",
+    "section": "Open-Meteo",
+    "text": "Open-Meteo\nOpen-Meteo es un servicio que proporciona información meteorológica y pronósticos del tiempo mediante una API.\nEsta API permite indicar mediante parámetros la ubicación y la información meteorológica que queremos consultar.\nEn este ejemplo solicitaremos la temperatura actual en Ciudad Juárez.\n\n# Dirección de la API\nurl = \"https://api.open-meteo.com/v1/forecast\"\n\n# Definimos los parámetros de la consulta\nparametros = {\n    \"latitude\": 31.69,\n    \"longitude\": -106.42,\n    \"current\": \"temperature_2m\"\n}\n\n# Hacemos la solicitud enviando los parámetros\nrespuesta = requests.get(url, params=parametros)\n\n# Convertimos la respuesta a JSON\ndatos = respuesta.json()\n\ndatos\n\nLos parámetros también pueden escribirse directamente en la URL de la solicitud.\nEn este caso, ? indica el inicio de los parámetros y & permite separar cada uno.\n\n# Construimos manualmente la URL con los parámetros\nurl = \"https://api.open-meteo.com/v1/forecast?latitude=31.69&longitude=-106.42&current=temperature_2m\"\n\n# Hacemos la solicitud\nrespuesta = requests.get(url)\n\n# Convertimos la respuesta a JSON\ndatos = respuesta.json()\n\ndatos"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-03.html#nasa-open-apis",
+    "href": "notebooks/unidad-01/notebook-03.html#nasa-open-apis",
+    "title": "Laboratorio 3. Sistemas y fuentes de datos",
+    "section": "NASA Open APIs",
+    "text": "NASA Open APIs\nNASA Open APIs proporciona acceso a diferentes datos de la NASA mediante APIs públicas.\nA diferencia de los ejemplos anteriores, algunas APIs requieren una clave de acceso (API key) para identificar al usuario que realiza la solicitud.\nNASA proporciona una clave de demostración llamada DEMO_KEY que podemos utilizar para realizar consultas sencillas.\nEn este ejemplo consultaremos la imagen astronómica del día.\n\n# Dirección de la API\nurl = \"https://api.nasa.gov/planetary/apod\"\n\n# Definimos los parámetros de la consulta\nparametros = {\n    \"api_key\": \"DEMO_KEY\"\n}\n\n# Hacemos la solicitud\nrespuesta = requests.get(url, params=parametros)\n\n# Convertimos la respuesta a JSON\ndatos = respuesta.json()\n\ndatos\n\nNota: Puedes consultar la lista de parametros disponibles aquí.\n\n# Extraemos algunos datos de la respuesta\nprint(\"Título:\", datos[\"title\"])\nprint(\"Fecha:\", datos[\"date\"])\nprint(\"Tipo:\", datos[\"media_type\"])\n\n\nfrom IPython.display import Image, display\n\ndisplay(Image(url=datos[\"url\"]))\n\nNota: Algunas APIs requieren autenticación. Una API key es una clave que permite identificar quién está realizando las solicitudes. Los requisitos de autenticación dependen de cada API.\nAlgunos ejemplos se muestran a continuación:\n\n\n\nSitio\nUso\n\n\n\n\nYouTube Data API\nVideos, canales, playlists y comentarios\n\n\nInstagram API\nCuentas, contenido y métricas de Instagram\n\n\nReddit API\nPublicaciones, comunidades y comentarios\n\n\nOpenAI API\nModelos de inteligencia artificial para texto, imágenes y audio\n\n\nGemini API\nModelos de inteligencia artificial generativa de Google\n\n\nAnthropic API\nAcceso a los modelos Claude\n\n\nSpotify Web API\nArtistas, álbumes, canciones y playlists"
+  },
+  {
+    "objectID": "notebooks/unidad-01/notebook-03.html#ideas-clave",
+    "href": "notebooks/unidad-01/notebook-03.html#ideas-clave",
+    "title": "Laboratorio 3. Sistemas y fuentes de datos",
+    "section": "Ideas clave",
+    "text": "Ideas clave\n\nLos datos pueden provenir de diferentes fuentes.\nCada fuente requiere diferentes mecanismos de acceso.\nLas bases de datos permiten consultar únicamente la información necesaria.\nLas APIs definen sus propias reglas, parámetros y mecanismos de autenticación.\nUna página web puede utilizarse como fuente de datos mediante web scraping.\nLos datos obtenidos pueden requerir transformación antes de poder utilizarlos."
   }
 ]

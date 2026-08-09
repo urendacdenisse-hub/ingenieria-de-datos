@@ -271,7 +271,7 @@ div.csl-indent {
 <section id="laboratorio" class="level1">
 <h1>Laboratorio</h1>
 <p>En el laboratorio pondremos en práctica los conceptos vistos en esta lección mediante ejemplos y actividades guiadas.</p>
-<p><a href="../../notebooks/unidad-xx/notebook-xx.ipynb"><strong>Ir al Notebook →</strong></a></p>
+<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-xx/notebook-xx.ipynb"><strong>Ir al Notebook →</strong></a></p>
 
 
 </section>
@@ -350,7 +350,7 @@ div.csl-indent {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/urendacdenisse-hub\.github\.io\/ingenieria-de-datos\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
