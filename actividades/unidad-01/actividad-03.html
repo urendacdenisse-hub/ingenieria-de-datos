@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notebooks – Ingeniería de Datos</title>
+<title>Acceso a diferentes fuentes de datos – Ingeniería de Datos</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ingeniería de Datos</span>
     </a>
   </div>
@@ -93,23 +128,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../recursos/syllabus.html"> 
+    <a class="nav-link" href="../../recursos/syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lecciones/index.html"> 
+    <a class="nav-link" href="../../lecciones/index.html"> 
 <span class="menu-text">Lecciones</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../notebooks/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../notebooks/index.html"> 
 <span class="menu-text">Notebooks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../actividades/index.html"> 
+    <a class="nav-link" href="../../actividades/index.html"> 
 <span class="menu-text">Actividades</span></a>
   </li>  
 </ul>
@@ -128,7 +163,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#unidad-i.-introducción-a-la-ingeniería-de-datos" id="toc-unidad-i.-introducción-a-la-ingeniería-de-datos" class="nav-link active" data-scroll-target="#unidad-i.-introducción-a-la-ingeniería-de-datos">Unidad I. Introducción a la ingeniería de datos</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
+  <li><a href="#entregable" id="toc-entregable" class="nav-link" data-scroll-target="#entregable">Entregable</a></li>
+  <li><a href="#parte-1.-archivo" id="toc-parte-1.-archivo" class="nav-link" data-scroll-target="#parte-1.-archivo">Parte 1. Archivo</a></li>
+  <li><a href="#parte-2.-base-de-datos" id="toc-parte-2.-base-de-datos" class="nav-link" data-scroll-target="#parte-2.-base-de-datos">Parte 2. Base de datos</a></li>
+  <li><a href="#parte-3.-api" id="toc-parte-3.-api" class="nav-link" data-scroll-target="#parte-3.-api">Parte 3. API</a></li>
   </ul>
 </nav>
     </div>
@@ -137,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notebooks</h1>
+<h1 class="title">Acceso a diferentes fuentes de datos</h1>
 </div>
 
 
@@ -154,50 +194,174 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="unidad-i.-introducción-a-la-ingeniería-de-datos" class="level1">
-<h1>Unidad I. Introducción a la ingeniería de datos</h1>
+<blockquote class="blockquote">
+<p><strong>Antes de comenzar</strong></p>
+<p>Este laboratorio está diseñado para ejecutarse en <strong>Google Colab</strong>.</p>
+<p>Una vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.</p>
+</blockquote>
+<div id="31198382" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git clone https:<span class="op">//</span>github.com<span class="op">/</span>urendacdenisse<span class="op">-</span>hub<span class="op">/</span>ingenieria<span class="op">-</span>de<span class="op">-</span>datos.git</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="aeef0c8e" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd ingenieria<span class="op">-</span>de<span class="op">-</span>datos</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>En esta actividad practicarás diferentes formas de acceder a datos utilizando <strong>archivos, bases de datos y APIs</strong>.</p>
+<p>Cada fuente requiere un mecanismo de acceso diferente. A lo largo de la actividad utilizarás los ejemplos vistos en el laboratorio para obtener datos desde cada una de ellas.</p>
+</section>
+<section id="objetivo" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
+<p>Obtener datos desde diferentes fuentes utilizando Python.</p>
 <ul>
-<li><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb">Introducción a los datos</a></li>
-<li><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-02.ipynb">Formatos de datos</a></li>
-<li><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-03.ipynb">Sistemas y fuentes de datos</a></li>
-<li><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-04.ipynb">Ciclo de vida de los datos</a></li>
+<li>Leer datos almacenados en un archivo.</li>
+<li>Consultar información almacenada en una base de datos.</li>
+<li>Investigar y utilizar una API pública para obtener datos.</li>
 </ul>
-<!--
-
-# Unidad II. Tecnologías de almacenamiento de datos
-
-- Introducción al almacenamiento de datos
-- Bases de datos relacionales
-- Almacenes analíticos
-- Sistemas de almacenamiento de archivos
-
-# Unidad III. Tecnologías de procesamiento de datos
-
-- Introducción al procesamiento de datos
-- Procesamiento por lotes
-- Procesamiento en tiempo real
-- Arquitecturas para el procesamiento de datos
-
-# Unidad IV. Integración de datos y ETL
-- Introducción a la integración de datos
-- Procesos ETL
-- Transformación de datos
-- Herramientas de integración de datos
-
-# Unidad V. Calidad y gobernanza de datos
-
-- Importancia de la calidad y gobernanza de datos
-- Calidad de los datos
-- Gestión de la calidad de datos
-- Gobernanza de datos
-
-# Unidad VI. Seguridad en ingeniería de datos
-
-- Importancia de la seguridad de los datos
-- Fundamentos de seguridad
-- Riesgos y protección de datos
-- Buenas prácticas de seguridad
--->
+</section>
+<section id="entregable" class="level2">
+<h2 class="anchored" data-anchor-id="entregable">Entregable</h2>
+<p>Completa las tres partes de la actividad directamente en el notebook.</p>
+<p>Antes de entregar:</p>
+<ol type="1">
+<li>Ejecuta todas las celdas y verifica que no existan errores.</li>
+<li>Asegúrate de que los resultados obtenidos sean visibles.</li>
+<li>Guarda el notebook con un nombre apropiado.</li>
+<li>Sube a la plataforma únicamente el archivo <strong><code>.ipynb</code></strong>.</li>
+</ol>
+<div id="6aa50a42" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># =================================================</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Configura todo lo necesario para comenzar</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># =================================================</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="bu">str</span>(Path.cwd().parent.parent))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="parte-1.-archivo" class="level2">
+<h2 class="anchored" data-anchor-id="parte-1.-archivo">Parte 1. Archivo</h2>
+<p>En el repositorio que acabas de clonar se encuentra el archivo <strong><code>fifa.csv</code></strong>, que contiene datos relacionados con la Copa Mundial de la FIFA.</p>
+<p>El archivo se encuentra en la carpeta <strong><code>entrada</code></strong>, dentro de <strong><code>datos</code></strong>, en la carpeta <strong><code>ingenieria-de-datos</code></strong>.</p>
+<ol type="1">
+<li>Construir la ruta al archivo.</li>
+<li>Leer el archivo CSV.</li>
+<li>Elegir un número de filas a mostrar y muestra esa cantidad de registros del archivo.</li>
+</ol>
+<div id="8937ff10" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa la biblioteca necesarias</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Construye la ruta al archivo</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ruta <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Lee el archivo CSV</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra los primeros x registros</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="parte-2.-base-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="parte-2.-base-de-datos">Parte 2. Base de datos</h2>
+<p>En el repositorio que acabas de clonar se encuentra la base de datos <strong><code>chinook.sqlite</code></strong>, que contiene información sobre una tienda digital de música.</p>
+<p>La base de datos está en la carpeta <strong><code>entrada</code></strong>, dentro de <strong><code>datos</code></strong>, que a su vez se encuentra en <strong><code>ingenieria-de-datos</code></strong>.</p>
+<ol type="1">
+<li>Construye la ruta a la base de datos.</li>
+<li>Establece una conexión utilizando <strong>SQLite</strong>.</li>
+<li>Consulta las tablas disponibles en la base de datos.</li>
+<li>Elige una de las tablas y consulta todos sus registros.</li>
+<li>Muestra los datos obtenidos.</li>
+<li>Cierra la conexión.</li>
+</ol>
+<div id="a3eb81cd" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa las bibliotecas necesarias</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Construye la ruta a la base de datos</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Establece la conexión</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Consulta las tablas disponibles</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra las tablas disponibles</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="5567b0ed" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Elige una tabla y realiza la consulta</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtén los datos</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra los datos</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="27602838" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cierra la conexión</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="parte-3.-api" class="level2">
+<h2 class="anchored" data-anchor-id="parte-3.-api">Parte 3. API</h2>
+<p>Selecciona una <strong>API pública y gratuita diferente a las utilizadas en el laboratorio</strong>.</p>
+<p>La API seleccionada debe poder utilizarse <strong>sin crear una cuenta, proporcionar información de pago o solicitar una API key</strong>.</p>
+<p>Investiga su documentación para identificar cómo realizar una consulta desde Python y obtén información utilizando la API seleccionada.</p>
+<ol type="1">
+<li>Selecciona una API pública y gratuita.</li>
+<li>Consulta su documentación.</li>
+<li>Identifica cómo realizar una solicitud y qué información puedes consultar.</li>
+<li>Realiza una consulta desde Python.</li>
+<li>Muestra el resultado obtenido.</li>
+</ol>
+<p>Puedes elegir alguna de las siguientes APIs o utilizar otra que cumpla con los requisitos:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>API</th>
+<th>Datos disponibles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://pokeapi.co/">PokéAPI</a></td>
+<td>Pokémon, habilidades, tipos y características</td>
+</tr>
+<tr class="even">
+<td><a href="https://rickandmortyapi.com/">Rick and Morty API</a></td>
+<td>Personajes, episodios y ubicaciones</td>
+</tr>
+<tr class="odd">
+<td><a href="https://dog.ceo/dog-api/">Dog API</a></td>
+<td>Razas e imágenes de perros</td>
+</tr>
+<tr class="even">
+<td><a href="https://date.nager.at/Api">Nager.Date</a></td>
+<td>Días festivos de diferentes países</td>
+</tr>
+<tr class="odd">
+<td><a href="https://freeapihub.com/apis/universities-list">Universities API</a></td>
+<td>Universidades, países, dominios y sitios web</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Importante:</strong> No utilices JSONPlaceholder, Open-Meteo Weather API ni NASA Open APIs, ya que fueron utilizadas en el laboratorio.</p>
+<div id="f3808bda" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa las bibliotecas necesarias</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define la información necesaria para realizar la consulta</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Realiza la consulta a la API</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtén los datos de la respuesta</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra el resultado</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 </section>
@@ -608,5 +772,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

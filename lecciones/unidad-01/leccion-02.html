@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -151,7 +217,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introducción a la ingeniería de datos</h1>
-  <p class="subtitle">Introducción a los datos</p>
+  <p class="subtitle">Formatos de datos</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -170,349 +236,296 @@ Dra. Denisse Urenda Castañeda
 <h2 id="toc-title">Tabla de contenidos</h2>
 <ul>
 <li><a href="#/introduccion" id="/toc-introduccion">Introduccion</a></li>
-<li><a href="#/qué-son-los-datos" id="/toc-qué-son-los-datos">¿Qué son los datos?</a></li>
-<li><a href="#/tipos-de-datos" id="/toc-tipos-de-datos">Tipos de datos</a></li>
+<li><a href="#/formato-de-datos" id="/toc-formato-de-datos">Formato de datos</a></li>
+<li><a href="#/estructura-de-los-datos" id="/toc-estructura-de-los-datos">Estructura de los datos</a></li>
+<li><a href="#/representación-de-la-información" id="/toc-representación-de-la-información">Representación de la información</a></li>
+<li><a href="#/elección-del-formato" id="/toc-elección-del-formato">Elección del formato</a></li>
 <li><a href="#/resumen" id="/toc-resumen">Resumen</a></li>
 <li><a href="#/referencias" id="/toc-referencias">Referencias</a></li>
-<li><a href="#/pregunta-1" id="/toc-pregunta-1">Pregunta</a></li>
+<li><a href="#/preguntas" id="/toc-preguntas">Preguntas</a></li>
 <li><a href="#/laboratorio" id="/toc-laboratorio">Laboratorio</a></li>
 </ul>
 </nav>
 </section>
-<section class="slide level2">
-
-<!-- ===================================================== -->
-<!-- PORTADA -->
-<!-- ===================================================== -->
-</section>
 <section>
 <section id="introduccion" class="title-slide slide level1 center">
 <h1>Introduccion</h1>
-<!-- ===================================================== -->
-<!-- OBJETIVO -->
-<!-- ===================================================== -->
+<p>Los datos pueden almacenarse y representarse de diferentes maneras. Una tabla, un documento, una imagen o una página web pueden contener información, pero no la organizan de la misma forma.</p>
+<p>El <strong>formato de datos</strong> determina cómo se representa y organiza esa información para poder almacenarla, intercambiarla e interpretarla.</p>
 </section>
 <section id="objetivo" class="slide level2">
 <h2>Objetivo</h2>
-<p>Al finalizar esta lección serás capaz de:</p>
-<ul>
-<li>Definir qué es un dato.</li>
-<li>Identificar los principales tipos de datos primitivos.</li>
-<li>Reconocer ejemplos de cada tipo de dato en situaciones cotidianas.</li>
-</ul>
-<!-- ===================================================== -->
-<!-- PREGUNTA DETONADORA -->
-<!-- ===================================================== -->
+<p>Comprender qué es un formato de datos, reconocer algunos de los formatos más comunes e identificar cómo sus características influyen en la forma de almacenar y utilizar la información.</p>
 </section>
 <section id="pregunta" class="slide level2">
 <h2>Pregunta</h2>
-<p><em>¿Qué tienen en común una fotografía, un mensaje de WhatsApp y la temperatura de una ciudad?</em></p>
-<!-- ===================================================== -->
-<!-- SUBTEMA 1 -->
-<!-- ===================================================== -->
+<p>¿Podemos leer y modificar de la misma manera un archivo CSV, una imagen y un PDF?</p>
 </section></section>
 <section>
-<section id="qué-son-los-datos" class="title-slide slide level1 center">
-<h1>¿Qué son los datos?</h1>
-<!-- ===================================================== -->
-<!-- CONCEPTOS -->
-<!-- ===================================================== -->
+<section id="formato-de-datos" class="title-slide slide level1 center">
+<h1>Formato de datos</h1>
+
 </section>
-<section id="definición-de-datos" class="slide level2">
-<h2>Definición de datos</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Los datos son un conjunto de hechos, números, palabras, observaciones u otra información útil. <span class="fragment"> A través del procesamiento de datos y análisis de datos, las organizaciones transforman datos sin procesar en <em>insights</em> valiosos</span><span class="fragment"> que mejoran la toma de decisiones e impulsan mejores resultados comerciales. <span class="citation" data-cites="ibm_data_2026"><a href="#/referencias" role="doc-biblioref" onclick="">[1]</a></span></span></p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="../imagenes/mister.png" style="width:80.0%"></p>
-</div></div>
-</section>
-<section id="dicho-de-otra-forma" class="slide level2">
-<h2>Dicho de otra forma…</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Los datos son información que podemos almacenar, organizar y analizar para responder preguntas o tomar decisiones.</p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="../imagenes/miss.png" style="width:70.0%"></p>
-</div></div>
-</section>
-<section id="quién-genera-datos" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p><img data-src="../imagenes/empresas.png" style="width:90.0%"></p>
-</section>
-<section id="quién-genera-datos-1" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>La pregunta importante no es quién genera datos, sino quién no los genera.</p>
-<div class="fragment">
-<p>Empresas, gobiernos, hospitales, bancos, aplicaciones, videojuegos e incluso nosotros generamos datos constantemente.</p>
-</div>
-<div class="fragment">
-<p>Por ejemplo, cada día generamos datos de ubicación, mensajes, compras, música, navegación y redes sociales.</p>
-</div>
-<div class="fragment">
-<p><strong>Todos generan datos.</strong></p>
-</div>
-</section>
-<section id="quién-genera-datos-2" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>Según un estudio realizado por el INEGI sobre los hábitos de usuarios de Internet en México durante 2024 <span class="citation" data-cites="inegi_habitos_internet_2024"><a href="#/referencias" role="doc-biblioref" onclick="">[2]</a></span>, las actividades que realizamos todos los días generan una enorme cantidad de datos.</p>
-</section>
-<section id="quién-genera-datos-3" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p><img data-src="../imagenes/inegi.png" style="width:100.0%"></p>
-</section>
-<section id="quién-genera-datos-4" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>De hecho, esto dice Internet:</p>
-<ul>
-<li class="fragment">Google maneja cerca de <strong>40,000 petabytes de datos diariamente</strong>. <span class="citation" data-cites="google_data_2024"><a href="#/referencias" role="doc-biblioref" onclick="">[3]</a></span></li>
-<li class="fragment">WhatsApp entrega alrededor de <strong>100 billones de mensajes al día</strong>. <span class="citation" data-cites="whatsapp_messages_2020"><a href="#/referencias" role="doc-biblioref" onclick="">[4]</a></span></li>
-<li class="fragment">En TikTok se suben más de <strong>23 millones de videos cada día</strong><span class="fragment">, es decir, aproximadamente <strong>16,000 videos por minuto</strong>.<span class="citation" data-cites="tiktok_statistics_2025"><a href="#/referencias" role="doc-biblioref" onclick="">[5]</a></span></span></li>
-</ul>
-</section>
-<section id="qué-datos-generan" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../imagenes/whats.png" style="width:90.0%"></p>
-</div><div class="column" style="width:70%;">
-<ul>
-<li class="fragment">Mensajes enviados</li>
-<li class="fragment">Hora del mensaje</li>
-<li class="fragment">Destinatario</li>
-<li class="fragment">Archivos compartidos</li>
-<li class="fragment">Llamadas realizadas</li>
-<li class="fragment">Tiempo de conexión</li>
-</ul>
-</div></div>
-</section>
-<section id="qué-datos-generan-1" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="../imagenes/netflix.png" style="width:90.0%"></p>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Películas y series reproducidas</li>
-<li class="fragment">Tiempo de reproducción</li>
-<li class="fragment">Búsquedas realizadas</li>
-<li class="fragment">Calificaciones</li>
-<li class="fragment">Listas personales</li>
-<li class="fragment">Dispositivo utilizado</li>
-</ul>
-</div></div>
-</section>
-<section id="qué-datos-generan-2" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../imagenes/uber.png" style="width:90.0%"></p>
-</div><div class="column" style="width:70%;">
-<ul>
-<li class="fragment">Ubicación de origen y destino</li>
-<li class="fragment">Tiempo del viaje</li>
-<li class="fragment">Costo del viaje</li>
-<li class="fragment">Conductor asignado</li>
-<li class="fragment">Calificación del viaje</li>
-<li class="fragment">Método de pago</li>
-</ul>
-</div></div>
-<!-- ===================================================== -->
-<!-- IDEA CLAVE -->
-<!-- ===================================================== -->
+<section id="qué-es-un-formato-de-datos" class="slide level2">
+<h2>¿Qué es un formato de datos?</h2>
+<p>Un <strong>formato de datos</strong> establece una forma específica de representar y organizar información.</p>
+<p>Algunos formatos comunes son:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Formato</th>
+<th>Uso común</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>.txt</code></td>
+<td>Texto plano</td>
+</tr>
+<tr class="even">
+<td><code>.csv</code></td>
+<td>Datos tabulares</td>
+</tr>
+<tr class="odd">
+<td><code>.xlsx</code></td>
+<td>Hojas de cálculo</td>
+</tr>
+<tr class="even">
+<td><code>.json</code></td>
+<td>Datos organizados mediante claves y valores</td>
+</tr>
+<tr class="odd">
+<td><code>.jpg</code>, <code>.png</code></td>
+<td>Imágenes</td>
+</tr>
+<tr class="even">
+<td><code>.html</code></td>
+<td>Páginas web</td>
+</tr>
+<tr class="odd">
+<td><code>.pdf</code></td>
+<td>Documentos</td>
+</tr>
+</tbody>
+</table>
+<p>La extensión de un archivo suele indicar el formato utilizado.</p>
 </section>
 <section id="idea-clave" class="slide level2">
 <h2>Idea clave</h2>
-<p>Todos generamos datos<span class="fragment">… pero no todos los datos son iguales.</span></p>
-<!-- ===================================================== -->
-<!-- SUBTEMA 2 -->
-<!-- ===================================================== -->
+<blockquote>
+<p><strong>El formato define cómo se organiza y representa la información almacenada.</strong></p>
+</blockquote>
+<p>La misma información puede almacenarse utilizando diferentes formatos.</p>
 </section></section>
 <section>
-<section id="tipos-de-datos" class="title-slide slide level1 center">
-<h1>Tipos de datos</h1>
-<!-- ===================================================== -->
-<!-- CONCEPTOS -->
-<!-- ===================================================== -->
+<section id="estructura-de-los-datos" class="title-slide slide level1 center">
+<h1>Estructura de los datos</h1>
+
 </section>
-<section id="no-todos-los-datos-son-iguales" class="slide level2">
-<h2>No todos los datos son iguales</h2>
-<p>Ya vimos que los organismos generan muchos datos y de muchos tipos:</p>
-<ul>
-<li class="fragment"><strong>Numéricos</strong>: precios, temperatura, edades, venta</li>
-<li class="fragment"><strong>Texto</strong>: mensajes, correos, comentarios, búsquedas</li>
-<li class="fragment"><strong>Fecha y hora</strong>: fechas de compra, horarios, duración, registros de acceso.</li>
-<li class="fragment"><strong>Ubicación</strong>: GPS, rutas, direcciones</li>
-<li class="fragment"><strong>Imágenes</strong>: fotografías, radiografías, publicaciones</li>
-<li class="fragment"><strong>Audio</strong>: canciones, notas de voz, llamadas</li>
-<li class="fragment"><strong>Video</strong>: películas, videollamadas, TikToks</li>
-</ul>
+<section id="datos-estructurados" class="slide level2">
+<h2>Datos estructurados</h2>
+<p>Los <strong>datos estructurados</strong> siguen una organización claramente definida, generalmente mediante filas, columnas y variables conocidas.</p>
+<p>Por ejemplo:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>nombre</th>
+<th style="text-align: right;">edad</th>
+<th>ciudad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ana</td>
+<td style="text-align: right;">25</td>
+<td>Juárez</td>
+</tr>
+<tr class="even">
+<td>Luis</td>
+<td style="text-align: right;">32</td>
+<td>Chihuahua</td>
+</tr>
+</tbody>
+</table>
+<p>Los archivos CSV y las hojas de cálculo son ejemplos comunes de esta forma de organización.</p>
 </section>
-<section id="datos-numéricos" class="slide level2">
-<h2>Datos numéricos</h2>
-<p>Los <strong>datos numéricos</strong> representan cantidades que pueden medirse o contarse. Se utilizan para realizar operaciones matemáticas y análisis estadísticos.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Edad de una persona.</li>
-<li class="fragment">Temperatura de una ciudad.</li>
-<li class="fragment">Precio de un producto.</li>
-<li class="fragment">Número de estudiantes.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>25 años · 18 °C · $350.00 · 12 km · 150 estudiantes</p>
-</div>
-</div>
+<section id="datos-semiestructurados" class="slide level2">
+<h2>Datos semiestructurados</h2>
+<p>Los <strong>datos semiestructurados</strong> contienen elementos que permiten organizar e identificar la información, pero no necesariamente siguen una estructura tabular.</p>
+<p>Por ejemplo, JSON utiliza claves y valores:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a></a><span class="fu">{</span></span>
+<span id="cb1-2"><a></a>  <span class="dt">"nombre"</span><span class="fu">:</span> <span class="st">"Ana"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a></a>  <span class="dt">"edad"</span><span class="fu">:</span> <span class="dv">25</span><span class="fu">,</span></span>
+<span id="cb1-4"><a></a>  <span class="dt">"ciudad"</span><span class="fu">:</span> <span class="st">"Juárez"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a></a>  <span class="dt">"telefono"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-6"><a></a>    <span class="dt">"fijo"</span><span class="fu">:</span> <span class="st">"656-123-4567"</span><span class="fu">,</span></span>
+<span id="cb1-7"><a></a>    <span class="dt">"movil"</span><span class="fu">:</span> <span class="st">"656-123-0000"</span></span>
+<span id="cb1-8"><a></a>  <span class="fu">}</span></span>
+<span id="cb1-9"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Formatos como JSON y HTML contienen información sobre su propia estructura mediante claves, etiquetas u otros elementos.</p>
 </section>
-<section id="datos-de-texto" class="slide level2">
-<h2>Datos de texto</h2>
-<p>Los <strong>datos de texto</strong> representan información formada por letras, palabras, símbolos o frases. Se utilizan para describir, identificar o comunicar información.</p>
-<p><strong>Ejemplos:</strong></p>
+<section id="datos-no-estructurados" class="slide level2">
+<h2>Datos no estructurados</h2>
+<p>Los <strong>datos no estructurados</strong> no siguen necesariamente una organización tabular o un esquema fijo.</p>
+<p>Algunos ejemplos son:</p>
 <ul>
-<li class="fragment">Nombre de una persona.</li>
-<li class="fragment">Dirección de correo electrónico.</li>
-<li class="fragment">Comentario de un usuario.</li>
-<li class="fragment">Mensaje de WhatsApp.</li>
+<li>Documentos de texto</li>
+<li>Archivos PDF</li>
+<li>Imágenes</li>
+<li>Audio</li>
+<li>Video</li>
 </ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>“Denisse Urenda” · “ingenieria.datos@uacj.mx”</p>
-</div>
-</div>
+<p>Su contenido no sigue un esquema predefinido, por lo que identificar y extraer elementos específicos puede requerir un procesamiento adicional.</p>
 </section>
-<section id="datos-de-fecha-y-hora" class="slide level2">
-<h2>Datos de fecha y hora</h2>
-<p>Los <strong>datos de fecha y hora</strong> representan momentos específicos en el tiempo. Se utilizan para registrar cuándo ocurre un evento y analizar su secuencia o duración.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Fecha de nacimiento.</li>
-<li class="fragment">Hora de una compra.</li>
-<li class="fragment">Fecha de un examen.</li>
-<li class="fragment">Hora de inicio de una llamada.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>15/08/2026 · 08:30 a.m. · 2026-07-13 14:25:36 · 12:00 p.m.</p>
-</div>
-</div>
+<section id="section" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="cómo-se-almacena-una-imagen">¿Cómo se almacena una imagen?</h3>
+<p>Una imagen digital está formada por una <strong>matriz de píxeles</strong>. Cada píxel contiene valores numéricos que representan su color.</p>
+<p>En una imagen RGB, cada píxel se representa mediante tres valores:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Color</th>
+<th style="text-align: right;">R</th>
+<th style="text-align: right;">G</th>
+<th style="text-align: right;">B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rojo</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>Verde</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>Azul</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">255</td>
+</tr>
+<tr class="even">
+<td>Blanco</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">255</td>
+</tr>
+<tr class="odd">
+<td>Negro</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="datos-de-ubicación" class="slide level2">
-<h2>Datos de ubicación</h2>
-<p>Los <strong>datos de ubicación</strong> representan un lugar o una posición geográfica. Se utilizan para localizar personas, objetos o eventos.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Dirección de un domicilio.</li>
-<li class="fragment">Coordenadas GPS.</li>
-<li class="fragment">Ruta de un viaje.</li>
-<li class="fragment">Ubicación de un restaurante.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>31.6904, -106.4245 · Av. Tecnológico 1340 · Ciudad Juárez, Chihuahua</p>
-</div>
-</div>
-</section>
-<section id="datos-de-imagen" class="slide level2">
-<h2>Datos de imagen</h2>
-<p>Los <strong>datos de imagen</strong> representan información visual capturada mediante fotografías, dibujos, radiografías o ilustraciones.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Fotografía.</li>
-<li class="fragment">Radiografía.</li>
-<li class="fragment">Imagen satelital.</li>
-<li class="fragment">Captura de pantalla.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>📷 selfie.jpg · 🩻 radiografia.png · 🌎 satelite.tif</p>
-</div>
-</div>
-</section>
-<section id="datos-de-audio" class="slide level2">
-<h2>Datos de audio</h2>
-<p>Los <strong>datos de audio</strong> representan sonidos o grabaciones que pueden almacenarse y reproducirse digitalmente.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Canción.</li>
-<li class="fragment">Nota de voz.</li>
-<li class="fragment">Llamada telefónica.</li>
-<li class="fragment">Podcast.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>🎵 musica.mp3 · 🎙️ nota_de_voz.m4a · 📞 llamada.wav</p>
-</div>
-</div>
-</section>
-<section id="datos-de-video" class="slide level2">
-<h2>Datos de video</h2>
-<p>Los <strong>datos de video</strong> representan una secuencia de imágenes, generalmente acompañadas de audio, que permiten registrar o reproducir movimiento.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Película.</li>
-<li class="fragment">Videollamada.</li>
-<li class="fragment">Video de seguridad.</li>
-<li class="fragment">TikTok.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>🎬 pelicula.mp4 · 📹 reunion.mp4 · 🎥 tiktok.mp4</p>
-</div>
-</div>
-<!-- ===================================================== -->
-<!-- IDEA CLAVE -->
-<!-- ===================================================== -->
+<section id="section-1" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="cómo-se-almacena-una-imagen-1">¿Cómo se almacena una imagen?</h3>
+<p>Dependiendo del tipo de imagen, cada píxel puede contener uno o varios valores.</p>
+<p><strong>Escala de grises:</strong> un valor de intensidad por píxel.</p>
+<p><em>Ejemplo</em>: 1080 x 1920</p>
+<p><strong>RGB</strong>: tres canales de color por píxel: rojo, verde y azul.</p>
+<p><em>Ejemplo</em>: 1080 x 1920 x 3</p>
+<p><strong>RGBA</strong>: cuatro canales por píxel: rojo, verde, azul y transparencia.</p>
+<p><em>Ejemplo</em>: 1080 x 1920 x 4</p>
+<p>Formatos como <strong>JPEG</strong> y <strong>PNG</strong> utilizan diferentes métodos para codificar y comprimir esta información.</p>
 </section>
 <section id="idea-clave-1" class="slide level2">
 <h2>Idea clave</h2>
-<p>Los datos pueden representarse de muchas formas.</p>
-<p><span class="fragment">Y cada una requiere una manera distinta de almacenarse.</span></p>
-<!-- ===================================================== -->
-<!-- RESUMEN -->
-<!-- ===================================================== -->
+<p>Los datos pueden tener diferentes niveles de estructura y no todos se organizan en filas y columnas.</p>
+<p>La estructura determina cómo está organizada la información y qué tan sencillo es identificar sus diferentes elementos.</p>
+</section></section>
+<section>
+<section id="representación-de-la-información" class="title-slide slide level1 center">
+<h1>Representación de la información</h1>
+
+</section>
+<section id="la-misma-información-en-diferentes-formatos" class="slide level2">
+<h2>La misma información en diferentes formatos</h2>
+<p>Una misma información puede representarse de distintas maneras.</p>
+<p>Por ejemplo:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>nombre</th>
+<th style="text-align: right;">edad</th>
+<th>ciudad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ana</td>
+<td style="text-align: right;">25</td>
+<td>Juárez</td>
+</tr>
+<tr class="even">
+<td>Luis</td>
+<td style="text-align: right;">32</td>
+<td>Chihuahua</td>
+</tr>
+</tbody>
+</table>
+<p>En CSV:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>nombre,edad,ciudad</span>
+<span id="cb2-2"><a></a>Ana,25,Juárez</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>En JSON:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a></a><span class="fu">{</span></span>
+<span id="cb3-2"><a></a>  <span class="dt">"nombre"</span><span class="fu">:</span> <span class="st">"Ana"</span><span class="fu">,</span></span>
+<span id="cb3-3"><a></a>  <span class="dt">"edad"</span><span class="fu">:</span> <span class="dv">25</span><span class="fu">,</span></span>
+<span id="cb3-4"><a></a>  <span class="dt">"ciudad"</span><span class="fu">:</span> <span class="st">"Juárez"</span></span>
+<span id="cb3-5"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La información es esencialmente la misma, pero su <strong>representación cambia</strong>.</p>
+</section></section>
+<section>
+<section id="elección-del-formato" class="title-slide slide level1 center">
+<h1>Elección del formato</h1>
+
+</section>
+<section id="por-qué-existen-diferentes-formatos" class="slide level2">
+<h2>¿Por qué existen diferentes formatos?</h2>
+<p>No existe un formato adecuado para todas las situaciones.</p>
+<p>La elección depende de factores como:</p>
+<ul>
+<li>La estructura de los datos.</li>
+<li>El tipo de información que queremos almacenar.</li>
+<li>El tamaño de los datos.</li>
+<li>La facilidad para intercambiarlos.</li>
+<li>La compatibilidad con diferentes herramientas.</li>
+<li>La necesidad de conservar la presentación.</li>
+</ul>
+<p>Por ejemplo, una tabla de millones de registros tiene necesidades diferentes a una fotografía o un reporte diseñado para ser leído por una persona.</p>
 </section></section>
 <section id="resumen" class="title-slide slide level1 center">
 <h1>Resumen</h1>
 <ul>
-<li><strong>Todos generamos datos</strong> en nuestras actividades diarias.</li>
-<li><strong>Los datos pueden representar distintos tipos de información</strong>, como números, texto, fechas, imágenes, audio, video o ubicaciones.</li>
-<li><strong>Identificar el tipo de dato es el primer paso</strong> para almacenarlo, procesarlo y analizarlo correctamente.</li>
+<li>Un formato de datos define cómo se representa y organiza la información.</li>
+<li>Los datos pueden encontrarse en formatos estructurados, semiestructurados y no estructurados.</li>
+<li>La misma información puede representarse utilizando diferentes formatos.</li>
+<li>La elección del formato depende del propósito y de las características de los datos.</li>
 </ul>
-<!-- ===================================================== -->
-<!-- REFERENCIAS -->
-<!-- ===================================================== -->
 </section>
 
 <section id="referencias" class="title-slide slide level1 smaller scrollable">
 <h1>Referencias</h1>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-ibm_data_2026" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Badman y M. Kosinski, <span>«¿Qué son los datos?»</span> Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://www.ibm.com/mx-es/think/topics/data">https://www.ibm.com/mx-es/think/topics/data</a></div>
+<div id="ref-ibm_unstructured_data" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Jonker y A. Gomstyn, <span>«¿Qué son los datos no estructurados?»</span> Accedido: 8 de agosto de 2026. [En línea]. Disponible en: <a href="https://www.ibm.com/mx-es/think/topics/unstructured-data">https://www.ibm.com/mx-es/think/topics/unstructured-data</a></div>
 </div>
-<div id="ref-inegi_habitos_internet_2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">I. Girón, <span>«20 Estudios sobre los hábitos de usuarios de Internet en México 2024 y perspectiva de IA»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://www.inegi.org.mx/contenidos/inegi/ccu/2024/segunda_sesion/presentaciones/habitos_internet.pdf">https://www.inegi.org.mx/contenidos/inegi/ccu/2024/segunda_sesion/presentaciones/habitos_internet.pdf</a></div>
-</div>
-<div id="ref-google_data_2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Anup KumarH S, <span>«How Google Handles Over 40,000 Petabytes of Data on a Daily Basis»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://skill-lync.com/blogs/how-google-handles-over-40000-petabytes-of-data-on-a-daily-basis">https://skill-lync.com/blogs/how-google-handles-over-40000-petabytes-of-data-on-a-daily-basis</a></div>
-</div>
-<div id="ref-whatsapp_messages_2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M. Singh, <span>«WhatsApp is now delivering roughly 100 billion messages a day»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://techcrunch.com/2020/10/29/whatsapp-is-now-delivering-roughly-100-billion-messages-a-day">https://techcrunch.com/2020/10/29/whatsapp-is-now-delivering-roughly-100-billion-messages-a-day</a></div>
-</div>
-<div id="ref-tiktok_statistics_2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Tamilore Oladipo, <span>«31 TikTok Statistics to Know for 2026»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://buffer.com/resources/tiktok-statistics">https://buffer.com/resources/tiktok-statistics</a></div>
+<div id="ref-dzoom_formatos_imagenes" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. L. Rodriguez, <span>«Cuáles son los Principales Formatos de Almacenamiento de Fotografías y Cuándo Usarlos»</span>. Accedido: 8 de agosto de 2026. [En línea]. Disponible en: <a href="https://www.dzoom.org.es/formatos-de-almacenamiento-de-las-imagenes-digitales">https://www.dzoom.org.es/formatos-de-almacenamiento-de-las-imagenes-digitales</a></div>
 </div>
 </div>
 </section>
 
-<section id="pregunta-1" class="title-slide slide level1 center">
-<h1>Pregunta</h1>
+<section id="preguntas" class="title-slide slide level1 center">
+<h1>Preguntas</h1>
 <p><img data-src="../imagenes/mister.png" style="width:50.0%"></p>
 <!-- ===================================================== -->
 <!-- LABORATORIO -->
@@ -521,8 +534,8 @@ Dra. Denisse Urenda Castañeda
 
 <section id="laboratorio" class="title-slide slide level1 center">
 <h1>Laboratorio</h1>
-<p>En el laboratorio pondremos en práctica los conceptos vistos en esta lección mediante ejemplos y actividades guiadas.</p>
-<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb"><strong>Ir al Notebook →</strong></a></p>
+<p>En el laboratorio exploraremos diferentes formatos de datos para observar cómo cambia la forma de acceder, modificar y almacenar su contenido.</p>
+<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-02.ipynb"><strong>Ir al Notebook →</strong></a></p>
 
 
 </section>

@@ -35,7 +35,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -151,7 +150,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introducción a la ingeniería de datos</h1>
-  <p class="subtitle">Introducción a los datos</p>
+  <p class="subtitle">Ciclo de vida de los datos</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -170,8 +169,9 @@ Dra. Denisse Urenda Castañeda
 <h2 id="toc-title">Tabla de contenidos</h2>
 <ul>
 <li><a href="#/introduccion" id="/toc-introduccion">Introduccion</a></li>
-<li><a href="#/qué-son-los-datos" id="/toc-qué-son-los-datos">¿Qué son los datos?</a></li>
-<li><a href="#/tipos-de-datos" id="/toc-tipos-de-datos">Tipos de datos</a></li>
+<li><a href="#/obtención-y-almacenamiento" id="/toc-obtención-y-almacenamiento">Obtención y almacenamiento</a></li>
+<li><a href="#/procesamiento-y-análisis" id="/toc-procesamiento-y-análisis">Procesamiento y análisis</a></li>
+<li><a href="#/comunicación-y-conservación" id="/toc-comunicación-y-conservación">Comunicación y conservación</a></li>
 <li><a href="#/resumen" id="/toc-resumen">Resumen</a></li>
 <li><a href="#/referencias" id="/toc-referencias">Referencias</a></li>
 <li><a href="#/pregunta-1" id="/toc-pregunta-1">Pregunta</a></li>
@@ -179,350 +179,169 @@ Dra. Denisse Urenda Castañeda
 </ul>
 </nav>
 </section>
-<section class="slide level2">
-
-<!-- ===================================================== -->
-<!-- PORTADA -->
-<!-- ===================================================== -->
-</section>
 <section>
 <section id="introduccion" class="title-slide slide level1 center">
 <h1>Introduccion</h1>
-<!-- ===================================================== -->
-<!-- OBJETIVO -->
-<!-- ===================================================== -->
+
 </section>
 <section id="objetivo" class="slide level2">
 <h2>Objetivo</h2>
-<p>Al finalizar esta lección serás capaz de:</p>
-<ul>
-<li>Definir qué es un dato.</li>
-<li>Identificar los principales tipos de datos primitivos.</li>
-<li>Reconocer ejemplos de cada tipo de dato en situaciones cotidianas.</li>
-</ul>
-<!-- ===================================================== -->
-<!-- PREGUNTA DETONADORA -->
-<!-- ===================================================== -->
+<p>Identificar las principales etapas del <strong>ciclo de vida de los datos</strong> y comprender cómo los datos se transforman desde su obtención hasta su conservación o eliminación.</p>
 </section>
 <section id="pregunta" class="slide level2">
 <h2>Pregunta</h2>
-<p><em>¿Qué tienen en común una fotografía, un mensaje de WhatsApp y la temperatura de una ciudad?</em></p>
-<!-- ===================================================== -->
-<!-- SUBTEMA 1 -->
-<!-- ===================================================== -->
+<p>¿Qué ocurre con los datos desde que son obtenidos hasta que dejan de utilizarse?</p>
+</section>
+<section id="el-ciclo-de-vida-de-los-datos" class="slide level2">
+<h2>El ciclo de vida de los datos</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>El <strong>ciclo de vida de los datos</strong> describe las distintas etapas por las que pasan los datos, desde su <strong>obtención</strong> hasta su <strong>conservación o eliminación</strong>.</p>
+<p>Durante este ciclo, los datos pueden ser almacenados, procesados, analizados y utilizados para generar nueva información.</p>
+</div><div class="column" style="width:55%;">
+<p><img data-src="../imagenes/ciclo-vida-datos.png" style="width:100.0%"></p>
+</div></div>
 </section></section>
 <section>
-<section id="qué-son-los-datos" class="title-slide slide level1 center">
-<h1>¿Qué son los datos?</h1>
-<!-- ===================================================== -->
-<!-- CONCEPTOS -->
-<!-- ===================================================== -->
+<section id="obtención-y-almacenamiento" class="title-slide slide level1 center">
+<h1>Obtención y almacenamiento</h1>
+
 </section>
-<section id="definición-de-datos" class="slide level2">
-<h2>Definición de datos</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Los datos son un conjunto de hechos, números, palabras, observaciones u otra información útil. <span class="fragment"> A través del procesamiento de datos y análisis de datos, las organizaciones transforman datos sin procesar en <em>insights</em> valiosos</span><span class="fragment"> que mejoran la toma de decisiones e impulsan mejores resultados comerciales. <span class="citation" data-cites="ibm_data_2026"><a href="#/referencias" role="doc-biblioref" onclick="">[1]</a></span></span></p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="../imagenes/mister.png" style="width:80.0%"></p>
-</div></div>
-</section>
-<section id="dicho-de-otra-forma" class="slide level2">
-<h2>Dicho de otra forma…</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Los datos son información que podemos almacenar, organizar y analizar para responder preguntas o tomar decisiones.</p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="../imagenes/miss.png" style="width:70.0%"></p>
-</div></div>
-</section>
-<section id="quién-genera-datos" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p><img data-src="../imagenes/empresas.png" style="width:90.0%"></p>
-</section>
-<section id="quién-genera-datos-1" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>La pregunta importante no es quién genera datos, sino quién no los genera.</p>
-<div class="fragment">
-<p>Empresas, gobiernos, hospitales, bancos, aplicaciones, videojuegos e incluso nosotros generamos datos constantemente.</p>
-</div>
-<div class="fragment">
-<p>Por ejemplo, cada día generamos datos de ubicación, mensajes, compras, música, navegación y redes sociales.</p>
-</div>
-<div class="fragment">
-<p><strong>Todos generan datos.</strong></p>
-</div>
-</section>
-<section id="quién-genera-datos-2" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>Según un estudio realizado por el INEGI sobre los hábitos de usuarios de Internet en México durante 2024 <span class="citation" data-cites="inegi_habitos_internet_2024"><a href="#/referencias" role="doc-biblioref" onclick="">[2]</a></span>, las actividades que realizamos todos los días generan una enorme cantidad de datos.</p>
-</section>
-<section id="quién-genera-datos-3" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p><img data-src="../imagenes/inegi.png" style="width:100.0%"></p>
-</section>
-<section id="quién-genera-datos-4" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>De hecho, esto dice Internet:</p>
+<section id="captura-de-datos" class="slide level2">
+<h2>Captura de datos</h2>
+<p>La <strong>captura de datos</strong> consiste en obtener datos desde una fuente.</p>
+<p>Los datos pueden provenir de:</p>
 <ul>
-<li class="fragment">Google maneja cerca de <strong>40,000 petabytes de datos diariamente</strong>. <span class="citation" data-cites="google_data_2024"><a href="#/referencias" role="doc-biblioref" onclick="">[3]</a></span></li>
-<li class="fragment">WhatsApp entrega alrededor de <strong>100 billones de mensajes al día</strong>. <span class="citation" data-cites="whatsapp_messages_2020"><a href="#/referencias" role="doc-biblioref" onclick="">[4]</a></span></li>
-<li class="fragment">En TikTok se suben más de <strong>23 millones de videos cada día</strong><span class="fragment">, es decir, aproximadamente <strong>16,000 videos por minuto</strong>.<span class="citation" data-cites="tiktok_statistics_2025"><a href="#/referencias" role="doc-biblioref" onclick="">[5]</a></span></span></li>
+<li><strong>Personas:</strong> formularios, encuestas, registros o interacciones.</li>
+<li><strong>Sensores:</strong> temperatura, ubicación, movimiento, imágenes, etc.</li>
+<li><strong>Aplicaciones y sistemas:</strong> transacciones, actividad de usuarios o registros del sistema.</li>
+<li><strong>Otros datos:</strong> bases de datos, archivos, APIs o conjuntos de datos existentes.</li>
 </ul>
 </section>
-<section id="qué-datos-generan" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../imagenes/whats.png" style="width:90.0%"></p>
-</div><div class="column" style="width:70%;">
+<section id="ingesta-de-datos" class="slide level2">
+<h2>Ingesta de datos</h2>
+<p>La <strong>ingesta de datos</strong> consiste en <strong>transferir o incorporar datos desde una fuente hacia el sistema donde serán utilizados</strong>.</p>
+<p>Por ejemplo:</p>
 <ul>
-<li class="fragment">Mensajes enviados</li>
-<li class="fragment">Hora del mensaje</li>
-<li class="fragment">Destinatario</li>
-<li class="fragment">Archivos compartidos</li>
-<li class="fragment">Llamadas realizadas</li>
-<li class="fragment">Tiempo de conexión</li>
+<li>Leer datos desde un archivo.</li>
+<li>Consultar una base de datos.</li>
+<li>Obtener datos mediante una API.</li>
+<li>Recibir datos generados por sensores o aplicaciones.</li>
 </ul>
-</div></div>
+<blockquote>
+<p><strong>Captura</strong> = obtener o generar el dato.<br>
+<strong>Ingesta</strong> = llevarlo al sistema donde será utilizado.</p>
+</blockquote>
 </section>
-<section id="qué-datos-generan-1" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="../imagenes/netflix.png" style="width:90.0%"></p>
-</div><div class="column" style="width:50%;">
+<section id="almacenamiento" class="slide level2">
+<h2>Almacenamiento</h2>
+<p>El <strong>almacenamiento</strong> consiste en conservar los datos para que puedan ser utilizados posteriormente.</p>
+<p>Los datos pueden almacenarse en:</p>
 <ul>
-<li class="fragment">Películas y series reproducidas</li>
-<li class="fragment">Tiempo de reproducción</li>
-<li class="fragment">Búsquedas realizadas</li>
-<li class="fragment">Calificaciones</li>
-<li class="fragment">Listas personales</li>
-<li class="fragment">Dispositivo utilizado</li>
+<li><strong>Archivos:</strong> CSV, JSON, Excel, imágenes, etc.</li>
+<li><strong>Bases de datos:</strong> SQL o NoSQL.</li>
+<li><strong>Data warehouses:</strong> datos procesados y estructurados para análisis.</li>
+<li><strong>Data lakes:</strong> grandes volúmenes de datos en su formato original.</li>
 </ul>
-</div></div>
+<blockquote>
+<p>Mantener los <strong>datos originales</strong> permite recuperar su estado inicial cuando sea necesario.</p>
+</blockquote>
+</section></section>
+<section>
+<section id="procesamiento-y-análisis" class="title-slide slide level1 center">
+<h1>Procesamiento y análisis</h1>
+
 </section>
-<section id="qué-datos-generan-2" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../imagenes/uber.png" style="width:90.0%"></p>
-</div><div class="column" style="width:70%;">
+<section id="procesamiento-de-datos" class="slide level2">
+<h2>Procesamiento de datos</h2>
+<p>El <strong>procesamiento</strong> consiste en preparar y modificar los datos para que puedan ser utilizados.</p>
+<p>Puede incluir:</p>
 <ul>
-<li class="fragment">Ubicación de origen y destino</li>
-<li class="fragment">Tiempo del viaje</li>
-<li class="fragment">Costo del viaje</li>
-<li class="fragment">Conductor asignado</li>
-<li class="fragment">Calificación del viaje</li>
-<li class="fragment">Método de pago</li>
+<li><strong>Inspección:</strong> conocer su estructura y contenido.</li>
+<li><strong>Limpieza:</strong> corregir errores, duplicados o valores faltantes.</li>
+<li><strong>Transformación:</strong> cambiar formatos, unidades o representaciones.</li>
+<li><strong>Integración:</strong> combinar datos de diferentes fuentes.</li>
+<li><strong>Selección:</strong> conservar únicamente los datos necesarios.</li>
+<li><strong>Validación:</strong> verificar que los datos sean correctos y consistentes.</li>
 </ul>
-</div></div>
-<!-- ===================================================== -->
-<!-- IDEA CLAVE -->
-<!-- ===================================================== -->
+</section>
+<section id="análisis-de-datos" class="slide level2">
+<h2>Análisis de datos</h2>
+<p>El <strong>análisis de datos</strong> consiste en examinar los datos para <strong>responder preguntas, identificar patrones o resolver problemas</strong>.</p>
+<p>Puede incluir:</p>
+<ul>
+<li><strong>Describir:</strong> ¿qué ocurrió?</li>
+<li><strong>Comparar:</strong> ¿qué diferencias existen?</li>
+<li><strong>Relacionar:</strong> ¿cómo se relacionan las variables?</li>
+<li><strong>Explicar:</strong> ¿por qué ocurrió?</li>
+<li><strong>Predecir:</strong> ¿qué podría ocurrir?</li>
+</ul>
 </section>
 <section id="idea-clave" class="slide level2">
 <h2>Idea clave</h2>
-<p>Todos generamos datos<span class="fragment">… pero no todos los datos son iguales.</span></p>
-<!-- ===================================================== -->
-<!-- SUBTEMA 2 -->
-<!-- ===================================================== -->
+<p>Los resultados de un análisis también pueden convertirse en <strong>nuevos datos</strong> y comenzar su propio ciclo de vida.</p>
 </section></section>
 <section>
-<section id="tipos-de-datos" class="title-slide slide level1 center">
-<h1>Tipos de datos</h1>
-<!-- ===================================================== -->
-<!-- CONCEPTOS -->
-<!-- ===================================================== -->
+<section id="comunicación-y-conservación" class="title-slide slide level1 center">
+<h1>Comunicación y conservación</h1>
+
 </section>
-<section id="no-todos-los-datos-son-iguales" class="slide level2">
-<h2>No todos los datos son iguales</h2>
-<p>Ya vimos que los organismos generan muchos datos y de muchos tipos:</p>
+<section id="comunicación" class="slide level2">
+<h2>Comunicación</h2>
+<p>La <strong>comunicación</strong> consiste en presentar los resultados del análisis de forma que puedan ser <strong>interpretados y utilizados por otras personas</strong>.</p>
+<p>Los resultados pueden comunicarse mediante:</p>
 <ul>
-<li class="fragment"><strong>Numéricos</strong>: precios, temperatura, edades, venta</li>
-<li class="fragment"><strong>Texto</strong>: mensajes, correos, comentarios, búsquedas</li>
-<li class="fragment"><strong>Fecha y hora</strong>: fechas de compra, horarios, duración, registros de acceso.</li>
-<li class="fragment"><strong>Ubicación</strong>: GPS, rutas, direcciones</li>
-<li class="fragment"><strong>Imágenes</strong>: fotografías, radiografías, publicaciones</li>
-<li class="fragment"><strong>Audio</strong>: canciones, notas de voz, llamadas</li>
-<li class="fragment"><strong>Video</strong>: películas, videollamadas, TikToks</li>
+<li><strong>Tablas y gráficas.</strong></li>
+<li><strong>Reportes.</strong></li>
+<li><strong>Presentaciones.</strong></li>
+<li><strong>Dashboards.</strong></li>
+<li><strong>Páginas web.</strong></li>
 </ul>
+<blockquote>
+<p>La forma de comunicar los resultados depende del <strong>objetivo y la audiencia</strong>.</p>
+</blockquote>
 </section>
-<section id="datos-numéricos" class="slide level2">
-<h2>Datos numéricos</h2>
-<p>Los <strong>datos numéricos</strong> representan cantidades que pueden medirse o contarse. Se utilizan para realizar operaciones matemáticas y análisis estadísticos.</p>
-<p><strong>Ejemplos:</strong></p>
+<section id="conservación-y-eliminación" class="slide level2">
+<h2>Conservación y eliminación</h2>
+<p>La <strong>conservación</strong> consiste en mantener los datos mientras puedan ser necesarios para su uso futuro.</p>
+<p>El tiempo durante el cual se conservan puede depender de:</p>
 <ul>
-<li class="fragment">Edad de una persona.</li>
-<li class="fragment">Temperatura de una ciudad.</li>
-<li class="fragment">Precio de un producto.</li>
-<li class="fragment">Número de estudiantes.</li>
+<li><strong>Utilidad futura:</strong> posibilidad de reutilizar los datos.</li>
+<li><strong>Privacidad:</strong> protección de información sensible.</li>
+<li><strong>Almacenamiento:</strong> espacio y costo de conservarlos.</li>
+<li><strong>Políticas y regulaciones:</strong> requisitos de la organización o legales.</li>
 </ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>25 años · 18 °C · $350.00 · 12 km · 150 estudiantes</p>
-</div>
-</div>
-</section>
-<section id="datos-de-texto" class="slide level2">
-<h2>Datos de texto</h2>
-<p>Los <strong>datos de texto</strong> representan información formada por letras, palabras, símbolos o frases. Se utilizan para describir, identificar o comunicar información.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Nombre de una persona.</li>
-<li class="fragment">Dirección de correo electrónico.</li>
-<li class="fragment">Comentario de un usuario.</li>
-<li class="fragment">Mensaje de WhatsApp.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>“Denisse Urenda” · “ingenieria.datos@uacj.mx”</p>
-</div>
-</div>
-</section>
-<section id="datos-de-fecha-y-hora" class="slide level2">
-<h2>Datos de fecha y hora</h2>
-<p>Los <strong>datos de fecha y hora</strong> representan momentos específicos en el tiempo. Se utilizan para registrar cuándo ocurre un evento y analizar su secuencia o duración.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Fecha de nacimiento.</li>
-<li class="fragment">Hora de una compra.</li>
-<li class="fragment">Fecha de un examen.</li>
-<li class="fragment">Hora de inicio de una llamada.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>15/08/2026 · 08:30 a.m. · 2026-07-13 14:25:36 · 12:00 p.m.</p>
-</div>
-</div>
-</section>
-<section id="datos-de-ubicación" class="slide level2">
-<h2>Datos de ubicación</h2>
-<p>Los <strong>datos de ubicación</strong> representan un lugar o una posición geográfica. Se utilizan para localizar personas, objetos o eventos.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Dirección de un domicilio.</li>
-<li class="fragment">Coordenadas GPS.</li>
-<li class="fragment">Ruta de un viaje.</li>
-<li class="fragment">Ubicación de un restaurante.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>31.6904, -106.4245 · Av. Tecnológico 1340 · Ciudad Juárez, Chihuahua</p>
-</div>
-</div>
-</section>
-<section id="datos-de-imagen" class="slide level2">
-<h2>Datos de imagen</h2>
-<p>Los <strong>datos de imagen</strong> representan información visual capturada mediante fotografías, dibujos, radiografías o ilustraciones.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Fotografía.</li>
-<li class="fragment">Radiografía.</li>
-<li class="fragment">Imagen satelital.</li>
-<li class="fragment">Captura de pantalla.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>📷 selfie.jpg · 🩻 radiografia.png · 🌎 satelite.tif</p>
-</div>
-</div>
-</section>
-<section id="datos-de-audio" class="slide level2">
-<h2>Datos de audio</h2>
-<p>Los <strong>datos de audio</strong> representan sonidos o grabaciones que pueden almacenarse y reproducirse digitalmente.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Canción.</li>
-<li class="fragment">Nota de voz.</li>
-<li class="fragment">Llamada telefónica.</li>
-<li class="fragment">Podcast.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>🎵 musica.mp3 · 🎙️ nota_de_voz.m4a · 📞 llamada.wav</p>
-</div>
-</div>
-</section>
-<section id="datos-de-video" class="slide level2">
-<h2>Datos de video</h2>
-<p>Los <strong>datos de video</strong> representan una secuencia de imágenes, generalmente acompañadas de audio, que permiten registrar o reproducir movimiento.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Película.</li>
-<li class="fragment">Videollamada.</li>
-<li class="fragment">Video de seguridad.</li>
-<li class="fragment">TikTok.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>🎬 pelicula.mp4 · 📹 reunion.mp4 · 🎥 tiktok.mp4</p>
-</div>
-</div>
-<!-- ===================================================== -->
-<!-- IDEA CLAVE -->
-<!-- ===================================================== -->
-</section>
-<section id="idea-clave-1" class="slide level2">
-<h2>Idea clave</h2>
-<p>Los datos pueden representarse de muchas formas.</p>
-<p><span class="fragment">Y cada una requiere una manera distinta de almacenarse.</span></p>
-<!-- ===================================================== -->
-<!-- RESUMEN -->
-<!-- ===================================================== -->
+<p>Cuando los datos dejan de ser necesarios, pueden <strong>archivarse o eliminarse</strong>.</p>
 </section></section>
 <section id="resumen" class="title-slide slide level1 center">
 <h1>Resumen</h1>
 <ul>
-<li><strong>Todos generamos datos</strong> en nuestras actividades diarias.</li>
-<li><strong>Los datos pueden representar distintos tipos de información</strong>, como números, texto, fechas, imágenes, audio, video o ubicaciones.</li>
-<li><strong>Identificar el tipo de dato es el primer paso</strong> para almacenarlo, procesarlo y analizarlo correctamente.</li>
+<li>Los datos pasan por <strong>diferentes etapas</strong> durante su ciclo de vida.</li>
+<li>La <strong>captura e ingesta</strong> permiten obtener e incorporar los datos.</li>
+<li>El <strong>almacenamiento y procesamiento</strong> permiten conservarlos y prepararlos.</li>
+<li>El <strong>análisis</strong> transforma los datos en información útil.</li>
+<li>Los resultados pueden <strong>visualizarse y comunicarse</strong>.</li>
+<li>Finalmente, los datos pueden <strong>conservarse o eliminarse</strong>.</li>
+<li>Un resultado generado puede convertirse en un <strong>nuevo dato</strong> e iniciar su propio ciclo.</li>
 </ul>
-<!-- ===================================================== -->
-<!-- REFERENCIAS -->
-<!-- ===================================================== -->
 </section>
 
 <section id="referencias" class="title-slide slide level1 smaller scrollable">
 <h1>Referencias</h1>
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-ibm_data_2026" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Badman y M. Kosinski, <span>«¿Qué son los datos?»</span> Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://www.ibm.com/mx-es/think/topics/data">https://www.ibm.com/mx-es/think/topics/data</a></div>
-</div>
-<div id="ref-inegi_habitos_internet_2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">I. Girón, <span>«20 Estudios sobre los hábitos de usuarios de Internet en México 2024 y perspectiva de IA»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://www.inegi.org.mx/contenidos/inegi/ccu/2024/segunda_sesion/presentaciones/habitos_internet.pdf">https://www.inegi.org.mx/contenidos/inegi/ccu/2024/segunda_sesion/presentaciones/habitos_internet.pdf</a></div>
-</div>
-<div id="ref-google_data_2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Anup KumarH S, <span>«How Google Handles Over 40,000 Petabytes of Data on a Daily Basis»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://skill-lync.com/blogs/how-google-handles-over-40000-petabytes-of-data-on-a-daily-basis">https://skill-lync.com/blogs/how-google-handles-over-40000-petabytes-of-data-on-a-daily-basis</a></div>
-</div>
-<div id="ref-whatsapp_messages_2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M. Singh, <span>«WhatsApp is now delivering roughly 100 billion messages a day»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://techcrunch.com/2020/10/29/whatsapp-is-now-delivering-roughly-100-billion-messages-a-day">https://techcrunch.com/2020/10/29/whatsapp-is-now-delivering-roughly-100-billion-messages-a-day</a></div>
-</div>
-<div id="ref-tiktok_statistics_2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Tamilore Oladipo, <span>«31 TikTok Statistics to Know for 2026»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://buffer.com/resources/tiktok-statistics">https://buffer.com/resources/tiktok-statistics</a></div>
-</div>
+<div id="refs" role="list">
+
 </div>
 </section>
 
 <section id="pregunta-1" class="title-slide slide level1 center">
 <h1>Pregunta</h1>
 <p><img data-src="../imagenes/mister.png" style="width:50.0%"></p>
-<!-- ===================================================== -->
-<!-- LABORATORIO -->
-<!-- ===================================================== -->
 </section>
 
 <section id="laboratorio" class="title-slide slide level1 center">
 <h1>Laboratorio</h1>
-<p>En el laboratorio pondremos en práctica los conceptos vistos en esta lección mediante ejemplos y actividades guiadas.</p>
-<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb"><strong>Ir al Notebook →</strong></a></p>
+<p>En el laboratorio seguiremos el <strong>ciclo de vida de un conjunto de datos real</strong>, desde su ingesta hasta su análisis, comunicación y conservación.</p>
+<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-04.ipynb"><strong>Ir al Notebook →</strong></a></p>
 
 
 </section>

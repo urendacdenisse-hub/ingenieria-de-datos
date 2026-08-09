@@ -151,7 +151,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introducción a la ingeniería de datos</h1>
-  <p class="subtitle">Introducción a los datos</p>
+  <p class="subtitle">Roles en el ecosistema de datos</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -169,344 +169,221 @@ Dra. Denisse Urenda Castañeda
 <nav role="doc-toc"> 
 <h2 id="toc-title">Tabla de contenidos</h2>
 <ul>
-<li><a href="#/introduccion" id="/toc-introduccion">Introduccion</a></li>
-<li><a href="#/qué-son-los-datos" id="/toc-qué-son-los-datos">¿Qué son los datos?</a></li>
-<li><a href="#/tipos-de-datos" id="/toc-tipos-de-datos">Tipos de datos</a></li>
+<li><a href="#/introducción" id="/toc-introducción">Introducción</a></li>
+<li><a href="#/roles-relacionados-con-los-datos" id="/toc-roles-relacionados-con-los-datos">Roles relacionados con los datos</a></li>
+<li><a href="#/ingeniería-de-datos" id="/toc-ingeniería-de-datos">Ingeniería de datos</a></li>
 <li><a href="#/resumen" id="/toc-resumen">Resumen</a></li>
 <li><a href="#/referencias" id="/toc-referencias">Referencias</a></li>
 <li><a href="#/pregunta-1" id="/toc-pregunta-1">Pregunta</a></li>
-<li><a href="#/laboratorio" id="/toc-laboratorio">Laboratorio</a></li>
 </ul>
 </nav>
 </section>
-<section class="slide level2">
-
-<!-- ===================================================== -->
-<!-- PORTADA -->
-<!-- ===================================================== -->
-</section>
 <section>
-<section id="introduccion" class="title-slide slide level1 center">
-<h1>Introduccion</h1>
-<!-- ===================================================== -->
-<!-- OBJETIVO -->
-<!-- ===================================================== -->
+<section id="introducción" class="title-slide slide level1 center">
+<h1>Introducción</h1>
+
 </section>
 <section id="objetivo" class="slide level2">
 <h2>Objetivo</h2>
-<p>Al finalizar esta lección serás capaz de:</p>
-<ul>
-<li>Definir qué es un dato.</li>
-<li>Identificar los principales tipos de datos primitivos.</li>
-<li>Reconocer ejemplos de cada tipo de dato en situaciones cotidianas.</li>
-</ul>
-<!-- ===================================================== -->
-<!-- PREGUNTA DETONADORA -->
-<!-- ===================================================== -->
+<p>Identificar los principales <strong>roles relacionados con los datos</strong> y comprender la participación del <strong>ingeniero de datos</strong> dentro del ciclo de vida de los datos.</p>
+<p>Reconocer las etapas que conforman el <strong>ciclo de vida de la ingeniería de datos</strong>.</p>
 </section>
 <section id="pregunta" class="slide level2">
 <h2>Pregunta</h2>
-<p><em>¿Qué tienen en común una fotografía, un mensaje de WhatsApp y la temperatura de una ciudad?</em></p>
-<!-- ===================================================== -->
-<!-- SUBTEMA 1 -->
-<!-- ===================================================== -->
+<p>¿Quiénes participan en el ciclo de vida de los datos y cuál es el papel de la ingeniería de datos?</p>
 </section></section>
 <section>
-<section id="qué-son-los-datos" class="title-slide slide level1 center">
-<h1>¿Qué son los datos?</h1>
-<!-- ===================================================== -->
-<!-- CONCEPTOS -->
-<!-- ===================================================== -->
+<section id="roles-relacionados-con-los-datos" class="title-slide slide level1 center">
+<h1>Roles relacionados con los datos</h1>
+
 </section>
-<section id="definición-de-datos" class="slide level2">
-<h2>Definición de datos</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Los datos son un conjunto de hechos, números, palabras, observaciones u otra información útil. <span class="fragment"> A través del procesamiento de datos y análisis de datos, las organizaciones transforman datos sin procesar en <em>insights</em> valiosos</span><span class="fragment"> que mejoran la toma de decisiones e impulsan mejores resultados comerciales. <span class="citation" data-cites="ibm_data_2026"><a href="#/referencias" role="doc-biblioref" onclick="">[1]</a></span></span></p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="../imagenes/mister.png" style="width:80.0%"></p>
-</div></div>
-</section>
-<section id="dicho-de-otra-forma" class="slide level2">
-<h2>Dicho de otra forma…</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Los datos son información que podemos almacenar, organizar y analizar para responder preguntas o tomar decisiones.</p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="../imagenes/miss.png" style="width:70.0%"></p>
-</div></div>
-</section>
-<section id="quién-genera-datos" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p><img data-src="../imagenes/empresas.png" style="width:90.0%"></p>
-</section>
-<section id="quién-genera-datos-1" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>La pregunta importante no es quién genera datos, sino quién no los genera.</p>
-<div class="fragment">
-<p>Empresas, gobiernos, hospitales, bancos, aplicaciones, videojuegos e incluso nosotros generamos datos constantemente.</p>
-</div>
-<div class="fragment">
-<p>Por ejemplo, cada día generamos datos de ubicación, mensajes, compras, música, navegación y redes sociales.</p>
-</div>
-<div class="fragment">
-<p><strong>Todos generan datos.</strong></p>
-</div>
-</section>
-<section id="quién-genera-datos-2" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>Según un estudio realizado por el INEGI sobre los hábitos de usuarios de Internet en México durante 2024 <span class="citation" data-cites="inegi_habitos_internet_2024"><a href="#/referencias" role="doc-biblioref" onclick="">[2]</a></span>, las actividades que realizamos todos los días generan una enorme cantidad de datos.</p>
-</section>
-<section id="quién-genera-datos-3" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p><img data-src="../imagenes/inegi.png" style="width:100.0%"></p>
-</section>
-<section id="quién-genera-datos-4" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>De hecho, esto dice Internet:</p>
+<section id="ingeniero-analista-y-científico-de-datos" class="slide level2">
+<h2>Ingeniero, analista y científico de datos</h2>
+<p>Diferentes profesionales trabajan con los datos dependiendo del objetivo y la etapa del ciclo.</p>
 <ul>
-<li class="fragment">Google maneja cerca de <strong>40,000 petabytes de datos diariamente</strong>. <span class="citation" data-cites="google_data_2024"><a href="#/referencias" role="doc-biblioref" onclick="">[3]</a></span></li>
-<li class="fragment">WhatsApp entrega alrededor de <strong>100 billones de mensajes al día</strong>. <span class="citation" data-cites="whatsapp_messages_2020"><a href="#/referencias" role="doc-biblioref" onclick="">[4]</a></span></li>
-<li class="fragment">En TikTok se suben más de <strong>23 millones de videos cada día</strong><span class="fragment">, es decir, aproximadamente <strong>16,000 videos por minuto</strong>.<span class="citation" data-cites="tiktok_statistics_2025"><a href="#/referencias" role="doc-biblioref" onclick="">[5]</a></span></span></li>
+<li><strong>Ingeniero de datos:</strong> construye y mantiene los sistemas que permiten obtener, almacenar, transformar y disponibilizar los datos.</li>
+<li><strong>Analista de datos:</strong> utiliza los datos para responder preguntas, identificar patrones y comunicar resultados.</li>
+<li><strong>Científico de datos:</strong> utiliza los datos para realizar análisis, experimentación y desarrollar modelos.</li>
 </ul>
 </section>
-<section id="qué-datos-generan" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../imagenes/whats.png" style="width:90.0%"></p>
-</div><div class="column" style="width:70%;">
-<ul>
-<li class="fragment">Mensajes enviados</li>
-<li class="fragment">Hora del mensaje</li>
-<li class="fragment">Destinatario</li>
-<li class="fragment">Archivos compartidos</li>
-<li class="fragment">Llamadas realizadas</li>
-<li class="fragment">Tiempo de conexión</li>
-</ul>
-</div></div>
-</section>
-<section id="qué-datos-generan-1" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="../imagenes/netflix.png" style="width:90.0%"></p>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Películas y series reproducidas</li>
-<li class="fragment">Tiempo de reproducción</li>
-<li class="fragment">Búsquedas realizadas</li>
-<li class="fragment">Calificaciones</li>
-<li class="fragment">Listas personales</li>
-<li class="fragment">Dispositivo utilizado</li>
-</ul>
-</div></div>
-</section>
-<section id="qué-datos-generan-2" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../imagenes/uber.png" style="width:90.0%"></p>
-</div><div class="column" style="width:70%;">
-<ul>
-<li class="fragment">Ubicación de origen y destino</li>
-<li class="fragment">Tiempo del viaje</li>
-<li class="fragment">Costo del viaje</li>
-<li class="fragment">Conductor asignado</li>
-<li class="fragment">Calificación del viaje</li>
-<li class="fragment">Método de pago</li>
-</ul>
-</div></div>
-<!-- ===================================================== -->
-<!-- IDEA CLAVE -->
-<!-- ===================================================== -->
+<section id="participación-en-el-ciclo-de-vida" class="slide level2">
+<h2>Participación en el ciclo de vida</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Etapa</th>
+<th style="text-align: center;">Ingeniero de datos</th>
+<th style="text-align: center;">Analista de datos</th>
+<th style="text-align: center;">Científico de datos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Captura</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Ingesta</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Almacenamiento</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Procesamiento</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+</tr>
+<tr class="odd">
+<td>Análisis</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+</tr>
+<tr class="even">
+<td>Visualización y comunicación</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+</tr>
+<tr class="odd">
+<td>Conservación y eliminación</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>La participación de cada rol puede variar dependiendo de la organización y del problema.</p>
+</blockquote>
 </section>
 <section id="idea-clave" class="slide level2">
 <h2>Idea clave</h2>
-<p>Todos generamos datos<span class="fragment">… pero no todos los datos son iguales.</span></p>
-<!-- ===================================================== -->
-<!-- SUBTEMA 2 -->
-<!-- ===================================================== -->
+<p>La <strong>ingeniería de datos</strong>, el <strong>análisis de datos</strong> y la <strong>ciencia de datos</strong> son disciplinas diferentes pero complementarias.</p>
+<p>La ingeniería de datos se encuentra generalmente <strong>antes del análisis y la ciencia de datos</strong>, proporcionando los datos que estos necesitan para realizar su trabajo.</p>
 </section></section>
 <section>
-<section id="tipos-de-datos" class="title-slide slide level1 center">
-<h1>Tipos de datos</h1>
-<!-- ===================================================== -->
-<!-- CONCEPTOS -->
-<!-- ===================================================== -->
+<section id="ingeniería-de-datos" class="title-slide slide level1 center">
+<h1>Ingeniería de datos</h1>
+
 </section>
-<section id="no-todos-los-datos-son-iguales" class="slide level2">
-<h2>No todos los datos son iguales</h2>
-<p>Ya vimos que los organismos generan muchos datos y de muchos tipos:</p>
+<section id="qué-es-la-ingeniería-de-datos" class="slide level2">
+<h2>¿Qué es la ingeniería de datos?</h2>
+<p>La <strong>ingeniería de datos</strong> desarrolla y mantiene sistemas y procesos que permiten convertir <strong>datos crudos</strong> en datos <strong>consistentes, accesibles y útiles</strong> para otros usuarios y sistemas.</p>
+<p>El ingeniero de datos gestiona este proceso desde que los datos se obtienen de los <strong>sistemas de origen</strong> hasta que están disponibles para ser utilizados.</p>
+</section>
+<section id="ciclo-de-vida-de-la-ingeniería-de-datos" class="slide level2">
+<h2>Ciclo de vida de la ingeniería de datos</h2>
+<p>Reis y Housley dividen el <strong>ciclo de vida de la ingeniería de datos</strong> en cinco etapas principales:</p>
+<ol type="1">
+<li><strong>Generación</strong></li>
+<li><strong>Almacenamiento</strong></li>
+<li><strong>Ingesta</strong></li>
+<li><strong>Transformación</strong></li>
+<li><strong>Servicio de datos</strong></li>
+</ol>
+</section>
+<section id="ciclo-de-vida-de-la-ingeniería-de-datos-1" class="slide level2 unnumbered">
+<h2>Ciclo de vida de la ingeniería de datos</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../imagenes/ciclo-data-engineering.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</section>
+<section id="generación" class="slide level2">
+<h2>Generación</h2>
+<p>La <strong>generación</strong> ocurre en los sistemas donde se producen originalmente los datos.</p>
+<p>Un sistema de origen puede ser, por ejemplo:</p>
 <ul>
-<li class="fragment"><strong>Numéricos</strong>: precios, temperatura, edades, venta</li>
-<li class="fragment"><strong>Texto</strong>: mensajes, correos, comentarios, búsquedas</li>
-<li class="fragment"><strong>Fecha y hora</strong>: fechas de compra, horarios, duración, registros de acceso.</li>
-<li class="fragment"><strong>Ubicación</strong>: GPS, rutas, direcciones</li>
-<li class="fragment"><strong>Imágenes</strong>: fotografías, radiografías, publicaciones</li>
-<li class="fragment"><strong>Audio</strong>: canciones, notas de voz, llamadas</li>
-<li class="fragment"><strong>Video</strong>: películas, videollamadas, TikToks</li>
+<li>Una aplicación.</li>
+<li>Una base de datos transaccional.</li>
+<li>Un dispositivo IoT.</li>
+</ul>
+<p>El ingeniero de datos necesita comprender <strong>cómo se generan los datos</strong> para poder utilizarlos posteriormente.</p>
+</section>
+<section id="almacenamiento" class="slide level2">
+<h2>Almacenamiento</h2>
+<p>El <strong>almacenamiento</strong> determina cómo y dónde se guardan los datos.</p>
+<p>A diferencia de otras etapas, el almacenamiento puede aparecer en <strong>diferentes puntos del ciclo de ingeniería de datos</strong>.</p>
+<p>La forma en que los datos son almacenados influye en cómo podrán ser ingeridos, transformados y utilizados.</p>
+</section>
+<section id="ingesta" class="slide level2">
+<h2>Ingesta</h2>
+<p>La <strong>ingesta</strong> consiste en obtener los datos desde los sistemas de origen e incorporarlos al sistema de datos.</p>
+<p>Esta etapa conecta los <strong>sistemas que generan los datos</strong> con las siguientes etapas del ciclo.</p>
+</section>
+<section id="transformación" class="slide level2">
+<h2>Transformación</h2>
+<p>La <strong>transformación</strong> modifica los datos desde su forma original para convertirlos en datos útiles.</p>
+<p>Puede incluir operaciones como:</p>
+<ul>
+<li>Conversión de tipos.</li>
+<li>Estandarización de formatos.</li>
+<li>Eliminación de datos incorrectos.</li>
+<li>Normalización.</li>
+<li>Agregación.</li>
 </ul>
 </section>
-<section id="datos-numéricos" class="slide level2">
-<h2>Datos numéricos</h2>
-<p>Los <strong>datos numéricos</strong> representan cantidades que pueden medirse o contarse. Se utilizan para realizar operaciones matemáticas y análisis estadísticos.</p>
-<p><strong>Ejemplos:</strong></p>
+<section id="servicio-de-datos" class="slide level2">
+<h2>Servicio de datos</h2>
+<p>El <strong>servicio de datos</strong> consiste en poner los datos preparados a disposición de quienes los necesitan.</p>
+<p>Los datos pueden ser utilizados posteriormente para:</p>
 <ul>
-<li class="fragment">Edad de una persona.</li>
-<li class="fragment">Temperatura de una ciudad.</li>
-<li class="fragment">Precio de un producto.</li>
-<li class="fragment">Número de estudiantes.</li>
+<li>Análisis de datos.</li>
+<li>Reportes y dashboards.</li>
+<li>Machine learning.</li>
+<li>Otros sistemas y aplicaciones.</li>
 </ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>25 años · 18 °C · $350.00 · 12 km · 150 estudiantes</p>
-</div>
-</div>
 </section>
-<section id="datos-de-texto" class="slide level2">
-<h2>Datos de texto</h2>
-<p>Los <strong>datos de texto</strong> representan información formada por letras, palabras, símbolos o frases. Se utilizan para describir, identificar o comunicar información.</p>
-<p><strong>Ejemplos:</strong></p>
+<section id="elementos-transversales" class="slide level2">
+<h2>Elementos transversales</h2>
+<p>El ciclo de ingeniería de datos también está acompañado por una serie de elementos <strong>transversales</strong> (<em>undercurrents</em>) que intervienen a lo largo de todas sus etapas.</p>
 <ul>
-<li class="fragment">Nombre de una persona.</li>
-<li class="fragment">Dirección de correo electrónico.</li>
-<li class="fragment">Comentario de un usuario.</li>
-<li class="fragment">Mensaje de WhatsApp.</li>
+<li><strong>Seguridad:</strong> protección de los datos y control de acceso.</li>
+<li><strong>Gestión de datos:</strong> organización, calidad y gobierno de los datos.</li>
+<li><strong>DataOps:</strong> automatización, monitoreo y confiabilidad de los procesos.</li>
+<li><strong>Arquitectura de datos:</strong> diseño y organización de los sistemas de datos.</li>
+<li><strong>Orquestación:</strong> coordinación de tareas y dependencias.</li>
+<li><strong>Ingeniería de software:</strong> desarrollo y mantenimiento de los sistemas que procesan datos.</li>
 </ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>“Denisse Urenda” · “ingenieria.datos@uacj.mx”</p>
-</div>
-</div>
-</section>
-<section id="datos-de-fecha-y-hora" class="slide level2">
-<h2>Datos de fecha y hora</h2>
-<p>Los <strong>datos de fecha y hora</strong> representan momentos específicos en el tiempo. Se utilizan para registrar cuándo ocurre un evento y analizar su secuencia o duración.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Fecha de nacimiento.</li>
-<li class="fragment">Hora de una compra.</li>
-<li class="fragment">Fecha de un examen.</li>
-<li class="fragment">Hora de inicio de una llamada.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>15/08/2026 · 08:30 a.m. · 2026-07-13 14:25:36 · 12:00 p.m.</p>
-</div>
-</div>
-</section>
-<section id="datos-de-ubicación" class="slide level2">
-<h2>Datos de ubicación</h2>
-<p>Los <strong>datos de ubicación</strong> representan un lugar o una posición geográfica. Se utilizan para localizar personas, objetos o eventos.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Dirección de un domicilio.</li>
-<li class="fragment">Coordenadas GPS.</li>
-<li class="fragment">Ruta de un viaje.</li>
-<li class="fragment">Ubicación de un restaurante.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>31.6904, -106.4245 · Av. Tecnológico 1340 · Ciudad Juárez, Chihuahua</p>
-</div>
-</div>
-</section>
-<section id="datos-de-imagen" class="slide level2">
-<h2>Datos de imagen</h2>
-<p>Los <strong>datos de imagen</strong> representan información visual capturada mediante fotografías, dibujos, radiografías o ilustraciones.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Fotografía.</li>
-<li class="fragment">Radiografía.</li>
-<li class="fragment">Imagen satelital.</li>
-<li class="fragment">Captura de pantalla.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>📷 selfie.jpg · 🩻 radiografia.png · 🌎 satelite.tif</p>
-</div>
-</div>
-</section>
-<section id="datos-de-audio" class="slide level2">
-<h2>Datos de audio</h2>
-<p>Los <strong>datos de audio</strong> representan sonidos o grabaciones que pueden almacenarse y reproducirse digitalmente.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Canción.</li>
-<li class="fragment">Nota de voz.</li>
-<li class="fragment">Llamada telefónica.</li>
-<li class="fragment">Podcast.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>🎵 musica.mp3 · 🎙️ nota_de_voz.m4a · 📞 llamada.wav</p>
-</div>
-</div>
-</section>
-<section id="datos-de-video" class="slide level2">
-<h2>Datos de video</h2>
-<p>Los <strong>datos de video</strong> representan una secuencia de imágenes, generalmente acompañadas de audio, que permiten registrar o reproducir movimiento.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Película.</li>
-<li class="fragment">Videollamada.</li>
-<li class="fragment">Video de seguridad.</li>
-<li class="fragment">TikTok.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>🎬 pelicula.mp4 · 📹 reunion.mp4 · 🎥 tiktok.mp4</p>
-</div>
-</div>
-<!-- ===================================================== -->
-<!-- IDEA CLAVE -->
-<!-- ===================================================== -->
-</section>
-<section id="idea-clave-1" class="slide level2">
-<h2>Idea clave</h2>
-<p>Los datos pueden representarse de muchas formas.</p>
-<p><span class="fragment">Y cada una requiere una manera distinta de almacenarse.</span></p>
-<!-- ===================================================== -->
-<!-- RESUMEN -->
-<!-- ===================================================== -->
+<blockquote>
+<p>No son etapas adicionales del ciclo: son prácticas que <strong>dan soporte a todo el ciclo de ingeniería de datos</strong>.</p>
+</blockquote>
 </section></section>
 <section id="resumen" class="title-slide slide level1 center">
 <h1>Resumen</h1>
 <ul>
-<li><strong>Todos generamos datos</strong> en nuestras actividades diarias.</li>
-<li><strong>Los datos pueden representar distintos tipos de información</strong>, como números, texto, fechas, imágenes, audio, video o ubicaciones.</li>
-<li><strong>Identificar el tipo de dato es el primer paso</strong> para almacenarlo, procesarlo y analizarlo correctamente.</li>
+<li>El <strong>ingeniero, analista y científico de datos</strong> participan en distintas etapas del ciclo de vida de los datos y cumplen funciones complementarias.</li>
+<li>La <strong>ingeniería de datos</strong> construye los sistemas y procesos que permiten convertir datos crudos en datos útiles y disponibles para su consumo.</li>
+<li>El ciclo de vida de la ingeniería de datos comprende <strong>generación, almacenamiento, ingesta, transformación y servicio</strong>.</li>
+<li>El <strong>almacenamiento</strong> puede estar presente en diferentes etapas del ciclo.</li>
+<li>Las etapas no forman una secuencia rígida: pueden <strong>repetirse, superponerse o ejecutarse en diferente orden</strong>.</li>
+<li><strong>Seguridad, gestión de datos, DataOps, arquitectura, orquestación e ingeniería de software</strong> son elementos transversales que dan soporte a todo el ciclo.</li>
+<li>El objetivo final es <strong>servir datos</strong> que puedan ser utilizados para análisis, machine learning y otros casos de uso.</li>
 </ul>
-<!-- ===================================================== -->
-<!-- REFERENCIAS -->
-<!-- ===================================================== -->
 </section>
 
 <section id="referencias" class="title-slide slide level1 smaller scrollable">
 <h1>Referencias</h1>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-ibm_data_2026" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Badman y M. Kosinski, <span>«¿Qué son los datos?»</span> Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://www.ibm.com/mx-es/think/topics/data">https://www.ibm.com/mx-es/think/topics/data</a></div>
+<div id="ref-questionpro_ciclo_datos" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">QuestionPro, <span>«Ciclo de vida de los datos: Qué es y qué etapas tiene»</span>. Accedido: 9 de agosto de 2026. [En línea]. Disponible en: <a href="https://www.questionpro.com/blog/es/ciclo-de-vida-de-los-datos/">https://www.questionpro.com/blog/es/ciclo-de-vida-de-los-datos/</a></div>
 </div>
-<div id="ref-inegi_habitos_internet_2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">I. Girón, <span>«20 Estudios sobre los hábitos de usuarios de Internet en México 2024 y perspectiva de IA»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://www.inegi.org.mx/contenidos/inegi/ccu/2024/segunda_sesion/presentaciones/habitos_internet.pdf">https://www.inegi.org.mx/contenidos/inegi/ccu/2024/segunda_sesion/presentaciones/habitos_internet.pdf</a></div>
+<div id="ref-ibm_data_lifecycle_management" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">IBM, <span>«¿Qué es la gestión del ciclo de vida de los datos (DLM)?»</span> Accedido: 9 de agosto de 2026. [En línea]. Disponible en: <a href="https://www.ibm.com/mx-es/think/topics/data-lifecycle-management">https://www.ibm.com/mx-es/think/topics/data-lifecycle-management</a></div>
 </div>
-<div id="ref-google_data_2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Anup KumarH S, <span>«How Google Handles Over 40,000 Petabytes of Data on a Daily Basis»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://skill-lync.com/blogs/how-google-handles-over-40000-petabytes-of-data-on-a-daily-basis">https://skill-lync.com/blogs/how-google-handles-over-40000-petabytes-of-data-on-a-daily-basis</a></div>
-</div>
-<div id="ref-whatsapp_messages_2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M. Singh, <span>«WhatsApp is now delivering roughly 100 billion messages a day»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://techcrunch.com/2020/10/29/whatsapp-is-now-delivering-roughly-100-billion-messages-a-day">https://techcrunch.com/2020/10/29/whatsapp-is-now-delivering-roughly-100-billion-messages-a-day</a></div>
-</div>
-<div id="ref-tiktok_statistics_2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Tamilore Oladipo, <span>«31 TikTok Statistics to Know for 2026»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://buffer.com/resources/tiktok-statistics">https://buffer.com/resources/tiktok-statistics</a></div>
+<div id="ref-reis2022fundamentals" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">J. Reis y M. Housley, <em>Fundamentals of Data Engineering: Plan and Build Robust Data Systems</em>. O’Reilly, 2022.</div>
 </div>
 </div>
 </section>
@@ -514,15 +391,6 @@ Dra. Denisse Urenda Castañeda
 <section id="pregunta-1" class="title-slide slide level1 center">
 <h1>Pregunta</h1>
 <p><img data-src="../imagenes/mister.png" style="width:50.0%"></p>
-<!-- ===================================================== -->
-<!-- LABORATORIO -->
-<!-- ===================================================== -->
-</section>
-
-<section id="laboratorio" class="title-slide slide level1 center">
-<h1>Laboratorio</h1>
-<p>En el laboratorio pondremos en práctica los conceptos vistos en esta lección mediante ejemplos y actividades guiadas.</p>
-<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb"><strong>Ir al Notebook →</strong></a></p>
 
 
 </section>

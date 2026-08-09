@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -151,7 +217,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introducción a la ingeniería de datos</h1>
-  <p class="subtitle">Introducción a los datos</p>
+  <p class="subtitle">Sistemas y fuentes de datos</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -170,8 +236,7 @@ Dra. Denisse Urenda Castañeda
 <h2 id="toc-title">Tabla de contenidos</h2>
 <ul>
 <li><a href="#/introduccion" id="/toc-introduccion">Introduccion</a></li>
-<li><a href="#/qué-son-los-datos" id="/toc-qué-son-los-datos">¿Qué son los datos?</a></li>
-<li><a href="#/tipos-de-datos" id="/toc-tipos-de-datos">Tipos de datos</a></li>
+<li><a href="#/fuentes-de-datos" id="/toc-fuentes-de-datos">Fuentes de datos</a></li>
 <li><a href="#/resumen" id="/toc-resumen">Resumen</a></li>
 <li><a href="#/referencias" id="/toc-referencias">Referencias</a></li>
 <li><a href="#/pregunta-1" id="/toc-pregunta-1">Pregunta</a></li>
@@ -179,301 +244,390 @@ Dra. Denisse Urenda Castañeda
 </ul>
 </nav>
 </section>
-<section class="slide level2">
-
-<!-- ===================================================== -->
-<!-- PORTADA -->
-<!-- ===================================================== -->
-</section>
 <section>
 <section id="introduccion" class="title-slide slide level1 center">
 <h1>Introduccion</h1>
-<!-- ===================================================== -->
-<!-- OBJETIVO -->
-<!-- ===================================================== -->
+
 </section>
 <section id="objetivo" class="slide level2">
 <h2>Objetivo</h2>
-<p>Al finalizar esta lección serás capaz de:</p>
-<ul>
-<li>Definir qué es un dato.</li>
-<li>Identificar los principales tipos de datos primitivos.</li>
-<li>Reconocer ejemplos de cada tipo de dato en situaciones cotidianas.</li>
-</ul>
-<!-- ===================================================== -->
-<!-- PREGUNTA DETONADORA -->
-<!-- ===================================================== -->
+<p>Reconocer diferentes <strong>fuentes y sistemas de almacenamiento de datos</strong> e identificar los mecanismos utilizados para acceder a la información que contienen.</p>
 </section>
 <section id="pregunta" class="slide level2">
 <h2>Pregunta</h2>
-<p><em>¿Qué tienen en común una fotografía, un mensaje de WhatsApp y la temperatura de una ciudad?</em></p>
-<!-- ===================================================== -->
-<!-- SUBTEMA 1 -->
-<!-- ===================================================== -->
+<p>¿Todos los datos se obtienen de la misma manera?</p>
 </section></section>
 <section>
-<section id="qué-son-los-datos" class="title-slide slide level1 center">
-<h1>¿Qué son los datos?</h1>
-<!-- ===================================================== -->
-<!-- CONCEPTOS -->
-<!-- ===================================================== -->
+<section id="fuentes-de-datos" class="title-slide slide level1 center">
+<h1>Fuentes de datos</h1>
+
 </section>
-<section id="definición-de-datos" class="slide level2">
-<h2>Definición de datos</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Los datos son un conjunto de hechos, números, palabras, observaciones u otra información útil. <span class="fragment"> A través del procesamiento de datos y análisis de datos, las organizaciones transforman datos sin procesar en <em>insights</em> valiosos</span><span class="fragment"> que mejoran la toma de decisiones e impulsan mejores resultados comerciales. <span class="citation" data-cites="ibm_data_2026"><a href="#/referencias" role="doc-biblioref" onclick="">[1]</a></span></span></p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="../imagenes/mister.png" style="width:80.0%"></p>
-</div></div>
+<section id="de-dónde-podemos-tomar-datos" class="slide level2">
+<h2>¿De dónde podemos tomar datos?</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 60%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fuente</th>
+<th>¿Qué es?</th>
+<th>¿Cómo accedemos?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Archivos</td>
+<td>Datos almacenados en archivos</td>
+<td>Sistema de archivos</td>
+</tr>
+<tr class="even">
+<td>Base de datos</td>
+<td>Sistema organizado para almacenar y gestionar datos</td>
+<td>Consultas / conexión</td>
+</tr>
+<tr class="odd">
+<td>Página web</td>
+<td>Información publicada en la web</td>
+<td>HTTP / extracción</td>
+</tr>
+<tr class="even">
+<td>Página web</td>
+<td>Información publicada en la web</td>
+<td>HTTP / extracción</td>
+</tr>
+<tr class="odd">
+<td>API</td>
+<td>Interfaz que proporciona acceso a datos o servicios</td>
+<td>Solicitudes HTTP</td>
+</tr>
+<tr class="even">
+<td>Data warehouse</td>
+<td>Almacenamiento orientado al análisis</td>
+<td>Consultas</td>
+</tr>
+<tr class="odd">
+<td>Data lake</td>
+<td>Repositorio de grandes volúmenes de datos</td>
+<td>Herramientas/plataformas de datos</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="dicho-de-otra-forma" class="slide level2">
-<h2>Dicho de otra forma…</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Los datos son información que podemos almacenar, organizar y analizar para responder preguntas o tomar decisiones.</p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="../imagenes/miss.png" style="width:70.0%"></p>
-</div></div>
-</section>
-<section id="quién-genera-datos" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p><img data-src="../imagenes/empresas.png" style="width:90.0%"></p>
-</section>
-<section id="quién-genera-datos-1" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>La pregunta importante no es quién genera datos, sino quién no los genera.</p>
-<div class="fragment">
-<p>Empresas, gobiernos, hospitales, bancos, aplicaciones, videojuegos e incluso nosotros generamos datos constantemente.</p>
-</div>
-<div class="fragment">
-<p>Por ejemplo, cada día generamos datos de ubicación, mensajes, compras, música, navegación y redes sociales.</p>
-</div>
-<div class="fragment">
-<p><strong>Todos generan datos.</strong></p>
-</div>
-</section>
-<section id="quién-genera-datos-2" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>Según un estudio realizado por el INEGI sobre los hábitos de usuarios de Internet en México durante 2024 <span class="citation" data-cites="inegi_habitos_internet_2024"><a href="#/referencias" role="doc-biblioref" onclick="">[2]</a></span>, las actividades que realizamos todos los días generan una enorme cantidad de datos.</p>
-</section>
-<section id="quién-genera-datos-3" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p><img data-src="../imagenes/inegi.png" style="width:100.0%"></p>
-</section>
-<section id="quién-genera-datos-4" class="slide level2">
-<h2>¿Quién genera datos?</h2>
-<p>De hecho, esto dice Internet:</p>
+<section id="archivos" class="slide level2">
+<h2>Archivos</h2>
+<p>Los archivos son una de las formas más simples de almacenar e intercambiar datos.</p>
+<p>Pueden contener datos estructurados, semiestructurados o no estructurados utilizando diferentes formatos.</p>
 <ul>
-<li class="fragment">Google maneja cerca de <strong>40,000 petabytes de datos diariamente</strong>. <span class="citation" data-cites="google_data_2024"><a href="#/referencias" role="doc-biblioref" onclick="">[3]</a></span></li>
-<li class="fragment">WhatsApp entrega alrededor de <strong>100 billones de mensajes al día</strong>. <span class="citation" data-cites="whatsapp_messages_2020"><a href="#/referencias" role="doc-biblioref" onclick="">[4]</a></span></li>
-<li class="fragment">En TikTok se suben más de <strong>23 millones de videos cada día</strong><span class="fragment">, es decir, aproximadamente <strong>16,000 videos por minuto</strong>.<span class="citation" data-cites="tiktok_statistics_2025"><a href="#/referencias" role="doc-biblioref" onclick="">[5]</a></span></span></li>
+<li>CSV</li>
+<li>JSON</li>
+<li>Excel</li>
+<li>HTML</li>
+<li>PDF</li>
+<li>Imágenes</li>
 </ul>
 </section>
-<section id="qué-datos-generan" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../imagenes/whats.png" style="width:90.0%"></p>
-</div><div class="column" style="width:70%;">
-<ul>
-<li class="fragment">Mensajes enviados</li>
-<li class="fragment">Hora del mensaje</li>
-<li class="fragment">Destinatario</li>
-<li class="fragment">Archivos compartidos</li>
-<li class="fragment">Llamadas realizadas</li>
-<li class="fragment">Tiempo de conexión</li>
-</ul>
-</div></div>
+<section id="base-de-datos" class="slide level2">
+<h2>Base de datos</h2>
+<p>Una base de datos es un sistema diseñado para almacenar, organizar y gestionar datos.</p>
+<p>A diferencia de un archivo individual, permite consultar y administrar información de manera eficiente.</p>
+<p>Por ejemplo, utilizando <strong>SQL</strong> podemos consultar los datos almacenados:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a></a><span class="kw">SELECT</span> nombre, edad</span>
+<span id="cb1-2"><a></a><span class="kw">FROM</span> clientes</span>
+<span id="cb1-3"><a></a><span class="kw">WHERE</span> edad <span class="op">&gt;</span> <span class="dv">30</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="qué-datos-generan-1" class="slide level2">
-<h2>¿Qué datos generan?</h2>
+<section id="section" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="bases-de-datos-relacionales">Bases de datos relacionales</h3>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Las bases de datos relacionales organizan la información principalmente mediante <strong>tablas relacionadas entre sí</strong>.</p>
+</div><div class="column" style="width:60%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Sistema</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.sqlite.org/">SQLite</a></td>
+<td>Base de datos local y ligera.</td>
+</tr>
+<tr class="even">
+<td><a href="https://www.mysql.com/">MySQL</a></td>
+<td>Base de datos relacional popular.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.postgresql.org/">PostgreSQL</a></td>
+<td>Relacional avanzada y extensible.</td>
+</tr>
+<tr class="even">
+<td><a href="https://www.microsoft.com/sql-server/">SQL Server</a></td>
+<td>Plataforma empresarial de Microsoft.</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<p><img data-src="../imagenes/database.jpg"></p>
+<div class="figure-source">
+<p>Fuente: Frank Kodie — LinkedIn</p>
+</div>
+</section>
+<section id="section-1" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="bases-de-datos-no-relacionales">Bases de datos no relacionales</h3>
+<p>Las bases de datos NoSQL pueden utilizar diferentes modelos para organizar la información.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Clave-valor</strong></td>
+<td>Pares de claves y valores.</td>
+<td><a href="https://redis.io/">Redis</a></td>
+</tr>
+<tr class="even">
+<td><strong>Documentos</strong></td>
+<td>Documentos con estructuras similares a JSON.</td>
+<td><a href="https://www.mongodb.com/">MongoDB</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Columnas</strong></td>
+<td>Datos organizados en familias de columnas.</td>
+<td><a href="https://cassandra.apache.org/">Apache Cassandra</a></td>
+</tr>
+<tr class="even">
+<td><strong>Grafos</strong></td>
+<td>Nodos y relaciones.</td>
+<td><a href="https://neo4j.com/">Neo4j</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="section-2" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="sql-vs.-nosql">SQL vs.&nbsp;NoSQL</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="../imagenes/netflix.png" style="width:90.0%"></p>
+<p><img data-src="../imagenes/sql_nosql.webp"></p>
+<div class="figure-source">
+<p>Fuente: Pronetic — Geeknetic</p>
+</div>
 </div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Películas y series reproducidas</li>
-<li class="fragment">Tiempo de reproducción</li>
-<li class="fragment">Búsquedas realizadas</li>
-<li class="fragment">Calificaciones</li>
-<li class="fragment">Listas personales</li>
-<li class="fragment">Dispositivo utilizado</li>
-</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bases de datos SQL</th>
+<th>Bases de datos NoSQL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Modelo relacional</td>
+<td>Modelos no relacionales</td>
+</tr>
+<tr class="even">
+<td>Organizadas en tablas</td>
+<td>Diferentes formas de organización</td>
+</tr>
+<tr class="odd">
+<td>Relaciones entre tablas</td>
+<td>Estructuras más flexibles</td>
+</tr>
+<tr class="even">
+<td>Utilizan SQL para consultas</td>
+<td>El mecanismo de consulta depende del sistema</td>
+</tr>
+</tbody>
+</table>
 </div></div>
 </section>
-<section id="qué-datos-generan-2" class="slide level2">
-<h2>¿Qué datos generan?</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="../imagenes/uber.png" style="width:90.0%"></p>
-</div><div class="column" style="width:70%;">
+<section id="apis" class="slide level2">
+<h2>APIs</h2>
+<p>Una <strong>API</strong> (<strong>Application Programming Interface</strong>) es una interfaz que permite que diferentes aplicaciones o sistemas se comuniquen entre sí.</p>
+<p>Una aplicación puede solicitar información y recibir una respuesta sin necesidad de acceder directamente al sistema donde los datos están almacenados.</p>
+<p><img data-src="../imagenes/api.jpg"></p>
+<div class="figure-source">
+<p>Fuente: Akamai Technologies</p>
+</div>
+</section>
+<section id="section-3" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="acceso-a-una-api">Acceso a una API</h3>
+<p>Cada API define <strong>qué información ofrece, cómo solicitarla y cómo estructura sus respuestas</strong>.</p>
+<p>También puede establecer:</p>
 <ul>
-<li class="fragment">Ubicación de origen y destino</li>
-<li class="fragment">Tiempo del viaje</li>
-<li class="fragment">Costo del viaje</li>
-<li class="fragment">Conductor asignado</li>
-<li class="fragment">Calificación del viaje</li>
-<li class="fragment">Método de pago</li>
+<li>Parámetros disponibles.</li>
+<li>Métodos de autenticación.</li>
+<li>Límites o condiciones de acceso.</li>
 </ul>
-</div></div>
-<!-- ===================================================== -->
-<!-- IDEA CLAVE -->
-<!-- ===================================================== -->
+<p>Por ello, es necesario consultar su <strong>documentación</strong>.</p>
+<p>Algunas APIs son públicas; otras requieren autenticación, por ejemplo mediante una <strong>API key</strong>.</p>
 </section>
-<section id="idea-clave" class="slide level2">
-<h2>Idea clave</h2>
-<p>Todos generamos datos<span class="fragment">… pero no todos los datos son iguales.</span></p>
-<!-- ===================================================== -->
-<!-- SUBTEMA 2 -->
-<!-- ===================================================== -->
-</section></section>
-<section>
-<section id="tipos-de-datos" class="title-slide slide level1 center">
-<h1>Tipos de datos</h1>
-<!-- ===================================================== -->
-<!-- CONCEPTOS -->
-<!-- ===================================================== -->
+<section id="páginas-web" class="slide level2">
+<h2>Páginas web</h2>
+<p>Las páginas web contienen información representada principalmente mediante documentos HTML.</p>
+<p>Aunque podemos visualizar esta información en un navegador, también podemos obtener y procesar el documento HTML.</p>
+<h3 id="web-scraping">Web scraping</h3>
+<p>El <strong>web scraping</strong> consiste en extraer información de una página web a partir de su contenido y estructura.</p>
+<p>A diferencia de una API, los datos de una página web <strong>no necesariamente fueron preparados para ser consumidos directamente por otra aplicación</strong>.</p>
 </section>
-<section id="no-todos-los-datos-son-iguales" class="slide level2">
-<h2>No todos los datos son iguales</h2>
-<p>Ya vimos que los organismos generan muchos datos y de muchos tipos:</p>
+<section id="data-warehouse" class="slide level2">
+<h2>Data warehouse</h2>
+<p>Un <strong>data warehouse</strong> es un repositorio centralizado que integra y organiza datos provenientes de diferentes fuentes para facilitar su consulta y análisis.</p>
+<p>A diferencia del almacenamiento de datos crudos, contiene datos <strong>procesados, limpios y estructurados</strong>, listos para ser utilizados.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../imagenes/data-warehouse.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+<div class="figure-source">
+<p>Fuente: LinkedIn</p>
+</div>
+</section>
+<section id="section-4" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="integración-de-datos">Integración de datos</h3>
+<p>Un <strong>data warehouse</strong> integra información proveniente de diferentes sistemas bajo una <strong>estructura común</strong>.</p>
 <ul>
-<li class="fragment"><strong>Numéricos</strong>: precios, temperatura, edades, venta</li>
-<li class="fragment"><strong>Texto</strong>: mensajes, correos, comentarios, búsquedas</li>
-<li class="fragment"><strong>Fecha y hora</strong>: fechas de compra, horarios, duración, registros de acceso.</li>
-<li class="fragment"><strong>Ubicación</strong>: GPS, rutas, direcciones</li>
-<li class="fragment"><strong>Imágenes</strong>: fotografías, radiografías, publicaciones</li>
-<li class="fragment"><strong>Audio</strong>: canciones, notas de voz, llamadas</li>
-<li class="fragment"><strong>Video</strong>: películas, videollamadas, TikToks</li>
+<li>Sistema de ventas.</li>
+<li>Sistema de inventarios.</li>
+<li>Base de datos de clientes.</li>
+<li>Sistema financiero.</li>
 </ul>
+<p>Esto permite <strong>relacionar y analizar conjuntamente</strong> datos que originalmente se encontraban separados.</p>
 </section>
-<section id="datos-numéricos" class="slide level2">
-<h2>Datos numéricos</h2>
-<p>Los <strong>datos numéricos</strong> representan cantidades que pueden medirse o contarse. Se utilizan para realizar operaciones matemáticas y análisis estadísticos.</p>
-<p><strong>Ejemplos:</strong></p>
+<section id="section-5" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="consulta-de-datos">Consulta de datos</h3>
+<p>Una vez que los datos se encuentran organizados dentro del data warehouse, normalmente se consultan utilizando <strong>SQL</strong> (<strong>Structured Query Language</strong>).</p>
+<p>SQL permite seleccionar, filtrar, agrupar y relacionar los datos almacenados.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a></a><span class="kw">SELECT</span> producto, <span class="fu">SUM</span>(total_venta)</span>
+<span id="cb2-2"><a></a><span class="kw">FROM</span> ventas</span>
+<span id="cb2-3"><a></a><span class="kw">GROUP</span> <span class="kw">BY</span> producto;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="section-6" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="ejemplos">Ejemplos</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Data warehouse</th>
+<th>Proveedor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://cloud.google.com/bigquery"><strong>BigQuery</strong></a></td>
+<td>Google Cloud</td>
+</tr>
+<tr class="even">
+<td><a href="https://aws.amazon.com/redshift/"><strong>Amazon Redshift</strong></a></td>
+<td>Amazon Web Services (AWS)</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.snowflake.com/"><strong>Snowflake</strong></a></td>
+<td>Snowflake</td>
+</tr>
+<tr class="even">
+<td><a href="https://azure.microsoft.com/products/synapse-analytics/"><strong>Azure Synapse Analytics</strong></a></td>
+<td>Microsoft Azure</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.teradata.com/"><strong>Teradata</strong></a></td>
+<td>Teradata</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-lake" class="slide level2">
+<h2>Data lake</h2>
+<p>Un <strong>data lake</strong> almacena grandes volúmenes de datos en su <strong>formato original o con poco procesamiento</strong>, sin requerir una estructura previa. Puede contener:</p>
 <ul>
-<li class="fragment">Edad de una persona.</li>
-<li class="fragment">Temperatura de una ciudad.</li>
-<li class="fragment">Precio de un producto.</li>
-<li class="fragment">Número de estudiantes.</li>
+<li><strong>Estructurados:</strong> tablas, CSV.</li>
+<li><strong>Semiestructurados:</strong> JSON, XML, logs.</li>
+<li><strong>No estructurados:</strong> imágenes, audio, video, documentos.</li>
 </ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>25 años · 18 °C · $350.00 · 12 km · 150 estudiantes</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../imagenes/data-lake.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
 </div>
+<div class="figure-source">
+<p>Fuente: Hewlett Packard Enterprise (HPE)</p>
 </div>
 </section>
-<section id="datos-de-texto" class="slide level2">
-<h2>Datos de texto</h2>
-<p>Los <strong>datos de texto</strong> representan información formada por letras, palabras, símbolos o frases. Se utilizan para describir, identificar o comunicar información.</p>
-<p><strong>Ejemplos:</strong></p>
+<section id="section-7" class="slide level2 unnumbered">
+<h2></h2>
+<h3 id="acceso-a-los-datos">Acceso a los datos</h3>
+<p>En un <strong>data lake</strong>, la forma de acceder a los datos depende de su <strong>formato</strong>:</p>
 <ul>
-<li class="fragment">Nombre de una persona.</li>
-<li class="fragment">Dirección de correo electrónico.</li>
-<li class="fragment">Comentario de un usuario.</li>
-<li class="fragment">Mensaje de WhatsApp.</li>
+<li><strong>CSV / Parquet:</strong> Python, Spark o motores de consulta.</li>
+<li><strong>JSON / XML:</strong> herramientas que interpreten su estructura.</li>
+<li><strong>Imágenes, audio y video:</strong> herramientas especializadas.</li>
+<li><strong>Documentos y texto:</strong> herramientas de procesamiento de texto.</li>
 </ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>“Denisse Urenda” · “ingenieria.datos@uacj.mx”</p>
-</div>
-</div>
+<blockquote>
+<p>A diferencia de un <strong>data warehouse</strong>, donde los datos estructurados suelen consultarse mediante <strong>SQL</strong>, un data lake puede requerir distintas herramientas según el tipo de dato.</p>
+</blockquote>
 </section>
-<section id="datos-de-fecha-y-hora" class="slide level2">
-<h2>Datos de fecha y hora</h2>
-<p>Los <strong>datos de fecha y hora</strong> representan momentos específicos en el tiempo. Se utilizan para registrar cuándo ocurre un evento y analizar su secuencia o duración.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Fecha de nacimiento.</li>
-<li class="fragment">Hora de una compra.</li>
-<li class="fragment">Fecha de un examen.</li>
-<li class="fragment">Hora de inicio de una llamada.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>15/08/2026 · 08:30 a.m. · 2026-07-13 14:25:36 · 12:00 p.m.</p>
-</div>
-</div>
-</section>
-<section id="datos-de-ubicación" class="slide level2">
-<h2>Datos de ubicación</h2>
-<p>Los <strong>datos de ubicación</strong> representan un lugar o una posición geográfica. Se utilizan para localizar personas, objetos o eventos.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Dirección de un domicilio.</li>
-<li class="fragment">Coordenadas GPS.</li>
-<li class="fragment">Ruta de un viaje.</li>
-<li class="fragment">Ubicación de un restaurante.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>31.6904, -106.4245 · Av. Tecnológico 1340 · Ciudad Juárez, Chihuahua</p>
-</div>
-</div>
-</section>
-<section id="datos-de-imagen" class="slide level2">
-<h2>Datos de imagen</h2>
-<p>Los <strong>datos de imagen</strong> representan información visual capturada mediante fotografías, dibujos, radiografías o ilustraciones.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Fotografía.</li>
-<li class="fragment">Radiografía.</li>
-<li class="fragment">Imagen satelital.</li>
-<li class="fragment">Captura de pantalla.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>📷 selfie.jpg · 🩻 radiografia.png · 🌎 satelite.tif</p>
-</div>
-</div>
-</section>
-<section id="datos-de-audio" class="slide level2">
-<h2>Datos de audio</h2>
-<p>Los <strong>datos de audio</strong> representan sonidos o grabaciones que pueden almacenarse y reproducirse digitalmente.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Canción.</li>
-<li class="fragment">Nota de voz.</li>
-<li class="fragment">Llamada telefónica.</li>
-<li class="fragment">Podcast.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>🎵 musica.mp3 · 🎙️ nota_de_voz.m4a · 📞 llamada.wav</p>
-</div>
-</div>
-</section>
-<section id="datos-de-video" class="slide level2">
-<h2>Datos de video</h2>
-<p>Los <strong>datos de video</strong> representan una secuencia de imágenes, generalmente acompañadas de audio, que permiten registrar o reproducir movimiento.</p>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li class="fragment">Película.</li>
-<li class="fragment">Videollamada.</li>
-<li class="fragment">Video de seguridad.</li>
-<li class="fragment">TikTok.</li>
-</ul>
-<div class="fragment">
-<div class="real-example">
-<p><strong>Ejemplo real</strong></p>
-<p>🎬 pelicula.mp4 · 📹 reunion.mp4 · 🎥 tiktok.mp4</p>
-</div>
-</div>
-<!-- ===================================================== -->
-<!-- IDEA CLAVE -->
-<!-- ===================================================== -->
-</section>
-<section id="idea-clave-1" class="slide level2">
-<h2>Idea clave</h2>
-<p>Los datos pueden representarse de muchas formas.</p>
-<p><span class="fragment">Y cada una requiere una manera distinta de almacenarse.</span></p>
+<section id="data-warehouse-vs.-data-lake" class="slide level2">
+<h2>Data warehouse vs.&nbsp;data lake</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data warehouse</th>
+<th>Data lake</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Datos preparados y organizados</td>
+<td>Datos crudos o cercanos al original</td>
+</tr>
+<tr class="even">
+<td>Principalmente estructurados</td>
+<td>Estructurados, semiestructurados y no estructurados</td>
+</tr>
+<tr class="odd">
+<td><strong>Schema-on-write</strong></td>
+<td><strong>Schema-on-read</strong></td>
+</tr>
+<tr class="even">
+<td>Estructura definida antes de almacenar</td>
+<td>Estructura aplicada al consultar</td>
+</tr>
+<tr class="odd">
+<td>Consumo principalmente con <strong>SQL</strong></td>
+<td>Consumo según el tipo de datos</td>
+</tr>
+<tr class="even">
+<td>Orientado al análisis</td>
+<td>Orientado al almacenamiento flexible</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Warehouse:</strong> datos listos para usar.<br>
+<strong>Lake:</strong> datos almacenados para procesarlos cuando se necesiten.</p>
+</blockquote>
 <!-- ===================================================== -->
 <!-- RESUMEN -->
 <!-- ===================================================== -->
@@ -481,9 +635,13 @@ Dra. Denisse Urenda Castañeda
 <section id="resumen" class="title-slide slide level1 center">
 <h1>Resumen</h1>
 <ul>
-<li><strong>Todos generamos datos</strong> en nuestras actividades diarias.</li>
-<li><strong>Los datos pueden representar distintos tipos de información</strong>, como números, texto, fechas, imágenes, audio, video o ubicaciones.</li>
-<li><strong>Identificar el tipo de dato es el primer paso</strong> para almacenarlo, procesarlo y analizarlo correctamente.</li>
+<li>Los datos pueden provenir de <strong>archivos, bases de datos, APIs, páginas web, data warehouses y data lakes</strong>.</li>
+<li>Las <strong>bases de datos</strong> permiten almacenar, organizar y consultar información.</li>
+<li>Las <strong>APIs</strong> permiten acceder a datos y servicios mediante solicitudes.</li>
+<li>El <strong>web scraping</strong> permite extraer información de páginas web.</li>
+<li>Un <strong>data warehouse</strong> integra datos procesados y estructurados para su análisis.</li>
+<li>Un <strong>data lake</strong> almacena datos de distintos tipos y formatos con mayor flexibilidad.</li>
+<li>La forma de <strong>acceder a los datos depende de la fuente y de cómo están almacenados</strong>.</li>
 </ul>
 <!-- ===================================================== -->
 <!-- REFERENCIAS -->
@@ -493,20 +651,20 @@ Dra. Denisse Urenda Castañeda
 <section id="referencias" class="title-slide slide level1 smaller scrollable">
 <h1>Referencias</h1>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-ibm_data_2026" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Badman y M. Kosinski, <span>«¿Qué son los datos?»</span> Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://www.ibm.com/mx-es/think/topics/data">https://www.ibm.com/mx-es/think/topics/data</a></div>
+<div id="ref-dbaexperts2022nosql" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">DBA Experts, <span>«Tipos de Bases de Datos NoSQL»</span>. Accedido: 8 de agosto de 2026. [En línea]. Disponible en: <a href="https://dbaexperts.tech/bases-de-datos/tipos-de-bases-de-datos-nosql/">https://dbaexperts.tech/bases-de-datos/tipos-de-bases-de-datos-nosql/</a></div>
 </div>
-<div id="ref-inegi_habitos_internet_2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">I. Girón, <span>«20 Estudios sobre los hábitos de usuarios de Internet en México 2024 y perspectiva de IA»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://www.inegi.org.mx/contenidos/inegi/ccu/2024/segunda_sesion/presentaciones/habitos_internet.pdf">https://www.inegi.org.mx/contenidos/inegi/ccu/2024/segunda_sesion/presentaciones/habitos_internet.pdf</a></div>
+<div id="ref-unzue2025nosql" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">R. Unzué, <span>«Bases de datos NoSQL: Qué son, cuándo usarlas y por qué no todas las apps necesitan SQL»</span>. Accedido: 9 de agosto de 2026. [En línea]. Disponible en: <a href="https://pronetic.geeknetic.es/Guia/3196/Bases-de-datos-NoSQL-Que-son-Cuando-usarlas-y-Por-que-no-todas-las-apps-necesitan-SQL.html">https://pronetic.geeknetic.es/Guia/3196/Bases-de-datos-NoSQL-Que-son-Cuando-usarlas-y-Por-que-no-todas-las-apps-necesitan-SQL.html</a></div>
 </div>
-<div id="ref-google_data_2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Anup KumarH S, <span>«How Google Handles Over 40,000 Petabytes of Data on a Daily Basis»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://skill-lync.com/blogs/how-google-handles-over-40000-petabytes-of-data-on-a-daily-basis">https://skill-lync.com/blogs/how-google-handles-over-40000-petabytes-of-data-on-a-daily-basis</a></div>
+<div id="ref-akamai_api" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Akamai, <span>«¿Cómo funcionan las API?»</span> Accedido: 9 de agosto de 2026. [En línea]. Disponible en: <a href="https://www.akamai.com/es/glossary/how-do-apis-work">https://www.akamai.com/es/glossary/how-do-apis-work</a></div>
 </div>
-<div id="ref-whatsapp_messages_2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M. Singh, <span>«WhatsApp is now delivering roughly 100 billion messages a day»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://techcrunch.com/2020/10/29/whatsapp-is-now-delivering-roughly-100-billion-messages-a-day">https://techcrunch.com/2020/10/29/whatsapp-is-now-delivering-roughly-100-billion-messages-a-day</a></div>
+<div id="ref-powerdata_datawarehouse" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">PowerData, <span>«Data Warehouse: todo lo que necesitas saber sobre almacenamiento de datos»</span>. Accedido: 9 de agosto de 2026. [En línea]. Disponible en: <a href="https://www.powerdata.es/data-warehouse">https://www.powerdata.es/data-warehouse</a></div>
 </div>
-<div id="ref-tiktok_statistics_2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Tamilore Oladipo, <span>«31 TikTok Statistics to Know for 2026»</span>. Accedido: 13 de julio de 2026. [En línea]. Disponible en: <a href="https://buffer.com/resources/tiktok-statistics">https://buffer.com/resources/tiktok-statistics</a></div>
+<div id="ref-hpe_datalake" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Hewlett Packard Enterprise, <span>«¿Qué es un lago de datos?»</span> Accedido: 9 de agosto de 2026. [En línea]. Disponible en: <a href="https://www.hpe.com/es/es/what-is/data-lake.html">https://www.hpe.com/es/es/what-is/data-lake.html</a></div>
 </div>
 </div>
 </section>
@@ -522,7 +680,7 @@ Dra. Denisse Urenda Castañeda
 <section id="laboratorio" class="title-slide slide level1 center">
 <h1>Laboratorio</h1>
 <p>En el laboratorio pondremos en práctica los conceptos vistos en esta lección mediante ejemplos y actividades guiadas.</p>
-<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-01.ipynb"><strong>Ir al Notebook →</strong></a></p>
+<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-03.ipynb"><strong>Ir al Notebook →</strong></a></p>
 
 
 </section>
