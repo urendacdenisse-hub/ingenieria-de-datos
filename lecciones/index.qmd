@@ -10,14 +10,15 @@ title: "Lecciones"
 - [Ciclo de vida de los datos](unidad-01/leccion-04.qmd)
 - [Roles en el ecosistema de datos](unidad-01/leccion-05.qmd)
 
-<!--
+
 # Unidad II. Tecnologías de almacenamiento de datos
 
 - Introducción al almacenamiento de datos
-- Bases de datos relacionales
+- [Bases de datos relacionales](unidad-02/leccion-01.qmd)
 - Almacenes analíticos
 - Sistemas de almacenamiento de archivos
 
+<!--
 # Unidad III. Tecnologías de procesamiento de datos
 
 - Introducción al procesamiento de datos

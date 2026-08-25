@@ -8,7 +8,6 @@ nocite: |
     @reis2022fundamentals
 ---
 
-
 # Introducción
 
 ## Objetivo
@@ -17,11 +16,9 @@ Identificar los principales **roles relacionados con los datos** y comprender la
 
 Reconocer las etapas que conforman el **ciclo de vida de la ingeniería de datos**.
 
-
 ## Pregunta
 
 ¿Quiénes participan en el ciclo de vida de los datos y cuál es el papel de la ingeniería de datos?
-
 
 # Roles relacionados con los datos
 
@@ -36,7 +33,7 @@ Diferentes profesionales trabajan con los datos dependiendo del objetivo y la et
 ## Participación en el ciclo de vida
 
 | Etapa | Ingeniero de datos | Analista de datos | Científico de datos |
-|---|:---:|:---:|:---:|
+|----|:--:|:--:|:--:|
 | Captura | ● |  |  |
 | Ingesta | ● |  |  |
 | Almacenamiento | ● |  |  |
@@ -65,12 +62,11 @@ El ingeniero de datos gestiona este proceso desde que los datos se obtienen de l
 
 Reis y Housley dividen el **ciclo de vida de la ingeniería de datos** en cinco etapas principales:
 
-1. **Generación**
-2. **Almacenamiento**
-3. **Ingesta**
-4. **Transformación**
-5. **Servicio de datos**
-
+1.  **Generación**
+2.  **Almacenamiento**
+3.  **Ingesta**
+4.  **Transformación**
+5.  **Servicio de datos**
 
 ## Ciclo de vida de la ingeniería de datos {.unnumbered}
 
@@ -87,7 +83,6 @@ Un sistema de origen puede ser, por ejemplo:
 - Un dispositivo IoT.
 
 El ingeniero de datos necesita comprender **cómo se generan los datos** para poder utilizarlos posteriormente.
-
 
 ## Almacenamiento
 
@@ -156,7 +151,4 @@ El ciclo de ingeniería de datos también está acompañado por una serie de ele
 
 # Pregunta
 
-
-![](../imagenes/mister.png){width=50%}
-
-
+![](../imagenes/mister.png){width="50%"}

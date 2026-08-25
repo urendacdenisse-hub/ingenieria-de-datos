@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Dra. Denisse Urenda Castañeda">
-  <title>Ingeniería de Datos – Introducción a la ingeniería de datos</title>
+  <title>Ingeniería de Datos – Diseño de Bases de Datos</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,26 +31,7 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+  </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-4cf3024c5b2c507bbd17a5474bc699b2.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -149,8 +130,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introducción a la ingeniería de datos</h1>
-  <p class="subtitle">Ciclo de vida de los datos</p>
+  <h1 class="title">Diseño de Bases de Datos</h1>
+  <p class="subtitle">Del problema al modelo relacional</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -164,184 +145,519 @@ Dra. Denisse Urenda Castañeda
 </div>
 
   <p class="date">agosto 2026</p>
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Tabla de contenidos</h2>
+</section>
+<section id="representar-el-negocio" class="slide level2">
+<h2>Representar el negocio</h2>
+<p>Intentamos crear una representación de la información y las reglas que existen en un negocio.</p>
+<p>Queremos convertirlas en una estructura que:</p>
 <ul>
-<li><a href="#/introduccion" id="/toc-introduccion">Introduccion</a></li>
-<li><a href="#/obtención-y-almacenamiento" id="/toc-obtención-y-almacenamiento">Obtención y almacenamiento</a></li>
-<li><a href="#/procesamiento-y-análisis" id="/toc-procesamiento-y-análisis">Procesamiento y análisis</a></li>
-<li><a href="#/comunicación-y-conservación" id="/toc-comunicación-y-conservación">Comunicación y conservación</a></li>
-<li><a href="#/resumen" id="/toc-resumen">Resumen</a></li>
-<li><a href="#/referencias" id="/toc-referencias">Referencias</a></li>
-<li><a href="#/pregunta-1" id="/toc-pregunta-1">Pregunta</a></li>
-<li><a href="#/laboratorio" id="/toc-laboratorio">Laboratorio</a></li>
-</ul>
-</nav>
-</section>
-<section>
-<section id="introduccion" class="title-slide slide level1 center">
-<h1>Introduccion</h1>
-
-</section>
-<section id="objetivo" class="slide level2">
-<h2>Objetivo</h2>
-<p>Identificar las principales etapas del <strong>ciclo de vida de los datos</strong> y comprender cómo los datos se transforman desde su obtención hasta su conservación o eliminación.</p>
-</section>
-<section id="pregunta" class="slide level2">
-<h2>Pregunta</h2>
-<p>¿Qué ocurre con los datos desde que son obtenidos hasta que dejan de utilizarse?</p>
-</section>
-<section id="el-ciclo-de-vida-de-los-datos" class="slide level2">
-<h2>El ciclo de vida de los datos</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p>El <strong>ciclo de vida de los datos</strong> describe las distintas etapas por las que pasan los datos, desde su <strong>obtención</strong> hasta su <strong>conservación o eliminación</strong>.</p>
-<p>Durante este ciclo, los datos pueden ser almacenados, procesados, analizados y utilizados para generar nueva información.</p>
-</div><div class="column" style="width:55%;">
-<p><img data-src="../imagenes/ciclo-vida-datos.png" style="width:100.0%"></p>
-</div></div>
-</section></section>
-<section>
-<section id="obtención-y-almacenamiento" class="title-slide slide level1 center">
-<h1>Obtención y almacenamiento</h1>
-
-</section>
-<section id="captura-de-datos" class="slide level2">
-<h2>Captura de datos</h2>
-<p>La <strong>captura de datos</strong> consiste en obtener datos desde una fuente.</p>
-<p>Los datos pueden provenir de:</p>
-<ul>
-<li><strong>Personas:</strong> formularios, encuestas, registros o interacciones.</li>
-<li><strong>Sensores:</strong> temperatura, ubicación, movimiento, imágenes, etc.</li>
-<li><strong>Aplicaciones y sistemas:</strong> transacciones, actividad de usuarios o registros del sistema.</li>
-<li><strong>Otros datos:</strong> bases de datos, archivos, APIs o conjuntos de datos existentes.</li>
+<li class="fragment">represente correctamente la información;</li>
+<li class="fragment">evite redundancia innecesaria;</li>
+<li class="fragment">mantenga relaciones consistentes;</li>
+<li class="fragment">permita aplicar las reglas del negocio.</li>
 </ul>
 </section>
-<section id="ingesta-de-datos" class="slide level2">
-<h2>Ingesta de datos</h2>
-<p>La <strong>ingesta de datos</strong> consiste en <strong>transferir o incorporar datos desde una fuente hacia el sistema donde serán utilizados</strong>.</p>
-<p>Por ejemplo:</p>
+<section id="diagrama-entidadrelación" class="slide level2">
+<h2>Diagrama Entidad–Relación</h2>
+<p>Antes de crear la estructura debemos saber</p>
 <ul>
-<li>Leer datos desde un archivo.</li>
-<li>Consultar una base de datos.</li>
-<li>Obtener datos mediante una API.</li>
-<li>Recibir datos generados por sensores o aplicaciones.</li>
+<li>¿Qué cosas existen?</li>
+<li>¿Qué sabemos de ellas?</li>
+<li>¿Cómo se relacionan?</li>
 </ul>
+<p>El diagrama ER representa estas ideas mediante:</p>
+<p><img data-src="../imagenes/er-componentes.png"></p>
+</section>
+<section id="entidades" class="slide level2">
+<h2>Entidades</h2>
+<p>Una <strong>entidad</strong> representa una persona, objeto, lugar, evento o concepto del mundo real que puede <strong>identificarse</strong> y sobre el cual necesitamos <strong>almacenar información</strong>.</p>
+<p>Ejemplos:</p>
+<ul>
+<li>Cliente</li>
+<li>Producto</li>
+<li>Empleado</li>
+<li>Proveedor</li>
+<li>Pedido</li>
+</ul>
+<p><strong>Pregunta clave:</strong></p>
 <blockquote>
-<p><strong>Captura</strong> = obtener o generar el dato.<br>
-<strong>Ingesta</strong> = llevarlo al sistema donde será utilizado.</p>
+<p>¿Sobre qué cosas necesito guardar información?</p>
 </blockquote>
 </section>
-<section id="almacenamiento" class="slide level2">
-<h2>Almacenamiento</h2>
-<p>El <strong>almacenamiento</strong> consiste en conservar los datos para que puedan ser utilizados posteriormente.</p>
-<p>Los datos pueden almacenarse en:</p>
+<section id="atributos" class="slide level2">
+<h2>Atributos</h2>
+<p>Un <strong>atributo</strong> representa una característica o propiedad de una entidad que necesitamos <strong>conocer y almacenar</strong> para describirla o identificarla.</p>
 <ul>
-<li><strong>Archivos:</strong> CSV, JSON, Excel, imágenes, etc.</li>
-<li><strong>Bases de datos:</strong> SQL o NoSQL.</li>
-<li><strong>Data warehouses:</strong> datos procesados y estructurados para análisis.</li>
-<li><strong>Data lakes:</strong> grandes volúmenes de datos en su formato original.</li>
+<li><strong>Cliente:</strong> cliente_id, nombre, correo, domicilio</li>
+<li><strong>Producto:</strong> producto_id, nombre, precio, categoría</li>
 </ul>
+<p><strong>Pregunta clave:</strong></p>
 <blockquote>
-<p>Mantener los <strong>datos originales</strong> permite recuperar su estado inicial cuando sea necesario.</p>
-</blockquote>
-</section></section>
-<section>
-<section id="procesamiento-y-análisis" class="title-slide slide level1 center">
-<h1>Procesamiento y análisis</h1>
-
-</section>
-<section id="procesamiento-de-datos" class="slide level2">
-<h2>Procesamiento de datos</h2>
-<p>El <strong>procesamiento</strong> consiste en preparar y modificar los datos para que puedan ser utilizados.</p>
-<p>Puede incluir:</p>
-<ul>
-<li><strong>Inspección:</strong> conocer su estructura y contenido.</li>
-<li><strong>Limpieza:</strong> corregir errores, duplicados o valores faltantes.</li>
-<li><strong>Transformación:</strong> cambiar formatos, unidades o representaciones.</li>
-<li><strong>Integración:</strong> combinar datos de diferentes fuentes.</li>
-<li><strong>Selección:</strong> conservar únicamente los datos necesarios.</li>
-<li><strong>Validación:</strong> verificar que los datos sean correctos y consistentes.</li>
-</ul>
-</section>
-<section id="análisis-de-datos" class="slide level2">
-<h2>Análisis de datos</h2>
-<p>El <strong>análisis de datos</strong> consiste en examinar los datos para <strong>responder preguntas, identificar patrones o resolver problemas</strong>.</p>
-<p>Puede incluir:</p>
-<ul>
-<li><strong>Describir:</strong> ¿qué ocurrió?</li>
-<li><strong>Comparar:</strong> ¿qué diferencias existen?</li>
-<li><strong>Relacionar:</strong> ¿cómo se relacionan las variables?</li>
-<li><strong>Explicar:</strong> ¿por qué ocurrió?</li>
-<li><strong>Predecir:</strong> ¿qué podría ocurrir?</li>
-</ul>
-</section>
-<section id="idea-clave" class="slide level2">
-<h2>Idea clave</h2>
-<p>Los resultados de un análisis también pueden convertirse en <strong>nuevos datos</strong> y comenzar su propio ciclo de vida.</p>
-</section></section>
-<section>
-<section id="comunicación-y-conservación" class="title-slide slide level1 center">
-<h1>Comunicación y conservación</h1>
-
-</section>
-<section id="comunicación" class="slide level2">
-<h2>Comunicación</h2>
-<p>La <strong>comunicación</strong> consiste en presentar los resultados del análisis de forma que puedan ser <strong>interpretados y utilizados por otras personas</strong>.</p>
-<p>Los resultados pueden comunicarse mediante:</p>
-<ul>
-<li><strong>Tablas y gráficas.</strong></li>
-<li><strong>Reportes.</strong></li>
-<li><strong>Presentaciones.</strong></li>
-<li><strong>Dashboards.</strong></li>
-<li><strong>Páginas web.</strong></li>
-</ul>
-<blockquote>
-<p>La forma de comunicar los resultados depende del <strong>objetivo y la audiencia</strong>.</p>
+<p>¿Qué información necesitamos conocer de cada entidad?</p>
 </blockquote>
 </section>
-<section id="conservación-y-eliminación" class="slide level2">
-<h2>Conservación y eliminación</h2>
-<p>La <strong>conservación</strong> consiste en mantener los datos mientras puedan ser necesarios para su uso futuro.</p>
-<p>El tiempo durante el cual se conservan puede depender de:</p>
+<section id="llave-primaria" class="slide level2">
+<h2>Llave primaria</h2>
+<p>Cada registro debe poder <strong>identificarse de manera única</strong> dentro de una tabla.</p>
+<p>La <strong>llave primaria (Primary Key o PK)</strong> es el atributo, o conjunto de atributos, que permite identificar de manera única cada registro (renglón).</p>
+<p><strong>Cliente</strong></p>
 <ul>
-<li><strong>Utilidad futura:</strong> posibilidad de reutilizar los datos.</li>
-<li><strong>Privacidad:</strong> protección de información sensible.</li>
-<li><strong>Almacenamiento:</strong> espacio y costo de conservarlos.</li>
-<li><strong>Políticas y regulaciones:</strong> requisitos de la organización o legales.</li>
+<li><code>cliente_id</code> <strong>(PK)</strong></li>
+<li>nombre</li>
+<li>correo</li>
+<li>domicilio</li>
 </ul>
-<p>Cuando los datos dejan de ser necesarios, pueden <strong>archivarse o eliminarse</strong>.</p>
-</section></section>
-<section id="resumen" class="title-slide slide level1 center">
-<h1>Resumen</h1>
-<ul>
-<li>Los datos pasan por <strong>diferentes etapas</strong> durante su ciclo de vida.</li>
-<li>La <strong>captura e ingesta</strong> permiten obtener e incorporar los datos.</li>
-<li>El <strong>almacenamiento y procesamiento</strong> permiten conservarlos y prepararlos.</li>
-<li>El <strong>análisis</strong> transforma los datos en información útil.</li>
-<li>Los resultados pueden <strong>visualizarse y comunicarse</strong>.</li>
-<li>Finalmente, los datos pueden <strong>conservarse o eliminarse</strong>.</li>
-<li>Un resultado generado puede convertirse en un <strong>nuevo dato</strong> e iniciar su propio ciclo.</li>
-</ul>
+<p><code>cliente_id</code> permite distinguir a un cliente de todos los demás.</p>
+<p>Una <strong>llave primaria</strong> debe ser <strong>única</strong>, no puede ser <strong>nula</strong>, debe identificar un solo registro.</p>
 </section>
-
-<section id="referencias" class="title-slide slide level1 smaller scrollable">
-<h1>Referencias</h1>
-<div id="refs" role="list">
-
+<section id="relaciones" class="slide level2">
+<h2>Relaciones</h2>
+<p>Las entidades no existen de manera aislada.</p>
+<p><img data-src="../imagenes/er-relacion.png"></p>
+<p>Una relación describe <strong>cómo se conectan dos entidades</strong> dentro del negocio.</p>
+<p><strong>Pregunta clave:</strong></p>
+<blockquote>
+<p>¿Cómo se relacionan estas entidades entre sí?</p>
+</blockquote>
+</section>
+<section id="cardinalidad" class="slide level2">
+<h2>Cardinalidad</h2>
+<p>La <strong>cardinalidad</strong> indica <strong>cuántos elementos de una entidad pueden relacionarse con otra</strong>, de acuerdo con las reglas del negocio.</p>
+<ul>
+<li><p><strong>One-to-one</strong> (1:1) Cada elemento de una entidad se relaciona con <strong>uno</strong> de la otra.</p></li>
+<li><p><strong>One-to-many</strong> (1:N) Un elemento de una entidad puede relacionarse con <strong>muchos</strong> de la otra.</p></li>
+<li><p><strong>Many-to-many</strong> (N:M) Muchos elementos de una entidad pueden relacionarse con <strong>muchos</strong> de la otra.</p></li>
+</ul>
+<p><strong>Pregunta clave:</strong></p>
+<blockquote>
+<p>Para cada elemento de una entidad, ¿con cuántos elementos de la otra puede relacionarse?</p>
+</blockquote>
+</section>
+<section id="cardinalidad-1" class="slide level2 unlisted">
+<h2>Cardinalidad</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../imagenes/cardinalidad.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
 </div>
 </section>
-
-<section id="pregunta-1" class="title-slide slide level1 center">
-<h1>Pregunta</h1>
-<p><img data-src="../imagenes/mister.png" style="width:50.0%"></p>
+<section id="relaciones-nm" class="slide level2">
+<h2>Relaciones N:M</h2>
+<p>Una relación N:M normalmente necesita convertirse en una nueva estructura.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../imagenes/many-to-many.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+<p>Además, la relación puede tener sus propios datos.</p>
 </section>
-
-<section id="laboratorio" class="title-slide slide level1 center">
-<h1>Laboratorio</h1>
-<p>En el laboratorio seguiremos el <strong>ciclo de vida de un conjunto de datos real</strong>, desde su ingesta hasta su análisis, comunicación y conservación.</p>
-<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-04.ipynb"><strong>Ir al Notebook →</strong></a></p>
+<section id="del-modelo-er-a-tablas" class="slide level2">
+<h2>Del modelo ER a tablas</h2>
+<p>El modelo conceptual comienza a convertirse en una base de datos.</p>
+<p><strong>Entidad → Tabla</strong></p>
+<p><strong>Atributo → Columna</strong></p>
+<p><strong>Identificador → Primary Key</strong></p>
+<p><strong>Relación → Foreign Key / tabla asociativa</strong></p>
+</section>
+<section id="antes-de-implementar" class="slide level2">
+<h2>Antes de implementar…</h2>
+<p>Tenemos:</p>
+<ul>
+<li class="fragment"><strong>Entidades:</strong> las cosas sobre las que almacenamos información.</li>
+<li class="fragment"><strong>Atributos:</strong> las características que describen a una entidad.</li>
+<li class="fragment"><strong>Relaciones:</strong> cómo se conectan las entidades entre sí.</li>
+<li class="fragment"><strong>Cardinalidades:</strong> cuántos elementos pueden participar en una relación.</li>
+</ul>
+<div class="fragment">
+<p>Ahora necesitamos preguntarnos:</p>
+<blockquote>
+<p><strong>¿La estructura que diseñamos tiene sentido?</strong></p>
+</blockquote>
+</div>
+</section>
+<section id="normalización" class="slide level2">
+<h2>Normalización</h2>
+<p>La normalización nos ayuda a revisar nuestro diseño.</p>
+<p>Buscamos principalmente:</p>
+<ul>
+<li>evitar información repetida;</li>
+<li>evitar inconsistencias;</li>
+<li>guardar cada dato donde corresponde.</li>
+</ul>
+</section>
+<section id="primera-forma-normal-1nf" class="slide level2">
+<h2>Primera Forma Normal — 1NF</h2>
+<p><strong>Definición formal:</strong><br>
+El valor de una columna debe ser una entidad atómica, indivisible, excluyendo así las dificultades que podría conllevar el tratamiento de un dato formado de varias partes.</p>
+<p><strong>En palabras simples:</strong></p>
+<ul>
+<li><p><strong>Un solo valor por celda:</strong> no debemos almacenar listas o múltiples valores juntos.</p></li>
+<li><p><strong>Un valor indivisible:</strong> si necesitas usar sus partes por separado, sepáralas en columnas.</p></li>
+</ul>
+</section>
+<section id="primera-forma-normal-1nf-1" class="slide level2 unlisted">
+<h2>Primera Forma Normal — 1NF</h2>
+<h3 id="incorrecto">❌ Incorrecto</h3>
+<p><strong>Cliente</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>cliente_id</th>
+<th>nombre</th>
+<th>teléfonos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C001</td>
+<td>Ana</td>
+<td>656-111-0000, 656-222-0000</td>
+</tr>
+<tr class="even">
+<td>C002</td>
+<td>Luis</td>
+<td>656-333-0000</td>
+</tr>
+</tbody>
+</table>
+<p>Una celda contiene más de un teléfono.</p>
+</section>
+<section id="primera-forma-normal-1nf-2" class="slide level2 unlisted">
+<h2>Primera Forma Normal — 1NF</h2>
+<h3 id="correcto">✅ Correcto</h3>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><strong>Cliente</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>cliente_id</th>
+<th>nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C001</td>
+<td>Ana</td>
+</tr>
+<tr class="even">
+<td>C002</td>
+<td>Luis</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:55%;">
+<p><strong>Teléfono</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>cliente_id</th>
+<th>lada</th>
+<th>teléfono</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C001</td>
+<td>656</td>
+<td>111-0000</td>
+</tr>
+<tr class="even">
+<td>C001</td>
+<td>656</td>
+<td>222-0000</td>
+</tr>
+<tr class="odd">
+<td>C002</td>
+<td>915</td>
+<td>333-0000</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<p>Ahora:</p>
+<ul>
+<li>Cada celda contiene <strong>un solo valor</strong>.</li>
+<li>Los datos que necesitamos utilizar por separado, como <strong>lada</strong> y <strong>teléfono</strong>, están almacenados en columnas diferentes.</li>
+</ul>
+</section>
+<section id="segunda-forma-normal-2nf" class="slide level2">
+<h2>Segunda Forma Normal — 2NF</h2>
+<p><strong>Definición formal:</strong></p>
+<p>Una relación se encuentra en <strong>Segunda Forma Normal (2NF)</strong> cuando está en Primera Forma Normal (1NF) y todos los atributos no primos presentan dependencia funcional completa respecto de la llave primaria, es decir, no existen dependencias parciales.</p>
+<p><strong>En palabras simples:</strong></p>
+<ul>
+<li><p><strong>Primero debe cumplir 1NF.</strong></p></li>
+<li><p><strong>Si la llave primaria está formada por varias columnas:</strong> los demás atributos deben depender de <strong>toda la llave</strong>, no solamente de una parte.</p></li>
+<li><p><strong>Pregunta clave:</strong> ¿necesito toda la llave para determinar este dato?</p></li>
+</ul>
+</section>
+<section id="segunda-forma-normal-2nf-1" class="slide level2 unlisted">
+<h2>Segunda Forma Normal — 2NF</h2>
+<h3 id="incorrecto-1">❌ Incorrecto</h3>
+<p><strong>Inscripción</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>estudiante_id</th>
+<th>curso_id</th>
+<th>estudiante_nombre</th>
+<th>curso_nombre</th>
+<th>calificación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E001</td>
+<td>C101</td>
+<td>Ana</td>
+<td>Bases de Datos</td>
+<td>95</td>
+</tr>
+<tr class="even">
+<td>E001</td>
+<td>C102</td>
+<td>Ana</td>
+<td>Programación</td>
+<td>88</td>
+</tr>
+<tr class="odd">
+<td>E002</td>
+<td>C101</td>
+<td>Luis</td>
+<td>Bases de Datos</td>
+<td>91</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Llave primaria:</strong> <code>(estudiante_id, curso_id)</code></p>
+</section>
+<section id="segunda-forma-normal-2nf-2" class="slide level2 unlisted">
+<h2>Segunda Forma Normal — 2NF</h2>
+<ul>
+<li><code>estudiante_nombre</code> depende solamente de <code>estudiante_id</code>.</li>
+<li><code>curso_nombre</code> depende solamente de <code>curso_id</code>.</li>
+<li><code>calificación</code> sí depende de la combinación <code>estudiante_id + curso_id</code>.</li>
+</ul>
+<blockquote>
+<p>Si un atributo depende solamente de <strong>una parte de la llave</strong>, no pertenece aquí.</p>
+</blockquote>
+</section>
+<section id="segunda-forma-normal-2nf-3" class="slide level2 unlisted">
+<h2>Segunda Forma Normal — 2NF</h2>
+<h3 id="correcto-1">✅ Correcto</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Estudiante</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>estudiante_id</th>
+<th>nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E001</td>
+<td>Ana</td>
+</tr>
+<tr class="even">
+<td>E002</td>
+<td>Luis</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><strong>Curso</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>curso_id</th>
+<th>nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C101</td>
+<td>Bases de Datos</td>
+</tr>
+<tr class="even">
+<td>C102</td>
+<td>Programación</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<div class="columns" style="align-items: center;">
+<div class="column" style="width:50%;">
+<p><strong>Inscripción</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>estudiante_id</th>
+<th>curso_id</th>
+<th>calificación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E001</td>
+<td>C101</td>
+<td>95</td>
+</tr>
+<tr class="even">
+<td>E001</td>
+<td>C102</td>
+<td>88</td>
+</tr>
+<tr class="odd">
+<td>E002</td>
+<td>C101</td>
+<td>91</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="text-align: center;">
+<p>Ahora cada atributo depende de <strong>la llave completa de la tabla en la que se encuentra</strong>.</p>
+</div></div>
+</section>
+<section id="tercera-forma-normal-3nf" class="slide level2">
+<h2>Tercera Forma Normal — 3NF</h2>
+<p><strong>Definición formal:</strong></p>
+<p>Una relación se encuentra en Tercera Forma Normal (3NF) cuando está en Segunda Forma Normal (2NF) y no contiene dependencias transitivas; es decir, ningún atributo que no forma parte de la llave depende funcionalmente de otro atributo que tampoco forma parte de la llave.</p>
+<p><strong>En palabras simples:</strong></p>
+<ul>
+<li><p><strong>Primero debe cumplir 2NF.</strong></p></li>
+<li><p>Los atributos deben depender <strong>directamente de la llave</strong>, no de otro atributo.</p></li>
+<li><p><strong>Pregunta clave:</strong> ¿este dato describe directamente a la entidad o describe a otra cosa?</p></li>
+</ul>
+</section>
+<section id="tercera-forma-normal-3nf-1" class="slide level2 unlisted">
+<h2>Tercera Forma Normal — 3NF</h2>
+<h3 id="incorrecto-2">❌ Incorrecto</h3>
+<p><strong>Empleado</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>empleado_id</th>
+<th>nombre</th>
+<th>departamento_id</th>
+<th>departamento_nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E001</td>
+<td>Ana</td>
+<td>D01</td>
+<td>Recursos Humanos</td>
+</tr>
+<tr class="even">
+<td>E002</td>
+<td>Luis</td>
+<td>D02</td>
+<td>Ventas</td>
+</tr>
+<tr class="odd">
+<td>E003</td>
+<td>María</td>
+<td>D01</td>
+<td>Recursos Humanos</td>
+</tr>
+</tbody>
+</table>
+<p><code>departamento_nombre</code> no depende directamente de <code>empleado_id</code>.</p>
+<p>Depende de <code>departamento_id</code>:</p>
+<blockquote>
+<p><code>empleado_id → departamento_id → departamento_nombre</code></p>
+</blockquote>
+<p>Por lo tanto, tenemos una <strong>dependencia transitiva</strong>.</p>
+</section>
+<section id="tercera-forma-normal-3nf-2" class="slide level2 unlisted">
+<h2>Tercera Forma Normal — 3NF</h2>
+<h3 id="correcto-2">✅ Correcto</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Empleado</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>empleado_id</th>
+<th>nombre</th>
+<th>departamento_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E001</td>
+<td>Ana</td>
+<td>D01</td>
+</tr>
+<tr class="even">
+<td>E002</td>
+<td>Luis</td>
+<td>D02</td>
+</tr>
+<tr class="odd">
+<td>E003</td>
+<td>María</td>
+<td>D01</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><strong>Departamento</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>departamento_id</th>
+<th>nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>D01</td>
+<td>Recursos Humanos</td>
+</tr>
+<tr class="even">
+<td>D02</td>
+<td>Ventas</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<p>Ahora cada atributo describe directamente a la entidad a la que pertenece.</p>
+<p><code>departamento_nombre</code> depende de <code>departamento_id</code>, por lo que se almacena en <strong>Departamento</strong> y no en <strong>Empleado</strong>.</p>
+</section>
+<section id="las-preguntas-clave" class="slide level2">
+<h2>Las preguntas clave</h2>
+<p><strong>1NF</strong>: ¿Cada celda contiene un solo valor y está suficientemente dividido? → Un valor por celda.</p>
+<p><strong>2NF</strong>: ¿Necesito toda la llave para conocer este dato? →Si depende solo de una parte de la llave, <strong>sepáralo</strong>.</p>
+<p><strong>3NF</strong>: ¿Este dato depende de la llave o de otro dato? → Si depende de otro atributo, <strong>probablemente pertenece en otra tabla</strong>.</p>
+</section>
+<section id="la-idea-importante" class="slide level2">
+<h2>La idea importante</h2>
+<p>No se trata de memorizar reglas.</p>
+<p>Se trata de poder preguntar:</p>
+<ol type="1">
+<li>¿Qué entidades existen?</li>
+<li>¿Qué atributos pertenecen a cada una?</li>
+<li>¿Cómo se relacionan?</li>
+<li>¿Cuál es su cardinalidad?</li>
+<li>¿Estoy repitiendo información?</li>
+<li>¿Cada dato está donde realmente corresponde?</li>
+</ol>
+</section>
+<section id="nuestro-proceso" class="slide level2">
+<h2>Nuestro proceso</h2>
+<p><img data-src="../imagenes/flujo-de-diseno-bd.png"></p>
 
 
 </section>

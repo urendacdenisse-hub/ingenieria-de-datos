@@ -13,27 +13,19 @@ Identificar las principales etapas del **ciclo de vida de los datos** y comprend
 
 ¿Qué ocurre con los datos desde que son obtenidos hasta que dejan de utilizarse?
 
-
 ## El ciclo de vida de los datos
 
-:::: {.columns}
-
+::::: columns
 ::: {.column width="45%"}
-
 El **ciclo de vida de los datos** describe las distintas etapas por las que pasan los datos, desde su **obtención** hasta su **conservación o eliminación**.
 
 Durante este ciclo, los datos pueden ser almacenados, procesados, analizados y utilizados para generar nueva información.
-
 :::
 
 ::: {.column width="55%"}
-
-![](../imagenes/ciclo-vida-datos.png){width=100%}
-
+![](../imagenes/ciclo-vida-datos.png){width="100%"}
 :::
-
-::::
-
+:::::
 
 # Obtención y almacenamiento
 
@@ -59,7 +51,7 @@ Por ejemplo:
 - Obtener datos mediante una API.
 - Recibir datos generados por sensores o aplicaciones.
 
-> **Captura** = obtener o generar el dato.  
+> **Captura** = obtener o generar el dato.\
 > **Ingesta** = llevarlo al sistema donde será utilizado.
 
 ## Almacenamiento
@@ -145,7 +137,6 @@ Cuando los datos dejan de ser necesarios, pueden **archivarse o eliminarse**.
 - Finalmente, los datos pueden **conservarse o eliminarse**.
 - Un resultado generado puede convertirse en un **nuevo dato** e iniciar su propio ciclo.
 
-
 # Referencias
 
 ::: {#refs}
@@ -153,9 +144,7 @@ Cuando los datos dejan de ser necesarios, pueden **archivarse o eliminarse**.
 
 # Pregunta
 
-
-![](../imagenes/mister.png){width=50%}
-
+![](../imagenes/mister.png){width="50%"}
 
 # Laboratorio
 
