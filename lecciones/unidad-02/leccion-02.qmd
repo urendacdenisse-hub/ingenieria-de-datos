@@ -1,0 +1,484 @@
+---
+title: "Implementación del Modelo Relacional"
+subtitle: "Del diseño a SQLite"
+format: revealjs
+---
+
+## Del diseño a la implementación
+
+Ya definimos:
+
+::: incremental
+- las **entidades**;
+- sus **atributos**;
+- las **llaves primarias**;
+- las **relaciones**;
+- las **reglas del negocio**.
+:::
+
+::: fragment
+Ahora necesitamos convertir ese diseño en instrucciones que el sistema gestor de bases de datos pueda ejecutar.
+:::
+
+## SQL
+
+**SQL (Structured Query Language)** es el lenguaje que utilizamos para trabajar con bases de datos relacionales.
+
+Nos permite:
+
+- crear tablas;
+- definir columnas y tipos de datos;
+- establecer llaves;
+- implementar restricciones;
+- consultar y modificar información.
+
+En esta unidad utilizaremos **SQLite**.
+
+## Crear una tabla
+
+Para crear una tabla utilizamos:
+
+``` sql
+CREATE TABLE Producto (
+    producto_id INTEGER,
+    nombre TEXT,
+    precio REAL
+);
+```
+
+Cada columna tiene:
+
+> **nombre + tipo de dato**
+
+## Tipos de datos en SQLite
+
+SQLite utiliza principalmente los siguientes tipos:
+
+| Tipo      | Uso                   |
+|-----------|-----------------------|
+| `INTEGER` | Números enteros       |
+| `REAL`    | Números con decimales |
+| `TEXT`    | Texto                 |
+| `BLOB`    | Datos binarios        |
+
+El tipo debe elegirse de acuerdo con el **significado y uso del dato**.
+
+## Llave primaria
+
+La llave primaria que identificamos durante el diseño se implementa utilizando `PRIMARY KEY`.
+
+``` sql
+CREATE TABLE Producto (
+    producto_id INTEGER PRIMARY KEY,
+    nombre TEXT,
+    precio REAL
+);
+```
+
+`producto_id` identifica de manera única cada producto.
+
+## Restricciones
+
+Además del tipo de dato, podemos establecer **restricciones** sobre los valores permitidos.
+
+Las restricciones nos permiten implementar las **reglas del negocio**.
+
+Algunas de las principales son:
+
+::: incremental
+- `PRIMARY KEY`
+- `NOT NULL`
+- `UNIQUE`
+- `DEFAULT`
+- `CHECK`
+- `FOREIGN KEY`
+:::
+
+## NOT NULL
+
+`NOT NULL` indica que una columna **siempre** debe contener un valor.
+
+**Regla:**
+
+> Todo empleado debe tener un nombre.
+
+``` sql
+CREATE TABLE Empleado (
+    empleado_id INTEGER PRIMARY KEY,
+    nombre TEXT NOT NULL
+);
+```
+
+No será posible registrar un empleado sin proporcionar su nombre.
+
+## UNIQUE
+
+`UNIQUE` evita que un valor se repita en una columna.
+
+**Regla:**
+
+> Dos usuarios no pueden tener el mismo correo.
+
+``` sql
+CREATE TABLE Usuario (
+    usuario_id INTEGER PRIMARY KEY,
+    correo TEXT UNIQUE
+);
+```
+
+## DEFAULT
+
+`DEFAULT` establece un valor que será utilizado cuando no se proporcione uno.
+
+**Regla:**
+
+> La existencia inicial de un producto será cero.
+
+``` sql
+CREATE TABLE Producto (
+    producto_id INTEGER PRIMARY KEY,
+    existencia INTEGER DEFAULT 0
+);
+```
+
+Si no proporcionamos `existencia`, SQLite utilizará `0`.
+
+## CHECK
+
+`CHECK` permite establecer una condición que debe cumplir un dato.
+
+**Regla:**
+
+> El precio de un producto debe ser mayor que cero.
+
+``` sql
+CREATE TABLE Producto (
+    producto_id INTEGER PRIMARY KEY,
+    precio REAL CHECK (precio > 0)
+);
+```
+
+## CHECK — Rango {.unlisted}
+
+También podemos restringir un valor a un intervalo.
+
+**Regla:**
+
+> Una calificación debe encontrarse entre 0 y 100.
+
+``` sql
+CREATE TABLE Evaluacion (
+    evaluacion_id INTEGER PRIMARY KEY,
+    calificacion REAL
+        CHECK (calificacion BETWEEN 0 AND 100)
+);
+```
+
+## CHECK — Valores permitidos {.unlisted}
+
+Podemos establecer un conjunto de valores válidos.
+
+**Regla:**
+
+> Un empleado solamente puede pertenecer a uno de tres turnos.
+
+``` sql
+CREATE TABLE Empleado (
+    empleado_id INTEGER PRIMARY KEY,
+    turno TEXT CHECK (turno IN ('Matutino','Vespertino','Nocturno'))
+);
+```
+
+## Restricciones sobre texto
+
+También podemos establecer reglas sobre el formato de un texto.
+
+**Regla:**
+
+> El código de empleado debe comenzar con una letra mayúscula.
+
+```sql
+CREATE TABLE Empleado (
+    empleado_id INTEGER PRIMARY KEY,
+    codigo TEXT CHECK (codigo GLOB '[A-Z]*')
+);
+```
+
+## Restricciones sobre texto {.unlisted}
+
+`GLOB` permite verificar si un texto coincide con un **patrón**.
+
+En el patrón `[A-Z]*`
+
+- `[A-Z]` representa **un carácter entre A y Z**.
+- `*` representa **cualquier secuencia de caracteres** después de la letra.
+
+Por lo tanto, `codigo GLOB '[A-Z]*'` pregunta:
+
+> **¿El código comienza con una letra mayúscula?**
+
+
+## Restricciones sobre texto {.unlisted}
+
+También podemos utilizar `^` para **negar un conjunto de caracteres**.
+
+**Regla:**
+
+> El código no puede comenzar con un número.
+
+```sql
+CREATE TABLE Empleado (
+    empleado_id INTEGER PRIMARY KEY,
+    codigo TEXT CHECK (codigo GLOB '[^0-9]*')
+);
+```
+
+
+## Restricciones sobre texto {.unlisted}
+
+En el patrón `[^0-9]*`
+
+- `[0-9]` representa **un dígito entre 0 y 9**.
+- `^` niega el conjunto: `[^0-9]` representa **un carácter que no sea un número**.
+- `*` representa **cualquier secuencia de caracteres** después del primer carácter.
+
+Por lo tanto, `codigo GLOB '[^0-9]*'` pregunta:
+
+> **¿El código comienza con un carácter que no sea un número?**
+
+
+
+## Restricciones sobre texto {.unlisted}
+
+Ahora podemos combinar los patrones anteriores.
+
+**Regla:**
+
+> El nombre solamente puede contener letras y espacios.
+
+```sql
+CREATE TABLE Persona (
+    persona_id INTEGER PRIMARY KEY,
+    nombre TEXT
+        CHECK (nombre NOT GLOB '*[^A-Za-z ]*')
+);
+```
+
+## Restricciones sobre texto {.unlisted}
+
+En el patrón `*[^A-Za-z ]*`
+
+- `*` representa cualquier secuencia de caracteres.
+- `[^A-Za-z ]` representa **un carácter que no sea una letra o un espacio**.
+- `*` representa cualquier secuencia de caracteres.
+
+Por lo tanto, `nombre GLOB '*[^A-Za-z ]*'` pregunta:
+
+> **¿El nombre contiene, en cualquier posición, un carácter que no sea una letra o un espacio?**
+
+
+## Números almacenados como texto
+
+No todo dato formado por dígitos debe almacenarse como `INTEGER`.
+
+Por ejemplo:
+
+> Un teléfono es un identificador, no una cantidad.
+
+``` sql
+CREATE TABLE Cliente (
+    cliente_id INTEGER PRIMARY KEY,
+    telefono TEXT
+);
+```
+
+No necesitamos sumar, multiplicar o realizar operaciones aritméticas con un teléfono.
+
+## Validar un teléfono
+
+**Regla:**
+
+> El teléfono debe utilizar el formato `###-###-####`.
+
+```sql
+CREATE TABLE Cliente (
+    cliente_id INTEGER PRIMARY KEY,
+    telefono TEXT
+        CHECK (
+            telefono GLOB
+            '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'
+        )
+);
+```
+
+## Validar un teléfono {.unlisted}
+
+Cada `[0-9]` representa **exactamente un dígito**.
+
+Los guiones deben aparecer exactamente en las posiciones indicadas.
+
+| Teléfono | ¿Válido? |
+|---|:---:|
+| `656-123-4567` | ✓ |
+| `915-555-1234` | ✓ |
+| `6561234567` | ✗ |
+| `656-12-4567` | ✗ |
+| `656-ABC-4567` | ✗ |
+
+## Fechas en SQLite
+
+SQLite no tiene un tipo de almacenamiento exclusivo para fechas.
+
+Podemos almacenarlas como `TEXT` utilizando un formato consistente.
+
+``` sql
+CREATE TABLE Pedido (
+    pedido_id INTEGER PRIMARY KEY,
+    fecha TEXT
+);
+```
+
+Podemos usar el formato YYYY-MM-DD.
+
+## Validar una fecha
+
+Podemos utilizar la función `date()` dentro de una restricción `CHECK` para validar un valor almacenado como `TEXT`.
+
+**Regla:**
+
+> La fecha debe utilizar el formato `YYYY-MM-DD` y representar una fecha válida.
+
+```sql
+CREATE TABLE Pedido (
+    pedido_id INTEGER PRIMARY KEY,
+    fecha TEXT CHECK (fecha = date(fecha))
+);
+```
+
+
+## Fecha y hora actual {.unlisted}
+
+Para almacenar fecha y hora podemos utilizar YYYY-MM-DD HH:MM:SS
+
+Ademas podemos utilizar `CURRENT_TIMESTAMP` para asignar automáticamente la fecha y hora al crear un registro.
+
+``` sql
+CREATE TABLE Registro (
+    registro_id INTEGER PRIMARY KEY,
+    fecha_hora TEXT
+        DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+
+## FOREIGN KEY - Relaciones 1:N
+
+Una `FOREIGN KEY` permite indicar que una columna hace referencia a la llave de otra tabla.
+
+``` sql
+CREATE TABLE Pedido (
+    pedido_id INTEGER PRIMARY KEY,
+    cliente_id INTEGER,
+
+    FOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id)
+);
+```
+
+`cliente_id` es **PK** en `Cliente` y **FK** en `Pedido`.
+
+
+## FOREIGN KEY - Relaciones N:M
+
+La tabla asociativa contiene las llaves de ambas entidades.
+
+``` sql
+CREATE TABLE Inscripcion (
+    estudiante_id INTEGER,
+    curso_id INTEGER,
+
+    PRIMARY KEY (estudiante_id, curso_id),
+    FOREIGN KEY (estudiante_id) REFERENCES Estudiante(estudiante_id),
+    FOREIGN KEY (curso_id) REFERENCES Curso(curso_id)
+);
+```
+
+La combinación (estudiante_id, curso_id) identifica una inscripción.
+
+
+## Integridad referencial
+
+La **integridad referencial** garantiza que las relaciones entre las tablas sean válidas y consistentes.
+
+Una llave foránea (`FOREIGN KEY`) solo puede hacer referencia a un valor que exista en la tabla relacionada.
+
+Esto evita:
+
+- referencias a registros inexistentes;
+- relaciones inválidas entre tablas;
+- inconsistencias en los datos.
+
+En SQLite debemos habilitar la aplicación de las llaves foráneas:
+
+```sql
+PRAGMA foreign_keys = ON;
+```
+
+## Juntando las piezas
+
+Una tabla puede implementar varias reglas al mismo tiempo.
+
+``` sql
+CREATE TABLE Producto (
+    producto_id INTEGER PRIMARY KEY,
+    nombre TEXT NOT NULL,
+    precio REAL CHECK (precio > 0),
+    existencia INTEGER DEFAULT 0
+);
+```
+
+
+## De la regla de negocio a SQL
+
+Cada decisión de diseño puede convertirse en una regla de la base de datos.
+
+**Regla del negocio**
+
+> Todo producto debe tener nombre.
+
+``` sql
+nombre TEXT NOT NULL
+```
+
+## De la regla de negocio a SQL {.unlisted}
+
+**Regla del negocio**
+
+> El precio debe ser positivo.
+
+``` sql
+precio REAL CHECK (precio > 0)
+```
+
+## De la regla de negocio a SQL {.unlisted}
+
+**Regla del negocio**
+
+> Un pedido debe hacer referencia a un cliente existente.
+
+``` sql
+FOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id)
+```
+
+## Idea clave
+
+No se trata solamente de crear columnas. Queremos que la propia base de datos ayude a garantizar que la información sea **válida y consistente**.
+
+Para cada atributo debemos preguntarnos:
+
+1.  ¿Qué tipo de dato representa?
+2.  ¿Puede ser nulo?
+3.  ¿Debe ser único?
+4.  ¿Qué valores son válidos?
+5.  ¿Depende de otra tabla?
+6.  ¿Qué regla del negocio debemos proteger?
+

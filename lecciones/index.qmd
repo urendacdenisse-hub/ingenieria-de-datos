@@ -14,7 +14,11 @@ title: "Lecciones"
 # Unidad II. Tecnologías de almacenamiento de datos
 
 - Introducción al almacenamiento de datos
-- [Bases de datos relacionales](unidad-02/leccion-01.qmd)
+- Bases de datos relacionales
+  - [Diagrama ER y Modelo Relacional](unidad-02/leccion-01.qmd)
+  - [Implemenación en SQLite](unidad-02/leccion-02.qmd)
+  - [Manipulación y Consultas](unidad-02/leccion-03.qmd)
+  - [Objetos y Automatización](unidad-02/leccion-04.qmd)
 - Almacenes analíticos
 - Sistemas de almacenamiento de archivos
 

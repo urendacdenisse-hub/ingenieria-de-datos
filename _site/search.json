@@ -529,7 +529,7 @@
     "href": "lecciones/index.html",
     "title": "Lecciones",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos"
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\nAlmacenes analíticos\nSistemas de almacenamiento de archivos"
   },
   {
     "objectID": "actividades/unidad-01/actividad-04.html",
@@ -1181,5 +1181,642 @@
     "title": "Laboratorio 4. Ciclo de vida de los datos",
     "section": "Ideas clave:",
     "text": "Ideas clave:\n\nEl ciclo de vida de los datos está formado por diferentes etapas, cada una con un propósito específico.\nLos datos se transforman continuamente para responder preguntas o resolver problemas.\nLos resultados de un análisis también son datos que pueden almacenarse, compartirse o eliminarse."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#más-allá-de-las-tablas",
+    "href": "lecciones/unidad-02/leccion-04.html#más-allá-de-las-tablas",
+    "title": "Objetos y Automatización",
+    "section": "Más allá de las tablas",
+    "text": "Más allá de las tablas\nUna base de datos puede incluir otros elementos para facilitar su uso, mejorar su rendimiento y automatizar operaciones.\n\n\n\nElemento\nFunción\n\n\n\n\nVIEW\nReutilizar consultas\n\n\nINDEX\nFacilitar búsquedas eficientes\n\n\nTRIGGER\nEjecutar acciones automáticamente\n\n\nTRANSACTION\nAgrupar operaciones como una unidad"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#view",
+    "href": "lecciones/unidad-02/leccion-04.html#view",
+    "title": "Objetos y Automatización",
+    "section": "VIEW",
+    "text": "VIEW\nUna vista es una consulta almacenada que puede utilizarse como si fuera una tabla.\nPor ejemplo, supongamos que consultamos frecuentemente los pedidos junto con el nombre del cliente:\nSELECT p.pedido_id, c.nombre, p.total\nFROM Pedido AS p\nJOIN Cliente AS c\n    ON p.cliente_id = c.cliente_id;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#create-view",
+    "href": "lecciones/unidad-02/leccion-04.html#create-view",
+    "title": "Objetos y Automatización",
+    "section": "CREATE VIEW",
+    "text": "CREATE VIEW\nPodemos guardar esa consulta como una vista:\nCREATE VIEW pedidos_clientes AS\nSELECT p.pedido_id, c.nombre, p.total\nFROM Pedido AS p\nJOIN Cliente AS c\n    ON p.cliente_id = c.cliente_id;\nDespués podemos consultarla directamente:\nSELECT * FROM pedidos_clientes;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#la-vista-almacena-los-datos",
+    "href": "lecciones/unidad-02/leccion-04.html#la-vista-almacena-los-datos",
+    "title": "Objetos y Automatización",
+    "section": "¿La vista almacena los datos?",
+    "text": "¿La vista almacena los datos?\nNo.\nLa vista almacena la consulta, no una copia independiente de los datos.\nCuando consultamos la vista, el resultado se obtiene a partir de las tablas originales."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#drop-view",
+    "href": "lecciones/unidad-02/leccion-04.html#drop-view",
+    "title": "Objetos y Automatización",
+    "section": "DROP VIEW",
+    "text": "DROP VIEW\nPodemos eliminar una vista cuando ya no sea necesaria:\nDROP VIEW pedidos_clientes;\nEsto elimina la vista, no las tablas ni los datos utilizados por ella."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#index",
+    "href": "lecciones/unidad-02/leccion-04.html#index",
+    "title": "Objetos y Automatización",
+    "section": "INDEX",
+    "text": "INDEX\nUn índice es una estructura que facilita la localización de registros en una tabla.\nEs especialmente útil cuando realizamos búsquedas frecuentes sobre una columna.\nPor ejemplo, podemos buscar todos los productos de una categoría:\nSELECT * FROM Producto\nWHERE categoria = 'Electrónica';\nSin un índice, SQLite necesita revisar los registros de la tabla para encontrar todas las coincidencias."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#create-index",
+    "href": "lecciones/unidad-02/leccion-04.html#create-index",
+    "title": "Objetos y Automatización",
+    "section": "CREATE INDEX",
+    "text": "CREATE INDEX\nSi realizamos frecuentemente búsquedas por categoría, podemos crear un índice:\nCREATE INDEX idx_producto_categoria\nON Producto(categoria);\nEl índice permite a SQLite localizar más eficientemente los registros asociados con cada categoría."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#cómo-funciona-un-índice",
+    "href": "lecciones/unidad-02/leccion-04.html#cómo-funciona-un-índice",
+    "title": "Objetos y Automatización",
+    "section": "¿Cómo funciona un índice?",
+    "text": "¿Cómo funciona un índice?\nSupongamos que tenemos la tabla:\n\n\n\nproducto_id\nnombre\ncategoria\n\n\n\n\n1\nLaptop\nElectrónica\n\n\n2\nMouse\nElectrónica\n\n\n3\nEscritorio\nMuebles\n\n\n4\nMonitor\nElectrónica\n\n\n5\nSilla\nMuebles\n\n\n\nCreamos un índice:\nCREATE INDEX idx_producto_categoria\nON Producto(categoria);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#cómo-se-ve-el-índice",
+    "href": "lecciones/unidad-02/leccion-04.html#cómo-se-ve-el-índice",
+    "title": "Objetos y Automatización",
+    "section": "¿Cómo se ve el índice?",
+    "text": "¿Cómo se ve el índice?\nConceptualmente, el índice mantiene los valores ordenados junto con una referencia al registro correspondiente.\n\n\n\ncategoria\nreferencia\n\n\n\n\nElectrónica\n1\n\n\nElectrónica\n2\n\n\nElectrónica\n4\n\n\nMuebles\n3\n\n\nMuebles\n5\n\n\n\nEl índice no contiene una nueva tabla de productos.\nMantiene una estructura que permite localizar los registros de manera más eficiente."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#buscar-utilizando-el-índice",
+    "href": "lecciones/unidad-02/leccion-04.html#buscar-utilizando-el-índice",
+    "title": "Objetos y Automatización",
+    "section": "Buscar utilizando el índice",
+    "text": "Buscar utilizando el índice\nPara una consulta como:\nSELECT *\nFROM Producto\nWHERE categoria = 'Muebles';\nSQLite puede utilizar el índice para localizar las referencias:\nMuebles\n   ├── 3\n   └── 5\ny después acceder a los registros correspondientes de Producto."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#índices-con-múltiples-columnas",
+    "href": "lecciones/unidad-02/leccion-04.html#índices-con-múltiples-columnas",
+    "title": "Objetos y Automatización",
+    "section": "Índices con múltiples columnas",
+    "text": "Índices con múltiples columnas\nUn índice también puede incluir más de una columna.\nCREATE INDEX idx_producto_categoria_precio\nON Producto(categoria, precio);\nPuede ser útil para consultas que utilizan ambas columnas:\nSELECT *\nFROM Producto\nWHERE categoria = 'Electrónica'\n  AND precio &lt; 5000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#drop-index",
+    "href": "lecciones/unidad-02/leccion-04.html#drop-index",
+    "title": "Objetos y Automatización",
+    "section": "DROP INDEX",
+    "text": "DROP INDEX\nPodemos eliminar un índice creado explícitamente:\nDROP INDEX idx_producto_categoria;\nEliminar el índice no elimina la columna ni sus datos."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#idea-clave",
+    "href": "lecciones/unidad-02/leccion-04.html#idea-clave",
+    "title": "Objetos y Automatización",
+    "section": "Idea clave",
+    "text": "Idea clave\nUn índice no modifica los datos ni el resultado de una consulta.\nModifica la forma en que SQLite puede localizar los datos.\nSin índice → buscar entre todos los registros\n\nCon índice → utilizar una estructura de búsqueda"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#trigger",
+    "href": "lecciones/unidad-02/leccion-04.html#trigger",
+    "title": "Objetos y Automatización",
+    "section": "TRIGGER",
+    "text": "TRIGGER\nUn trigger ejecuta automáticamente una acción cuando ocurre un evento determinado en una tabla.\nLos eventos principales son:\n\n\n\nEvento\nOcurre cuando…\n\n\n\n\nINSERT\nSe agrega un registro\n\n\nUPDATE\nSe modifica un registro\n\n\nDELETE\nSe elimina un registro"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#ejemplo",
+    "href": "lecciones/unidad-02/leccion-04.html#ejemplo",
+    "title": "Objetos y Automatización",
+    "section": "Ejemplo",
+    "text": "Ejemplo\nSupongamos que queremos conservar un historial de los cambios de precio.\nTenemos una tabla para registrar los cambios:\nCREATE TABLE HistorialPrecio (\n    historial_id INTEGER PRIMARY KEY,\n    producto_id INTEGER,\n    precio_anterior REAL,\n    precio_nuevo REAL,\n    fecha TEXT\n);\nQueremos que cada cambio se registre automáticamente."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#create-trigger",
+    "href": "lecciones/unidad-02/leccion-04.html#create-trigger",
+    "title": "Objetos y Automatización",
+    "section": "CREATE TRIGGER",
+    "text": "CREATE TRIGGER\nPodemos crear un trigger que se ejecute después de modificar un producto:\nCREATE TRIGGER registrar_cambio_precio\nAFTER UPDATE OF precio ON Producto\nBEGIN\n    INSERT INTO HistorialPrecio (\n        producto_id, precio_anterior, precio_nuevo, fecha\n    )\n    VALUES (\n        OLD.producto_id, OLD.precio, NEW.precio, CURRENT_TIMESTAMP\n    );\nEND;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#old-y-new",
+    "href": "lecciones/unidad-02/leccion-04.html#old-y-new",
+    "title": "Objetos y Automatización",
+    "section": "OLD y NEW",
+    "text": "OLD y NEW\nDentro de un trigger podemos acceder a los valores asociados con el evento.\n\n\n\nReferencia\nRepresenta\n\n\n\n\nOLD.columna\nValor anterior\n\n\nNEW.columna\nValor nuevo\n\n\n\nSi en una consulta se hace una actualizacion de precio en la tabla Producto de 800 a 950, dentro del trigger:\nOLD.precio → 800\nNEW.precio → 950"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#qué-ocurre",
+    "href": "lecciones/unidad-02/leccion-04.html#qué-ocurre",
+    "title": "Objetos y Automatización",
+    "section": "¿Qué ocurre?",
+    "text": "¿Qué ocurre?\nEjecutamos únicamente:\nUPDATE Producto SET precio = 950 WHERE producto_id = 3;\nEl trigger detecta el cambio en precio y ejecuta automáticamente:\nHistorialPrecio\n\nproducto_id      3\nprecio_anterior  800\nprecio_nuevo     950\nfecha            ...\nEl usuario no necesita insertar manualmente el registro en el historial."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#cuándo-se-ejecuta",
+    "href": "lecciones/unidad-02/leccion-04.html#cuándo-se-ejecuta",
+    "title": "Objetos y Automatización",
+    "section": "¿Cuándo se ejecuta?",
+    "text": "¿Cuándo se ejecuta?\nEn SQLite podemos indicar el momento en que se ejecutará el trigger.\n\n\n\nMomento\nSe ejecuta…\n\n\n\n\nBEFORE\nAntes del evento\n\n\nAFTER\nDespués del evento\n\n\nINSTEAD OF\nEn lugar del evento\n\n\n\nPor ejemplo:\nAFTER UPDATE ON Producto\nindica que el trigger se ejecutará después de modificar un registro de Producto."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#triggers-y-eventos",
+    "href": "lecciones/unidad-02/leccion-04.html#triggers-y-eventos",
+    "title": "Objetos y Automatización",
+    "section": "Triggers y eventos",
+    "text": "Triggers y eventos\nLa disponibilidad de OLD y NEW depende del evento.\n\n\n\nEvento\nOLD\nNEW\n\n\n\n\nINSERT\n—\n✓\n\n\nUPDATE\n✓\n✓\n\n\nDELETE\n✓\n—\n\n\n\nEn un INSERT no existe un valor anterior.\nEn un DELETE no existe un valor nuevo."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#condiciones",
+    "href": "lecciones/unidad-02/leccion-04.html#condiciones",
+    "title": "Objetos y Automatización",
+    "section": "Condiciones",
+    "text": "Condiciones\nUn trigger también puede ejecutarse solamente cuando se cumple una condición.\nCREATE TRIGGER registrar_aumento_precio\nAFTER UPDATE OF precio ON Producto\nWHEN NEW.precio &gt; OLD.precio\nBEGIN\n    INSERT INTO HistorialPrecio (\n        producto_id, precio_anterior, precio_nuevo, fecha\n    )\n    VALUES (\n        OLD.producto_id, OLD.precio, NEW.precio, CURRENT_TIMESTAMP\n    );\nEND;\nEn este caso, el historial se actualiza únicamente cuando el precio aumenta."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#drop-trigger",
+    "href": "lecciones/unidad-02/leccion-04.html#drop-trigger",
+    "title": "Objetos y Automatización",
+    "section": "DROP TRIGGER",
+    "text": "DROP TRIGGER\nPodemos eliminar un trigger cuando ya no sea necesario.\nDROP TRIGGER registrar_cambio_precio;\nEliminar el trigger no elimina las tablas ni los registros que haya generado anteriormente."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#transaction",
+    "href": "lecciones/unidad-02/leccion-04.html#transaction",
+    "title": "Objetos y Automatización",
+    "section": "TRANSACTION",
+    "text": "TRANSACTION\nUna transacción agrupa varias operaciones para tratarlas como una sola unidad.\nBEGIN TRANSACTION;\n\nINSERT INTO Inscripcion (estudiante_id, materia_id) VALUES (25, 10);\n\nUPDATE Materia SET cupo = cupo - 1 WHERE materia_id = 10;\n\nUPDATE Estudiante\nSET creditos_disponibles = creditos_disponibles - 8\nWHERE estudiante_id = 25;\n\nCOMMIT;\nCOMMIT confirma todos los cambios realizados en la transacción."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#rollback",
+    "href": "lecciones/unidad-02/leccion-04.html#rollback",
+    "title": "Objetos y Automatización",
+    "section": "ROLLBACK",
+    "text": "ROLLBACK\nSi ocurre un problema, podemos cancelar los cambios antes de confirmarlos.\nBEGIN TRANSACTION;\n\nINSERT INTO Inscripcion (estudiante_id, materia_id) VALUES (25, 10);\n\nUPDATE Materia SET cupo = cupo - 1 WHERE materia_id = 10;\n\nUPDATE Estudiante\nSET creditos_disponibles = creditos_disponibles - 8\nWHERE estudiante_id = 25;\n\nCOMMIT;\nROLLBACK revierte los cambios realizados desde el inicio de la transacción."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#idea-clave-1",
+    "href": "lecciones/unidad-02/leccion-04.html#idea-clave-1",
+    "title": "Objetos y Automatización",
+    "section": "Idea clave",
+    "text": "Idea clave\nUna transacción permite tratar varias operaciones como una sola unidad de trabajo.\n\n\n\nInstrucción\nFunción\n\n\n\n\nBEGIN TRANSACTION\nInicia la transacción\n\n\nCOMMIT\nConfirma los cambios\n\n\nROLLBACK\nCancela los cambios"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#del-diseño-a-la-implementación",
+    "href": "lecciones/unidad-02/leccion-02.html#del-diseño-a-la-implementación",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Del diseño a la implementación",
+    "text": "Del diseño a la implementación\nYa definimos:\n\nlas entidades;\nsus atributos;\nlas llaves primarias;\nlas relaciones;\nlas reglas del negocio.\n\n\nAhora necesitamos convertir ese diseño en instrucciones que el sistema gestor de bases de datos pueda ejecutar."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#sql",
+    "href": "lecciones/unidad-02/leccion-02.html#sql",
+    "title": "Implementación del Modelo Relacional",
+    "section": "SQL",
+    "text": "SQL\nSQL (Structured Query Language) es el lenguaje que utilizamos para trabajar con bases de datos relacionales.\nNos permite:\n\ncrear tablas;\ndefinir columnas y tipos de datos;\nestablecer llaves;\nimplementar restricciones;\nconsultar y modificar información.\n\nEn esta unidad utilizaremos SQLite."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#crear-una-tabla",
+    "href": "lecciones/unidad-02/leccion-02.html#crear-una-tabla",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Crear una tabla",
+    "text": "Crear una tabla\nPara crear una tabla utilizamos:\nCREATE TABLE Producto (\n    producto_id INTEGER,\n    nombre TEXT,\n    precio REAL\n);\nCada columna tiene:\n\nnombre + tipo de dato"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#tipos-de-datos-en-sqlite",
+    "href": "lecciones/unidad-02/leccion-02.html#tipos-de-datos-en-sqlite",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Tipos de datos en SQLite",
+    "text": "Tipos de datos en SQLite\nSQLite utiliza principalmente los siguientes tipos:\n\n\n\nTipo\nUso\n\n\n\n\nINTEGER\nNúmeros enteros\n\n\nREAL\nNúmeros con decimales\n\n\nTEXT\nTexto\n\n\nBLOB\nDatos binarios\n\n\n\nEl tipo debe elegirse de acuerdo con el significado y uso del dato."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#llave-primaria",
+    "href": "lecciones/unidad-02/leccion-02.html#llave-primaria",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Llave primaria",
+    "text": "Llave primaria\nLa llave primaria que identificamos durante el diseño se implementa utilizando PRIMARY KEY.\nCREATE TABLE Producto (\n    producto_id INTEGER PRIMARY KEY,\n    nombre TEXT,\n    precio REAL\n);\nproducto_id identifica de manera única cada producto."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones",
+    "text": "Restricciones\nAdemás del tipo de dato, podemos establecer restricciones sobre los valores permitidos.\nLas restricciones nos permiten implementar las reglas del negocio.\nAlgunas de las principales son:\n\nPRIMARY KEY\nNOT NULL\nUNIQUE\nDEFAULT\nCHECK\nFOREIGN KEY"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#not-null",
+    "href": "lecciones/unidad-02/leccion-02.html#not-null",
+    "title": "Implementación del Modelo Relacional",
+    "section": "NOT NULL",
+    "text": "NOT NULL\nNOT NULL indica que una columna siempre debe contener un valor.\nRegla:\n\nTodo empleado debe tener un nombre.\n\nCREATE TABLE Empleado (\n    empleado_id INTEGER PRIMARY KEY,\n    nombre TEXT NOT NULL\n);\nNo será posible registrar un empleado sin proporcionar su nombre."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#unique",
+    "href": "lecciones/unidad-02/leccion-02.html#unique",
+    "title": "Implementación del Modelo Relacional",
+    "section": "UNIQUE",
+    "text": "UNIQUE\nUNIQUE evita que un valor se repita en una columna.\nRegla:\n\nDos usuarios no pueden tener el mismo correo.\n\nCREATE TABLE Usuario (\n    usuario_id INTEGER PRIMARY KEY,\n    correo TEXT UNIQUE\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#default",
+    "href": "lecciones/unidad-02/leccion-02.html#default",
+    "title": "Implementación del Modelo Relacional",
+    "section": "DEFAULT",
+    "text": "DEFAULT\nDEFAULT establece un valor que será utilizado cuando no se proporcione uno.\nRegla:\n\nLa existencia inicial de un producto será cero.\n\nCREATE TABLE Producto (\n    producto_id INTEGER PRIMARY KEY,\n    existencia INTEGER DEFAULT 0\n);\nSi no proporcionamos existencia, SQLite utilizará 0."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#check",
+    "href": "lecciones/unidad-02/leccion-02.html#check",
+    "title": "Implementación del Modelo Relacional",
+    "section": "CHECK",
+    "text": "CHECK\nCHECK permite establecer una condición que debe cumplir un dato.\nRegla:\n\nEl precio de un producto debe ser mayor que cero.\n\nCREATE TABLE Producto (\n    producto_id INTEGER PRIMARY KEY,\n    precio REAL CHECK (precio &gt; 0)\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#check-rango",
+    "href": "lecciones/unidad-02/leccion-02.html#check-rango",
+    "title": "Implementación del Modelo Relacional",
+    "section": "CHECK — Rango",
+    "text": "CHECK — Rango\nTambién podemos restringir un valor a un intervalo.\nRegla:\n\nUna calificación debe encontrarse entre 0 y 100.\n\nCREATE TABLE Evaluacion (\n    evaluacion_id INTEGER PRIMARY KEY,\n    calificacion REAL\n        CHECK (calificacion BETWEEN 0 AND 100)\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#check-valores-permitidos",
+    "href": "lecciones/unidad-02/leccion-02.html#check-valores-permitidos",
+    "title": "Implementación del Modelo Relacional",
+    "section": "CHECK — Valores permitidos",
+    "text": "CHECK — Valores permitidos\nPodemos establecer un conjunto de valores válidos.\nRegla:\n\nUn empleado solamente puede pertenecer a uno de tres turnos.\n\nCREATE TABLE Empleado (\n    empleado_id INTEGER PRIMARY KEY,\n    turno TEXT CHECK (turno IN ('Matutino','Vespertino','Nocturno'))\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nTambién podemos establecer reglas sobre el formato de un texto.\nRegla:\n\nEl código de empleado debe comenzar con una letra mayúscula.\n\nCREATE TABLE Empleado (\n    empleado_id INTEGER PRIMARY KEY,\n    codigo TEXT CHECK (codigo GLOB '[A-Z]*')\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-1",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-1",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nGLOB permite verificar si un texto coincide con un patrón.\nEn el patrón [A-Z]*\n\n[A-Z] representa un carácter entre A y Z.\n* representa cualquier secuencia de caracteres después de la letra.\n\nPor lo tanto, codigo GLOB '[A-Z]*' pregunta:\n\n¿El código comienza con una letra mayúscula?"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-2",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-2",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nTambién podemos utilizar ^ para negar un conjunto de caracteres.\nRegla:\n\nEl código no puede comenzar con un número.\n\nCREATE TABLE Empleado (\n    empleado_id INTEGER PRIMARY KEY,\n    codigo TEXT CHECK (codigo GLOB '[^0-9]*')\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-3",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-3",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nEn el patrón [^0-9]*\n\n[0-9] representa un dígito entre 0 y 9.\n^ niega el conjunto: [^0-9] representa un carácter que no sea un número.\n* representa cualquier secuencia de caracteres después del primer carácter.\n\nPor lo tanto, codigo GLOB '[^0-9]*' pregunta:\n\n¿El código comienza con un carácter que no sea un número?"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-4",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-4",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nAhora podemos combinar los patrones anteriores.\nRegla:\n\nEl nombre solamente puede contener letras y espacios.\n\nCREATE TABLE Persona (\n    persona_id INTEGER PRIMARY KEY,\n    nombre TEXT\n        CHECK (nombre NOT GLOB '*[^A-Za-z ]*')\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-5",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-5",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nEn el patrón *[^A-Za-z ]*\n\n* representa cualquier secuencia de caracteres.\n[^A-Za-z ] representa un carácter que no sea una letra o un espacio.\n* representa cualquier secuencia de caracteres.\n\nPor lo tanto, nombre GLOB '*[^A-Za-z ]*' pregunta:\n\n¿El nombre contiene, en cualquier posición, un carácter que no sea una letra o un espacio?"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#números-almacenados-como-texto",
+    "href": "lecciones/unidad-02/leccion-02.html#números-almacenados-como-texto",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Números almacenados como texto",
+    "text": "Números almacenados como texto\nNo todo dato formado por dígitos debe almacenarse como INTEGER.\nPor ejemplo:\n\nUn teléfono es un identificador, no una cantidad.\n\nCREATE TABLE Cliente (\n    cliente_id INTEGER PRIMARY KEY,\n    telefono TEXT\n);\nNo necesitamos sumar, multiplicar o realizar operaciones aritméticas con un teléfono."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#validar-un-teléfono",
+    "href": "lecciones/unidad-02/leccion-02.html#validar-un-teléfono",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Validar un teléfono",
+    "text": "Validar un teléfono\nRegla:\n\nEl teléfono debe utilizar el formato ###-###-####.\n\nCREATE TABLE Cliente (\n    cliente_id INTEGER PRIMARY KEY,\n    telefono TEXT\n        CHECK (\n            telefono GLOB\n            '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'\n        )\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#validar-un-teléfono-1",
+    "href": "lecciones/unidad-02/leccion-02.html#validar-un-teléfono-1",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Validar un teléfono",
+    "text": "Validar un teléfono\nCada [0-9] representa exactamente un dígito.\nLos guiones deben aparecer exactamente en las posiciones indicadas.\n\n\n\nTeléfono\n¿Válido?\n\n\n\n\n656-123-4567\n✓\n\n\n915-555-1234\n✓\n\n\n6561234567\n✗\n\n\n656-12-4567\n✗\n\n\n656-ABC-4567\n✗"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#fechas-en-sqlite",
+    "href": "lecciones/unidad-02/leccion-02.html#fechas-en-sqlite",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Fechas en SQLite",
+    "text": "Fechas en SQLite\nSQLite no tiene un tipo de almacenamiento exclusivo para fechas.\nPodemos almacenarlas como TEXT utilizando un formato consistente.\nCREATE TABLE Pedido (\n    pedido_id INTEGER PRIMARY KEY,\n    fecha TEXT\n);\nPodemos usar el formato YYYY-MM-DD."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#validar-una-fecha",
+    "href": "lecciones/unidad-02/leccion-02.html#validar-una-fecha",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Validar una fecha",
+    "text": "Validar una fecha\nPodemos utilizar la función date() dentro de una restricción CHECK para validar un valor almacenado como TEXT.\nRegla:\n\nLa fecha debe utilizar el formato YYYY-MM-DD y representar una fecha válida.\n\nCREATE TABLE Pedido (\n    pedido_id INTEGER PRIMARY KEY,\n    fecha TEXT CHECK (fecha = date(fecha))\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#fecha-y-hora-actual",
+    "href": "lecciones/unidad-02/leccion-02.html#fecha-y-hora-actual",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Fecha y hora actual",
+    "text": "Fecha y hora actual\nPara almacenar fecha y hora podemos utilizar YYYY-MM-DD HH:MM:SS\nAdemas podemos utilizar CURRENT_TIMESTAMP para asignar automáticamente la fecha y hora al crear un registro.\nCREATE TABLE Registro (\n    registro_id INTEGER PRIMARY KEY,\n    fecha_hora TEXT\n        DEFAULT CURRENT_TIMESTAMP\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#foreign-key---relaciones-1n",
+    "href": "lecciones/unidad-02/leccion-02.html#foreign-key---relaciones-1n",
+    "title": "Implementación del Modelo Relacional",
+    "section": "FOREIGN KEY - Relaciones 1:N",
+    "text": "FOREIGN KEY - Relaciones 1:N\nUna FOREIGN KEY permite indicar que una columna hace referencia a la llave de otra tabla.\nCREATE TABLE Pedido (\n    pedido_id INTEGER PRIMARY KEY,\n    cliente_id INTEGER,\n\n    FOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id)\n);\ncliente_id es PK en Cliente y FK en Pedido."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#foreign-key---relaciones-nm",
+    "href": "lecciones/unidad-02/leccion-02.html#foreign-key---relaciones-nm",
+    "title": "Implementación del Modelo Relacional",
+    "section": "FOREIGN KEY - Relaciones N:M",
+    "text": "FOREIGN KEY - Relaciones N:M\nLa tabla asociativa contiene las llaves de ambas entidades.\nCREATE TABLE Inscripcion (\n    estudiante_id INTEGER,\n    curso_id INTEGER,\n\n    PRIMARY KEY (estudiante_id, curso_id),\n    FOREIGN KEY (estudiante_id) REFERENCES Estudiante(estudiante_id),\n    FOREIGN KEY (curso_id) REFERENCES Curso(curso_id)\n);\nLa combinación (estudiante_id, curso_id) identifica una inscripción."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#integridad-referencial",
+    "href": "lecciones/unidad-02/leccion-02.html#integridad-referencial",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Integridad referencial",
+    "text": "Integridad referencial\nLa integridad referencial garantiza que las relaciones entre las tablas sean válidas y consistentes.\nUna llave foránea (FOREIGN KEY) solo puede hacer referencia a un valor que exista en la tabla relacionada.\nEsto evita:\n\nreferencias a registros inexistentes;\nrelaciones inválidas entre tablas;\ninconsistencias en los datos.\n\nEn SQLite debemos habilitar la aplicación de las llaves foráneas:\nPRAGMA foreign_keys = ON;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#juntando-las-piezas",
+    "href": "lecciones/unidad-02/leccion-02.html#juntando-las-piezas",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Juntando las piezas",
+    "text": "Juntando las piezas\nUna tabla puede implementar varias reglas al mismo tiempo.\nCREATE TABLE Producto (\n    producto_id INTEGER PRIMARY KEY,\n    nombre TEXT NOT NULL,\n    precio REAL CHECK (precio &gt; 0),\n    existencia INTEGER DEFAULT 0\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql",
+    "href": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql",
+    "title": "Implementación del Modelo Relacional",
+    "section": "De la regla de negocio a SQL",
+    "text": "De la regla de negocio a SQL\nCada decisión de diseño puede convertirse en una regla de la base de datos.\nRegla del negocio\n\nTodo producto debe tener nombre.\n\nnombre TEXT NOT NULL"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql-1",
+    "href": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql-1",
+    "title": "Implementación del Modelo Relacional",
+    "section": "De la regla de negocio a SQL",
+    "text": "De la regla de negocio a SQL\nRegla del negocio\n\nEl precio debe ser positivo.\n\nprecio REAL CHECK (precio &gt; 0)"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql-2",
+    "href": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql-2",
+    "title": "Implementación del Modelo Relacional",
+    "section": "De la regla de negocio a SQL",
+    "text": "De la regla de negocio a SQL\nRegla del negocio\n\nUn pedido debe hacer referencia a un cliente existente.\n\nFOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id)"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#la-idea-importante",
+    "href": "lecciones/unidad-02/leccion-02.html#la-idea-importante",
+    "title": "Implementación del Modelo Relacional",
+    "section": "La idea importante",
+    "text": "La idea importante\nNo se trata solamente de crear columnas. Queremos que la propia base de datos ayude a garantizar que la información sea válida y consistente.\nPara cada atributo debemos preguntarnos:\n\n¿Qué tipo de dato representa?\n¿Puede ser nulo?\n¿Debe ser único?\n¿Qué valores son válidos?\n¿Depende de otra tabla?\n¿Qué regla del negocio debemos proteger?"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#manipulación-de-datos-1",
+    "href": "lecciones/unidad-02/leccion-03.html#manipulación-de-datos-1",
+    "title": "Manipulación y Consultas",
+    "section": "Manipulación de datos",
+    "text": "Manipulación de datos\nUna vez creadas las tablas, podemos trabajar con los datos almacenados.\nLas operaciones principales son:\n\n\n\nOperación\nFunción\n\n\n\n\nINSERT\nAgregar registros\n\n\nUPDATE\nModificar registros\n\n\nDELETE\nEliminar registros"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#insert",
+    "href": "lecciones/unidad-02/leccion-03.html#insert",
+    "title": "Manipulación y Consultas",
+    "section": "INSERT",
+    "text": "INSERT\nINSERT permite agregar nuevos registros a una tabla.\nINSERT INTO Producto (producto_id, nombre, precio)\nVALUES (1, 'Laptop', 15000);\nLos valores deben corresponder con las columnas indicadas."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#insert-1",
+    "href": "lecciones/unidad-02/leccion-03.html#insert-1",
+    "title": "Manipulación y Consultas",
+    "section": "INSERT",
+    "text": "INSERT\nTambién podemos insertar varios registros en una sola instrucción.\nINSERT INTO Producto (producto_id, nombre, precio)\nVALUES\n    (2, 'Mouse', 350),\n    (3, 'Teclado', 800),\n    (4, 'Monitor', 4500);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#update",
+    "href": "lecciones/unidad-02/leccion-03.html#update",
+    "title": "Manipulación y Consultas",
+    "section": "UPDATE",
+    "text": "UPDATE\nUPDATE permite modificar registros existentes.\nUPDATE Producto\nSET precio = 400\nWHERE producto_id = 2;\nWHERE indica qué registros serán modificados."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#update-1",
+    "href": "lecciones/unidad-02/leccion-03.html#update-1",
+    "title": "Manipulación y Consultas",
+    "section": "UPDATE",
+    "text": "UPDATE\nPodemos modificar más de una columna.\nUPDATE Producto\nSET nombre = 'Mouse inalámbrico', precio = 500\nWHERE producto_id = 2;\n\n\n\n\n\n\nAdvertencia\n\n\nSin WHERE, se modificarán todos los registros de la tabla."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#delete",
+    "href": "lecciones/unidad-02/leccion-03.html#delete",
+    "title": "Manipulación y Consultas",
+    "section": "DELETE",
+    "text": "DELETE\nDELETE permite eliminar registros.\nDELETE FROM Producto WHERE producto_id = 4;\nWHERE indica qué registros serán eliminados.\n\n\n\n\n\n\nAdvertencia\n\n\nSin WHERE, se eliminarán todos los registros de la tabla."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#select",
+    "href": "lecciones/unidad-02/leccion-03.html#select",
+    "title": "Manipulación y Consultas",
+    "section": "SELECT",
+    "text": "SELECT\nSELECT permite consultar los datos almacenados.\nSELECT * FROM Producto;\n* indica que queremos obtener todas las columnas."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#select---múltiples-columnas",
+    "href": "lecciones/unidad-02/leccion-03.html#select---múltiples-columnas",
+    "title": "Manipulación y Consultas",
+    "section": "SELECT - Múltiples columnas",
+    "text": "SELECT - Múltiples columnas\nPodemos indicar únicamente las columnas que necesitamos.\nSELECT nombre, precio FROM Producto;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#where",
+    "href": "lecciones/unidad-02/leccion-03.html#where",
+    "title": "Manipulación y Consultas",
+    "section": "WHERE",
+    "text": "WHERE\nWHERE permite filtrar registros mediante una condición.\nSELECT nombre, precio FROM Producto WHERE precio &gt; 1000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#operadores-de-comparación",
+    "href": "lecciones/unidad-02/leccion-03.html#operadores-de-comparación",
+    "title": "Manipulación y Consultas",
+    "section": "Operadores de comparación",
+    "text": "Operadores de comparación\nPodemos construir condiciones utilizando operadores de comparación.\n\n\n\nOperador\nSignificado\n\n\n\n\n=\nIgual\n\n\n!=\nDiferente\n\n\n&gt;\nMayor que\n\n\n&lt;\nMenor que\n\n\n&gt;=\nMayor o igual\n\n\n&lt;=\nMenor o igual"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#and",
+    "href": "lecciones/unidad-02/leccion-03.html#and",
+    "title": "Manipulación y Consultas",
+    "section": "AND",
+    "text": "AND\nAND requiere que todas las condiciones se cumplan.\nSELECT * FROM Producto\nWHERE precio &gt;= 500 AND precio &lt;= 5000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#or",
+    "href": "lecciones/unidad-02/leccion-03.html#or",
+    "title": "Manipulación y Consultas",
+    "section": "OR",
+    "text": "OR\nOR requiere que al menos una condición se cumpla.\nSELECT *\nFROM Producto\nWHERE nombre = 'Laptop' OR nombre = 'Monitor';"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#not",
+    "href": "lecciones/unidad-02/leccion-03.html#not",
+    "title": "Manipulación y Consultas",
+    "section": "NOT",
+    "text": "NOT\nNOT permite negar una condición.\nSELECT * FROM Producto\nWHERE NOT precio &gt; 1000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#between",
+    "href": "lecciones/unidad-02/leccion-03.html#between",
+    "title": "Manipulación y Consultas",
+    "section": "BETWEEN",
+    "text": "BETWEEN\nBETWEEN permite verificar si un valor se encuentra dentro de un rango.\nSELECT * FROM Producto\nWHERE precio BETWEEN 500 AND 5000;\nLos límites están incluidos."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#in",
+    "href": "lecciones/unidad-02/leccion-03.html#in",
+    "title": "Manipulación y Consultas",
+    "section": "IN",
+    "text": "IN\nIN permite comparar un valor contra varias opciones.\nSELECT * FROM Producto\nWHERE nombre IN ('Laptop', 'Mouse', 'Monitor');"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#like",
+    "href": "lecciones/unidad-02/leccion-03.html#like",
+    "title": "Manipulación y Consultas",
+    "section": "LIKE",
+    "text": "LIKE\nLIKE permite buscar patrones en texto.\nSELECT * FROM Producto\nWHERE nombre LIKE 'M%';\n% representa cualquier secuencia de caracteres."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#like-1",
+    "href": "lecciones/unidad-02/leccion-03.html#like-1",
+    "title": "Manipulación y Consultas",
+    "section": "LIKE",
+    "text": "LIKE\nAlgunos patrones comunes son:\n\n\n\nPatrón\nSignificado\n\n\n\n\n'M%'\nComienza con M\n\n\n'%a'\nTermina con a\n\n\n'%top%'\nContiene la secuencia de caracteres “top”\n\n\n'M_use'\n_ representa cualquier carácter"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#distinct",
+    "href": "lecciones/unidad-02/leccion-03.html#distinct",
+    "title": "Manipulación y Consultas",
+    "section": "DISTINCT",
+    "text": "DISTINCT\nDISTINCT muestra únicamente los valores no repetidos en el resultado de la consulta.\nSELECT DISTINCT categoria FROM Producto;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#order-by",
+    "href": "lecciones/unidad-02/leccion-03.html#order-by",
+    "title": "Manipulación y Consultas",
+    "section": "ORDER BY",
+    "text": "ORDER BY\nORDER BY permite ordenar los resultados.\nSELECT nombre, precio FROM Producto\nORDER BY precio ASC;\nASC ordena de menor a mayor."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#order-by-1",
+    "href": "lecciones/unidad-02/leccion-03.html#order-by-1",
+    "title": "Manipulación y Consultas",
+    "section": "ORDER BY",
+    "text": "ORDER BY\nPara ordenar de mayor a menor utilizamos DESC.\nSELECT nombre, precio FROM Producto\nORDER BY precio DESC;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#limit",
+    "href": "lecciones/unidad-02/leccion-03.html#limit",
+    "title": "Manipulación y Consultas",
+    "section": "LIMIT",
+    "text": "LIMIT\nLIMIT restringe la cantidad de registros obtenidos.\nSELECT * FROM Producto LIMIT 5;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#funciones-de-agregación",
+    "href": "lecciones/unidad-02/leccion-03.html#funciones-de-agregación",
+    "title": "Manipulación y Consultas",
+    "section": "Funciones de agregación",
+    "text": "Funciones de agregación\nLas funciones de agregación resumen varios registros en un resultado.\n\n\n\nFunción\nResultado\n\n\n\n\nCOUNT()\nCantidad\n\n\nSUM()\nSuma\n\n\nAVG()\nPromedio\n\n\nMIN()\nMínimo\n\n\nMAX()\nMáximo"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#ejemplos",
+    "href": "lecciones/unidad-02/leccion-03.html#ejemplos",
+    "title": "Manipulación y Consultas",
+    "section": "Ejemplos",
+    "text": "Ejemplos\nSELECT COUNT(*) FROM Producto;\nSELECT SUM(precio) FROM Producto;\nSELECT AVG(precio) FROM Producto;\nSELECT MIN(precio), MAX(precio) FROM Producto;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#group-by",
+    "href": "lecciones/unidad-02/leccion-03.html#group-by",
+    "title": "Manipulación y Consultas",
+    "section": "GROUP BY",
+    "text": "GROUP BY\nGROUP BY permite realizar agregaciones por grupos.\nSELECT categoria, AVG(precio) FROM Producto\nGROUP BY categoria;\nCalcula el precio promedio de cada categoría."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#having",
+    "href": "lecciones/unidad-02/leccion-03.html#having",
+    "title": "Manipulación y Consultas",
+    "section": "HAVING",
+    "text": "HAVING\nHAVING permite filtrar grupos después de una agregación.\nSELECT categoria, AVG(precio)\nFROM Producto\nGROUP BY categoria\nHAVING AVG(precio) &gt; 1000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#where-vs-having",
+    "href": "lecciones/unidad-02/leccion-03.html#where-vs-having",
+    "title": "Manipulación y Consultas",
+    "section": "WHERE vs HAVING",
+    "text": "WHERE vs HAVING\nWHERE filtra registros antes de agrupar.\nHAVING filtra grupos después de agrupar.\nSELECT categoria, AVG(precio)\nFROM Producto\nWHERE precio &gt; 100\nGROUP BY categoria\nHAVING AVG(precio) &gt; 1000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#join",
+    "href": "lecciones/unidad-02/leccion-03.html#join",
+    "title": "Manipulación y Consultas",
+    "section": "JOIN",
+    "text": "JOIN\nJOIN permite combinar información almacenada en tablas relacionadas.\nSELECT Pedido.pedido_id, Cliente.nombre\nFROM Pedido\nJOIN Cliente\n    ON Pedido.cliente_id = Cliente.cliente_id;\nLa condición ON indica cómo se relacionan las tablas."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#alias",
+    "href": "lecciones/unidad-02/leccion-03.html#alias",
+    "title": "Manipulación y Consultas",
+    "section": "Alias",
+    "text": "Alias\nPodemos utilizar alias para simplificar las consultas.\nSELECT p.pedido_id, c.nombre\nFROM Pedido AS p\nJOIN Cliente AS c\n    ON p.cliente_id = c.cliente_id;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#inner-join",
+    "href": "lecciones/unidad-02/leccion-03.html#inner-join",
+    "title": "Manipulación y Consultas",
+    "section": "INNER JOIN",
+    "text": "INNER JOIN\nINNER JOIN devuelve únicamente registros que tienen una correspondencia en ambas tablas.\nSELECT c.nombre, p.pedido_id\nFROM Cliente AS c\nINNER JOIN Pedido AS p\n    ON c.cliente_id = p.cliente_id;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#left-join",
+    "href": "lecciones/unidad-02/leccion-03.html#left-join",
+    "title": "Manipulación y Consultas",
+    "section": "LEFT JOIN",
+    "text": "LEFT JOIN\nLEFT JOIN conserva todos los registros de la tabla izquierda, incluso si no tienen una correspondencia.\nSELECT c.nombre, p.pedido_id\nFROM Cliente AS c\nLEFT JOIN Pedido AS p\n    ON c.cliente_id = p.cliente_id;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#orden-de-una-consulta",
+    "href": "lecciones/unidad-02/leccion-03.html#orden-de-una-consulta",
+    "title": "Manipulación y Consultas",
+    "section": "Orden de una consulta",
+    "text": "Orden de una consulta\nUna consulta puede combinar varias de estas operaciones.\nSELECT categoria, AVG(precio)\nFROM Producto\nWHERE precio &gt; 100\nGROUP BY categoria\nHAVING AVG(precio) &gt; 500\nORDER BY AVG(precio) DESC\nLIMIT 5;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#orden-de-las-cláusulas",
+    "href": "lecciones/unidad-02/leccion-03.html#orden-de-las-cláusulas",
+    "title": "Manipulación y Consultas",
+    "section": "Orden de las cláusulas",
+    "text": "Orden de las cláusulas\nSELECT\nFROM\nWHERE\nGROUP BY\nHAVING\nORDER BY\nLIMIT\nNo todas las consultas necesitan utilizar todas las cláusulas."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#idea-clave",
+    "href": "lecciones/unidad-02/leccion-03.html#idea-clave",
+    "title": "Manipulación y Consultas",
+    "section": "Idea clave",
+    "text": "Idea clave\nSQL nos permite:\nInsertar → Modificar → Eliminar → Consultar → Filtrar → Agrupar → Relacionar\nLas instrucciones pueden combinarse para responder preguntas cada vez más complejas sobre los datos almacenados."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#idea-clave",
+    "href": "lecciones/unidad-02/leccion-02.html#idea-clave",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Idea clave",
+    "text": "Idea clave\nNo se trata solamente de crear columnas. Queremos que la propia base de datos ayude a garantizar que la información sea válida y consistente.\nPara cada atributo debemos preguntarnos:\n\n¿Qué tipo de dato representa?\n¿Puede ser nulo?\n¿Debe ser único?\n¿Qué valores son válidos?\n¿Depende de otra tabla?\n¿Qué regla del negocio debemos proteger?"
   }
 ]

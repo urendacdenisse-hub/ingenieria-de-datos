@@ -1,0 +1,381 @@
+---
+title: "Manipulación y Consultas"
+subtitle: "SQLite"
+format: revealjs
+---
+
+# Manipulación de datos
+
+## Manipulación de datos
+
+Una vez creadas las tablas, podemos trabajar con los datos almacenados.
+
+Las operaciones principales son:
+
+| Operación | Función             |
+|-----------|---------------------|
+| `INSERT`  | Agregar registros   |
+| `UPDATE`  | Modificar registros |
+| `DELETE`  | Eliminar registros  |
+
+## INSERT
+
+`INSERT` permite **agregar nuevos registros** a una tabla.
+
+``` sql
+INSERT INTO Producto (producto_id, nombre, precio)
+VALUES (1, 'Laptop', 15000);
+```
+
+Los valores deben corresponder con las columnas indicadas.
+
+## INSERT {.unlisted}
+
+También podemos insertar **varios registros** en una sola instrucción.
+
+``` sql
+INSERT INTO Producto (producto_id, nombre, precio)
+VALUES
+    (2, 'Mouse', 350),
+    (3, 'Teclado', 800),
+    (4, 'Monitor', 4500);
+```
+
+## UPDATE
+
+`UPDATE` permite **modificar registros existentes**.
+
+``` sql
+UPDATE Producto
+SET precio = 400
+WHERE producto_id = 2;
+```
+
+`WHERE` indica qué registros serán modificados.
+
+## UPDATE {.unlisted}
+
+Podemos modificar **más de una columna**.
+
+``` sql
+UPDATE Producto
+SET nombre = 'Mouse inalámbrico', precio = 500
+WHERE producto_id = 2;
+```
+
+::: callout-warning
+Sin `WHERE`, se modificarán **todos los registros** de la tabla.
+:::
+
+## DELETE
+
+`DELETE` permite **eliminar registros**.
+
+``` sql
+DELETE FROM Producto WHERE producto_id = 4;
+```
+
+`WHERE` indica qué registros serán eliminados.
+
+::: callout-warning
+Sin `WHERE`, se eliminarán **todos los registros** de la tabla.
+:::
+
+# Consultas
+
+## SELECT
+
+`SELECT` permite **consultar los datos** almacenados.
+
+``` sql
+SELECT * FROM Producto;
+```
+
+`*` indica que queremos obtener **todas las columnas**.
+
+## SELECT - Múltiples columnas
+
+Podemos indicar únicamente las columnas que necesitamos.
+
+``` sql
+SELECT nombre, precio FROM Producto;
+```
+
+## WHERE
+
+`WHERE` permite **filtrar registros** mediante una condición.
+
+``` sql
+SELECT nombre, precio FROM Producto WHERE precio > 1000;
+```
+
+## Operadores de comparación
+
+Podemos construir condiciones utilizando operadores de comparación.
+
+| Operador | Significado   |
+|:--------:|---------------|
+|   `=`    | Igual         |
+|   `!=`   | Diferente     |
+|   `>`    | Mayor que     |
+|   `<`    | Menor que     |
+|   `>=`   | Mayor o igual |
+|   `<=`   | Menor o igual |
+
+## AND
+
+`AND` requiere que **todas las condiciones** se cumplan.
+
+``` sql
+SELECT * FROM Producto
+WHERE precio >= 500 AND precio <= 5000;
+```
+
+## OR
+
+`OR` requiere que **al menos una condición** se cumpla.
+
+``` sql
+SELECT *
+FROM Producto
+WHERE nombre = 'Laptop' OR nombre = 'Monitor';
+```
+
+## NOT
+
+`NOT` permite **negar una condición**.
+
+``` sql
+SELECT * FROM Producto
+WHERE NOT precio > 1000;
+```
+
+## BETWEEN
+
+`BETWEEN` permite verificar si un valor se encuentra dentro de un rango.
+
+``` sql
+SELECT * FROM Producto
+WHERE precio BETWEEN 500 AND 5000;
+```
+
+Los límites están incluidos.
+
+## IN
+
+`IN` permite comparar un valor contra **varias opciones**.
+
+``` sql
+SELECT * FROM Producto
+WHERE nombre IN ('Laptop', 'Mouse', 'Monitor');
+```
+
+## LIKE
+
+`LIKE` permite buscar **patrones en texto**.
+
+``` sql
+SELECT * FROM Producto
+WHERE nombre LIKE 'M%';
+```
+
+`%` representa cualquier secuencia de caracteres.
+
+## LIKE {.unlisted}
+
+Algunos patrones comunes son:
+
+| Patrón    | Significado                               |
+|-----------|-------------------------------------------|
+| `'M%'`    | Comienza con M                            |
+| `'%a'`    | Termina con a                             |
+| `'%top%'` | Contiene la secuencia de caracteres "top" |
+| `'M_use'` | `_` representa cualquier carácter         |
+
+## DISTINCT
+
+`DISTINCT` muestra únicamente los valores **no repetidos** en el resultado de la consulta.
+
+``` sql
+SELECT DISTINCT categoria FROM Producto;
+```
+
+## ORDER BY
+
+`ORDER BY` permite **ordenar los resultados**.
+
+``` sql
+SELECT nombre, precio FROM Producto
+ORDER BY precio ASC;
+```
+
+`ASC` ordena de menor a mayor.
+
+## ORDER BY {.unlisted}
+
+Para ordenar de mayor a menor utilizamos `DESC`.
+
+``` sql
+SELECT nombre, precio FROM Producto
+ORDER BY precio DESC;
+```
+
+## LIMIT
+
+`LIMIT` restringe la cantidad de registros obtenidos.
+
+``` sql
+SELECT * FROM Producto LIMIT 5;
+```
+
+# Agregación
+
+## Funciones de agregación
+
+Las funciones de agregación resumen **varios registros en un resultado**.
+
+| Función   | Resultado |
+|-----------|-----------|
+| `COUNT()` | Cantidad  |
+| `SUM()`   | Suma      |
+| `AVG()`   | Promedio  |
+| `MIN()`   | Mínimo    |
+| `MAX()`   | Máximo    |
+
+## Ejemplos
+
+``` sql
+SELECT COUNT(*) FROM Producto;
+```
+
+``` sql
+SELECT SUM(precio) FROM Producto;
+```
+
+``` sql
+SELECT AVG(precio) FROM Producto;
+```
+
+``` sql
+SELECT MIN(precio), MAX(precio) FROM Producto;
+```
+
+## GROUP BY
+
+`GROUP BY` permite realizar agregaciones **por grupos**.
+
+``` sql
+SELECT categoria, AVG(precio) FROM Producto
+GROUP BY categoria;
+```
+
+Calcula el precio promedio de cada categoría.
+
+## HAVING
+
+`HAVING` permite **filtrar grupos** después de una agregación.
+
+``` sql
+SELECT categoria, AVG(precio)
+FROM Producto
+GROUP BY categoria
+HAVING AVG(precio) > 1000;
+```
+
+## WHERE vs HAVING
+
+`WHERE` filtra **registros** antes de agrupar.
+
+`HAVING` filtra **grupos** después de agrupar.
+
+``` sql
+SELECT categoria, AVG(precio)
+FROM Producto
+WHERE precio > 100
+GROUP BY categoria
+HAVING AVG(precio) > 1000;
+```
+
+# Consultar múltiples tablas
+
+## JOIN
+
+`JOIN` permite combinar información almacenada en **tablas relacionadas**.
+
+``` sql
+SELECT Pedido.pedido_id, Cliente.nombre
+FROM Pedido
+JOIN Cliente
+    ON Pedido.cliente_id = Cliente.cliente_id;
+```
+
+La condición `ON` indica cómo se relacionan las tablas.
+
+## Alias
+
+Podemos utilizar alias para simplificar las consultas.
+
+``` sql
+SELECT p.pedido_id, c.nombre
+FROM Pedido AS p
+JOIN Cliente AS c
+    ON p.cliente_id = c.cliente_id;
+```
+
+## INNER JOIN
+
+`INNER JOIN` devuelve únicamente registros que tienen una correspondencia en ambas tablas.
+
+``` sql
+SELECT c.nombre, p.pedido_id
+FROM Cliente AS c
+INNER JOIN Pedido AS p
+    ON c.cliente_id = p.cliente_id;
+```
+
+## LEFT JOIN
+
+`LEFT JOIN` conserva **todos los registros de la tabla izquierda**, incluso si no tienen una correspondencia.
+
+``` sql
+SELECT c.nombre, p.pedido_id
+FROM Cliente AS c
+LEFT JOIN Pedido AS p
+    ON c.cliente_id = p.cliente_id;
+```
+
+## Orden de una consulta
+
+Una consulta puede combinar varias de estas operaciones.
+
+``` sql
+SELECT categoria, AVG(precio)
+FROM Producto
+WHERE precio > 100
+GROUP BY categoria
+HAVING AVG(precio) > 500
+ORDER BY AVG(precio) DESC
+LIMIT 5;
+```
+
+## Orden de las cláusulas
+
+``` text
+SELECT
+FROM
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+LIMIT
+```
+
+No todas las consultas necesitan utilizar todas las cláusulas.
+
+## Idea clave
+
+SQL nos permite:
+
+**Insertar → Modificar → Eliminar → Consultar → Filtrar → Agrupar → Relacionar**
+
+Las instrucciones pueden combinarse para responder preguntas cada vez más complejas sobre los datos almacenados.

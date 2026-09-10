@@ -144,7 +144,7 @@ Dra. Denisse Urenda Castañeda
     </div>
 </div>
 
-  <p class="date">agosto 2026</p>
+  <p class="date">septiembre 2026</p>
 </section>
 <section id="representar-el-negocio" class="slide level2">
 <h2>Representar el negocio</h2>
@@ -946,7 +946,7 @@ El valor de una columna debe ser una entidad atómica, indivisible, excluyendo a
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/urendacdenisse-hub\.github\.io\/ingenieria-de-datos\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

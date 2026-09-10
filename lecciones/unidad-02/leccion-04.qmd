@@ -1,0 +1,399 @@
+---
+title: "Objetos y Automatización"
+subtitle: "SQLite"
+format: revealjs
+---
+
+# Objetos y Automatización en SQLite
+
+## Más allá de las tablas
+
+Una base de datos puede incluir otros elementos para facilitar su uso, mejorar su rendimiento y automatizar operaciones.
+
+| Elemento      | Función                             |
+|---------------|-------------------------------------|
+| `VIEW`        | Reutilizar consultas                |
+| `INDEX`       | Facilitar búsquedas eficientes      |
+| `TRIGGER`     | Ejecutar acciones automáticamente   |
+| `TRANSACTION` | Agrupar operaciones como una unidad |
+
+# Vistas
+
+## VIEW
+
+Una **vista** es una consulta almacenada que puede utilizarse como si fuera una tabla.
+
+Por ejemplo, supongamos que consultamos frecuentemente los pedidos junto con el nombre del cliente:
+
+``` sql
+SELECT p.pedido_id, c.nombre, p.total
+FROM Pedido AS p
+JOIN Cliente AS c
+    ON p.cliente_id = c.cliente_id;
+```
+
+## CREATE VIEW
+
+Podemos guardar esa consulta como una vista:
+
+``` sql
+CREATE VIEW pedidos_clientes AS
+SELECT p.pedido_id, c.nombre, p.total
+FROM Pedido AS p
+JOIN Cliente AS c
+    ON p.cliente_id = c.cliente_id;
+```
+
+Después podemos consultarla directamente:
+
+``` sql
+SELECT * FROM pedidos_clientes;
+```
+
+## ¿La vista almacena los datos?
+
+No.
+
+La vista almacena la **consulta**, no una copia independiente de los datos.
+
+Cuando consultamos la vista, el resultado se obtiene a partir de las tablas originales.
+
+## DROP VIEW
+
+Podemos eliminar una vista cuando ya no sea necesaria:
+
+``` sql
+DROP VIEW pedidos_clientes;
+```
+
+Esto elimina la **vista**, no las tablas ni los datos utilizados por ella.
+
+# Índices
+
+## INDEX
+
+Un **índice** es una estructura que facilita la localización de registros en una tabla.
+
+Es especialmente útil cuando realizamos búsquedas frecuentes sobre una columna.
+
+Por ejemplo, podemos buscar todos los productos de una categoría:
+
+``` sql
+SELECT * FROM Producto
+WHERE categoria = 'Electrónica';
+```
+
+Sin un índice, SQLite necesita revisar los registros de la tabla para encontrar **todas** las coincidencias.
+
+## CREATE INDEX
+
+Si realizamos frecuentemente búsquedas por categoría, podemos crear un índice:
+
+``` sql
+CREATE INDEX idx_producto_categoria
+ON Producto(categoria);
+```
+
+El índice permite a SQLite localizar más eficientemente los registros asociados con cada categoría.
+
+## ¿Cómo funciona un índice?
+
+Supongamos que tenemos la tabla:
+
+| producto_id | nombre     | categoria   |
+|------------:|------------|-------------|
+|           1 | Laptop     | Electrónica |
+|           2 | Mouse      | Electrónica |
+|           3 | Escritorio | Muebles     |
+|           4 | Monitor    | Electrónica |
+|           5 | Silla      | Muebles     |
+
+Creamos un índice:
+
+``` sql
+CREATE INDEX idx_producto_categoria
+ON Producto(categoria);
+```
+
+## ¿Cómo se ve el índice?
+
+Conceptualmente, el índice mantiene los valores **ordenados** junto con una referencia al registro correspondiente.
+
+| categoria   | referencia |
+|-------------|-----------:|
+| Electrónica |          1 |
+| Electrónica |          2 |
+| Electrónica |          4 |
+| Muebles     |          3 |
+| Muebles     |          5 |
+
+El índice **no contiene una nueva tabla de productos**.
+
+Mantiene una estructura que permite localizar los registros de manera más eficiente.
+
+## Buscar utilizando el índice
+
+Para una consulta como:
+
+``` sql
+SELECT *
+FROM Producto
+WHERE categoria = 'Muebles';
+```
+
+SQLite puede utilizar el índice para localizar las referencias:
+
+``` text
+Muebles
+   ├── 3
+   └── 5
+```
+
+y después acceder a los registros correspondientes de `Producto`.
+
+## Índices con múltiples columnas
+
+Un índice también puede incluir más de una columna.
+
+``` sql
+CREATE INDEX idx_producto_categoria_precio
+ON Producto(categoria, precio);
+```
+
+Puede ser útil para consultas que utilizan ambas columnas:
+
+``` sql
+SELECT *
+FROM Producto
+WHERE categoria = 'Electrónica'
+  AND precio < 5000;
+```
+
+## DROP INDEX
+
+Podemos eliminar un índice creado explícitamente:
+
+``` sql
+DROP INDEX idx_producto_categoria;
+```
+
+Eliminar el índice **no elimina la columna ni sus datos**.
+
+## Idea clave
+
+Un índice **no modifica los datos ni el resultado de una consulta**.
+
+Modifica la forma en que SQLite puede localizar los datos.
+
+``` text
+Sin índice → buscar entre todos los registros
+
+Con índice → utilizar una estructura de búsqueda
+```
+
+# Triggers
+
+## TRIGGER
+
+Un **trigger** ejecuta automáticamente una acción cuando ocurre un evento determinado en una tabla.
+
+Los eventos principales son:
+
+| Evento   | Ocurre cuando...        |
+|----------|-------------------------|
+| `INSERT` | Se agrega un registro   |
+| `UPDATE` | Se modifica un registro |
+| `DELETE` | Se elimina un registro  |
+
+## Ejemplo
+
+Supongamos que queremos conservar un historial de los cambios de precio.
+
+Tenemos una tabla para registrar los cambios:
+
+``` sql
+CREATE TABLE HistorialPrecio (
+    historial_id INTEGER PRIMARY KEY,
+    producto_id INTEGER,
+    precio_anterior REAL,
+    precio_nuevo REAL,
+    fecha TEXT
+);
+```
+
+Queremos que cada cambio se registre **automáticamente**.
+
+## CREATE TRIGGER
+
+Podemos crear un trigger que se ejecute después de modificar un producto:
+
+``` sql
+CREATE TRIGGER registrar_cambio_precio
+AFTER UPDATE OF precio ON Producto
+BEGIN
+    INSERT INTO HistorialPrecio (
+        producto_id, precio_anterior, precio_nuevo, fecha
+    )
+    VALUES (
+        OLD.producto_id, OLD.precio, NEW.precio, CURRENT_TIMESTAMP
+    );
+END;
+```
+
+## OLD y NEW
+
+Dentro de un trigger podemos acceder a los valores asociados con el evento.
+
+| Referencia    | Representa     |
+|---------------|----------------|
+| `OLD.columna` | Valor anterior |
+| `NEW.columna` | Valor nuevo    |
+
+Si en una consulta se hace una actualizacion de precio en la tabla Producto de 800 a 950, dentro del trigger:
+
+``` text
+OLD.precio → 800
+NEW.precio → 950
+```
+
+## ¿Qué ocurre?
+
+Ejecutamos únicamente:
+
+``` sql
+UPDATE Producto SET precio = 950 WHERE producto_id = 3;
+```
+
+El trigger detecta el cambio en precio y ejecuta automáticamente:
+
+``` text
+HistorialPrecio
+
+producto_id      3
+precio_anterior  800
+precio_nuevo     950
+fecha            ...
+```
+
+El usuario **no necesita insertar manualmente** el registro en el historial.
+
+
+## ¿Cuándo se ejecuta?
+
+En SQLite podemos indicar el momento en que se ejecutará el trigger.
+
+| Momento | Se ejecuta... |
+|---|---|
+| `BEFORE` | Antes del evento |
+| `AFTER` | Después del evento |
+| `INSTEAD OF` | En lugar del evento |
+
+Por ejemplo:
+
+``` sql
+AFTER UPDATE ON Producto
+```
+
+indica que el trigger se ejecutará después de modificar un registro de `Producto`.
+
+
+## Triggers y eventos
+
+La disponibilidad de `OLD` y `NEW` depende del evento.
+
+| Evento   | `OLD` | `NEW` |
+|----------|:-----:|:-----:|
+| `INSERT` |   —   |   ✓   |
+| `UPDATE` |   ✓   |   ✓   |
+| `DELETE` |   ✓   |   —   |
+
+En un `INSERT` no existe un valor anterior.
+
+En un `DELETE` no existe un valor nuevo.
+
+
+## Condiciones
+
+Un trigger también puede ejecutarse solamente cuando se cumple una condición.
+
+``` sql
+CREATE TRIGGER registrar_aumento_precio
+AFTER UPDATE OF precio ON Producto
+WHEN NEW.precio > OLD.precio
+BEGIN
+    INSERT INTO HistorialPrecio (
+        producto_id, precio_anterior, precio_nuevo, fecha
+    )
+    VALUES (
+        OLD.producto_id, OLD.precio, NEW.precio, CURRENT_TIMESTAMP
+    );
+END;
+```
+
+En este caso, el historial se actualiza únicamente cuando el precio **aumenta**.
+
+
+## DROP TRIGGER
+
+Podemos eliminar un trigger cuando ya no sea necesario.
+
+``` sql
+DROP TRIGGER registrar_cambio_precio;
+```
+
+Eliminar el trigger no elimina las tablas ni los registros que haya generado anteriormente.
+
+
+# Transacciones
+
+## TRANSACTION
+
+Una **transacción** agrupa varias operaciones para tratarlas como una sola unidad.
+
+```sql
+BEGIN TRANSACTION;
+
+INSERT INTO Inscripcion (estudiante_id, materia_id) VALUES (25, 10);
+
+UPDATE Materia SET cupo = cupo - 1 WHERE materia_id = 10;
+
+UPDATE Estudiante
+SET creditos_disponibles = creditos_disponibles - 8
+WHERE estudiante_id = 25;
+
+COMMIT;
+```
+
+`COMMIT` confirma todos los cambios realizados en la transacción.
+
+
+## ROLLBACK
+
+Si ocurre un problema, podemos cancelar los cambios antes de confirmarlos.
+
+```sql
+BEGIN TRANSACTION;
+
+INSERT INTO Inscripcion (estudiante_id, materia_id) VALUES (25, 10);
+
+UPDATE Materia SET cupo = cupo - 1 WHERE materia_id = 10;
+
+UPDATE Estudiante
+SET creditos_disponibles = creditos_disponibles - 8
+WHERE estudiante_id = 25;
+
+COMMIT;
+```
+
+`ROLLBACK` revierte los cambios realizados desde el inicio de la transacción.
+
+
+## Idea clave
+
+Una transacción permite tratar varias operaciones como **una sola unidad de trabajo**.
+
+| Instrucción | Función |
+|---|---|
+| `BEGIN TRANSACTION` | Inicia la transacción |
+| `COMMIT` | Confirma los cambios |
+| `ROLLBACK` | Cancela los cambios |
