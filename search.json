@@ -147,760 +147,235 @@
     "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos"
   },
   {
-    "objectID": "lecciones/unidad-01/leccion-05.html#objetivo",
-    "href": "lecciones/unidad-01/leccion-05.html#objetivo",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Objetivo",
-    "text": "Objetivo\nIdentificar los principales roles relacionados con los datos y comprender la participación del ingeniero de datos dentro del ciclo de vida de los datos.\nReconocer las etapas que conforman el ciclo de vida de la ingeniería de datos."
+    "objectID": "lecciones/unidad-02/leccion-03.html#manipulación-de-datos-1",
+    "href": "lecciones/unidad-02/leccion-03.html#manipulación-de-datos-1",
+    "title": "Manipulación y Consultas",
+    "section": "Manipulación de datos",
+    "text": "Manipulación de datos\nUna vez creadas las tablas, podemos trabajar con los datos almacenados.\nLas operaciones principales son:\n\n\n\nOperación\nFunción\n\n\n\n\nINSERT\nAgregar registros\n\n\nUPDATE\nModificar registros\n\n\nDELETE\nEliminar registros"
   },
   {
-    "objectID": "lecciones/unidad-01/leccion-05.html#pregunta",
-    "href": "lecciones/unidad-01/leccion-05.html#pregunta",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Pregunta",
-    "text": "Pregunta\n¿Quiénes participan en el ciclo de vida de los datos y cuál es el papel de la ingeniería de datos?"
+    "objectID": "lecciones/unidad-02/leccion-03.html#insert",
+    "href": "lecciones/unidad-02/leccion-03.html#insert",
+    "title": "Manipulación y Consultas",
+    "section": "INSERT",
+    "text": "INSERT\nINSERT permite agregar nuevos registros a una tabla.\nINSERT INTO Producto (producto_id, nombre, precio)\nVALUES (1, 'Laptop', 15000);\nLos valores deben corresponder con las columnas indicadas."
   },
   {
-    "objectID": "lecciones/unidad-01/leccion-05.html#ingeniero-analista-y-científico-de-datos",
-    "href": "lecciones/unidad-01/leccion-05.html#ingeniero-analista-y-científico-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Ingeniero, analista y científico de datos",
-    "text": "Ingeniero, analista y científico de datos\nDiferentes profesionales trabajan con los datos dependiendo del objetivo y la etapa del ciclo.\n\nIngeniero de datos: construye y mantiene los sistemas que permiten obtener, almacenar, transformar y disponibilizar los datos.\nAnalista de datos: utiliza los datos para responder preguntas, identificar patrones y comunicar resultados.\nCientífico de datos: utiliza los datos para realizar análisis, experimentación y desarrollar modelos."
+    "objectID": "lecciones/unidad-02/leccion-03.html#insert-1",
+    "href": "lecciones/unidad-02/leccion-03.html#insert-1",
+    "title": "Manipulación y Consultas",
+    "section": "INSERT",
+    "text": "INSERT\nTambién podemos insertar varios registros en una sola instrucción.\nINSERT INTO Producto (producto_id, nombre, precio)\nVALUES\n    (2, 'Mouse', 350),\n    (3, 'Teclado', 800),\n    (4, 'Monitor', 4500);"
   },
   {
-    "objectID": "lecciones/unidad-01/leccion-05.html#participación-en-el-ciclo-de-vida",
-    "href": "lecciones/unidad-01/leccion-05.html#participación-en-el-ciclo-de-vida",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Participación en el ciclo de vida",
-    "text": "Participación en el ciclo de vida\n\n\n\nEtapa\nIngeniero de datos\nAnalista de datos\nCientífico de datos\n\n\n\n\nCaptura\n●\n\n\n\n\nIngesta\n●\n\n\n\n\nAlmacenamiento\n●\n\n\n\n\nProcesamiento\n●\n●\n●\n\n\nAnálisis\n\n●\n●\n\n\nVisualización y comunicación\n\n●\n●\n\n\nConservación y eliminación\n●\n\n\n\n\n\n\nLa participación de cada rol puede variar dependiendo de la organización y del problema."
+    "objectID": "lecciones/unidad-02/leccion-03.html#update",
+    "href": "lecciones/unidad-02/leccion-03.html#update",
+    "title": "Manipulación y Consultas",
+    "section": "UPDATE",
+    "text": "UPDATE\nUPDATE permite modificar registros existentes.\nUPDATE Producto\nSET precio = 400\nWHERE producto_id = 2;\nWHERE indica qué registros serán modificados."
   },
   {
-    "objectID": "lecciones/unidad-01/leccion-05.html#idea-clave",
-    "href": "lecciones/unidad-01/leccion-05.html#idea-clave",
-    "title": "Introducción a la ingeniería de datos",
+    "objectID": "lecciones/unidad-02/leccion-03.html#update-1",
+    "href": "lecciones/unidad-02/leccion-03.html#update-1",
+    "title": "Manipulación y Consultas",
+    "section": "UPDATE",
+    "text": "UPDATE\nPodemos modificar más de una columna.\nUPDATE Producto\nSET nombre = 'Mouse inalámbrico', precio = 500\nWHERE producto_id = 2;\n\n\n\n\n\n\nAdvertencia\n\n\nSin WHERE, se modificarán todos los registros de la tabla."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#delete",
+    "href": "lecciones/unidad-02/leccion-03.html#delete",
+    "title": "Manipulación y Consultas",
+    "section": "DELETE",
+    "text": "DELETE\nDELETE permite eliminar registros.\nDELETE FROM Producto WHERE producto_id = 4;\nWHERE indica qué registros serán eliminados.\n\n\n\n\n\n\nAdvertencia\n\n\nSin WHERE, se eliminarán todos los registros de la tabla."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#select",
+    "href": "lecciones/unidad-02/leccion-03.html#select",
+    "title": "Manipulación y Consultas",
+    "section": "SELECT",
+    "text": "SELECT\nSELECT permite consultar los datos almacenados.\nSELECT * FROM Producto;\n* indica que queremos obtener todas las columnas."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#select---múltiples-columnas",
+    "href": "lecciones/unidad-02/leccion-03.html#select---múltiples-columnas",
+    "title": "Manipulación y Consultas",
+    "section": "SELECT - Múltiples columnas",
+    "text": "SELECT - Múltiples columnas\nPodemos indicar únicamente las columnas que necesitamos.\nSELECT nombre, precio FROM Producto;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#where",
+    "href": "lecciones/unidad-02/leccion-03.html#where",
+    "title": "Manipulación y Consultas",
+    "section": "WHERE",
+    "text": "WHERE\nWHERE permite filtrar registros mediante una condición.\nSELECT nombre, precio FROM Producto WHERE precio &gt; 1000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#operadores-de-comparación",
+    "href": "lecciones/unidad-02/leccion-03.html#operadores-de-comparación",
+    "title": "Manipulación y Consultas",
+    "section": "Operadores de comparación",
+    "text": "Operadores de comparación\nPodemos construir condiciones utilizando operadores de comparación.\n\n\n\nOperador\nSignificado\n\n\n\n\n=\nIgual\n\n\n!=\nDiferente\n\n\n&gt;\nMayor que\n\n\n&lt;\nMenor que\n\n\n&gt;=\nMayor o igual\n\n\n&lt;=\nMenor o igual"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#and",
+    "href": "lecciones/unidad-02/leccion-03.html#and",
+    "title": "Manipulación y Consultas",
+    "section": "AND",
+    "text": "AND\nAND requiere que todas las condiciones se cumplan.\nSELECT * FROM Producto\nWHERE precio &gt;= 500 AND precio &lt;= 5000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#or",
+    "href": "lecciones/unidad-02/leccion-03.html#or",
+    "title": "Manipulación y Consultas",
+    "section": "OR",
+    "text": "OR\nOR requiere que al menos una condición se cumpla.\nSELECT *\nFROM Producto\nWHERE nombre = 'Laptop' OR nombre = 'Monitor';"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#not",
+    "href": "lecciones/unidad-02/leccion-03.html#not",
+    "title": "Manipulación y Consultas",
+    "section": "NOT",
+    "text": "NOT\nNOT permite negar una condición.\nSELECT * FROM Producto\nWHERE NOT precio &gt; 1000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#between",
+    "href": "lecciones/unidad-02/leccion-03.html#between",
+    "title": "Manipulación y Consultas",
+    "section": "BETWEEN",
+    "text": "BETWEEN\nBETWEEN permite verificar si un valor se encuentra dentro de un rango.\nSELECT * FROM Producto\nWHERE precio BETWEEN 500 AND 5000;\nLos límites están incluidos."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#in",
+    "href": "lecciones/unidad-02/leccion-03.html#in",
+    "title": "Manipulación y Consultas",
+    "section": "IN",
+    "text": "IN\nIN permite comparar un valor contra varias opciones.\nSELECT * FROM Producto\nWHERE nombre IN ('Laptop', 'Mouse', 'Monitor');"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#like",
+    "href": "lecciones/unidad-02/leccion-03.html#like",
+    "title": "Manipulación y Consultas",
+    "section": "LIKE",
+    "text": "LIKE\nLIKE permite buscar patrones en texto.\nSELECT * FROM Producto\nWHERE nombre LIKE 'M%';\n% representa cualquier secuencia de caracteres."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#like-1",
+    "href": "lecciones/unidad-02/leccion-03.html#like-1",
+    "title": "Manipulación y Consultas",
+    "section": "LIKE",
+    "text": "LIKE\nAlgunos patrones comunes son:\n\n\n\nPatrón\nSignificado\n\n\n\n\n'M%'\nComienza con M\n\n\n'%a'\nTermina con a\n\n\n'%top%'\nContiene la secuencia de caracteres “top”\n\n\n'M_use'\n_ representa cualquier carácter"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#distinct",
+    "href": "lecciones/unidad-02/leccion-03.html#distinct",
+    "title": "Manipulación y Consultas",
+    "section": "DISTINCT",
+    "text": "DISTINCT\nDISTINCT muestra únicamente los valores no repetidos en el resultado de la consulta.\nSELECT DISTINCT categoria FROM Producto;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#order-by",
+    "href": "lecciones/unidad-02/leccion-03.html#order-by",
+    "title": "Manipulación y Consultas",
+    "section": "ORDER BY",
+    "text": "ORDER BY\nORDER BY permite ordenar los resultados.\nSELECT nombre, precio FROM Producto\nORDER BY precio ASC;\nASC ordena de menor a mayor."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#order-by-1",
+    "href": "lecciones/unidad-02/leccion-03.html#order-by-1",
+    "title": "Manipulación y Consultas",
+    "section": "ORDER BY",
+    "text": "ORDER BY\nPara ordenar de mayor a menor utilizamos DESC.\nSELECT nombre, precio FROM Producto\nORDER BY precio DESC;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#limit",
+    "href": "lecciones/unidad-02/leccion-03.html#limit",
+    "title": "Manipulación y Consultas",
+    "section": "LIMIT",
+    "text": "LIMIT\nLIMIT restringe la cantidad de registros obtenidos.\nSELECT * FROM Producto LIMIT 5;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#funciones-de-agregación",
+    "href": "lecciones/unidad-02/leccion-03.html#funciones-de-agregación",
+    "title": "Manipulación y Consultas",
+    "section": "Funciones de agregación",
+    "text": "Funciones de agregación\nLas funciones de agregación resumen varios registros en un resultado.\n\n\n\nFunción\nResultado\n\n\n\n\nCOUNT()\nCantidad\n\n\nSUM()\nSuma\n\n\nAVG()\nPromedio\n\n\nMIN()\nMínimo\n\n\nMAX()\nMáximo"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#ejemplos",
+    "href": "lecciones/unidad-02/leccion-03.html#ejemplos",
+    "title": "Manipulación y Consultas",
+    "section": "Ejemplos",
+    "text": "Ejemplos\nSELECT COUNT(*) FROM Producto;\nSELECT SUM(precio) FROM Producto;\nSELECT AVG(precio) FROM Producto;\nSELECT MIN(precio), MAX(precio) FROM Producto;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#group-by",
+    "href": "lecciones/unidad-02/leccion-03.html#group-by",
+    "title": "Manipulación y Consultas",
+    "section": "GROUP BY",
+    "text": "GROUP BY\nGROUP BY permite realizar agregaciones por grupos.\nSELECT categoria, AVG(precio) FROM Producto\nGROUP BY categoria;\nCalcula el precio promedio de cada categoría."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#having",
+    "href": "lecciones/unidad-02/leccion-03.html#having",
+    "title": "Manipulación y Consultas",
+    "section": "HAVING",
+    "text": "HAVING\nHAVING permite filtrar grupos después de una agregación.\nSELECT categoria, AVG(precio)\nFROM Producto\nGROUP BY categoria\nHAVING AVG(precio) &gt; 1000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#where-vs-having",
+    "href": "lecciones/unidad-02/leccion-03.html#where-vs-having",
+    "title": "Manipulación y Consultas",
+    "section": "WHERE vs HAVING",
+    "text": "WHERE vs HAVING\nWHERE filtra registros antes de agrupar.\nHAVING filtra grupos después de agrupar.\nSELECT categoria, AVG(precio)\nFROM Producto\nWHERE precio &gt; 100\nGROUP BY categoria\nHAVING AVG(precio) &gt; 1000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#join",
+    "href": "lecciones/unidad-02/leccion-03.html#join",
+    "title": "Manipulación y Consultas",
+    "section": "JOIN",
+    "text": "JOIN\nJOIN permite combinar información almacenada en tablas relacionadas.\nSELECT Pedido.pedido_id, Cliente.nombre\nFROM Pedido\nJOIN Cliente\n    ON Pedido.cliente_id = Cliente.cliente_id;\nLa condición ON indica cómo se relacionan las tablas."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#alias",
+    "href": "lecciones/unidad-02/leccion-03.html#alias",
+    "title": "Manipulación y Consultas",
+    "section": "Alias",
+    "text": "Alias\nPodemos utilizar alias para simplificar las consultas.\nSELECT p.pedido_id, c.nombre\nFROM Pedido AS p\nJOIN Cliente AS c\n    ON p.cliente_id = c.cliente_id;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#inner-join",
+    "href": "lecciones/unidad-02/leccion-03.html#inner-join",
+    "title": "Manipulación y Consultas",
+    "section": "INNER JOIN",
+    "text": "INNER JOIN\nINNER JOIN devuelve únicamente registros que tienen una correspondencia en ambas tablas.\nSELECT c.nombre, p.pedido_id\nFROM Cliente AS c\nINNER JOIN Pedido AS p\n    ON c.cliente_id = p.cliente_id;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#left-join",
+    "href": "lecciones/unidad-02/leccion-03.html#left-join",
+    "title": "Manipulación y Consultas",
+    "section": "LEFT JOIN",
+    "text": "LEFT JOIN\nLEFT JOIN conserva todos los registros de la tabla izquierda, incluso si no tienen una correspondencia.\nSELECT c.nombre, p.pedido_id\nFROM Cliente AS c\nLEFT JOIN Pedido AS p\n    ON c.cliente_id = p.cliente_id;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#orden-de-una-consulta",
+    "href": "lecciones/unidad-02/leccion-03.html#orden-de-una-consulta",
+    "title": "Manipulación y Consultas",
+    "section": "Orden de una consulta",
+    "text": "Orden de una consulta\nUna consulta puede combinar varias de estas operaciones.\nSELECT categoria, AVG(precio)\nFROM Producto\nWHERE precio &gt; 100\nGROUP BY categoria\nHAVING AVG(precio) &gt; 500\nORDER BY AVG(precio) DESC\nLIMIT 5;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#orden-de-las-cláusulas",
+    "href": "lecciones/unidad-02/leccion-03.html#orden-de-las-cláusulas",
+    "title": "Manipulación y Consultas",
+    "section": "Orden de las cláusulas",
+    "text": "Orden de las cláusulas\nSELECT\nFROM\nWHERE\nGROUP BY\nHAVING\nORDER BY\nLIMIT\nNo todas las consultas necesitan utilizar todas las cláusulas."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-03.html#idea-clave",
+    "href": "lecciones/unidad-02/leccion-03.html#idea-clave",
+    "title": "Manipulación y Consultas",
     "section": "Idea clave",
-    "text": "Idea clave\nLa ingeniería de datos, el análisis de datos y la ciencia de datos son disciplinas diferentes pero complementarias.\nLa ingeniería de datos se encuentra generalmente antes del análisis y la ciencia de datos, proporcionando los datos que estos necesitan para realizar su trabajo."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-05.html#qué-es-la-ingeniería-de-datos",
-    "href": "lecciones/unidad-01/leccion-05.html#qué-es-la-ingeniería-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Qué es la ingeniería de datos?",
-    "text": "¿Qué es la ingeniería de datos?\nLa ingeniería de datos desarrolla y mantiene sistemas y procesos que permiten convertir datos crudos en datos consistentes, accesibles y útiles para otros usuarios y sistemas.\nEl ingeniero de datos gestiona este proceso desde que los datos se obtienen de los sistemas de origen hasta que están disponibles para ser utilizados."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos",
-    "href": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Ciclo de vida de la ingeniería de datos",
-    "text": "Ciclo de vida de la ingeniería de datos\nReis y Housley dividen el ciclo de vida de la ingeniería de datos en cinco etapas principales:\n\nGeneración\nAlmacenamiento\nIngesta\nTransformación\nServicio de datos"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos-1",
-    "href": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Ciclo de vida de la ingeniería de datos",
-    "text": "Ciclo de vida de la ingeniería de datos"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-05.html#generación",
-    "href": "lecciones/unidad-01/leccion-05.html#generación",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Generación",
-    "text": "Generación\nLa generación ocurre en los sistemas donde se producen originalmente los datos.\nUn sistema de origen puede ser, por ejemplo:\n\nUna aplicación.\nUna base de datos transaccional.\nUn dispositivo IoT.\n\nEl ingeniero de datos necesita comprender cómo se generan los datos para poder utilizarlos posteriormente."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-05.html#almacenamiento",
-    "href": "lecciones/unidad-01/leccion-05.html#almacenamiento",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Almacenamiento",
-    "text": "Almacenamiento\nEl almacenamiento determina cómo y dónde se guardan los datos.\nA diferencia de otras etapas, el almacenamiento puede aparecer en diferentes puntos del ciclo de ingeniería de datos.\nLa forma en que los datos son almacenados influye en cómo podrán ser ingeridos, transformados y utilizados."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-05.html#ingesta",
-    "href": "lecciones/unidad-01/leccion-05.html#ingesta",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Ingesta",
-    "text": "Ingesta\nLa ingesta consiste en obtener los datos desde los sistemas de origen e incorporarlos al sistema de datos.\nEsta etapa conecta los sistemas que generan los datos con las siguientes etapas del ciclo."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-05.html#transformación",
-    "href": "lecciones/unidad-01/leccion-05.html#transformación",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Transformación",
-    "text": "Transformación\nLa transformación modifica los datos desde su forma original para convertirlos en datos útiles.\nPuede incluir operaciones como:\n\nConversión de tipos.\nEstandarización de formatos.\nEliminación de datos incorrectos.\nNormalización.\nAgregación."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-05.html#servicio-de-datos",
-    "href": "lecciones/unidad-01/leccion-05.html#servicio-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Servicio de datos",
-    "text": "Servicio de datos\nEl servicio de datos consiste en poner los datos preparados a disposición de quienes los necesitan.\nLos datos pueden ser utilizados posteriormente para:\n\nAnálisis de datos.\nReportes y dashboards.\nMachine learning.\nOtros sistemas y aplicaciones."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-05.html#elementos-transversales",
-    "href": "lecciones/unidad-01/leccion-05.html#elementos-transversales",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Elementos transversales",
-    "text": "Elementos transversales\nEl ciclo de ingeniería de datos también está acompañado por una serie de elementos transversales (undercurrents) que intervienen a lo largo de todas sus etapas.\n\nSeguridad: protección de los datos y control de acceso.\nGestión de datos: organización, calidad y gobierno de los datos.\nDataOps: automatización, monitoreo y confiabilidad de los procesos.\nArquitectura de datos: diseño y organización de los sistemas de datos.\nOrquestación: coordinación de tareas y dependencias.\nIngeniería de software: desarrollo y mantenimiento de los sistemas que procesan datos.\n\n\nNo son etapas adicionales del ciclo: son prácticas que dan soporte a todo el ciclo de ingeniería de datos."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#objetivo",
-    "href": "lecciones/unidad-01/leccion-03.html#objetivo",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Objetivo",
-    "text": "Objetivo\nReconocer diferentes fuentes y sistemas de almacenamiento de datos e identificar los mecanismos utilizados para acceder a la información que contienen."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#pregunta",
-    "href": "lecciones/unidad-01/leccion-03.html#pregunta",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Pregunta",
-    "text": "Pregunta\n¿Todos los datos se obtienen de la misma manera?"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#de-dónde-podemos-tomar-datos",
-    "href": "lecciones/unidad-01/leccion-03.html#de-dónde-podemos-tomar-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿De dónde podemos tomar datos?",
-    "text": "¿De dónde podemos tomar datos?\n\n\n\n\n\n\n\n\nFuente\n¿Qué es?\n¿Cómo accedemos?\n\n\n\n\nArchivos\nDatos almacenados en archivos\nSistema de archivos\n\n\nBase de datos\nSistema organizado para almacenar y gestionar datos\nConsultas / conexión\n\n\nPágina web\nInformación publicada en la web\nHTTP / extracción\n\n\nPágina web\nInformación publicada en la web\nHTTP / extracción\n\n\nAPI\nInterfaz que proporciona acceso a datos o servicios\nSolicitudes HTTP\n\n\nData warehouse\nAlmacenamiento orientado al análisis\nConsultas\n\n\nData lake\nRepositorio de grandes volúmenes de datos\nHerramientas/plataformas de datos"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#archivos",
-    "href": "lecciones/unidad-01/leccion-03.html#archivos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Archivos",
-    "text": "Archivos\nLos archivos son una de las formas más simples de almacenar e intercambiar datos.\nPueden contener datos estructurados, semiestructurados o no estructurados utilizando diferentes formatos.\n\nCSV\nJSON\nExcel\nHTML\nPDF\nImágenes"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#base-de-datos",
-    "href": "lecciones/unidad-01/leccion-03.html#base-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Base de datos",
-    "text": "Base de datos\nUna base de datos es un sistema diseñado para almacenar, organizar y gestionar datos.\nA diferencia de un archivo individual, permite consultar y administrar información de manera eficiente.\nPor ejemplo, utilizando SQL podemos consultar los datos almacenados:\nSELECT nombre, edad\nFROM clientes\nWHERE edad &gt; 30;"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#section",
-    "href": "lecciones/unidad-01/leccion-03.html#section",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "Bases de datos relacionales\n\n\nLas bases de datos relacionales organizan la información principalmente mediante tablas relacionadas entre sí.\n\n\n\n\nSistema\nDescripción\n\n\n\n\nSQLite\nBase de datos local y ligera.\n\n\nMySQL\nBase de datos relacional popular.\n\n\nPostgreSQL\nRelacional avanzada y extensible.\n\n\nSQL Server\nPlataforma empresarial de Microsoft.\n\n\n\n\n\n\nFuente: Frank Kodie — LinkedIn"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#section-1",
-    "href": "lecciones/unidad-01/leccion-03.html#section-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "Bases de datos no relacionales\nLas bases de datos NoSQL pueden utilizar diferentes modelos para organizar la información.\n\n\n\nTipo\nDescripción\nEjemplo\n\n\n\n\nClave-valor\nPares de claves y valores.\nRedis\n\n\nDocumentos\nDocumentos con estructuras similares a JSON.\nMongoDB\n\n\nColumnas\nDatos organizados en familias de columnas.\nApache Cassandra\n\n\nGrafos\nNodos y relaciones.\nNeo4j"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#section-2",
-    "href": "lecciones/unidad-01/leccion-03.html#section-2",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "SQL vs. NoSQL\n\n\n\n\nFuente: Pronetic — Geeknetic\n\n\n\n\n\n\n\n\n\nBases de datos SQL\nBases de datos NoSQL\n\n\n\n\nModelo relacional\nModelos no relacionales\n\n\nOrganizadas en tablas\nDiferentes formas de organización\n\n\nRelaciones entre tablas\nEstructuras más flexibles\n\n\nUtilizan SQL para consultas\nEl mecanismo de consulta depende del sistema"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#apis",
-    "href": "lecciones/unidad-01/leccion-03.html#apis",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "APIs",
-    "text": "APIs\nUna API (Application Programming Interface) es una interfaz que permite que diferentes aplicaciones o sistemas se comuniquen entre sí.\nUna aplicación puede solicitar información y recibir una respuesta sin necesidad de acceder directamente al sistema donde los datos están almacenados.\n\n\nFuente: Akamai Technologies"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#section-3",
-    "href": "lecciones/unidad-01/leccion-03.html#section-3",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "Acceso a una API\nCada API define qué información ofrece, cómo solicitarla y cómo estructura sus respuestas.\nTambién puede establecer:\n\nParámetros disponibles.\nMétodos de autenticación.\nLímites o condiciones de acceso.\n\nPor ello, es necesario consultar su documentación.\nAlgunas APIs son públicas; otras requieren autenticación, por ejemplo mediante una API key."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#páginas-web",
-    "href": "lecciones/unidad-01/leccion-03.html#páginas-web",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Páginas web",
-    "text": "Páginas web\nLas páginas web contienen información representada principalmente mediante documentos HTML.\nAunque podemos visualizar esta información en un navegador, también podemos obtener y procesar el documento HTML.\nWeb scraping\nEl web scraping consiste en extraer información de una página web a partir de su contenido y estructura.\nA diferencia de una API, los datos de una página web no necesariamente fueron preparados para ser consumidos directamente por otra aplicación."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#data-warehouse",
-    "href": "lecciones/unidad-01/leccion-03.html#data-warehouse",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Data warehouse",
-    "text": "Data warehouse\nUn data warehouse es un repositorio centralizado que integra y organiza datos provenientes de diferentes fuentes para facilitar su consulta y análisis.\nA diferencia del almacenamiento de datos crudos, contiene datos procesados, limpios y estructurados, listos para ser utilizados.\n\n\n\n\n\n\nFuente: LinkedIn"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#section-4",
-    "href": "lecciones/unidad-01/leccion-03.html#section-4",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "Integración de datos\nUn data warehouse integra información proveniente de diferentes sistemas bajo una estructura común.\n\nSistema de ventas.\nSistema de inventarios.\nBase de datos de clientes.\nSistema financiero.\n\nEsto permite relacionar y analizar conjuntamente datos que originalmente se encontraban separados."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#section-5",
-    "href": "lecciones/unidad-01/leccion-03.html#section-5",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "Consulta de datos\nUna vez que los datos se encuentran organizados dentro del data warehouse, normalmente se consultan utilizando SQL (Structured Query Language).\nSQL permite seleccionar, filtrar, agrupar y relacionar los datos almacenados.\nSELECT producto, SUM(total_venta)\nFROM ventas\nGROUP BY producto;"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#section-6",
-    "href": "lecciones/unidad-01/leccion-03.html#section-6",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "Ejemplos\n\n\n\nData warehouse\nProveedor\n\n\n\n\nBigQuery\nGoogle Cloud\n\n\nAmazon Redshift\nAmazon Web Services (AWS)\n\n\nSnowflake\nSnowflake\n\n\nAzure Synapse Analytics\nMicrosoft Azure\n\n\nTeradata\nTeradata"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#data-lake",
-    "href": "lecciones/unidad-01/leccion-03.html#data-lake",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Data lake",
-    "text": "Data lake\nUn data lake almacena grandes volúmenes de datos en su formato original o con poco procesamiento, sin requerir una estructura previa. Puede contener:\n\nEstructurados: tablas, CSV.\nSemiestructurados: JSON, XML, logs.\nNo estructurados: imágenes, audio, video, documentos.\n\n\n\n\n\n\n\nFuente: Hewlett Packard Enterprise (HPE)"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#section-7",
-    "href": "lecciones/unidad-01/leccion-03.html#section-7",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "Acceso a los datos\nEn un data lake, la forma de acceder a los datos depende de su formato:\n\nCSV / Parquet: Python, Spark o motores de consulta.\nJSON / XML: herramientas que interpreten su estructura.\nImágenes, audio y video: herramientas especializadas.\nDocumentos y texto: herramientas de procesamiento de texto.\n\n\nA diferencia de un data warehouse, donde los datos estructurados suelen consultarse mediante SQL, un data lake puede requerir distintas herramientas según el tipo de dato."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-03.html#data-warehouse-vs.-data-lake",
-    "href": "lecciones/unidad-01/leccion-03.html#data-warehouse-vs.-data-lake",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Data warehouse vs. data lake",
-    "text": "Data warehouse vs. data lake\n\n\n\n\n\n\n\nData warehouse\nData lake\n\n\n\n\nDatos preparados y organizados\nDatos crudos o cercanos al original\n\n\nPrincipalmente estructurados\nEstructurados, semiestructurados y no estructurados\n\n\nSchema-on-write\nSchema-on-read\n\n\nEstructura definida antes de almacenar\nEstructura aplicada al consultar\n\n\nConsumo principalmente con SQL\nConsumo según el tipo de datos\n\n\nOrientado al análisis\nOrientado al almacenamiento flexible\n\n\n\n\nWarehouse: datos listos para usar.\nLake: datos almacenados para procesarlos cuando se necesiten."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#objetivo",
-    "href": "lecciones/unidad-01/leccion-01.html#objetivo",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Objetivo",
-    "text": "Objetivo\nAl finalizar esta lección serás capaz de:\n\nDefinir qué es un dato.\nIdentificar los principales tipos de datos primitivos.\nReconocer ejemplos de cada tipo de dato en situaciones cotidianas."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#pregunta",
-    "href": "lecciones/unidad-01/leccion-01.html#pregunta",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Pregunta",
-    "text": "Pregunta\n¿Qué tienen en común una fotografía, un mensaje de WhatsApp y la temperatura de una ciudad?"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#definición-de-datos",
-    "href": "lecciones/unidad-01/leccion-01.html#definición-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Definición de datos",
-    "text": "Definición de datos\n\n\nLos datos son un conjunto de hechos, números, palabras, observaciones u otra información útil.  A través del procesamiento de datos y análisis de datos, las organizaciones transforman datos sin procesar en insights valiosos que mejoran la toma de decisiones e impulsan mejores resultados comerciales. [1]"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#dicho-de-otra-forma",
-    "href": "lecciones/unidad-01/leccion-01.html#dicho-de-otra-forma",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Dicho de otra forma…",
-    "text": "Dicho de otra forma…\n\n\nLos datos son información que podemos almacenar, organizar y analizar para responder preguntas o tomar decisiones."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos",
-    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-1",
-    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?\nLa pregunta importante no es quién genera datos, sino quién no los genera.\n\nEmpresas, gobiernos, hospitales, bancos, aplicaciones, videojuegos e incluso nosotros generamos datos constantemente.\n\n\nPor ejemplo, cada día generamos datos de ubicación, mensajes, compras, música, navegación y redes sociales.\n\n\nTodos generan datos."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-2",
-    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-2",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?\nSegún un estudio realizado por el INEGI sobre los hábitos de usuarios de Internet en México durante 2024 [2], las actividades que realizamos todos los días generan una enorme cantidad de datos."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-3",
-    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-3",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-4",
-    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-4",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Quién genera datos?",
-    "text": "¿Quién genera datos?\nDe hecho, esto dice Internet:\n\nGoogle maneja cerca de 40,000 petabytes de datos diariamente. [3]\nWhatsApp entrega alrededor de 100 billones de mensajes al día. [4]\nEn TikTok se suben más de 23 millones de videos cada día, es decir, aproximadamente 16,000 videos por minuto.[5]"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#qué-datos-generan",
-    "href": "lecciones/unidad-01/leccion-01.html#qué-datos-generan",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Qué datos generan?",
-    "text": "¿Qué datos generan?\n\n\n\n\n\nMensajes enviados\nHora del mensaje\nDestinatario\nArchivos compartidos\nLlamadas realizadas\nTiempo de conexión"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#qué-datos-generan-1",
-    "href": "lecciones/unidad-01/leccion-01.html#qué-datos-generan-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Qué datos generan?",
-    "text": "¿Qué datos generan?\n\n\n\n\n\nPelículas y series reproducidas\nTiempo de reproducción\nBúsquedas realizadas\nCalificaciones\nListas personales\nDispositivo utilizado"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#qué-datos-generan-2",
-    "href": "lecciones/unidad-01/leccion-01.html#qué-datos-generan-2",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Qué datos generan?",
-    "text": "¿Qué datos generan?\n\n\n\n\n\nUbicación de origen y destino\nTiempo del viaje\nCosto del viaje\nConductor asignado\nCalificación del viaje\nMétodo de pago"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#idea-clave",
-    "href": "lecciones/unidad-01/leccion-01.html#idea-clave",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Idea clave",
-    "text": "Idea clave\nTodos generamos datos… pero no todos los datos son iguales."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#no-todos-los-datos-son-iguales",
-    "href": "lecciones/unidad-01/leccion-01.html#no-todos-los-datos-son-iguales",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "No todos los datos son iguales",
-    "text": "No todos los datos son iguales\nYa vimos que los organismos generan muchos datos y de muchos tipos:\n\nNuméricos: precios, temperatura, edades, venta\nTexto: mensajes, correos, comentarios, búsquedas\nFecha y hora: fechas de compra, horarios, duración, registros de acceso.\nUbicación: GPS, rutas, direcciones\nImágenes: fotografías, radiografías, publicaciones\nAudio: canciones, notas de voz, llamadas\nVideo: películas, videollamadas, TikToks"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#datos-numéricos",
-    "href": "lecciones/unidad-01/leccion-01.html#datos-numéricos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos numéricos",
-    "text": "Datos numéricos\nLos datos numéricos representan cantidades que pueden medirse o contarse. Se utilizan para realizar operaciones matemáticas y análisis estadísticos.\nEjemplos:\n\nEdad de una persona.\nTemperatura de una ciudad.\nPrecio de un producto.\nNúmero de estudiantes.\n\n\n\nEjemplo real\n25 años · 18 °C · $350.00 · 12 km · 150 estudiantes"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-texto",
-    "href": "lecciones/unidad-01/leccion-01.html#datos-de-texto",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de texto",
-    "text": "Datos de texto\nLos datos de texto representan información formada por letras, palabras, símbolos o frases. Se utilizan para describir, identificar o comunicar información.\nEjemplos:\n\nNombre de una persona.\nDirección de correo electrónico.\nComentario de un usuario.\nMensaje de WhatsApp.\n\n\n\nEjemplo real\n“Denisse Urenda” · “ingenieria.datos@uacj.mx”"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-fecha-y-hora",
-    "href": "lecciones/unidad-01/leccion-01.html#datos-de-fecha-y-hora",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de fecha y hora",
-    "text": "Datos de fecha y hora\nLos datos de fecha y hora representan momentos específicos en el tiempo. Se utilizan para registrar cuándo ocurre un evento y analizar su secuencia o duración.\nEjemplos:\n\nFecha de nacimiento.\nHora de una compra.\nFecha de un examen.\nHora de inicio de una llamada.\n\n\n\nEjemplo real\n15/08/2026 · 08:30 a.m. · 2026-07-13 14:25:36 · 12:00 p.m."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-ubicación",
-    "href": "lecciones/unidad-01/leccion-01.html#datos-de-ubicación",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de ubicación",
-    "text": "Datos de ubicación\nLos datos de ubicación representan un lugar o una posición geográfica. Se utilizan para localizar personas, objetos o eventos.\nEjemplos:\n\nDirección de un domicilio.\nCoordenadas GPS.\nRuta de un viaje.\nUbicación de un restaurante.\n\n\n\nEjemplo real\n31.6904, -106.4245 · Av. Tecnológico 1340 · Ciudad Juárez, Chihuahua"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-imagen",
-    "href": "lecciones/unidad-01/leccion-01.html#datos-de-imagen",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de imagen",
-    "text": "Datos de imagen\nLos datos de imagen representan información visual capturada mediante fotografías, dibujos, radiografías o ilustraciones.\nEjemplos:\n\nFotografía.\nRadiografía.\nImagen satelital.\nCaptura de pantalla.\n\n\n\nEjemplo real\n📷 selfie.jpg · 🩻 radiografia.png · 🌎 satelite.tif"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-audio",
-    "href": "lecciones/unidad-01/leccion-01.html#datos-de-audio",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de audio",
-    "text": "Datos de audio\nLos datos de audio representan sonidos o grabaciones que pueden almacenarse y reproducirse digitalmente.\nEjemplos:\n\nCanción.\nNota de voz.\nLlamada telefónica.\nPodcast.\n\n\n\nEjemplo real\n🎵 musica.mp3 · 🎙️ nota_de_voz.m4a · 📞 llamada.wav"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-video",
-    "href": "lecciones/unidad-01/leccion-01.html#datos-de-video",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos de video",
-    "text": "Datos de video\nLos datos de video representan una secuencia de imágenes, generalmente acompañadas de audio, que permiten registrar o reproducir movimiento.\nEjemplos:\n\nPelícula.\nVideollamada.\nVideo de seguridad.\nTikTok.\n\n\n\nEjemplo real\n🎬 pelicula.mp4 · 📹 reunion.mp4 · 🎥 tiktok.mp4"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-01.html#idea-clave-1",
-    "href": "lecciones/unidad-01/leccion-01.html#idea-clave-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Idea clave",
-    "text": "Idea clave\nLos datos pueden representarse de muchas formas.\nY cada una requiere una manera distinta de almacenarse."
-  },
-  {
-    "objectID": "lecciones/index.html",
-    "href": "lecciones/index.html",
-    "title": "Lecciones",
-    "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\nAlmacenes analíticos\nSistemas de almacenamiento de archivos"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-04.html",
-    "href": "actividades/unidad-01/actividad-04.html",
-    "title": "Generación de Reporte de Resultados",
-    "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-04.html#introducción",
-    "href": "actividades/unidad-01/actividad-04.html#introducción",
-    "title": "Generación de Reporte de Resultados",
-    "section": "Introducción",
-    "text": "Introducción\nEn esta actividad aplicarás nuevamente las etapas del ciclo de vida de los datos utilizando un conjunto de datos proveniente de una encuesta.\nEsta vez deberás seleccionar tu propio conjunto de datos y recorrer el mismo proceso visto en el laboratorio, desde la ingesta hasta la generación de un reporte."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-04.html#objetivo",
-    "href": "actividades/unidad-01/actividad-04.html#objetivo",
-    "title": "Generación de Reporte de Resultados",
-    "section": "Objetivo",
-    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nAplicar las principales etapas del ciclo de vida de los datos a un nuevo conjunto de datos.\nSeleccionar y analizar variables de interés.\nComunicar los resultados mediante una gráfica y un reporte."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-04.html#instrucciones",
-    "href": "actividades/unidad-01/actividad-04.html#instrucciones",
-    "title": "Generación de Reporte de Resultados",
-    "section": "Instrucciones",
-    "text": "Instrucciones\nDurante la actividad deberás:\n\nBuscar y seleccionar en Kaggle un conjunto de datos proveniente de una encuesta:\n\nDebe contener respuestas individuales.\nDebe incluir varias preguntas o variables.\nNo debe contener información personal identificable.\n\nDescargar el conjunto de datos seleccionado desde Kaggle en formato CSV.\nCargar el archivo CSV en Google Colab.\nGuardar una copia del conjunto de datos original en formato CSV.\nInspeccionar el contenido del conjunto de datos identificando:\n\nnúmero de registros,\ntipos de datos,\nvalores faltantes.\n\nLimpiar y preparar el conjunto de datos para el análisis:\n\ntratar los valores faltantes cuando sea necesario,\ncorregir tipos de datos cuando sea necesario,\nidentificar y corregir posibles inconsistencias.\n\nPlantear una pregunta de análisis que pueda responderse utilizando los datos de la encuesta.\nSeleccionar las variables necesarias para responder la pregunta planteada.\nRealizar las operaciones o estadísticas necesarias para responder la pregunta.\nGenerar una gráfica que permita comunicar los resultados y guardarla como imagen.\nElaborar un reporte en Microsoft Word que incluya:\n\nnombre de la actividad,\ntu nombre,\nnombre y enlace del dataset seleccionado,\npregunta de análisis,\ngráfica generada,\nbreve interpretación de los resultados (entre 5 y 10 líneas).\n\nExportar el documento a formato PDF.\nUna vez confirmado que la imagen fue incorporada al reporte, ejecutar la última celda del notebook para eliminar el archivo PNG generado.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nCARPETA_SALIDA = Path(\"ingenieria-de-datos/datos/salida\")\nCARPETA_SALIDA.mkdir(parents=True, exist_ok=True)\n\nfrom recursos.codigo.visualizacion import visualizar_resultados\n\n\n# ==========================================================\n# 3. Carga de datos\n#    Cargar el archivo CSV descargado desde Kaggle\n#    en un DataFrame llamado `datos`\n# ==========================================================\n\nimport pandas as pd\n\nruta = \"&lt;ruta completa de archivo&gt;\"\n# datos = pd.read_csv(...)\n# datos.info()\n\n\n# ==========================================================\n# 4. Almacenamiento de datos\n#    Guardar una copia de los datos originales en formato CSV\n#    dentro de la carpeta de salida\n# ==========================================================\n\nruta = CARPETA_SALIDA / \"&lt;nombre de archivo&gt;\"\n\n# datos.to_csv(...)\n\n\n# ==========================================================\n# 5. Inspección de datos\n#    Examinar el conjunto de datos e identificar:\n#    - número de registros\n#    - tipos de datos\n#    - valores faltantes\n# ==========================================================\n\n# datos.&lt;metodo&gt;(&lt;argumentos&gt;)\n\n\n# ==========================================================\n# 6. Limpieza de datos\n#    Preparar los datos para el análisis:\n#    - tratar valores faltantes\n#    - corregir tipos de datos\n#    - corregir inconsistencias cuando sea necesario\n# ==========================================================\n\n# datos_limpios = datos.copy()\n# datos_limpios...\n\n\n# ==========================================================\n# 8. Selección de datos\n#    Seleccionar las variables necesarias para responder\n#    la pregunta de análisis\n# ==========================================================\n\ncolumnas = [\n    \"&lt;columna 1&gt;\",\n    \"&lt;columna 2&gt;\",\n    \"&lt;columna 3&gt;\",\n    \"&lt;columna 4&gt;\"\n]\n\n# datos_analisis = datos_limpios[...]\n\n\n# ==========================================================\n# 9. Análisis de datos\n#    Realizar las operaciones o estadísticas necesarias\n#    para responder la pregunta planteada\n# ==========================================================\n\n# datos_analisis.&lt;metodo&gt;(...)\n\n\n# ==========================================================\n# 10. Visualización de resultados\n#    Generar una gráfica que permita comunicar los resultados\n#    del análisis y guardarla como imagen\n# ==========================================================\n\n# Puedes hacer tu propia grafica o intentar usar la funcion\n# ya creada, solo asegurate de que los datos que ingresas tenga\n# variables categoricas (tipo texto).\n\n# figura = visualizar_resultados(datos_analisis)\n\n\nruta = CARPETA_SALIDA / \"&lt;nombre de imagen&gt;.png\"\n\n\n# ==========================================\n#    Crear ruta de imagen\n# ==========================================\n\nruta = CARPETA_SALIDA / \"&lt;nombre de imagen&gt;.png\"\n\n# ==========================================\n#    Guardar los resultados para uso posterior\n# ==========================================\n\n#figura.savefig(\n#    fname=ruta,\n#    dpi=300,\n#    bbox_inches=\"tight\"\n#)\n\nprint(f\"Guardado en: {ruta.resolve()}\")\n\n\n# =====================================================\n# 13. Conservacion y eliminacion de datos\n#    Eliminar gráfico\n#    ⚠️ Corre una vez realizado el reporte final.\n# =====================================================\n\nif ruta.exists():\n    ruta.unlink()\n    print(\"🗑️ La imagen fue eliminada.\")\nelse:\n    print(\"⚠️ La imagen ya no existe.\")"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-02.html",
-    "href": "actividades/unidad-01/actividad-02.html",
-    "title": "Simulación de un Sistema de Compras",
-    "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-02.html#introducción",
-    "href": "actividades/unidad-01/actividad-02.html#introducción",
-    "title": "Simulación de un Sistema de Compras",
-    "section": "Introducción",
-    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para simular el proceso de compra de una tienda. A lo largo de la actividad observarás cómo la información capturada por el usuario se almacena en distintos formatos y cómo esos archivos pueden utilizarse para generar otros nuevos."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-02.html#objetivo",
-    "href": "actividades/unidad-01/actividad-02.html#objetivo",
-    "title": "Simulación de un Sistema de Compras",
-    "section": "Objetivo",
-    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nComprender que una misma información puede almacenarse en diferentes formatos de archivo.\nReconocer que un archivo puede utilizarse como entrada para generar otros archivos o productos.\nIdentificar el flujo de los datos desde su captura hasta la generación de distintos productos."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-02.html#instrucciones",
-    "href": "actividades/unidad-01/actividad-02.html#instrucciones",
-    "title": "Simulación de un Sistema de Compras",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\nPara configurar todo lo necesario para la actividad, ejecuta la primera celda del notebook. No modifiques su contenido, ya que la actividad depende de ella. La celda se ve así:\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent))\n\nfrom Recursos.compras import (\n     iniciar_compra, procesar_compra, generar_factura, enviar_factura\n)\nPara comenzar con la captura de datos, ejecuta la siguiente celda. Se te solicitará la información necesaria para registrar una compra, como los artículos, sus cantidades y sus precios. La celda contiene algo así:\ncompra = iniciar_compra()\nUna vez capturada la información, ejecuta la siguiente celda para procesar la compra y generar el ticket correspondiente. La celda contiene algo así:\nticket = procesar_compra(compra)\nDespués, ejecuta la celda que genera la factura. El archivo se guardará automáticamente en formato PDF dentro de la carpeta correspondiente. La celda contiene algo así:\nruta_factura = generar_factura(ticket)\nA continuación, ejecuta la celda que genera el correo electrónico. Se creará un archivo .eml con la factura adjunta, el cual también se guardará automáticamente.\nruta_correo = enviar_factura(ruta_factura)\nLocaliza el archivo .eml generado y súbelo a la plataforma como evidencia de tu trabajo.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.compras import (\n    iniciar_compra, procesar_compra, generar_factura, enviar_factura\n)\n\n\n# =================================================\n# Captura los datos de la compra\n# Regresa: diccionario con la información capturada\n# =================================================\n\ncompra = iniciar_compra()\n\n\n# =================================================\n# Genera el ticket de compra\n# Regresa: texto (str) con el contenido del ticket\n# =================================================\n\nticket = procesar_compra(compra)\n\n\n# =================================================\n# Genera y guarda la factura en formato PDF\n# Regresa: ruta del archivo PDF generado\n# =================================================\n\nruta_factura = generar_factura(ticket)\n\n\n# =================================================\n# Genera y guarda el correo electrónico (.eml)\n# Regresa: ruta del archivo .eml generado\n# =================================================\n\nruta_correo = enviar_factura(ruta_factura)"
-  },
-  {
-    "objectID": "actividades/plantilla.html",
-    "href": "actividades/plantilla.html",
-    "title": "Titulo de actividad",
-    "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
-  },
-  {
-    "objectID": "actividades/plantilla.html#introducción",
-    "href": "actividades/plantilla.html#introducción",
-    "title": "Titulo de actividad",
-    "section": "Introducción",
-    "text": "Introducción\n…"
-  },
-  {
-    "objectID": "actividades/plantilla.html#objetivo",
-    "href": "actividades/plantilla.html#objetivo",
-    "title": "Titulo de actividad",
-    "section": "Objetivo",
-    "text": "Objetivo\n…\n\n…\n…\n…"
-  },
-  {
-    "objectID": "actividades/plantilla.html#instrucciones",
-    "href": "actividades/plantilla.html#instrucciones",
-    "title": "Titulo de actividad",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\n…\n…\n…\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\n# from ... import ..."
-  },
-  {
-    "objectID": "actividades/index.html",
-    "href": "actividades/index.html",
-    "title": "Actividades",
-    "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-01.html",
-    "href": "actividades/unidad-01/actividad-01.html",
-    "title": "Reporte de Información Personal",
-    "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-01.html#introducción",
-    "href": "actividades/unidad-01/actividad-01.html#introducción",
-    "title": "Reporte de Información Personal",
-    "section": "Introducción",
-    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para capturar información personal y generar un reporte automáticamente. El objetivo es observar cómo un conjunto de datos introducidos por el usuario puede procesarse para producir un resultado útil.\nNo es necesario comprender cómo está programada la aplicación; por ahora, simplemente úsala como si fuera otra aplicación."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-01.html#objetivo",
-    "href": "actividades/unidad-01/actividad-01.html#objetivo",
-    "title": "Reporte de Información Personal",
-    "section": "Objetivo",
-    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nIdentificar diferentes tipos de datos introducidos por el usuario.\nComprender que una aplicación puede recibir y procesar distintos tipos de datos.\nComprender que el procesamiento de los datos permite generar un resultado útil para el usuario."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-01.html#instrucciones",
-    "href": "actividades/unidad-01/actividad-01.html#instrucciones",
-    "title": "Reporte de Información Personal",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n\nPara preparar el entorno de trabajo, ejecuta la celda que contiene:\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\nPara comenzar con el cuestionario y obtener el reporte, ejecuta la celda que contiene:\nreporte = capturar_datos()\nResponde cada una de las preguntas que aparecerán en pantalla. Si algún dato no cumple con el formato esperado, el sistema solicitará que lo ingreses nuevamente.\nEspera a que el sistema complete el procesamiento y aparezca un mensaje como el siguiente\n\"Reporte generado correctamente.\"\nPara visualizar el reporte, ejecuta la celda que contiene:\nprint(reporte)\nCopia el contenido completo del reporte mostrado en pantalla.\nPega el reporte en un documento de Microsoft Word.\nGuarda el documento en formato PDF.\nSube el archivo PDF como evidencia de la actividad.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\n\n\n# =======================================\n# Captura los datos personales\n# Regresa: reporte en formato de texto\n# =======================================\n\nreporte = capturar_datos()\n\n\n# =======================================\n# Visualiza el reporte en pantalla\n# =======================================\n\nprint(reporte)"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-03.html",
-    "href": "actividades/unidad-01/actividad-03.html",
-    "title": "Acceso a diferentes fuentes de datos",
-    "section": "",
-    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-03.html#introducción",
-    "href": "actividades/unidad-01/actividad-03.html#introducción",
-    "title": "Acceso a diferentes fuentes de datos",
-    "section": "Introducción",
-    "text": "Introducción\nEn esta actividad practicarás diferentes formas de acceder a datos utilizando archivos, bases de datos y APIs.\nCada fuente requiere un mecanismo de acceso diferente. A lo largo de la actividad utilizarás los ejemplos vistos en el laboratorio para obtener datos desde cada una de ellas."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-03.html#objetivo",
-    "href": "actividades/unidad-01/actividad-03.html#objetivo",
-    "title": "Acceso a diferentes fuentes de datos",
-    "section": "Objetivo",
-    "text": "Objetivo\nObtener datos desde diferentes fuentes utilizando Python.\n\nLeer datos almacenados en un archivo.\nConsultar información almacenada en una base de datos.\nInvestigar y utilizar una API pública para obtener datos."
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-03.html#entregable",
-    "href": "actividades/unidad-01/actividad-03.html#entregable",
-    "title": "Acceso a diferentes fuentes de datos",
-    "section": "Entregable",
-    "text": "Entregable\nCompleta las tres partes de la actividad directamente en el notebook.\nAntes de entregar:\n\nEjecuta todas las celdas y verifica que no existan errores.\nAsegúrate de que los resultados obtenidos sean visibles.\nGuarda el notebook con un nombre apropiado.\nSube a la plataforma únicamente el archivo .ipynb.\n\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-03.html#parte-1.-archivo",
-    "href": "actividades/unidad-01/actividad-03.html#parte-1.-archivo",
-    "title": "Acceso a diferentes fuentes de datos",
-    "section": "Parte 1. Archivo",
-    "text": "Parte 1. Archivo\nEn el repositorio que acabas de clonar se encuentra el archivo fifa.csv, que contiene datos relacionados con la Copa Mundial de la FIFA.\nEl archivo se encuentra en la carpeta entrada, dentro de datos, en la carpeta ingenieria-de-datos.\n\nConstruir la ruta al archivo.\nLeer el archivo CSV.\nElegir un número de filas a mostrar y muestra esa cantidad de registros del archivo.\n\n\n# Importa la biblioteca necesarias\n\n# Construye la ruta al archivo\nruta = \"\"\n\n# Lee el archivo CSV\n\n# Muestra los primeros x registros"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-03.html#parte-2.-base-de-datos",
-    "href": "actividades/unidad-01/actividad-03.html#parte-2.-base-de-datos",
-    "title": "Acceso a diferentes fuentes de datos",
-    "section": "Parte 2. Base de datos",
-    "text": "Parte 2. Base de datos\nEn el repositorio que acabas de clonar se encuentra la base de datos chinook.sqlite, que contiene información sobre una tienda digital de música.\nLa base de datos está en la carpeta entrada, dentro de datos, que a su vez se encuentra en ingenieria-de-datos.\n\nConstruye la ruta a la base de datos.\nEstablece una conexión utilizando SQLite.\nConsulta las tablas disponibles en la base de datos.\nElige una de las tablas y consulta todos sus registros.\nMuestra los datos obtenidos.\nCierra la conexión.\n\n\n# Importa las bibliotecas necesarias\nimport sqlite3\nimport pandas as pd\n\n# Construye la ruta a la base de datos\n\n\n# Establece la conexión\n\n\n# Consulta las tablas disponibles\n\n\n# Muestra las tablas disponibles\n\n\n# Elige una tabla y realiza la consulta\n\n\n# Obtén los datos\n\n\n# Muestra los datos\n\n\n\n# Cierra la conexión"
-  },
-  {
-    "objectID": "actividades/unidad-01/actividad-03.html#parte-3.-api",
-    "href": "actividades/unidad-01/actividad-03.html#parte-3.-api",
-    "title": "Acceso a diferentes fuentes de datos",
-    "section": "Parte 3. API",
-    "text": "Parte 3. API\nSelecciona una API pública y gratuita diferente a las utilizadas en el laboratorio.\nLa API seleccionada debe poder utilizarse sin crear una cuenta, proporcionar información de pago o solicitar una API key.\nInvestiga su documentación para identificar cómo realizar una consulta desde Python y obtén información utilizando la API seleccionada.\n\nSelecciona una API pública y gratuita.\nConsulta su documentación.\nIdentifica cómo realizar una solicitud y qué información puedes consultar.\nRealiza una consulta desde Python.\nMuestra el resultado obtenido.\n\nPuedes elegir alguna de las siguientes APIs o utilizar otra que cumpla con los requisitos:\n\n\n\nAPI\nDatos disponibles\n\n\n\n\nPokéAPI\nPokémon, habilidades, tipos y características\n\n\nRick and Morty API\nPersonajes, episodios y ubicaciones\n\n\nDog API\nRazas e imágenes de perros\n\n\nNager.Date\nDías festivos de diferentes países\n\n\nUniversities API\nUniversidades, países, dominios y sitios web\n\n\n\nImportante: No utilices JSONPlaceholder, Open-Meteo Weather API ni NASA Open APIs, ya que fueron utilizadas en el laboratorio.\n\n# Importa las bibliotecas necesarias\n\n\n# Define la información necesaria para realizar la consulta\n\n\n# Realiza la consulta a la API\n\n\n# Obtén los datos de la respuesta\n\n\n# Muestra el resultado"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ingeniería de Datos",
-    "section": "",
-    "text": "Bienvenido al repositorio oficial del curso Ingeniería de Datos.\nEn este sitio se publicarán gradualmente las lecciones, notebooks, conjuntos de datos, laboratorios y recursos utilizados durante el semestre.\n\n\n\n\n\n\nNotaAntes de comenzar\n\n\n\nSe recomienda revisar el syllabus para conocer los objetivos, la metodología, el esquema de evaluación y el cronograma del curso.\n\n\n\n\nTodo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
-  },
-  {
-    "objectID": "index.html#repositorio",
-    "href": "index.html#repositorio",
-    "title": "Ingeniería de Datos",
-    "section": "",
-    "text": "Todo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
-  },
-  {
-    "objectID": "lecciones/plantilla.html#concepto-1",
-    "href": "lecciones/plantilla.html#concepto-1",
-    "title": "Tema",
-    "section": "Concepto 1",
-    "text": "Concepto 1"
-  },
-  {
-    "objectID": "lecciones/plantilla.html#idea-clave",
-    "href": "lecciones/plantilla.html#idea-clave",
-    "title": "Tema",
-    "section": "Idea clave",
-    "text": "Idea clave"
-  },
-  {
-    "objectID": "lecciones/plantilla.html#concepto-1-1",
-    "href": "lecciones/plantilla.html#concepto-1-1",
-    "title": "Tema",
-    "section": "Concepto 1",
-    "text": "Concepto 1"
-  },
-  {
-    "objectID": "lecciones/plantilla.html#idea-clave-1",
-    "href": "lecciones/plantilla.html#idea-clave-1",
-    "title": "Tema",
-    "section": "Idea clave",
-    "text": "Idea clave"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#objetivo",
-    "href": "lecciones/unidad-01/leccion-02.html#objetivo",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Objetivo",
-    "text": "Objetivo\nComprender qué es un formato de datos, reconocer algunos de los formatos más comunes e identificar cómo sus características influyen en la forma de almacenar y utilizar la información."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#pregunta",
-    "href": "lecciones/unidad-01/leccion-02.html#pregunta",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Pregunta",
-    "text": "Pregunta\n¿Podemos leer y modificar de la misma manera un archivo CSV, una imagen y un PDF?"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#qué-es-un-formato-de-datos",
-    "href": "lecciones/unidad-01/leccion-02.html#qué-es-un-formato-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Qué es un formato de datos?",
-    "text": "¿Qué es un formato de datos?\nUn formato de datos establece una forma específica de representar y organizar información.\nAlgunos formatos comunes son:\n\n\n\nFormato\nUso común\n\n\n\n\n.txt\nTexto plano\n\n\n.csv\nDatos tabulares\n\n\n.xlsx\nHojas de cálculo\n\n\n.json\nDatos organizados mediante claves y valores\n\n\n.jpg, .png\nImágenes\n\n\n.html\nPáginas web\n\n\n.pdf\nDocumentos\n\n\n\nLa extensión de un archivo suele indicar el formato utilizado."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#idea-clave",
-    "href": "lecciones/unidad-01/leccion-02.html#idea-clave",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Idea clave",
-    "text": "Idea clave\n\nEl formato define cómo se organiza y representa la información almacenada.\n\nLa misma información puede almacenarse utilizando diferentes formatos."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#datos-estructurados",
-    "href": "lecciones/unidad-01/leccion-02.html#datos-estructurados",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos estructurados",
-    "text": "Datos estructurados\nLos datos estructurados siguen una organización claramente definida, generalmente mediante filas, columnas y variables conocidas.\nPor ejemplo:\n\n\n\nnombre\nedad\nciudad\n\n\n\n\nAna\n25\nJuárez\n\n\nLuis\n32\nChihuahua\n\n\n\nLos archivos CSV y las hojas de cálculo son ejemplos comunes de esta forma de organización."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#datos-semiestructurados",
-    "href": "lecciones/unidad-01/leccion-02.html#datos-semiestructurados",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos semiestructurados",
-    "text": "Datos semiestructurados\nLos datos semiestructurados contienen elementos que permiten organizar e identificar la información, pero no necesariamente siguen una estructura tabular.\nPor ejemplo, JSON utiliza claves y valores:\n{\n  \"nombre\": \"Ana\",\n  \"edad\": 25,\n  \"ciudad\": \"Juárez\",\n  \"telefono\": {\n    \"fijo\": \"656-123-4567\",\n    \"movil\": \"656-123-0000\"\n  }\n}\nFormatos como JSON y HTML contienen información sobre su propia estructura mediante claves, etiquetas u otros elementos."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#datos-no-estructurados",
-    "href": "lecciones/unidad-01/leccion-02.html#datos-no-estructurados",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Datos no estructurados",
-    "text": "Datos no estructurados\nLos datos no estructurados no siguen necesariamente una organización tabular o un esquema fijo.\nAlgunos ejemplos son:\n\nDocumentos de texto\nArchivos PDF\nImágenes\nAudio\nVideo\n\nSu contenido no sigue un esquema predefinido, por lo que identificar y extraer elementos específicos puede requerir un procesamiento adicional."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#section",
-    "href": "lecciones/unidad-01/leccion-02.html#section",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "¿Cómo se almacena una imagen?\nUna imagen digital está formada por una matriz de píxeles. Cada píxel contiene valores numéricos que representan su color.\nEn una imagen RGB, cada píxel se representa mediante tres valores:\n\n\n\nColor\nR\nG\nB\n\n\n\n\nRojo\n255\n0\n0\n\n\nVerde\n0\n255\n0\n\n\nAzul\n0\n0\n255\n\n\nBlanco\n255\n255\n255\n\n\nNegro\n0\n0\n0"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#section-1",
-    "href": "lecciones/unidad-01/leccion-02.html#section-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "",
-    "text": "¿Cómo se almacena una imagen?\nDependiendo del tipo de imagen, cada píxel puede contener uno o varios valores.\nEscala de grises: un valor de intensidad por píxel.\nEjemplo: 1080 x 1920\nRGB: tres canales de color por píxel: rojo, verde y azul.\nEjemplo: 1080 x 1920 x 3\nRGBA: cuatro canales por píxel: rojo, verde, azul y transparencia.\nEjemplo: 1080 x 1920 x 4\nFormatos como JPEG y PNG utilizan diferentes métodos para codificar y comprimir esta información."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#idea-clave-1",
-    "href": "lecciones/unidad-01/leccion-02.html#idea-clave-1",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Idea clave",
-    "text": "Idea clave\nLos datos pueden tener diferentes niveles de estructura y no todos se organizan en filas y columnas.\nLa estructura determina cómo está organizada la información y qué tan sencillo es identificar sus diferentes elementos."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#la-misma-información-en-diferentes-formatos",
-    "href": "lecciones/unidad-01/leccion-02.html#la-misma-información-en-diferentes-formatos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "La misma información en diferentes formatos",
-    "text": "La misma información en diferentes formatos\nUna misma información puede representarse de distintas maneras.\nPor ejemplo:\n\n\n\nnombre\nedad\nciudad\n\n\n\n\nAna\n25\nJuárez\n\n\nLuis\n32\nChihuahua\n\n\n\nEn CSV:\nnombre,edad,ciudad\nAna,25,Juárez\nEn JSON:\n{\n  \"nombre\": \"Ana\",\n  \"edad\": 25,\n  \"ciudad\": \"Juárez\"\n}\nLa información es esencialmente la misma, pero su representación cambia."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-02.html#por-qué-existen-diferentes-formatos",
-    "href": "lecciones/unidad-01/leccion-02.html#por-qué-existen-diferentes-formatos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "¿Por qué existen diferentes formatos?",
-    "text": "¿Por qué existen diferentes formatos?\nNo existe un formato adecuado para todas las situaciones.\nLa elección depende de factores como:\n\nLa estructura de los datos.\nEl tipo de información que queremos almacenar.\nEl tamaño de los datos.\nLa facilidad para intercambiarlos.\nLa compatibilidad con diferentes herramientas.\nLa necesidad de conservar la presentación.\n\nPor ejemplo, una tabla de millones de registros tiene necesidades diferentes a una fotografía o un reporte diseñado para ser leído por una persona."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#objetivo",
-    "href": "lecciones/unidad-01/leccion-04.html#objetivo",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Objetivo",
-    "text": "Objetivo\nIdentificar las principales etapas del ciclo de vida de los datos y comprender cómo los datos se transforman desde su obtención hasta su conservación o eliminación."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#pregunta",
-    "href": "lecciones/unidad-01/leccion-04.html#pregunta",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Pregunta",
-    "text": "Pregunta\n¿Qué ocurre con los datos desde que son obtenidos hasta que dejan de utilizarse?"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#el-ciclo-de-vida-de-los-datos",
-    "href": "lecciones/unidad-01/leccion-04.html#el-ciclo-de-vida-de-los-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "El ciclo de vida de los datos",
-    "text": "El ciclo de vida de los datos\n\n\nEl ciclo de vida de los datos describe las distintas etapas por las que pasan los datos, desde su obtención hasta su conservación o eliminación.\nDurante este ciclo, los datos pueden ser almacenados, procesados, analizados y utilizados para generar nueva información."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#captura-de-datos",
-    "href": "lecciones/unidad-01/leccion-04.html#captura-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Captura de datos",
-    "text": "Captura de datos\nLa captura de datos consiste en obtener datos desde una fuente.\nLos datos pueden provenir de:\n\nPersonas: formularios, encuestas, registros o interacciones.\nSensores: temperatura, ubicación, movimiento, imágenes, etc.\nAplicaciones y sistemas: transacciones, actividad de usuarios o registros del sistema.\nOtros datos: bases de datos, archivos, APIs o conjuntos de datos existentes."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#ingesta-de-datos",
-    "href": "lecciones/unidad-01/leccion-04.html#ingesta-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Ingesta de datos",
-    "text": "Ingesta de datos\nLa ingesta de datos consiste en transferir o incorporar datos desde una fuente hacia el sistema donde serán utilizados.\nPor ejemplo:\n\nLeer datos desde un archivo.\nConsultar una base de datos.\nObtener datos mediante una API.\nRecibir datos generados por sensores o aplicaciones.\n\n\nCaptura = obtener o generar el dato.\nIngesta = llevarlo al sistema donde será utilizado."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#almacenamiento",
-    "href": "lecciones/unidad-01/leccion-04.html#almacenamiento",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Almacenamiento",
-    "text": "Almacenamiento\nEl almacenamiento consiste en conservar los datos para que puedan ser utilizados posteriormente.\nLos datos pueden almacenarse en:\n\nArchivos: CSV, JSON, Excel, imágenes, etc.\nBases de datos: SQL o NoSQL.\nData warehouses: datos procesados y estructurados para análisis.\nData lakes: grandes volúmenes de datos en su formato original.\n\n\nMantener los datos originales permite recuperar su estado inicial cuando sea necesario."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#procesamiento-de-datos",
-    "href": "lecciones/unidad-01/leccion-04.html#procesamiento-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Procesamiento de datos",
-    "text": "Procesamiento de datos\nEl procesamiento consiste en preparar y modificar los datos para que puedan ser utilizados.\nPuede incluir:\n\nInspección: conocer su estructura y contenido.\nLimpieza: corregir errores, duplicados o valores faltantes.\nTransformación: cambiar formatos, unidades o representaciones.\nIntegración: combinar datos de diferentes fuentes.\nSelección: conservar únicamente los datos necesarios.\nValidación: verificar que los datos sean correctos y consistentes."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#análisis-de-datos",
-    "href": "lecciones/unidad-01/leccion-04.html#análisis-de-datos",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Análisis de datos",
-    "text": "Análisis de datos\nEl análisis de datos consiste en examinar los datos para responder preguntas, identificar patrones o resolver problemas.\nPuede incluir:\n\nDescribir: ¿qué ocurrió?\nComparar: ¿qué diferencias existen?\nRelacionar: ¿cómo se relacionan las variables?\nExplicar: ¿por qué ocurrió?\nPredecir: ¿qué podría ocurrir?"
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#idea-clave",
-    "href": "lecciones/unidad-01/leccion-04.html#idea-clave",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Idea clave",
-    "text": "Idea clave\nLos resultados de un análisis también pueden convertirse en nuevos datos y comenzar su propio ciclo de vida."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#comunicación",
-    "href": "lecciones/unidad-01/leccion-04.html#comunicación",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Comunicación",
-    "text": "Comunicación\nLa comunicación consiste en presentar los resultados del análisis de forma que puedan ser interpretados y utilizados por otras personas.\nLos resultados pueden comunicarse mediante:\n\nTablas y gráficas.\nReportes.\nPresentaciones.\nDashboards.\nPáginas web.\n\n\nLa forma de comunicar los resultados depende del objetivo y la audiencia."
-  },
-  {
-    "objectID": "lecciones/unidad-01/leccion-04.html#conservación-y-eliminación",
-    "href": "lecciones/unidad-01/leccion-04.html#conservación-y-eliminación",
-    "title": "Introducción a la ingeniería de datos",
-    "section": "Conservación y eliminación",
-    "text": "Conservación y eliminación\nLa conservación consiste en mantener los datos mientras puedan ser necesarios para su uso futuro.\nEl tiempo durante el cual se conservan puede depender de:\n\nUtilidad futura: posibilidad de reutilizar los datos.\nPrivacidad: protección de información sensible.\nAlmacenamiento: espacio y costo de conservarlos.\nPolíticas y regulaciones: requisitos de la organización o legales.\n\nCuando los datos dejan de ser necesarios, pueden archivarse o eliminarse."
+    "text": "Idea clave\nSQL nos permite:\nInsertar → Modificar → Eliminar → Consultar → Filtrar → Agrupar → Relacionar\nLas instrucciones pueden combinarse para responder preguntas cada vez más complejas sobre los datos almacenados."
   },
   {
     "objectID": "lecciones/unidad-02/leccion-01.html#representar-el-negocio",
@@ -1076,6 +551,1161 @@
     "title": "Diseño de Bases de Datos",
     "section": "Nuestro proceso",
     "text": "Nuestro proceso"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#objetivo",
+    "href": "lecciones/unidad-01/leccion-04.html#objetivo",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nIdentificar las principales etapas del ciclo de vida de los datos y comprender cómo los datos se transforman desde su obtención hasta su conservación o eliminación."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#pregunta",
+    "href": "lecciones/unidad-01/leccion-04.html#pregunta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Pregunta",
+    "text": "Pregunta\n¿Qué ocurre con los datos desde que son obtenidos hasta que dejan de utilizarse?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#el-ciclo-de-vida-de-los-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#el-ciclo-de-vida-de-los-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "El ciclo de vida de los datos",
+    "text": "El ciclo de vida de los datos\n\n\nEl ciclo de vida de los datos describe las distintas etapas por las que pasan los datos, desde su obtención hasta su conservación o eliminación.\nDurante este ciclo, los datos pueden ser almacenados, procesados, analizados y utilizados para generar nueva información."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#captura-de-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#captura-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Captura de datos",
+    "text": "Captura de datos\nLa captura de datos consiste en obtener datos desde una fuente.\nLos datos pueden provenir de:\n\nPersonas: formularios, encuestas, registros o interacciones.\nSensores: temperatura, ubicación, movimiento, imágenes, etc.\nAplicaciones y sistemas: transacciones, actividad de usuarios o registros del sistema.\nOtros datos: bases de datos, archivos, APIs o conjuntos de datos existentes."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#ingesta-de-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#ingesta-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ingesta de datos",
+    "text": "Ingesta de datos\nLa ingesta de datos consiste en transferir o incorporar datos desde una fuente hacia el sistema donde serán utilizados.\nPor ejemplo:\n\nLeer datos desde un archivo.\nConsultar una base de datos.\nObtener datos mediante una API.\nRecibir datos generados por sensores o aplicaciones.\n\n\nCaptura = obtener o generar el dato.\nIngesta = llevarlo al sistema donde será utilizado."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#almacenamiento",
+    "href": "lecciones/unidad-01/leccion-04.html#almacenamiento",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Almacenamiento",
+    "text": "Almacenamiento\nEl almacenamiento consiste en conservar los datos para que puedan ser utilizados posteriormente.\nLos datos pueden almacenarse en:\n\nArchivos: CSV, JSON, Excel, imágenes, etc.\nBases de datos: SQL o NoSQL.\nData warehouses: datos procesados y estructurados para análisis.\nData lakes: grandes volúmenes de datos en su formato original.\n\n\nMantener los datos originales permite recuperar su estado inicial cuando sea necesario."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#procesamiento-de-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#procesamiento-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Procesamiento de datos",
+    "text": "Procesamiento de datos\nEl procesamiento consiste en preparar y modificar los datos para que puedan ser utilizados.\nPuede incluir:\n\nInspección: conocer su estructura y contenido.\nLimpieza: corregir errores, duplicados o valores faltantes.\nTransformación: cambiar formatos, unidades o representaciones.\nIntegración: combinar datos de diferentes fuentes.\nSelección: conservar únicamente los datos necesarios.\nValidación: verificar que los datos sean correctos y consistentes."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#análisis-de-datos",
+    "href": "lecciones/unidad-01/leccion-04.html#análisis-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Análisis de datos",
+    "text": "Análisis de datos\nEl análisis de datos consiste en examinar los datos para responder preguntas, identificar patrones o resolver problemas.\nPuede incluir:\n\nDescribir: ¿qué ocurrió?\nComparar: ¿qué diferencias existen?\nRelacionar: ¿cómo se relacionan las variables?\nExplicar: ¿por qué ocurrió?\nPredecir: ¿qué podría ocurrir?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#idea-clave",
+    "href": "lecciones/unidad-01/leccion-04.html#idea-clave",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\nLos resultados de un análisis también pueden convertirse en nuevos datos y comenzar su propio ciclo de vida."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#comunicación",
+    "href": "lecciones/unidad-01/leccion-04.html#comunicación",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Comunicación",
+    "text": "Comunicación\nLa comunicación consiste en presentar los resultados del análisis de forma que puedan ser interpretados y utilizados por otras personas.\nLos resultados pueden comunicarse mediante:\n\nTablas y gráficas.\nReportes.\nPresentaciones.\nDashboards.\nPáginas web.\n\n\nLa forma de comunicar los resultados depende del objetivo y la audiencia."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-04.html#conservación-y-eliminación",
+    "href": "lecciones/unidad-01/leccion-04.html#conservación-y-eliminación",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Conservación y eliminación",
+    "text": "Conservación y eliminación\nLa conservación consiste en mantener los datos mientras puedan ser necesarios para su uso futuro.\nEl tiempo durante el cual se conservan puede depender de:\n\nUtilidad futura: posibilidad de reutilizar los datos.\nPrivacidad: protección de información sensible.\nAlmacenamiento: espacio y costo de conservarlos.\nPolíticas y regulaciones: requisitos de la organización o legales.\n\nCuando los datos dejan de ser necesarios, pueden archivarse o eliminarse."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#objetivo",
+    "href": "lecciones/unidad-01/leccion-02.html#objetivo",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nComprender qué es un formato de datos, reconocer algunos de los formatos más comunes e identificar cómo sus características influyen en la forma de almacenar y utilizar la información."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#pregunta",
+    "href": "lecciones/unidad-01/leccion-02.html#pregunta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Pregunta",
+    "text": "Pregunta\n¿Podemos leer y modificar de la misma manera un archivo CSV, una imagen y un PDF?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#qué-es-un-formato-de-datos",
+    "href": "lecciones/unidad-01/leccion-02.html#qué-es-un-formato-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Qué es un formato de datos?",
+    "text": "¿Qué es un formato de datos?\nUn formato de datos establece una forma específica de representar y organizar información.\nAlgunos formatos comunes son:\n\n\n\nFormato\nUso común\n\n\n\n\n.txt\nTexto plano\n\n\n.csv\nDatos tabulares\n\n\n.xlsx\nHojas de cálculo\n\n\n.json\nDatos organizados mediante claves y valores\n\n\n.jpg, .png\nImágenes\n\n\n.html\nPáginas web\n\n\n.pdf\nDocumentos\n\n\n\nLa extensión de un archivo suele indicar el formato utilizado."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#idea-clave",
+    "href": "lecciones/unidad-01/leccion-02.html#idea-clave",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\n\nEl formato define cómo se organiza y representa la información almacenada.\n\nLa misma información puede almacenarse utilizando diferentes formatos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#datos-estructurados",
+    "href": "lecciones/unidad-01/leccion-02.html#datos-estructurados",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos estructurados",
+    "text": "Datos estructurados\nLos datos estructurados siguen una organización claramente definida, generalmente mediante filas, columnas y variables conocidas.\nPor ejemplo:\n\n\n\nnombre\nedad\nciudad\n\n\n\n\nAna\n25\nJuárez\n\n\nLuis\n32\nChihuahua\n\n\n\nLos archivos CSV y las hojas de cálculo son ejemplos comunes de esta forma de organización."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#datos-semiestructurados",
+    "href": "lecciones/unidad-01/leccion-02.html#datos-semiestructurados",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos semiestructurados",
+    "text": "Datos semiestructurados\nLos datos semiestructurados contienen elementos que permiten organizar e identificar la información, pero no necesariamente siguen una estructura tabular.\nPor ejemplo, JSON utiliza claves y valores:\n{\n  \"nombre\": \"Ana\",\n  \"edad\": 25,\n  \"ciudad\": \"Juárez\",\n  \"telefono\": {\n    \"fijo\": \"656-123-4567\",\n    \"movil\": \"656-123-0000\"\n  }\n}\nFormatos como JSON y HTML contienen información sobre su propia estructura mediante claves, etiquetas u otros elementos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#datos-no-estructurados",
+    "href": "lecciones/unidad-01/leccion-02.html#datos-no-estructurados",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos no estructurados",
+    "text": "Datos no estructurados\nLos datos no estructurados no siguen necesariamente una organización tabular o un esquema fijo.\nAlgunos ejemplos son:\n\nDocumentos de texto\nArchivos PDF\nImágenes\nAudio\nVideo\n\nSu contenido no sigue un esquema predefinido, por lo que identificar y extraer elementos específicos puede requerir un procesamiento adicional."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#section",
+    "href": "lecciones/unidad-01/leccion-02.html#section",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "¿Cómo se almacena una imagen?\nUna imagen digital está formada por una matriz de píxeles. Cada píxel contiene valores numéricos que representan su color.\nEn una imagen RGB, cada píxel se representa mediante tres valores:\n\n\n\nColor\nR\nG\nB\n\n\n\n\nRojo\n255\n0\n0\n\n\nVerde\n0\n255\n0\n\n\nAzul\n0\n0\n255\n\n\nBlanco\n255\n255\n255\n\n\nNegro\n0\n0\n0"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#section-1",
+    "href": "lecciones/unidad-01/leccion-02.html#section-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "¿Cómo se almacena una imagen?\nDependiendo del tipo de imagen, cada píxel puede contener uno o varios valores.\nEscala de grises: un valor de intensidad por píxel.\nEjemplo: 1080 x 1920\nRGB: tres canales de color por píxel: rojo, verde y azul.\nEjemplo: 1080 x 1920 x 3\nRGBA: cuatro canales por píxel: rojo, verde, azul y transparencia.\nEjemplo: 1080 x 1920 x 4\nFormatos como JPEG y PNG utilizan diferentes métodos para codificar y comprimir esta información."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#idea-clave-1",
+    "href": "lecciones/unidad-01/leccion-02.html#idea-clave-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\nLos datos pueden tener diferentes niveles de estructura y no todos se organizan en filas y columnas.\nLa estructura determina cómo está organizada la información y qué tan sencillo es identificar sus diferentes elementos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#la-misma-información-en-diferentes-formatos",
+    "href": "lecciones/unidad-01/leccion-02.html#la-misma-información-en-diferentes-formatos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "La misma información en diferentes formatos",
+    "text": "La misma información en diferentes formatos\nUna misma información puede representarse de distintas maneras.\nPor ejemplo:\n\n\n\nnombre\nedad\nciudad\n\n\n\n\nAna\n25\nJuárez\n\n\nLuis\n32\nChihuahua\n\n\n\nEn CSV:\nnombre,edad,ciudad\nAna,25,Juárez\nEn JSON:\n{\n  \"nombre\": \"Ana\",\n  \"edad\": 25,\n  \"ciudad\": \"Juárez\"\n}\nLa información es esencialmente la misma, pero su representación cambia."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-02.html#por-qué-existen-diferentes-formatos",
+    "href": "lecciones/unidad-01/leccion-02.html#por-qué-existen-diferentes-formatos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Por qué existen diferentes formatos?",
+    "text": "¿Por qué existen diferentes formatos?\nNo existe un formato adecuado para todas las situaciones.\nLa elección depende de factores como:\n\nLa estructura de los datos.\nEl tipo de información que queremos almacenar.\nEl tamaño de los datos.\nLa facilidad para intercambiarlos.\nLa compatibilidad con diferentes herramientas.\nLa necesidad de conservar la presentación.\n\nPor ejemplo, una tabla de millones de registros tiene necesidades diferentes a una fotografía o un reporte diseñado para ser leído por una persona."
+  },
+  {
+    "objectID": "lecciones/plantilla.html#concepto-1",
+    "href": "lecciones/plantilla.html#concepto-1",
+    "title": "Tema",
+    "section": "Concepto 1",
+    "text": "Concepto 1"
+  },
+  {
+    "objectID": "lecciones/plantilla.html#idea-clave",
+    "href": "lecciones/plantilla.html#idea-clave",
+    "title": "Tema",
+    "section": "Idea clave",
+    "text": "Idea clave"
+  },
+  {
+    "objectID": "lecciones/plantilla.html#concepto-1-1",
+    "href": "lecciones/plantilla.html#concepto-1-1",
+    "title": "Tema",
+    "section": "Concepto 1",
+    "text": "Concepto 1"
+  },
+  {
+    "objectID": "lecciones/plantilla.html#idea-clave-1",
+    "href": "lecciones/plantilla.html#idea-clave-1",
+    "title": "Tema",
+    "section": "Idea clave",
+    "text": "Idea clave"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Bienvenido al repositorio oficial del curso Ingeniería de Datos.\nEn este sitio se publicarán gradualmente las lecciones, notebooks, conjuntos de datos, laboratorios y recursos utilizados durante el semestre.\n\n\n\n\n\n\nNotaAntes de comenzar\n\n\n\nSe recomienda revisar el syllabus para conocer los objetivos, la metodología, el esquema de evaluación y el cronograma del curso.\n\n\n\n\nTodo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
+  },
+  {
+    "objectID": "index.html#repositorio",
+    "href": "index.html#repositorio",
+    "title": "Ingeniería de Datos",
+    "section": "",
+    "text": "Todo el material del curso se encuentra disponible en GitHub.\nhttps://github.com/urendacdenisse-hub/ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html",
+    "href": "actividades/unidad-01/actividad-03.html",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#introducción",
+    "href": "actividades/unidad-01/actividad-03.html#introducción",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad practicarás diferentes formas de acceder a datos utilizando archivos, bases de datos y APIs.\nCada fuente requiere un mecanismo de acceso diferente. A lo largo de la actividad utilizarás los ejemplos vistos en el laboratorio para obtener datos desde cada una de ellas."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#objetivo",
+    "href": "actividades/unidad-01/actividad-03.html#objetivo",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nObtener datos desde diferentes fuentes utilizando Python.\n\nLeer datos almacenados en un archivo.\nConsultar información almacenada en una base de datos.\nInvestigar y utilizar una API pública para obtener datos."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#entregable",
+    "href": "actividades/unidad-01/actividad-03.html#entregable",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Entregable",
+    "text": "Entregable\nCompleta las tres partes de la actividad directamente en el notebook.\nAntes de entregar:\n\nEjecuta todas las celdas y verifica que no existan errores.\nAsegúrate de que los resultados obtenidos sean visibles.\nGuarda el notebook con un nombre apropiado.\nSube a la plataforma únicamente el archivo .ipynb.\n\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#parte-1.-archivo",
+    "href": "actividades/unidad-01/actividad-03.html#parte-1.-archivo",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Parte 1. Archivo",
+    "text": "Parte 1. Archivo\nEn el repositorio que acabas de clonar se encuentra el archivo fifa.csv, que contiene datos relacionados con la Copa Mundial de la FIFA.\nEl archivo se encuentra en la carpeta entrada, dentro de datos, en la carpeta ingenieria-de-datos.\n\nConstruir la ruta al archivo.\nLeer el archivo CSV.\nElegir un número de filas a mostrar y muestra esa cantidad de registros del archivo.\n\n\n# Importa la biblioteca necesarias\n\n# Construye la ruta al archivo\nruta = \"\"\n\n# Lee el archivo CSV\n\n# Muestra los primeros x registros"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#parte-2.-base-de-datos",
+    "href": "actividades/unidad-01/actividad-03.html#parte-2.-base-de-datos",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Parte 2. Base de datos",
+    "text": "Parte 2. Base de datos\nEn el repositorio que acabas de clonar se encuentra la base de datos chinook.sqlite, que contiene información sobre una tienda digital de música.\nLa base de datos está en la carpeta entrada, dentro de datos, que a su vez se encuentra en ingenieria-de-datos.\n\nConstruye la ruta a la base de datos.\nEstablece una conexión utilizando SQLite.\nConsulta las tablas disponibles en la base de datos.\nElige una de las tablas y consulta todos sus registros.\nMuestra los datos obtenidos.\nCierra la conexión.\n\n\n# Importa las bibliotecas necesarias\nimport sqlite3\nimport pandas as pd\n\n# Construye la ruta a la base de datos\n\n\n# Establece la conexión\n\n\n# Consulta las tablas disponibles\n\n\n# Muestra las tablas disponibles\n\n\n# Elige una tabla y realiza la consulta\n\n\n# Obtén los datos\n\n\n# Muestra los datos\n\n\n\n# Cierra la conexión"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-03.html#parte-3.-api",
+    "href": "actividades/unidad-01/actividad-03.html#parte-3.-api",
+    "title": "Acceso a diferentes fuentes de datos",
+    "section": "Parte 3. API",
+    "text": "Parte 3. API\nSelecciona una API pública y gratuita diferente a las utilizadas en el laboratorio.\nLa API seleccionada debe poder utilizarse sin crear una cuenta, proporcionar información de pago o solicitar una API key.\nInvestiga su documentación para identificar cómo realizar una consulta desde Python y obtén información utilizando la API seleccionada.\n\nSelecciona una API pública y gratuita.\nConsulta su documentación.\nIdentifica cómo realizar una solicitud y qué información puedes consultar.\nRealiza una consulta desde Python.\nMuestra el resultado obtenido.\n\nPuedes elegir alguna de las siguientes APIs o utilizar otra que cumpla con los requisitos:\n\n\n\nAPI\nDatos disponibles\n\n\n\n\nPokéAPI\nPokémon, habilidades, tipos y características\n\n\nRick and Morty API\nPersonajes, episodios y ubicaciones\n\n\nDog API\nRazas e imágenes de perros\n\n\nNager.Date\nDías festivos de diferentes países\n\n\nUniversities API\nUniversidades, países, dominios y sitios web\n\n\n\nImportante: No utilices JSONPlaceholder, Open-Meteo Weather API ni NASA Open APIs, ya que fueron utilizadas en el laboratorio.\n\n# Importa las bibliotecas necesarias\n\n\n# Define la información necesaria para realizar la consulta\n\n\n# Realiza la consulta a la API\n\n\n# Obtén los datos de la respuesta\n\n\n# Muestra el resultado"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-01.html",
+    "href": "actividades/unidad-01/actividad-01.html",
+    "title": "Reporte de Información Personal",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-01.html#introducción",
+    "href": "actividades/unidad-01/actividad-01.html#introducción",
+    "title": "Reporte de Información Personal",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para capturar información personal y generar un reporte automáticamente. El objetivo es observar cómo un conjunto de datos introducidos por el usuario puede procesarse para producir un resultado útil.\nNo es necesario comprender cómo está programada la aplicación; por ahora, simplemente úsala como si fuera otra aplicación."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-01.html#objetivo",
+    "href": "actividades/unidad-01/actividad-01.html#objetivo",
+    "title": "Reporte de Información Personal",
+    "section": "Objetivo",
+    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nIdentificar diferentes tipos de datos introducidos por el usuario.\nComprender que una aplicación puede recibir y procesar distintos tipos de datos.\nComprender que el procesamiento de los datos permite generar un resultado útil para el usuario."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-01.html#instrucciones",
+    "href": "actividades/unidad-01/actividad-01.html#instrucciones",
+    "title": "Reporte de Información Personal",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nPara preparar el entorno de trabajo, ejecuta la celda que contiene:\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\nPara comenzar con el cuestionario y obtener el reporte, ejecuta la celda que contiene:\nreporte = capturar_datos()\nResponde cada una de las preguntas que aparecerán en pantalla. Si algún dato no cumple con el formato esperado, el sistema solicitará que lo ingreses nuevamente.\nEspera a que el sistema complete el procesamiento y aparezca un mensaje como el siguiente\n\"Reporte generado correctamente.\"\nPara visualizar el reporte, ejecuta la celda que contiene:\nprint(reporte)\nCopia el contenido completo del reporte mostrado en pantalla.\nPega el reporte en un documento de Microsoft Word.\nGuarda el documento en formato PDF.\nSube el archivo PDF como evidencia de la actividad.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.reporte import capturar_datos\n\n\n# =======================================\n# Captura los datos personales\n# Regresa: reporte en formato de texto\n# =======================================\n\nreporte = capturar_datos()\n\n\n# =======================================\n# Visualiza el reporte en pantalla\n# =======================================\n\nprint(reporte)"
+  },
+  {
+    "objectID": "actividades/index.html",
+    "href": "actividades/index.html",
+    "title": "Actividades",
+    "section": "",
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos"
+  },
+  {
+    "objectID": "actividades/plantilla.html",
+    "href": "actividades/plantilla.html",
+    "title": "Titulo de actividad",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/plantilla.html#introducción",
+    "href": "actividades/plantilla.html#introducción",
+    "title": "Titulo de actividad",
+    "section": "Introducción",
+    "text": "Introducción\n…"
+  },
+  {
+    "objectID": "actividades/plantilla.html#objetivo",
+    "href": "actividades/plantilla.html#objetivo",
+    "title": "Titulo de actividad",
+    "section": "Objetivo",
+    "text": "Objetivo\n…\n\n…\n…\n…"
+  },
+  {
+    "objectID": "actividades/plantilla.html#instrucciones",
+    "href": "actividades/plantilla.html#instrucciones",
+    "title": "Titulo de actividad",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\n…\n…\n…\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\n# from ... import ..."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-02.html",
+    "href": "actividades/unidad-01/actividad-02.html",
+    "title": "Simulación de un Sistema de Compras",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-02.html#introducción",
+    "href": "actividades/unidad-01/actividad-02.html#introducción",
+    "title": "Simulación de un Sistema de Compras",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad utilizarás una pequeña aplicación desarrollada en Python para simular el proceso de compra de una tienda. A lo largo de la actividad observarás cómo la información capturada por el usuario se almacena en distintos formatos y cómo esos archivos pueden utilizarse para generar otros nuevos."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-02.html#objetivo",
+    "href": "actividades/unidad-01/actividad-02.html#objetivo",
+    "title": "Simulación de un Sistema de Compras",
+    "section": "Objetivo",
+    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nComprender que una misma información puede almacenarse en diferentes formatos de archivo.\nReconocer que un archivo puede utilizarse como entrada para generar otros archivos o productos.\nIdentificar el flujo de los datos desde su captura hasta la generación de distintos productos."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-02.html#instrucciones",
+    "href": "actividades/unidad-01/actividad-02.html#instrucciones",
+    "title": "Simulación de un Sistema de Compras",
+    "section": "Instrucciones",
+    "text": "Instrucciones\n\nPara configurar todo lo necesario para la actividad, ejecuta la primera celda del notebook. No modifiques su contenido, ya que la actividad depende de ella. La celda se ve así:\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent))\n\nfrom Recursos.compras import (\n     iniciar_compra, procesar_compra, generar_factura, enviar_factura\n)\nPara comenzar con la captura de datos, ejecuta la siguiente celda. Se te solicitará la información necesaria para registrar una compra, como los artículos, sus cantidades y sus precios. La celda contiene algo así:\ncompra = iniciar_compra()\nUna vez capturada la información, ejecuta la siguiente celda para procesar la compra y generar el ticket correspondiente. La celda contiene algo así:\nticket = procesar_compra(compra)\nDespués, ejecuta la celda que genera la factura. El archivo se guardará automáticamente en formato PDF dentro de la carpeta correspondiente. La celda contiene algo así:\nruta_factura = generar_factura(ticket)\nA continuación, ejecuta la celda que genera el correo electrónico. Se creará un archivo .eml con la factura adjunta, el cual también se guardará automáticamente.\nruta_correo = enviar_factura(ruta_factura)\nLocaliza el archivo .eml generado y súbelo a la plataforma como evidencia de tu trabajo.\n\nImportante: Ejecuta las celdas en el orden en que aparecen y evita modificar el código, a menos que la actividad lo indique explícitamente.\n🎁 Puntos extra\nResponde la encuesta de cierre y adjunta una captura de la confirmación de envío para obtener puntos extra en esta actividad.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nfrom recursos.codigo.compras import (\n    iniciar_compra, procesar_compra, generar_factura, enviar_factura\n)\n\n\n# =================================================\n# Captura los datos de la compra\n# Regresa: diccionario con la información capturada\n# =================================================\n\ncompra = iniciar_compra()\n\n\n# =================================================\n# Genera el ticket de compra\n# Regresa: texto (str) con el contenido del ticket\n# =================================================\n\nticket = procesar_compra(compra)\n\n\n# =================================================\n# Genera y guarda la factura en formato PDF\n# Regresa: ruta del archivo PDF generado\n# =================================================\n\nruta_factura = generar_factura(ticket)\n\n\n# =================================================\n# Genera y guarda el correo electrónico (.eml)\n# Regresa: ruta del archivo .eml generado\n# =================================================\n\nruta_correo = enviar_factura(ruta_factura)"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-04.html",
+    "href": "actividades/unidad-01/actividad-04.html",
+    "title": "Generación de Reporte de Resultados",
+    "section": "",
+    "text": "Antes de comenzar\nEste laboratorio está diseñado para ejecutarse en Google Colab.\nUna vez abierto en Google Colab, ejecute la primera celda para clonar el repositorio del curso y acceder a los conjuntos de datos utilizados en este laboratorio.\n!git clone https://github.com/urendacdenisse-hub/ingenieria-de-datos.git\n%cd ingenieria-de-datos"
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-04.html#introducción",
+    "href": "actividades/unidad-01/actividad-04.html#introducción",
+    "title": "Generación de Reporte de Resultados",
+    "section": "Introducción",
+    "text": "Introducción\nEn esta actividad aplicarás nuevamente las etapas del ciclo de vida de los datos utilizando un conjunto de datos proveniente de una encuesta.\nEsta vez deberás seleccionar tu propio conjunto de datos y recorrer el mismo proceso visto en el laboratorio, desde la ingesta hasta la generación de un reporte."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-04.html#objetivo",
+    "href": "actividades/unidad-01/actividad-04.html#objetivo",
+    "title": "Generación de Reporte de Resultados",
+    "section": "Objetivo",
+    "text": "Objetivo\nAl finalizar esta actividad serás capaz de:\n\nAplicar las principales etapas del ciclo de vida de los datos a un nuevo conjunto de datos.\nSeleccionar y analizar variables de interés.\nComunicar los resultados mediante una gráfica y un reporte."
+  },
+  {
+    "objectID": "actividades/unidad-01/actividad-04.html#instrucciones",
+    "href": "actividades/unidad-01/actividad-04.html#instrucciones",
+    "title": "Generación de Reporte de Resultados",
+    "section": "Instrucciones",
+    "text": "Instrucciones\nDurante la actividad deberás:\n\nBuscar y seleccionar en Kaggle un conjunto de datos proveniente de una encuesta:\n\nDebe contener respuestas individuales.\nDebe incluir varias preguntas o variables.\nNo debe contener información personal identificable.\n\nDescargar el conjunto de datos seleccionado desde Kaggle en formato CSV.\nCargar el archivo CSV en Google Colab.\nGuardar una copia del conjunto de datos original en formato CSV.\nInspeccionar el contenido del conjunto de datos identificando:\n\nnúmero de registros,\ntipos de datos,\nvalores faltantes.\n\nLimpiar y preparar el conjunto de datos para el análisis:\n\ntratar los valores faltantes cuando sea necesario,\ncorregir tipos de datos cuando sea necesario,\nidentificar y corregir posibles inconsistencias.\n\nPlantear una pregunta de análisis que pueda responderse utilizando los datos de la encuesta.\nSeleccionar las variables necesarias para responder la pregunta planteada.\nRealizar las operaciones o estadísticas necesarias para responder la pregunta.\nGenerar una gráfica que permita comunicar los resultados y guardarla como imagen.\nElaborar un reporte en Microsoft Word que incluya:\n\nnombre de la actividad,\ntu nombre,\nnombre y enlace del dataset seleccionado,\npregunta de análisis,\ngráfica generada,\nbreve interpretación de los resultados (entre 5 y 10 líneas).\n\nExportar el documento a formato PDF.\nUna vez confirmado que la imagen fue incorporada al reporte, ejecutar la última celda del notebook para eliminar el archivo PNG generado.\n\nAquí comienza la actividad. ¿Listo?\n\n# =================================================\n# 🚫 NO MODIFICAR ESTA CELDA... O SE CREASHEA\n# Configura todo lo necesario para comenzar\n# =================================================\n\nimport sys\nfrom pathlib import Path\n\nsys.path.append(str(Path.cwd().parent.parent))\n\nCARPETA_SALIDA = Path(\"ingenieria-de-datos/datos/salida\")\nCARPETA_SALIDA.mkdir(parents=True, exist_ok=True)\n\nfrom recursos.codigo.visualizacion import visualizar_resultados\n\n\n# ==========================================================\n# 3. Carga de datos\n#    Cargar el archivo CSV descargado desde Kaggle\n#    en un DataFrame llamado `datos`\n# ==========================================================\n\nimport pandas as pd\n\nruta = \"&lt;ruta completa de archivo&gt;\"\n# datos = pd.read_csv(...)\n# datos.info()\n\n\n# ==========================================================\n# 4. Almacenamiento de datos\n#    Guardar una copia de los datos originales en formato CSV\n#    dentro de la carpeta de salida\n# ==========================================================\n\nruta = CARPETA_SALIDA / \"&lt;nombre de archivo&gt;\"\n\n# datos.to_csv(...)\n\n\n# ==========================================================\n# 5. Inspección de datos\n#    Examinar el conjunto de datos e identificar:\n#    - número de registros\n#    - tipos de datos\n#    - valores faltantes\n# ==========================================================\n\n# datos.&lt;metodo&gt;(&lt;argumentos&gt;)\n\n\n# ==========================================================\n# 6. Limpieza de datos\n#    Preparar los datos para el análisis:\n#    - tratar valores faltantes\n#    - corregir tipos de datos\n#    - corregir inconsistencias cuando sea necesario\n# ==========================================================\n\n# datos_limpios = datos.copy()\n# datos_limpios...\n\n\n# ==========================================================\n# 8. Selección de datos\n#    Seleccionar las variables necesarias para responder\n#    la pregunta de análisis\n# ==========================================================\n\ncolumnas = [\n    \"&lt;columna 1&gt;\",\n    \"&lt;columna 2&gt;\",\n    \"&lt;columna 3&gt;\",\n    \"&lt;columna 4&gt;\"\n]\n\n# datos_analisis = datos_limpios[...]\n\n\n# ==========================================================\n# 9. Análisis de datos\n#    Realizar las operaciones o estadísticas necesarias\n#    para responder la pregunta planteada\n# ==========================================================\n\n# datos_analisis.&lt;metodo&gt;(...)\n\n\n# ==========================================================\n# 10. Visualización de resultados\n#    Generar una gráfica que permita comunicar los resultados\n#    del análisis y guardarla como imagen\n# ==========================================================\n\n# Puedes hacer tu propia grafica o intentar usar la funcion\n# ya creada, solo asegurate de que los datos que ingresas tenga\n# variables categoricas (tipo texto).\n\n# figura = visualizar_resultados(datos_analisis)\n\n\nruta = CARPETA_SALIDA / \"&lt;nombre de imagen&gt;.png\"\n\n\n# ==========================================\n#    Crear ruta de imagen\n# ==========================================\n\nruta = CARPETA_SALIDA / \"&lt;nombre de imagen&gt;.png\"\n\n# ==========================================\n#    Guardar los resultados para uso posterior\n# ==========================================\n\n#figura.savefig(\n#    fname=ruta,\n#    dpi=300,\n#    bbox_inches=\"tight\"\n#)\n\nprint(f\"Guardado en: {ruta.resolve()}\")\n\n\n# =====================================================\n# 13. Conservacion y eliminacion de datos\n#    Eliminar gráfico\n#    ⚠️ Corre una vez realizado el reporte final.\n# =====================================================\n\nif ruta.exists():\n    ruta.unlink()\n    print(\"🗑️ La imagen fue eliminada.\")\nelse:\n    print(\"⚠️ La imagen ya no existe.\")"
+  },
+  {
+    "objectID": "lecciones/index.html",
+    "href": "lecciones/index.html",
+    "title": "Lecciones",
+    "section": "",
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\nAlmacenes analíticos\nSistemas de almacenamiento de archivos"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#objetivo",
+    "href": "lecciones/unidad-01/leccion-01.html#objetivo",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nAl finalizar esta lección serás capaz de:\n\nDefinir qué es un dato.\nIdentificar los principales tipos de datos primitivos.\nReconocer ejemplos de cada tipo de dato en situaciones cotidianas."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#pregunta",
+    "href": "lecciones/unidad-01/leccion-01.html#pregunta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Pregunta",
+    "text": "Pregunta\n¿Qué tienen en común una fotografía, un mensaje de WhatsApp y la temperatura de una ciudad?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#definición-de-datos",
+    "href": "lecciones/unidad-01/leccion-01.html#definición-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Definición de datos",
+    "text": "Definición de datos\n\n\nLos datos son un conjunto de hechos, números, palabras, observaciones u otra información útil.  A través del procesamiento de datos y análisis de datos, las organizaciones transforman datos sin procesar en insights valiosos que mejoran la toma de decisiones e impulsan mejores resultados comerciales. [1]"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#dicho-de-otra-forma",
+    "href": "lecciones/unidad-01/leccion-01.html#dicho-de-otra-forma",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Dicho de otra forma…",
+    "text": "Dicho de otra forma…\n\n\nLos datos son información que podemos almacenar, organizar y analizar para responder preguntas o tomar decisiones."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos",
+    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Quién genera datos?",
+    "text": "¿Quién genera datos?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-1",
+    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Quién genera datos?",
+    "text": "¿Quién genera datos?\nLa pregunta importante no es quién genera datos, sino quién no los genera.\n\nEmpresas, gobiernos, hospitales, bancos, aplicaciones, videojuegos e incluso nosotros generamos datos constantemente.\n\n\nPor ejemplo, cada día generamos datos de ubicación, mensajes, compras, música, navegación y redes sociales.\n\n\nTodos generan datos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-2",
+    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-2",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Quién genera datos?",
+    "text": "¿Quién genera datos?\nSegún un estudio realizado por el INEGI sobre los hábitos de usuarios de Internet en México durante 2024 [2], las actividades que realizamos todos los días generan una enorme cantidad de datos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-3",
+    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-3",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Quién genera datos?",
+    "text": "¿Quién genera datos?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-4",
+    "href": "lecciones/unidad-01/leccion-01.html#quién-genera-datos-4",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Quién genera datos?",
+    "text": "¿Quién genera datos?\nDe hecho, esto dice Internet:\n\nGoogle maneja cerca de 40,000 petabytes de datos diariamente. [3]\nWhatsApp entrega alrededor de 100 billones de mensajes al día. [4]\nEn TikTok se suben más de 23 millones de videos cada día, es decir, aproximadamente 16,000 videos por minuto.[5]"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#qué-datos-generan",
+    "href": "lecciones/unidad-01/leccion-01.html#qué-datos-generan",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Qué datos generan?",
+    "text": "¿Qué datos generan?\n\n\n\n\n\nMensajes enviados\nHora del mensaje\nDestinatario\nArchivos compartidos\nLlamadas realizadas\nTiempo de conexión"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#qué-datos-generan-1",
+    "href": "lecciones/unidad-01/leccion-01.html#qué-datos-generan-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Qué datos generan?",
+    "text": "¿Qué datos generan?\n\n\n\n\n\nPelículas y series reproducidas\nTiempo de reproducción\nBúsquedas realizadas\nCalificaciones\nListas personales\nDispositivo utilizado"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#qué-datos-generan-2",
+    "href": "lecciones/unidad-01/leccion-01.html#qué-datos-generan-2",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Qué datos generan?",
+    "text": "¿Qué datos generan?\n\n\n\n\n\nUbicación de origen y destino\nTiempo del viaje\nCosto del viaje\nConductor asignado\nCalificación del viaje\nMétodo de pago"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#idea-clave",
+    "href": "lecciones/unidad-01/leccion-01.html#idea-clave",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\nTodos generamos datos… pero no todos los datos son iguales."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#no-todos-los-datos-son-iguales",
+    "href": "lecciones/unidad-01/leccion-01.html#no-todos-los-datos-son-iguales",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "No todos los datos son iguales",
+    "text": "No todos los datos son iguales\nYa vimos que los organismos generan muchos datos y de muchos tipos:\n\nNuméricos: precios, temperatura, edades, venta\nTexto: mensajes, correos, comentarios, búsquedas\nFecha y hora: fechas de compra, horarios, duración, registros de acceso.\nUbicación: GPS, rutas, direcciones\nImágenes: fotografías, radiografías, publicaciones\nAudio: canciones, notas de voz, llamadas\nVideo: películas, videollamadas, TikToks"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#datos-numéricos",
+    "href": "lecciones/unidad-01/leccion-01.html#datos-numéricos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos numéricos",
+    "text": "Datos numéricos\nLos datos numéricos representan cantidades que pueden medirse o contarse. Se utilizan para realizar operaciones matemáticas y análisis estadísticos.\nEjemplos:\n\nEdad de una persona.\nTemperatura de una ciudad.\nPrecio de un producto.\nNúmero de estudiantes.\n\n\n\nEjemplo real\n25 años · 18 °C · $350.00 · 12 km · 150 estudiantes"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-texto",
+    "href": "lecciones/unidad-01/leccion-01.html#datos-de-texto",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos de texto",
+    "text": "Datos de texto\nLos datos de texto representan información formada por letras, palabras, símbolos o frases. Se utilizan para describir, identificar o comunicar información.\nEjemplos:\n\nNombre de una persona.\nDirección de correo electrónico.\nComentario de un usuario.\nMensaje de WhatsApp.\n\n\n\nEjemplo real\n“Denisse Urenda” · “ingenieria.datos@uacj.mx”"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-fecha-y-hora",
+    "href": "lecciones/unidad-01/leccion-01.html#datos-de-fecha-y-hora",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos de fecha y hora",
+    "text": "Datos de fecha y hora\nLos datos de fecha y hora representan momentos específicos en el tiempo. Se utilizan para registrar cuándo ocurre un evento y analizar su secuencia o duración.\nEjemplos:\n\nFecha de nacimiento.\nHora de una compra.\nFecha de un examen.\nHora de inicio de una llamada.\n\n\n\nEjemplo real\n15/08/2026 · 08:30 a.m. · 2026-07-13 14:25:36 · 12:00 p.m."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-ubicación",
+    "href": "lecciones/unidad-01/leccion-01.html#datos-de-ubicación",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos de ubicación",
+    "text": "Datos de ubicación\nLos datos de ubicación representan un lugar o una posición geográfica. Se utilizan para localizar personas, objetos o eventos.\nEjemplos:\n\nDirección de un domicilio.\nCoordenadas GPS.\nRuta de un viaje.\nUbicación de un restaurante.\n\n\n\nEjemplo real\n31.6904, -106.4245 · Av. Tecnológico 1340 · Ciudad Juárez, Chihuahua"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-imagen",
+    "href": "lecciones/unidad-01/leccion-01.html#datos-de-imagen",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos de imagen",
+    "text": "Datos de imagen\nLos datos de imagen representan información visual capturada mediante fotografías, dibujos, radiografías o ilustraciones.\nEjemplos:\n\nFotografía.\nRadiografía.\nImagen satelital.\nCaptura de pantalla.\n\n\n\nEjemplo real\n📷 selfie.jpg · 🩻 radiografia.png · 🌎 satelite.tif"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-audio",
+    "href": "lecciones/unidad-01/leccion-01.html#datos-de-audio",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos de audio",
+    "text": "Datos de audio\nLos datos de audio representan sonidos o grabaciones que pueden almacenarse y reproducirse digitalmente.\nEjemplos:\n\nCanción.\nNota de voz.\nLlamada telefónica.\nPodcast.\n\n\n\nEjemplo real\n🎵 musica.mp3 · 🎙️ nota_de_voz.m4a · 📞 llamada.wav"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#datos-de-video",
+    "href": "lecciones/unidad-01/leccion-01.html#datos-de-video",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Datos de video",
+    "text": "Datos de video\nLos datos de video representan una secuencia de imágenes, generalmente acompañadas de audio, que permiten registrar o reproducir movimiento.\nEjemplos:\n\nPelícula.\nVideollamada.\nVideo de seguridad.\nTikTok.\n\n\n\nEjemplo real\n🎬 pelicula.mp4 · 📹 reunion.mp4 · 🎥 tiktok.mp4"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-01.html#idea-clave-1",
+    "href": "lecciones/unidad-01/leccion-01.html#idea-clave-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\nLos datos pueden representarse de muchas formas.\nY cada una requiere una manera distinta de almacenarse."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#objetivo",
+    "href": "lecciones/unidad-01/leccion-03.html#objetivo",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nReconocer diferentes fuentes y sistemas de almacenamiento de datos e identificar los mecanismos utilizados para acceder a la información que contienen."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#pregunta",
+    "href": "lecciones/unidad-01/leccion-03.html#pregunta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Pregunta",
+    "text": "Pregunta\n¿Todos los datos se obtienen de la misma manera?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#de-dónde-podemos-tomar-datos",
+    "href": "lecciones/unidad-01/leccion-03.html#de-dónde-podemos-tomar-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿De dónde podemos tomar datos?",
+    "text": "¿De dónde podemos tomar datos?\n\n\n\n\n\n\n\n\nFuente\n¿Qué es?\n¿Cómo accedemos?\n\n\n\n\nArchivos\nDatos almacenados en archivos\nSistema de archivos\n\n\nBase de datos\nSistema organizado para almacenar y gestionar datos\nConsultas / conexión\n\n\nPágina web\nInformación publicada en la web\nHTTP / extracción\n\n\nPágina web\nInformación publicada en la web\nHTTP / extracción\n\n\nAPI\nInterfaz que proporciona acceso a datos o servicios\nSolicitudes HTTP\n\n\nData warehouse\nAlmacenamiento orientado al análisis\nConsultas\n\n\nData lake\nRepositorio de grandes volúmenes de datos\nHerramientas/plataformas de datos"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#archivos",
+    "href": "lecciones/unidad-01/leccion-03.html#archivos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Archivos",
+    "text": "Archivos\nLos archivos son una de las formas más simples de almacenar e intercambiar datos.\nPueden contener datos estructurados, semiestructurados o no estructurados utilizando diferentes formatos.\n\nCSV\nJSON\nExcel\nHTML\nPDF\nImágenes"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#base-de-datos",
+    "href": "lecciones/unidad-01/leccion-03.html#base-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Base de datos",
+    "text": "Base de datos\nUna base de datos es un sistema diseñado para almacenar, organizar y gestionar datos.\nA diferencia de un archivo individual, permite consultar y administrar información de manera eficiente.\nPor ejemplo, utilizando SQL podemos consultar los datos almacenados:\nSELECT nombre, edad\nFROM clientes\nWHERE edad &gt; 30;"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section",
+    "href": "lecciones/unidad-01/leccion-03.html#section",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Bases de datos relacionales\n\n\nLas bases de datos relacionales organizan la información principalmente mediante tablas relacionadas entre sí.\n\n\n\n\nSistema\nDescripción\n\n\n\n\nSQLite\nBase de datos local y ligera.\n\n\nMySQL\nBase de datos relacional popular.\n\n\nPostgreSQL\nRelacional avanzada y extensible.\n\n\nSQL Server\nPlataforma empresarial de Microsoft.\n\n\n\n\n\n\nFuente: Frank Kodie — LinkedIn"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-1",
+    "href": "lecciones/unidad-01/leccion-03.html#section-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Bases de datos no relacionales\nLas bases de datos NoSQL pueden utilizar diferentes modelos para organizar la información.\n\n\n\nTipo\nDescripción\nEjemplo\n\n\n\n\nClave-valor\nPares de claves y valores.\nRedis\n\n\nDocumentos\nDocumentos con estructuras similares a JSON.\nMongoDB\n\n\nColumnas\nDatos organizados en familias de columnas.\nApache Cassandra\n\n\nGrafos\nNodos y relaciones.\nNeo4j"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-2",
+    "href": "lecciones/unidad-01/leccion-03.html#section-2",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "SQL vs. NoSQL\n\n\n\n\nFuente: Pronetic — Geeknetic\n\n\n\n\n\n\n\n\n\nBases de datos SQL\nBases de datos NoSQL\n\n\n\n\nModelo relacional\nModelos no relacionales\n\n\nOrganizadas en tablas\nDiferentes formas de organización\n\n\nRelaciones entre tablas\nEstructuras más flexibles\n\n\nUtilizan SQL para consultas\nEl mecanismo de consulta depende del sistema"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#apis",
+    "href": "lecciones/unidad-01/leccion-03.html#apis",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "APIs",
+    "text": "APIs\nUna API (Application Programming Interface) es una interfaz que permite que diferentes aplicaciones o sistemas se comuniquen entre sí.\nUna aplicación puede solicitar información y recibir una respuesta sin necesidad de acceder directamente al sistema donde los datos están almacenados.\n\n\nFuente: Akamai Technologies"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-3",
+    "href": "lecciones/unidad-01/leccion-03.html#section-3",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Acceso a una API\nCada API define qué información ofrece, cómo solicitarla y cómo estructura sus respuestas.\nTambién puede establecer:\n\nParámetros disponibles.\nMétodos de autenticación.\nLímites o condiciones de acceso.\n\nPor ello, es necesario consultar su documentación.\nAlgunas APIs son públicas; otras requieren autenticación, por ejemplo mediante una API key."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#páginas-web",
+    "href": "lecciones/unidad-01/leccion-03.html#páginas-web",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Páginas web",
+    "text": "Páginas web\nLas páginas web contienen información representada principalmente mediante documentos HTML.\nAunque podemos visualizar esta información en un navegador, también podemos obtener y procesar el documento HTML.\nWeb scraping\nEl web scraping consiste en extraer información de una página web a partir de su contenido y estructura.\nA diferencia de una API, los datos de una página web no necesariamente fueron preparados para ser consumidos directamente por otra aplicación."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#data-warehouse",
+    "href": "lecciones/unidad-01/leccion-03.html#data-warehouse",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Data warehouse",
+    "text": "Data warehouse\nUn data warehouse es un repositorio centralizado que integra y organiza datos provenientes de diferentes fuentes para facilitar su consulta y análisis.\nA diferencia del almacenamiento de datos crudos, contiene datos procesados, limpios y estructurados, listos para ser utilizados.\n\n\n\n\n\n\nFuente: LinkedIn"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-4",
+    "href": "lecciones/unidad-01/leccion-03.html#section-4",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Integración de datos\nUn data warehouse integra información proveniente de diferentes sistemas bajo una estructura común.\n\nSistema de ventas.\nSistema de inventarios.\nBase de datos de clientes.\nSistema financiero.\n\nEsto permite relacionar y analizar conjuntamente datos que originalmente se encontraban separados."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-5",
+    "href": "lecciones/unidad-01/leccion-03.html#section-5",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Consulta de datos\nUna vez que los datos se encuentran organizados dentro del data warehouse, normalmente se consultan utilizando SQL (Structured Query Language).\nSQL permite seleccionar, filtrar, agrupar y relacionar los datos almacenados.\nSELECT producto, SUM(total_venta)\nFROM ventas\nGROUP BY producto;"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-6",
+    "href": "lecciones/unidad-01/leccion-03.html#section-6",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Ejemplos\n\n\n\nData warehouse\nProveedor\n\n\n\n\nBigQuery\nGoogle Cloud\n\n\nAmazon Redshift\nAmazon Web Services (AWS)\n\n\nSnowflake\nSnowflake\n\n\nAzure Synapse Analytics\nMicrosoft Azure\n\n\nTeradata\nTeradata"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#data-lake",
+    "href": "lecciones/unidad-01/leccion-03.html#data-lake",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Data lake",
+    "text": "Data lake\nUn data lake almacena grandes volúmenes de datos en su formato original o con poco procesamiento, sin requerir una estructura previa. Puede contener:\n\nEstructurados: tablas, CSV.\nSemiestructurados: JSON, XML, logs.\nNo estructurados: imágenes, audio, video, documentos.\n\n\n\n\n\n\n\nFuente: Hewlett Packard Enterprise (HPE)"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#section-7",
+    "href": "lecciones/unidad-01/leccion-03.html#section-7",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "",
+    "text": "Acceso a los datos\nEn un data lake, la forma de acceder a los datos depende de su formato:\n\nCSV / Parquet: Python, Spark o motores de consulta.\nJSON / XML: herramientas que interpreten su estructura.\nImágenes, audio y video: herramientas especializadas.\nDocumentos y texto: herramientas de procesamiento de texto.\n\n\nA diferencia de un data warehouse, donde los datos estructurados suelen consultarse mediante SQL, un data lake puede requerir distintas herramientas según el tipo de dato."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-03.html#data-warehouse-vs.-data-lake",
+    "href": "lecciones/unidad-01/leccion-03.html#data-warehouse-vs.-data-lake",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Data warehouse vs. data lake",
+    "text": "Data warehouse vs. data lake\n\n\n\n\n\n\n\nData warehouse\nData lake\n\n\n\n\nDatos preparados y organizados\nDatos crudos o cercanos al original\n\n\nPrincipalmente estructurados\nEstructurados, semiestructurados y no estructurados\n\n\nSchema-on-write\nSchema-on-read\n\n\nEstructura definida antes de almacenar\nEstructura aplicada al consultar\n\n\nConsumo principalmente con SQL\nConsumo según el tipo de datos\n\n\nOrientado al análisis\nOrientado al almacenamiento flexible\n\n\n\n\nWarehouse: datos listos para usar.\nLake: datos almacenados para procesarlos cuando se necesiten."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#objetivo",
+    "href": "lecciones/unidad-01/leccion-05.html#objetivo",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Objetivo",
+    "text": "Objetivo\nIdentificar los principales roles relacionados con los datos y comprender la participación del ingeniero de datos dentro del ciclo de vida de los datos.\nReconocer las etapas que conforman el ciclo de vida de la ingeniería de datos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#pregunta",
+    "href": "lecciones/unidad-01/leccion-05.html#pregunta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Pregunta",
+    "text": "Pregunta\n¿Quiénes participan en el ciclo de vida de los datos y cuál es el papel de la ingeniería de datos?"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#ingeniero-analista-y-científico-de-datos",
+    "href": "lecciones/unidad-01/leccion-05.html#ingeniero-analista-y-científico-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ingeniero, analista y científico de datos",
+    "text": "Ingeniero, analista y científico de datos\nDiferentes profesionales trabajan con los datos dependiendo del objetivo y la etapa del ciclo.\n\nIngeniero de datos: construye y mantiene los sistemas que permiten obtener, almacenar, transformar y disponibilizar los datos.\nAnalista de datos: utiliza los datos para responder preguntas, identificar patrones y comunicar resultados.\nCientífico de datos: utiliza los datos para realizar análisis, experimentación y desarrollar modelos."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#participación-en-el-ciclo-de-vida",
+    "href": "lecciones/unidad-01/leccion-05.html#participación-en-el-ciclo-de-vida",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Participación en el ciclo de vida",
+    "text": "Participación en el ciclo de vida\n\n\n\nEtapa\nIngeniero de datos\nAnalista de datos\nCientífico de datos\n\n\n\n\nCaptura\n●\n\n\n\n\nIngesta\n●\n\n\n\n\nAlmacenamiento\n●\n\n\n\n\nProcesamiento\n●\n●\n●\n\n\nAnálisis\n\n●\n●\n\n\nVisualización y comunicación\n\n●\n●\n\n\nConservación y eliminación\n●\n\n\n\n\n\n\nLa participación de cada rol puede variar dependiendo de la organización y del problema."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#idea-clave",
+    "href": "lecciones/unidad-01/leccion-05.html#idea-clave",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Idea clave",
+    "text": "Idea clave\nLa ingeniería de datos, el análisis de datos y la ciencia de datos son disciplinas diferentes pero complementarias.\nLa ingeniería de datos se encuentra generalmente antes del análisis y la ciencia de datos, proporcionando los datos que estos necesitan para realizar su trabajo."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#qué-es-la-ingeniería-de-datos",
+    "href": "lecciones/unidad-01/leccion-05.html#qué-es-la-ingeniería-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "¿Qué es la ingeniería de datos?",
+    "text": "¿Qué es la ingeniería de datos?\nLa ingeniería de datos desarrolla y mantiene sistemas y procesos que permiten convertir datos crudos en datos consistentes, accesibles y útiles para otros usuarios y sistemas.\nEl ingeniero de datos gestiona este proceso desde que los datos se obtienen de los sistemas de origen hasta que están disponibles para ser utilizados."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos",
+    "href": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ciclo de vida de la ingeniería de datos",
+    "text": "Ciclo de vida de la ingeniería de datos\nReis y Housley dividen el ciclo de vida de la ingeniería de datos en cinco etapas principales:\n\nGeneración\nAlmacenamiento\nIngesta\nTransformación\nServicio de datos"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos-1",
+    "href": "lecciones/unidad-01/leccion-05.html#ciclo-de-vida-de-la-ingeniería-de-datos-1",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ciclo de vida de la ingeniería de datos",
+    "text": "Ciclo de vida de la ingeniería de datos"
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#generación",
+    "href": "lecciones/unidad-01/leccion-05.html#generación",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Generación",
+    "text": "Generación\nLa generación ocurre en los sistemas donde se producen originalmente los datos.\nUn sistema de origen puede ser, por ejemplo:\n\nUna aplicación.\nUna base de datos transaccional.\nUn dispositivo IoT.\n\nEl ingeniero de datos necesita comprender cómo se generan los datos para poder utilizarlos posteriormente."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#almacenamiento",
+    "href": "lecciones/unidad-01/leccion-05.html#almacenamiento",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Almacenamiento",
+    "text": "Almacenamiento\nEl almacenamiento determina cómo y dónde se guardan los datos.\nA diferencia de otras etapas, el almacenamiento puede aparecer en diferentes puntos del ciclo de ingeniería de datos.\nLa forma en que los datos son almacenados influye en cómo podrán ser ingeridos, transformados y utilizados."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#ingesta",
+    "href": "lecciones/unidad-01/leccion-05.html#ingesta",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Ingesta",
+    "text": "Ingesta\nLa ingesta consiste en obtener los datos desde los sistemas de origen e incorporarlos al sistema de datos.\nEsta etapa conecta los sistemas que generan los datos con las siguientes etapas del ciclo."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#transformación",
+    "href": "lecciones/unidad-01/leccion-05.html#transformación",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Transformación",
+    "text": "Transformación\nLa transformación modifica los datos desde su forma original para convertirlos en datos útiles.\nPuede incluir operaciones como:\n\nConversión de tipos.\nEstandarización de formatos.\nEliminación de datos incorrectos.\nNormalización.\nAgregación."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#servicio-de-datos",
+    "href": "lecciones/unidad-01/leccion-05.html#servicio-de-datos",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Servicio de datos",
+    "text": "Servicio de datos\nEl servicio de datos consiste en poner los datos preparados a disposición de quienes los necesitan.\nLos datos pueden ser utilizados posteriormente para:\n\nAnálisis de datos.\nReportes y dashboards.\nMachine learning.\nOtros sistemas y aplicaciones."
+  },
+  {
+    "objectID": "lecciones/unidad-01/leccion-05.html#elementos-transversales",
+    "href": "lecciones/unidad-01/leccion-05.html#elementos-transversales",
+    "title": "Introducción a la ingeniería de datos",
+    "section": "Elementos transversales",
+    "text": "Elementos transversales\nEl ciclo de ingeniería de datos también está acompañado por una serie de elementos transversales (undercurrents) que intervienen a lo largo de todas sus etapas.\n\nSeguridad: protección de los datos y control de acceso.\nGestión de datos: organización, calidad y gobierno de los datos.\nDataOps: automatización, monitoreo y confiabilidad de los procesos.\nArquitectura de datos: diseño y organización de los sistemas de datos.\nOrquestación: coordinación de tareas y dependencias.\nIngeniería de software: desarrollo y mantenimiento de los sistemas que procesan datos.\n\n\nNo son etapas adicionales del ciclo: son prácticas que dan soporte a todo el ciclo de ingeniería de datos."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#del-diseño-a-la-implementación",
+    "href": "lecciones/unidad-02/leccion-02.html#del-diseño-a-la-implementación",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Del diseño a la implementación",
+    "text": "Del diseño a la implementación\nYa definimos:\n\nlas entidades;\nsus atributos;\nlas llaves primarias;\nlas relaciones;\nlas reglas del negocio.\n\n\nAhora necesitamos convertir ese diseño en instrucciones que el sistema gestor de bases de datos pueda ejecutar."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#sql",
+    "href": "lecciones/unidad-02/leccion-02.html#sql",
+    "title": "Implementación del Modelo Relacional",
+    "section": "SQL",
+    "text": "SQL\nSQL (Structured Query Language) es el lenguaje que utilizamos para trabajar con bases de datos relacionales.\nNos permite:\n\ncrear tablas;\ndefinir columnas y tipos de datos;\nestablecer llaves;\nimplementar restricciones;\nconsultar y modificar información.\n\nEn esta unidad utilizaremos SQLite."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#crear-una-tabla",
+    "href": "lecciones/unidad-02/leccion-02.html#crear-una-tabla",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Crear una tabla",
+    "text": "Crear una tabla\nPara crear una tabla utilizamos:\nCREATE TABLE Producto (\n    producto_id INTEGER,\n    nombre TEXT,\n    precio REAL\n);\nCada columna tiene:\n\nnombre + tipo de dato"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#tipos-de-datos-en-sqlite",
+    "href": "lecciones/unidad-02/leccion-02.html#tipos-de-datos-en-sqlite",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Tipos de datos en SQLite",
+    "text": "Tipos de datos en SQLite\nSQLite utiliza principalmente los siguientes tipos:\n\n\n\nTipo\nUso\n\n\n\n\nINTEGER\nNúmeros enteros\n\n\nREAL\nNúmeros con decimales\n\n\nTEXT\nTexto\n\n\nBLOB\nDatos binarios\n\n\n\nEl tipo debe elegirse de acuerdo con el significado y uso del dato."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#llave-primaria",
+    "href": "lecciones/unidad-02/leccion-02.html#llave-primaria",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Llave primaria",
+    "text": "Llave primaria\nLa llave primaria que identificamos durante el diseño se implementa utilizando PRIMARY KEY.\nCREATE TABLE Producto (\n    producto_id INTEGER PRIMARY KEY,\n    nombre TEXT,\n    precio REAL\n);\nproducto_id identifica de manera única cada producto."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones",
+    "text": "Restricciones\nAdemás del tipo de dato, podemos establecer restricciones sobre los valores permitidos.\nLas restricciones nos permiten implementar las reglas del negocio.\nAlgunas de las principales son:\n\nPRIMARY KEY\nNOT NULL\nUNIQUE\nDEFAULT\nCHECK\nFOREIGN KEY"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#not-null",
+    "href": "lecciones/unidad-02/leccion-02.html#not-null",
+    "title": "Implementación del Modelo Relacional",
+    "section": "NOT NULL",
+    "text": "NOT NULL\nNOT NULL indica que una columna siempre debe contener un valor.\nRegla:\n\nTodo empleado debe tener un nombre.\n\nCREATE TABLE Empleado (\n    empleado_id INTEGER PRIMARY KEY,\n    nombre TEXT NOT NULL\n);\nNo será posible registrar un empleado sin proporcionar su nombre."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#unique",
+    "href": "lecciones/unidad-02/leccion-02.html#unique",
+    "title": "Implementación del Modelo Relacional",
+    "section": "UNIQUE",
+    "text": "UNIQUE\nUNIQUE evita que un valor se repita en una columna.\nRegla:\n\nDos usuarios no pueden tener el mismo correo.\n\nCREATE TABLE Usuario (\n    usuario_id INTEGER PRIMARY KEY,\n    correo TEXT UNIQUE\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#default",
+    "href": "lecciones/unidad-02/leccion-02.html#default",
+    "title": "Implementación del Modelo Relacional",
+    "section": "DEFAULT",
+    "text": "DEFAULT\nDEFAULT establece un valor que será utilizado cuando no se proporcione uno.\nRegla:\n\nLa existencia inicial de un producto será cero.\n\nCREATE TABLE Producto (\n    producto_id INTEGER PRIMARY KEY,\n    existencia INTEGER DEFAULT 0\n);\nSi no proporcionamos existencia, SQLite utilizará 0."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#check",
+    "href": "lecciones/unidad-02/leccion-02.html#check",
+    "title": "Implementación del Modelo Relacional",
+    "section": "CHECK",
+    "text": "CHECK\nCHECK permite establecer una condición que debe cumplir un dato.\nRegla:\n\nEl precio de un producto debe ser mayor que cero.\n\nCREATE TABLE Producto (\n    producto_id INTEGER PRIMARY KEY,\n    precio REAL CHECK (precio &gt; 0)\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#check-rango",
+    "href": "lecciones/unidad-02/leccion-02.html#check-rango",
+    "title": "Implementación del Modelo Relacional",
+    "section": "CHECK — Rango",
+    "text": "CHECK — Rango\nTambién podemos restringir un valor a un intervalo.\nRegla:\n\nUna calificación debe encontrarse entre 0 y 100.\n\nCREATE TABLE Evaluacion (\n    evaluacion_id INTEGER PRIMARY KEY,\n    calificacion REAL\n        CHECK (calificacion BETWEEN 0 AND 100)\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#check-valores-permitidos",
+    "href": "lecciones/unidad-02/leccion-02.html#check-valores-permitidos",
+    "title": "Implementación del Modelo Relacional",
+    "section": "CHECK — Valores permitidos",
+    "text": "CHECK — Valores permitidos\nPodemos establecer un conjunto de valores válidos.\nRegla:\n\nUn empleado solamente puede pertenecer a uno de tres turnos.\n\nCREATE TABLE Empleado (\n    empleado_id INTEGER PRIMARY KEY,\n    turno TEXT CHECK (turno IN ('Matutino','Vespertino','Nocturno'))\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nTambién podemos establecer reglas sobre el formato de un texto.\nRegla:\n\nEl código de empleado debe comenzar con una letra mayúscula.\n\nCREATE TABLE Empleado (\n    empleado_id INTEGER PRIMARY KEY,\n    codigo TEXT CHECK (codigo GLOB '[A-Z]*')\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-1",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-1",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nGLOB permite verificar si un texto coincide con un patrón.\nEn el patrón [A-Z]*\n\n[A-Z] representa un carácter entre A y Z.\n* representa cualquier secuencia de caracteres después de la letra.\n\nPor lo tanto, codigo GLOB '[A-Z]*' pregunta:\n\n¿El código comienza con una letra mayúscula?"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-2",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-2",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nTambién podemos utilizar ^ para negar un conjunto de caracteres.\nRegla:\n\nEl código no puede comenzar con un número.\n\nCREATE TABLE Empleado (\n    empleado_id INTEGER PRIMARY KEY,\n    codigo TEXT CHECK (codigo GLOB '[^0-9]*')\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-3",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-3",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nEn el patrón [^0-9]*\n\n[0-9] representa un dígito entre 0 y 9.\n^ niega el conjunto: [^0-9] representa un carácter que no sea un número.\n* representa cualquier secuencia de caracteres después del primer carácter.\n\nPor lo tanto, codigo GLOB '[^0-9]*' pregunta:\n\n¿El código comienza con un carácter que no sea un número?"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-4",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-4",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nAhora podemos combinar los patrones anteriores.\nRegla:\n\nEl nombre solamente puede contener letras y espacios.\n\nCREATE TABLE Persona (\n    persona_id INTEGER PRIMARY KEY,\n    nombre TEXT\n        CHECK (nombre NOT GLOB '*[^A-Za-z ]*')\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-5",
+    "href": "lecciones/unidad-02/leccion-02.html#restricciones-sobre-texto-5",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Restricciones sobre texto",
+    "text": "Restricciones sobre texto\nEn el patrón *[^A-Za-z ]*\n\n* representa cualquier secuencia de caracteres.\n[^A-Za-z ] representa un carácter que no sea una letra o un espacio.\n* representa cualquier secuencia de caracteres.\n\nPor lo tanto, nombre GLOB '*[^A-Za-z ]*' pregunta:\n\n¿El nombre contiene, en cualquier posición, un carácter que no sea una letra o un espacio?"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#números-almacenados-como-texto",
+    "href": "lecciones/unidad-02/leccion-02.html#números-almacenados-como-texto",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Números almacenados como texto",
+    "text": "Números almacenados como texto\nNo todo dato formado por dígitos debe almacenarse como INTEGER.\nPor ejemplo:\n\nUn teléfono es un identificador, no una cantidad.\n\nCREATE TABLE Cliente (\n    cliente_id INTEGER PRIMARY KEY,\n    telefono TEXT\n);\nNo necesitamos sumar, multiplicar o realizar operaciones aritméticas con un teléfono."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#validar-un-teléfono",
+    "href": "lecciones/unidad-02/leccion-02.html#validar-un-teléfono",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Validar un teléfono",
+    "text": "Validar un teléfono\nRegla:\n\nEl teléfono debe utilizar el formato ###-###-####.\n\nCREATE TABLE Cliente (\n    cliente_id INTEGER PRIMARY KEY,\n    telefono TEXT\n        CHECK (\n            telefono GLOB\n            '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'\n        )\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#validar-un-teléfono-1",
+    "href": "lecciones/unidad-02/leccion-02.html#validar-un-teléfono-1",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Validar un teléfono",
+    "text": "Validar un teléfono\nCada [0-9] representa exactamente un dígito.\nLos guiones deben aparecer exactamente en las posiciones indicadas.\n\n\n\nTeléfono\n¿Válido?\n\n\n\n\n656-123-4567\n✓\n\n\n915-555-1234\n✓\n\n\n6561234567\n✗\n\n\n656-12-4567\n✗\n\n\n656-ABC-4567\n✗"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#fechas-en-sqlite",
+    "href": "lecciones/unidad-02/leccion-02.html#fechas-en-sqlite",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Fechas en SQLite",
+    "text": "Fechas en SQLite\nSQLite no tiene un tipo de almacenamiento exclusivo para fechas.\nPodemos almacenarlas como TEXT utilizando un formato consistente.\nCREATE TABLE Pedido (\n    pedido_id INTEGER PRIMARY KEY,\n    fecha TEXT\n);\nPodemos usar el formato YYYY-MM-DD."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#validar-una-fecha",
+    "href": "lecciones/unidad-02/leccion-02.html#validar-una-fecha",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Validar una fecha",
+    "text": "Validar una fecha\nPodemos utilizar la función date() dentro de una restricción CHECK para validar un valor almacenado como TEXT.\nRegla:\n\nLa fecha debe utilizar el formato YYYY-MM-DD y representar una fecha válida.\n\nCREATE TABLE Pedido (\n    pedido_id INTEGER PRIMARY KEY,\n    fecha TEXT CHECK (fecha = date(fecha))\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#fecha-y-hora-actual",
+    "href": "lecciones/unidad-02/leccion-02.html#fecha-y-hora-actual",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Fecha y hora actual",
+    "text": "Fecha y hora actual\nPara almacenar fecha y hora podemos utilizar YYYY-MM-DD HH:MM:SS\nAdemas podemos utilizar CURRENT_TIMESTAMP para asignar automáticamente la fecha y hora al crear un registro.\nCREATE TABLE Registro (\n    registro_id INTEGER PRIMARY KEY,\n    fecha_hora TEXT\n        DEFAULT CURRENT_TIMESTAMP\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#foreign-key---relaciones-1n",
+    "href": "lecciones/unidad-02/leccion-02.html#foreign-key---relaciones-1n",
+    "title": "Implementación del Modelo Relacional",
+    "section": "FOREIGN KEY - Relaciones 1:N",
+    "text": "FOREIGN KEY - Relaciones 1:N\nUna FOREIGN KEY permite indicar que una columna hace referencia a la llave de otra tabla.\nCREATE TABLE Pedido (\n    pedido_id INTEGER PRIMARY KEY,\n    cliente_id INTEGER,\n\n    FOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id)\n);\ncliente_id es PK en Cliente y FK en Pedido."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#foreign-key---relaciones-nm",
+    "href": "lecciones/unidad-02/leccion-02.html#foreign-key---relaciones-nm",
+    "title": "Implementación del Modelo Relacional",
+    "section": "FOREIGN KEY - Relaciones N:M",
+    "text": "FOREIGN KEY - Relaciones N:M\nLa tabla asociativa contiene las llaves de ambas entidades.\nCREATE TABLE Inscripcion (\n    estudiante_id INTEGER,\n    curso_id INTEGER,\n\n    PRIMARY KEY (estudiante_id, curso_id),\n    FOREIGN KEY (estudiante_id) REFERENCES Estudiante(estudiante_id),\n    FOREIGN KEY (curso_id) REFERENCES Curso(curso_id)\n);\nLa combinación (estudiante_id, curso_id) identifica una inscripción."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#integridad-referencial",
+    "href": "lecciones/unidad-02/leccion-02.html#integridad-referencial",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Integridad referencial",
+    "text": "Integridad referencial\nLa integridad referencial garantiza que las relaciones entre las tablas sean válidas y consistentes.\nUna llave foránea (FOREIGN KEY) solo puede hacer referencia a un valor que exista en la tabla relacionada.\nEsto evita:\n\nreferencias a registros inexistentes;\nrelaciones inválidas entre tablas;\ninconsistencias en los datos.\n\nEn SQLite debemos habilitar la aplicación de las llaves foráneas:\nPRAGMA foreign_keys = ON;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#juntando-las-piezas",
+    "href": "lecciones/unidad-02/leccion-02.html#juntando-las-piezas",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Juntando las piezas",
+    "text": "Juntando las piezas\nUna tabla puede implementar varias reglas al mismo tiempo.\nCREATE TABLE Producto (\n    producto_id INTEGER PRIMARY KEY,\n    nombre TEXT NOT NULL,\n    precio REAL CHECK (precio &gt; 0),\n    existencia INTEGER DEFAULT 0\n);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql",
+    "href": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql",
+    "title": "Implementación del Modelo Relacional",
+    "section": "De la regla de negocio a SQL",
+    "text": "De la regla de negocio a SQL\nCada decisión de diseño puede convertirse en una regla de la base de datos.\nRegla del negocio\n\nTodo producto debe tener nombre.\n\nnombre TEXT NOT NULL"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql-1",
+    "href": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql-1",
+    "title": "Implementación del Modelo Relacional",
+    "section": "De la regla de negocio a SQL",
+    "text": "De la regla de negocio a SQL\nRegla del negocio\n\nEl precio debe ser positivo.\n\nprecio REAL CHECK (precio &gt; 0)"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql-2",
+    "href": "lecciones/unidad-02/leccion-02.html#de-la-regla-de-negocio-a-sql-2",
+    "title": "Implementación del Modelo Relacional",
+    "section": "De la regla de negocio a SQL",
+    "text": "De la regla de negocio a SQL\nRegla del negocio\n\nUn pedido debe hacer referencia a un cliente existente.\n\nFOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id)"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-02.html#idea-clave",
+    "href": "lecciones/unidad-02/leccion-02.html#idea-clave",
+    "title": "Implementación del Modelo Relacional",
+    "section": "Idea clave",
+    "text": "Idea clave\nNo se trata solamente de crear columnas. Queremos que la propia base de datos ayude a garantizar que la información sea válida y consistente.\nPara cada atributo debemos preguntarnos:\n\n¿Qué tipo de dato representa?\n¿Puede ser nulo?\n¿Debe ser único?\n¿Qué valores son válidos?\n¿Depende de otra tabla?\n¿Qué regla del negocio debemos proteger?"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#más-allá-de-las-tablas",
+    "href": "lecciones/unidad-02/leccion-04.html#más-allá-de-las-tablas",
+    "title": "Objetos y Automatización",
+    "section": "Más allá de las tablas",
+    "text": "Más allá de las tablas\nUna base de datos puede incluir otros elementos para facilitar su uso, mejorar su rendimiento y automatizar operaciones.\n\n\n\nElemento\nFunción\n\n\n\n\nVIEW\nReutilizar consultas\n\n\nINDEX\nFacilitar búsquedas eficientes\n\n\nTRIGGER\nEjecutar acciones automáticamente\n\n\nTRANSACTION\nAgrupar operaciones como una unidad"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#view",
+    "href": "lecciones/unidad-02/leccion-04.html#view",
+    "title": "Objetos y Automatización",
+    "section": "VIEW",
+    "text": "VIEW\nUna vista es una consulta almacenada que puede utilizarse como si fuera una tabla.\nPor ejemplo, supongamos que consultamos frecuentemente los pedidos junto con el nombre del cliente:\nSELECT p.pedido_id, c.nombre, p.total\nFROM Pedido AS p\nJOIN Cliente AS c\n    ON p.cliente_id = c.cliente_id;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#create-view",
+    "href": "lecciones/unidad-02/leccion-04.html#create-view",
+    "title": "Objetos y Automatización",
+    "section": "CREATE VIEW",
+    "text": "CREATE VIEW\nPodemos guardar esa consulta como una vista:\nCREATE VIEW pedidos_clientes AS\nSELECT p.pedido_id, c.nombre, p.total\nFROM Pedido AS p\nJOIN Cliente AS c\n    ON p.cliente_id = c.cliente_id;\nDespués podemos consultarla directamente:\nSELECT * FROM pedidos_clientes;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#la-vista-almacena-los-datos",
+    "href": "lecciones/unidad-02/leccion-04.html#la-vista-almacena-los-datos",
+    "title": "Objetos y Automatización",
+    "section": "¿La vista almacena los datos?",
+    "text": "¿La vista almacena los datos?\nNo.\nLa vista almacena la consulta, no una copia independiente de los datos.\nCuando consultamos la vista, el resultado se obtiene a partir de las tablas originales."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#drop-view",
+    "href": "lecciones/unidad-02/leccion-04.html#drop-view",
+    "title": "Objetos y Automatización",
+    "section": "DROP VIEW",
+    "text": "DROP VIEW\nPodemos eliminar una vista cuando ya no sea necesaria:\nDROP VIEW pedidos_clientes;\nEsto elimina la vista, no las tablas ni los datos utilizados por ella."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#index",
+    "href": "lecciones/unidad-02/leccion-04.html#index",
+    "title": "Objetos y Automatización",
+    "section": "INDEX",
+    "text": "INDEX\nUn índice es una estructura que facilita la localización de registros en una tabla.\nEs especialmente útil cuando realizamos búsquedas frecuentes sobre una columna.\nPor ejemplo, podemos buscar todos los productos de una categoría:\nSELECT * FROM Producto\nWHERE categoria = 'Electrónica';\nSin un índice, SQLite necesita revisar los registros de la tabla para encontrar todas las coincidencias."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#create-index",
+    "href": "lecciones/unidad-02/leccion-04.html#create-index",
+    "title": "Objetos y Automatización",
+    "section": "CREATE INDEX",
+    "text": "CREATE INDEX\nSi realizamos frecuentemente búsquedas por categoría, podemos crear un índice:\nCREATE INDEX idx_producto_categoria\nON Producto(categoria);\nEl índice permite a SQLite localizar más eficientemente los registros asociados con cada categoría."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#cómo-funciona-un-índice",
+    "href": "lecciones/unidad-02/leccion-04.html#cómo-funciona-un-índice",
+    "title": "Objetos y Automatización",
+    "section": "¿Cómo funciona un índice?",
+    "text": "¿Cómo funciona un índice?\nSupongamos que tenemos la tabla:\n\n\n\nproducto_id\nnombre\ncategoria\n\n\n\n\n1\nLaptop\nElectrónica\n\n\n2\nMouse\nElectrónica\n\n\n3\nEscritorio\nMuebles\n\n\n4\nMonitor\nElectrónica\n\n\n5\nSilla\nMuebles\n\n\n\nCreamos un índice:\nCREATE INDEX idx_producto_categoria\nON Producto(categoria);"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#cómo-se-ve-el-índice",
+    "href": "lecciones/unidad-02/leccion-04.html#cómo-se-ve-el-índice",
+    "title": "Objetos y Automatización",
+    "section": "¿Cómo se ve el índice?",
+    "text": "¿Cómo se ve el índice?\nConceptualmente, el índice mantiene los valores ordenados junto con una referencia al registro correspondiente.\n\n\n\ncategoria\nreferencia\n\n\n\n\nElectrónica\n1\n\n\nElectrónica\n2\n\n\nElectrónica\n4\n\n\nMuebles\n3\n\n\nMuebles\n5\n\n\n\nEl índice no contiene una nueva tabla de productos.\nMantiene una estructura que permite localizar los registros de manera más eficiente."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#buscar-utilizando-el-índice",
+    "href": "lecciones/unidad-02/leccion-04.html#buscar-utilizando-el-índice",
+    "title": "Objetos y Automatización",
+    "section": "Buscar utilizando el índice",
+    "text": "Buscar utilizando el índice\nPara una consulta como:\nSELECT *\nFROM Producto\nWHERE categoria = 'Muebles';\nSQLite puede utilizar el índice para localizar las referencias:\nMuebles\n   ├── 3\n   └── 5\ny después acceder a los registros correspondientes de Producto."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#índices-con-múltiples-columnas",
+    "href": "lecciones/unidad-02/leccion-04.html#índices-con-múltiples-columnas",
+    "title": "Objetos y Automatización",
+    "section": "Índices con múltiples columnas",
+    "text": "Índices con múltiples columnas\nUn índice también puede incluir más de una columna.\nCREATE INDEX idx_producto_categoria_precio\nON Producto(categoria, precio);\nPuede ser útil para consultas que utilizan ambas columnas:\nSELECT *\nFROM Producto\nWHERE categoria = 'Electrónica'\n  AND precio &lt; 5000;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#drop-index",
+    "href": "lecciones/unidad-02/leccion-04.html#drop-index",
+    "title": "Objetos y Automatización",
+    "section": "DROP INDEX",
+    "text": "DROP INDEX\nPodemos eliminar un índice creado explícitamente:\nDROP INDEX idx_producto_categoria;\nEliminar el índice no elimina la columna ni sus datos."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#idea-clave",
+    "href": "lecciones/unidad-02/leccion-04.html#idea-clave",
+    "title": "Objetos y Automatización",
+    "section": "Idea clave",
+    "text": "Idea clave\nUn índice no modifica los datos ni el resultado de una consulta.\nModifica la forma en que SQLite puede localizar los datos.\nSin índice → buscar entre todos los registros\n\nCon índice → utilizar una estructura de búsqueda"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#trigger",
+    "href": "lecciones/unidad-02/leccion-04.html#trigger",
+    "title": "Objetos y Automatización",
+    "section": "TRIGGER",
+    "text": "TRIGGER\nUn trigger ejecuta automáticamente una acción cuando ocurre un evento determinado en una tabla.\nLos eventos principales son:\n\n\n\nEvento\nOcurre cuando…\n\n\n\n\nINSERT\nSe agrega un registro\n\n\nUPDATE\nSe modifica un registro\n\n\nDELETE\nSe elimina un registro"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#ejemplo",
+    "href": "lecciones/unidad-02/leccion-04.html#ejemplo",
+    "title": "Objetos y Automatización",
+    "section": "Ejemplo",
+    "text": "Ejemplo\nSupongamos que queremos conservar un historial de los cambios de precio.\nTenemos una tabla para registrar los cambios:\nCREATE TABLE HistorialPrecio (\n    historial_id INTEGER PRIMARY KEY,\n    producto_id INTEGER,\n    precio_anterior REAL,\n    precio_nuevo REAL,\n    fecha TEXT\n);\nQueremos que cada cambio se registre automáticamente."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#create-trigger",
+    "href": "lecciones/unidad-02/leccion-04.html#create-trigger",
+    "title": "Objetos y Automatización",
+    "section": "CREATE TRIGGER",
+    "text": "CREATE TRIGGER\nPodemos crear un trigger que se ejecute después de modificar un producto:\nCREATE TRIGGER registrar_cambio_precio\nAFTER UPDATE OF precio ON Producto\nBEGIN\n    INSERT INTO HistorialPrecio (\n        producto_id, precio_anterior, precio_nuevo, fecha\n    )\n    VALUES (\n        OLD.producto_id, OLD.precio, NEW.precio, CURRENT_TIMESTAMP\n    );\nEND;"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#old-y-new",
+    "href": "lecciones/unidad-02/leccion-04.html#old-y-new",
+    "title": "Objetos y Automatización",
+    "section": "OLD y NEW",
+    "text": "OLD y NEW\nDentro de un trigger podemos acceder a los valores asociados con el evento.\n\n\n\nReferencia\nRepresenta\n\n\n\n\nOLD.columna\nValor anterior\n\n\nNEW.columna\nValor nuevo\n\n\n\nSi en una consulta se hace una actualizacion de precio en la tabla Producto de 800 a 950, dentro del trigger:\nOLD.precio → 800\nNEW.precio → 950"
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#qué-ocurre",
+    "href": "lecciones/unidad-02/leccion-04.html#qué-ocurre",
+    "title": "Objetos y Automatización",
+    "section": "¿Qué ocurre?",
+    "text": "¿Qué ocurre?\nEjecutamos únicamente:\nUPDATE Producto SET precio = 950 WHERE producto_id = 3;\nEl trigger detecta el cambio en precio y ejecuta automáticamente:\nHistorialPrecio\n\nproducto_id      3\nprecio_anterior  800\nprecio_nuevo     950\nfecha            ...\nEl usuario no necesita insertar manualmente el registro en el historial."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#cuándo-se-ejecuta",
+    "href": "lecciones/unidad-02/leccion-04.html#cuándo-se-ejecuta",
+    "title": "Objetos y Automatización",
+    "section": "¿Cuándo se ejecuta?",
+    "text": "¿Cuándo se ejecuta?\nEn SQLite podemos indicar el momento en que se ejecutará el trigger.\n\n\n\nMomento\nSe ejecuta…\n\n\n\n\nBEFORE\nAntes del evento\n\n\nAFTER\nDespués del evento\n\n\nINSTEAD OF\nEn lugar del evento\n\n\n\nPor ejemplo:\nAFTER UPDATE ON Producto\nindica que el trigger se ejecutará después de modificar un registro de Producto."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#triggers-y-eventos",
+    "href": "lecciones/unidad-02/leccion-04.html#triggers-y-eventos",
+    "title": "Objetos y Automatización",
+    "section": "Triggers y eventos",
+    "text": "Triggers y eventos\nLa disponibilidad de OLD y NEW depende del evento.\n\n\n\nEvento\nOLD\nNEW\n\n\n\n\nINSERT\n—\n✓\n\n\nUPDATE\n✓\n✓\n\n\nDELETE\n✓\n—\n\n\n\nEn un INSERT no existe un valor anterior.\nEn un DELETE no existe un valor nuevo."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#condiciones",
+    "href": "lecciones/unidad-02/leccion-04.html#condiciones",
+    "title": "Objetos y Automatización",
+    "section": "Condiciones",
+    "text": "Condiciones\nUn trigger también puede ejecutarse solamente cuando se cumple una condición.\nCREATE TRIGGER registrar_aumento_precio\nAFTER UPDATE OF precio ON Producto\nWHEN NEW.precio &gt; OLD.precio\nBEGIN\n    INSERT INTO HistorialPrecio (\n        producto_id, precio_anterior, precio_nuevo, fecha\n    )\n    VALUES (\n        OLD.producto_id, OLD.precio, NEW.precio, CURRENT_TIMESTAMP\n    );\nEND;\nEn este caso, el historial se actualiza únicamente cuando el precio aumenta."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#drop-trigger",
+    "href": "lecciones/unidad-02/leccion-04.html#drop-trigger",
+    "title": "Objetos y Automatización",
+    "section": "DROP TRIGGER",
+    "text": "DROP TRIGGER\nPodemos eliminar un trigger cuando ya no sea necesario.\nDROP TRIGGER registrar_cambio_precio;\nEliminar el trigger no elimina las tablas ni los registros que haya generado anteriormente."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#transaction",
+    "href": "lecciones/unidad-02/leccion-04.html#transaction",
+    "title": "Objetos y Automatización",
+    "section": "TRANSACTION",
+    "text": "TRANSACTION\nUna transacción agrupa varias operaciones para tratarlas como una sola unidad.\nBEGIN TRANSACTION;\n\nINSERT INTO Inscripcion (estudiante_id, materia_id) VALUES (25, 10);\n\nUPDATE Materia SET cupo = cupo - 1 WHERE materia_id = 10;\n\nUPDATE Estudiante\nSET creditos_disponibles = creditos_disponibles - 8\nWHERE estudiante_id = 25;\n\nCOMMIT;\nCOMMIT confirma todos los cambios realizados en la transacción."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#rollback",
+    "href": "lecciones/unidad-02/leccion-04.html#rollback",
+    "title": "Objetos y Automatización",
+    "section": "ROLLBACK",
+    "text": "ROLLBACK\nSi ocurre un problema, podemos cancelar los cambios antes de confirmarlos.\nBEGIN TRANSACTION;\n\nINSERT INTO Inscripcion (estudiante_id, materia_id) VALUES (25, 10);\n\nUPDATE Materia SET cupo = cupo - 1 WHERE materia_id = 10;\n\nUPDATE Estudiante\nSET creditos_disponibles = creditos_disponibles - 8\nWHERE estudiante_id = 25;\n\nCOMMIT;\nROLLBACK revierte los cambios realizados desde el inicio de la transacción."
+  },
+  {
+    "objectID": "lecciones/unidad-02/leccion-04.html#idea-clave-1",
+    "href": "lecciones/unidad-02/leccion-04.html#idea-clave-1",
+    "title": "Objetos y Automatización",
+    "section": "Idea clave",
+    "text": "Idea clave\nUna transacción permite tratar varias operaciones como una sola unidad de trabajo.\n\n\n\nInstrucción\nFunción\n\n\n\n\nBEGIN TRANSACTION\nInicia la transacción\n\n\nCOMMIT\nConfirma los cambios\n\n\nROLLBACK\nCancela los cambios"
   },
   {
     "objectID": "notebooks/plantilla.html",
