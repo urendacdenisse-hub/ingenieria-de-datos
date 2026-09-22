@@ -928,7 +928,7 @@
     "href": "lecciones/index.html",
     "title": "Lecciones",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\nAlmacenes analíticos\nSistemas de almacenamiento de archivos"
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos"
   },
   {
     "objectID": "actividades/unidad-01/actividad-04.html",
