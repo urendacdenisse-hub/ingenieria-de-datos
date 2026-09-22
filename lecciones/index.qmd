@@ -19,17 +19,17 @@ title: "Lecciones"
   - [Implemenación en SQLite](unidad-02/leccion-02.qmd)
   - [Manipulación y Consultas](unidad-02/leccion-03.qmd)
   - [Objetos y Automatización](unidad-02/leccion-04.qmd)
-- Almacenes analíticos
-- Sistemas de almacenamiento de archivos
 
-<!--
+
+
 # Unidad III. Tecnologías de procesamiento de datos
 
-- Introducción al procesamiento de datos
+- [Introducción al procesamiento de datos](unidad-03/leccion-01.qmd)
 - Procesamiento por lotes
 - Procesamiento en tiempo real
 - Arquitecturas para el procesamiento de datos
 
+<!--
 # Unidad IV. Integración de datos y ETL
 - Introducción a la integración de datos
 - Procesos ETL
