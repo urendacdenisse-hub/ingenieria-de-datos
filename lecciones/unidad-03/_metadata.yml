@@ -1,0 +1,25 @@
+author: "Dra. Denisse Urenda Castañeda"
+institute: "Universidad Autónoma de Ciudad Juárez"
+date: today
+date-format: "MMMM YYYY"
+
+bibliography: ../../recursos/referencias.bib
+csl: ../../recursos/ieee.csl
+reference-location: document
+
+format:
+  revealjs:
+    auto-stretch: false
+    include-after-body: 
+      text: |
+        <a href="../index.html" class="home-button">
+        📖 Lecciones
+        </a>
+    theme: [default, ../../recursos/slides.scss]
+    slide-number: c/t
+    transition: fade
+    toc: true
+    toc-depth: 1
+    incremental: false
+    center: false
+    footer: "Ingeniería de Datos · UACJ"

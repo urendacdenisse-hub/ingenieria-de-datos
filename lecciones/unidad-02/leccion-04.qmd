@@ -382,7 +382,7 @@ UPDATE Estudiante
 SET creditos_disponibles = creditos_disponibles - 8
 WHERE estudiante_id = 25;
 
-COMMIT;
+ROLLBACK;
 ```
 
 `ROLLBACK` revierte los cambios realizados desde el inicio de la transacción.

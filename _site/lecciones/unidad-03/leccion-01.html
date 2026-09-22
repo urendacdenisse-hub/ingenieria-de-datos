@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Dra. Denisse Urenda Castañeda">
-  <title>Ingeniería de Datos – Introducción a la ingeniería de datos</title>
+  <title>Ingeniería de Datos – Procesamiento de Datos</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,93 +31,7 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+  </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-4cf3024c5b2c507bbd17a5474bc699b2.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -216,8 +130,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introducción a la ingeniería de datos</h1>
-  <p class="subtitle">Formatos de datos</p>
+  <h1 class="title">Procesamiento de Datos</h1>
+  <p class="subtitle">Introducción al procesamiento de datos</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -231,311 +145,255 @@ Dra. Denisse Urenda Castañeda
 </div>
 
   <p class="date">septiembre 2026</p>
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Tabla de contenidos</h2>
+</section>
+<section id="datos" class="slide level2">
+<h2>Datos</h2>
+<p>Las organizaciones generan y almacenan <strong>grandes cantidades de datos</strong>.</p>
+<p>Por ejemplo:</p>
 <ul>
-<li><a href="#/introduccion" id="/toc-introduccion">Introduccion</a></li>
-<li><a href="#/formato-de-datos" id="/toc-formato-de-datos">Formato de datos</a></li>
-<li><a href="#/estructura-de-los-datos" id="/toc-estructura-de-los-datos">Estructura de los datos</a></li>
-<li><a href="#/representación-de-la-información" id="/toc-representación-de-la-información">Representación de la información</a></li>
-<li><a href="#/elección-del-formato" id="/toc-elección-del-formato">Elección del formato</a></li>
-<li><a href="#/resumen" id="/toc-resumen">Resumen</a></li>
-<li><a href="#/referencias" id="/toc-referencias">Referencias</a></li>
-<li><a href="#/preguntas" id="/toc-preguntas">Preguntas</a></li>
-<li><a href="#/laboratorio" id="/toc-laboratorio">Laboratorio</a></li>
+<li>transacciones;</li>
+<li>ventas;</li>
+<li>registros de clientes;</li>
+<li>sensores;</li>
+<li>aplicaciones;</li>
+<li>páginas web.</li>
 </ul>
-</nav>
+<p>Pero tener datos almacenados <strong>no significa que podamos utilizarlos directamente</strong>.</p>
 </section>
-<section>
-<section id="introduccion" class="title-slide slide level1 center">
-<h1>Introduccion</h1>
-<p>Los datos pueden almacenarse y representarse de diferentes maneras. Una tabla, un documento, una imagen o una página web pueden contener información, pero no la organizan de la misma forma.</p>
-<p>El <strong>formato de datos</strong> determina cómo se representa y organiza esa información para poder almacenarla, intercambiarla e interpretarla.</p>
+<section id="datos-sin-procesar" class="slide level2">
+<h2>Datos sin procesar</h2>
+<p>Los datos en su estado original pueden contener información valiosa.</p>
+<p>Sin embargo, esta información puede estar:</p>
+<ul>
+<li>distribuida entre muchos registros;</li>
+<li>en un formato poco conveniente;</li>
+<li>mezclada con información que no necesitamos;</li>
+<li>sin organizar de acuerdo con nuestro objetivo.</li>
+</ul>
+<p>Por sí solos, los datos representan principalmente <strong>valor potencial</strong>.</p>
 </section>
-<section id="objetivo" class="slide level2">
-<h2>Objetivo</h2>
-<p>Comprender qué es un formato de datos, reconocer algunos de los formatos más comunes e identificar cómo sus características influyen en la forma de almacenar y utilizar la información.</p>
+<section id="de-datos-a-información" class="slide level2">
+<h2>De datos a información</h2>
+<p>El <strong>procesamiento de datos</strong> es una serie de operaciones mediante las cuales los <strong>datos sin procesar</strong> se transforman en <strong>información utilizable</strong>.</p>
+<p><img data-src="../imagenes/procesamiento.png"></p>
 </section>
-<section id="pregunta" class="slide level2">
-<h2>Pregunta</h2>
-<p>¿Podemos leer y modificar de la misma manera un archivo CSV, una imagen y un PDF?</p>
-</section></section>
-<section>
-<section id="formato-de-datos" class="title-slide slide level1 center">
-<h1>Formato de datos</h1>
-
-</section>
-<section id="qué-es-un-formato-de-datos" class="slide level2">
-<h2>¿Qué es un formato de datos?</h2>
-<p>Un <strong>formato de datos</strong> establece una forma específica de representar y organizar información.</p>
-<p>Algunos formatos comunes son:</p>
+<section id="ejemplo" class="slide level2">
+<h2>Ejemplo</h2>
+<p>Una empresa registra cada una de sus ventas en una base de datoa:</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>Formato</th>
-<th>Uso común</th>
+<th>venta_id</th>
+<th>producto</th>
+<th style="text-align: right;">cantidad</th>
+<th style="text-align: right;">precio</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>.txt</code></td>
-<td>Texto plano</td>
+<td>V001</td>
+<td>Laptop</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">18500</td>
 </tr>
 <tr class="even">
-<td><code>.csv</code></td>
-<td>Datos tabulares</td>
+<td>V002</td>
+<td>Monitor</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4200</td>
 </tr>
 <tr class="odd">
-<td><code>.xlsx</code></td>
-<td>Hojas de cálculo</td>
+<td>V003</td>
+<td>Laptop</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18500</td>
 </tr>
 <tr class="even">
-<td><code>.json</code></td>
-<td>Datos organizados mediante claves y valores</td>
-</tr>
-<tr class="odd">
-<td><code>.jpg</code>, <code>.png</code></td>
-<td>Imágenes</td>
-</tr>
-<tr class="even">
-<td><code>.html</code></td>
-<td>Páginas web</td>
-</tr>
-<tr class="odd">
-<td><code>.pdf</code></td>
-<td>Documentos</td>
+<td>V004</td>
+<td>Teclado</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">800</td>
 </tr>
 </tbody>
 </table>
-<p>La extensión de un archivo suele indicar el formato utilizado.</p>
+<p>Queremos responder</p>
+<div style="text-align: center;">
+<p><strong>¿Cuánto dinero generó cada producto?</strong></p>
+</div>
 </section>
-<section id="idea-clave" class="slide level2">
-<h2>Idea clave</h2>
+<section id="ejemplo-1" class="slide level2 unlisted">
+<h2>Ejemplo</h2>
+<p>Para responder la pregunta podemos realizar diferentes operaciones:</p>
+<ol type="1">
+<li><strong>Calcular</strong> el importe de cada venta.</li>
+</ol>
+<p><span class="math display">\[
+\text{importe} = \text{cantidad} \times \text{precio}
+\]</span></p>
+<ol start="2" type="1">
+<li><p><strong>Agrupar</strong> las ventas por producto.</p></li>
+<li><p><strong>Sumar</strong> los importes de cada grupo.</p></li>
+</ol>
+</section>
+<section id="ejemplo-2" class="slide level2 unlisted">
+<h2>Ejemplo</h2>
+<p>Después del procesamiento obtenemos:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>producto</th>
+<th style="text-align: right;">venta_total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Laptop</td>
+<td style="text-align: right;">55500</td>
+</tr>
+<tr class="even">
+<td>Monitor</td>
+<td style="text-align: right;">12600</td>
+</tr>
+<tr class="odd">
+<td>Teclado</td>
+<td style="text-align: right;">4000</td>
+</tr>
+</tbody>
+</table>
+<p>La información necesaria estaba contenida en los datos originales.</p>
+<p>El procesamiento permitió <strong>obtenerla en una forma útil</strong>.</p>
+</section>
+<section id="ejemplo-3" class="slide level2 unlisted">
+<h2>Ejemplo</h2>
+<p>El procesamiento puede involucrar <strong>varias operaciones consecutivas</strong>, donde el resultado de una operación se convierte en la entrada de la siguiente.</p>
+<p><img data-src="../imagenes/procesamiento-ejemplo.png"></p>
+<p>En este caso, los registros individuales se transformaron paso a paso hasta obtener un <strong>resumen de ventas por producto</strong>.</p>
+</section>
+<section id="operaciones-de-procesamiento" class="slide level2">
+<h2>Operaciones de procesamiento</h2>
+<p>Dependiendo del resultado que buscamos, podemos realizar diferentes operaciones.</p>
+<ul>
+<li class="fragment"><strong>Clasificación:</strong> ordenar los datos de acuerdo con algún criterio.</li>
+<li class="fragment"><strong>Filtrado:</strong> seleccionar solamente los datos que cumplen ciertas condiciones.</li>
+<li class="fragment"><strong>Cálculo:</strong> realizar operaciones matemáticas sobre los datos.</li>
+<li class="fragment"><strong>Agregación:</strong> resumir información contenida en múltiples registros.</li>
+</ul>
+<div class="fragment">
+<p>No existe una única forma de procesar los datos. Las operaciones dependen del <strong>resultado que necesitamos obtener</strong>.</p>
+</div>
+</section>
+<section id="procesamiento-de-datos-dentro-del-ciclo" class="slide level2">
+<h2>Procesamiento de datos dentro del ciclo</h2>
+<p>El procesamiento forma parte de un ciclo más amplio:</p>
+<div class="columns" style="align-items: center;">
+<div class="column" style="width:60%;">
+<p><img data-src="../imagenes/procesamiento-ciclo.png"></p>
+</div><div class="column" style="width:40%;">
+<p>Cada etapa cumple una función diferente dentro del <strong>ciclo de vida de los datos</strong>.</p>
+<p>En esta unidad nos enfocaremos en el <strong>procesamiento</strong>, donde los datos son sometidos a diferentes operaciones para transformarlos en <strong>resultados útiles</strong>.</p>
+</div></div>
+</section>
+<section id="procesamiento" class="slide level2">
+<h2>Procesamiento</h2>
+<p>Una vez que los datos están disponibles, podemos realizar diferentes operaciones para <strong>transformarlos en un resultado útil</strong>. Sin embargo, antes de realizar el procesamiento principal, los datos pueden necesitar cierta <strong>preparación</strong>.</p>
+<ul>
+<li class="fragment">corregir o eliminar datos inválidos;</li>
+<li class="fragment">tratar valores faltantes;</li>
+<li class="fragment">eliminar duplicados;</li>
+<li class="fragment">convertir tipos de datos;</li>
+<li class="fragment">estandarizar formatos.</li>
+</ul>
+<div class="fragment">
+<p>El objetivo es asegurar que los datos estén en una forma adecuada para las operaciones que realizaremos.</p>
+</div>
+</section>
+<section id="procesamiento-1" class="slide level2 unlisted">
+<h2>Procesamiento</h2>
+<p>Una vez preparados, podemos aplicar las operaciones necesarias para obtener el resultado deseado.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li class="fragment"><strong>filtrar:</strong> seleccionar los registros que necesitamos;</li>
+<li class="fragment"><strong>ordenar:</strong> organizar los datos de acuerdo con algún criterio;</li>
+<li class="fragment"><strong>calcular:</strong> obtener nuevos valores a partir de los existentes;</li>
+<li class="fragment"><strong>agrupar:</strong> reunir registros que comparten alguna característica;</li>
+<li class="fragment"><strong>agregar:</strong> obtener resúmenes como sumas, promedios o conteos.</li>
+</ul>
+<div class="fragment">
+<p>Las operaciones utilizadas dependen del <strong>problema que queremos resolver</strong>.</p>
+</div>
+</section>
+<section id="procesamiento-2" class="slide level2 unlisted">
+<h2>Procesamiento</h2>
+<p>El procesamiento puede involucrar <strong>varias operaciones consecutivas</strong>.</p>
+<p><img data-src="../imagenes/flujo-procesamiento.png"></p>
+<p>El resultado de una operación puede convertirse en la <strong>entrada de la siguiente</strong>. No todos los datos requieren las mismas operaciones ni la misma preparación.</p>
+</section>
+<section id="antes-de-continuar" class="slide level2 unlisted">
+<h2>Antes de continuar…</h2>
+<div class="columns" style="align-items: center;">
+<div class="column" style="width:50%;">
+<p><img data-src="../imagenes/miss.png"></p>
+</div><div class="column" style="width:50%;">
+<p>Contesta la siguiente encuesta:</p>
+<p><a href="https://forms.gle/nWyykZBGd1Z28WWb7"><strong>Responder encuesta</strong></a></p>
+</div></div>
+</section>
+<section id="pero-no-todos-los-datos-se-procesan-igual" class="slide level2">
+<h2>Pero no todos los datos se procesan igual</h2>
+<p>Consideremos dos situaciones.</p>
+<div class="columns" style="align-items: center;">
+<div class="column" style="width:50%;">
+<h3 id="situación-1">Situación 1</h3>
 <blockquote>
-<p><strong>El formato define cómo se organiza y representa la información almacenada.</strong></p>
+<p>Una empresa necesita generar al final del día un reporte con todas sus ventas.</p>
 </blockquote>
-<p>La misma información puede almacenarse utilizando diferentes formatos.</p>
-</section></section>
-<section>
-<section id="estructura-de-los-datos" class="title-slide slide level1 center">
-<h1>Estructura de los datos</h1>
-
+<p>Podemos <strong>acumular las ventas</strong> y procesarlas juntas.</p>
+</div><div class="column" style="width:50%;">
+<h3 id="situación-2">Situación 2</h3>
+<blockquote>
+<p>Un banco necesita determinar si una transacción puede ser fraudulenta.</p>
+</blockquote>
+<p>El resultado debe obtenerse <strong>prácticamente mientras ocurre la transacción</strong>.</p>
+</div></div>
 </section>
-<section id="datos-estructurados" class="slide level2">
-<h2>Datos estructurados</h2>
-<p>Los <strong>datos estructurados</strong> siguen una organización claramente definida, generalmente mediante filas, columnas y variables conocidas.</p>
-<p>Por ejemplo:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>nombre</th>
-<th style="text-align: right;">edad</th>
-<th>ciudad</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ana</td>
-<td style="text-align: right;">25</td>
-<td>Juárez</td>
-</tr>
-<tr class="even">
-<td>Luis</td>
-<td style="text-align: right;">32</td>
-<td>Chihuahua</td>
-</tr>
-</tbody>
-</table>
-<p>Los archivos CSV y las hojas de cálculo son ejemplos comunes de esta forma de organización.</p>
+<section id="diferentes-necesidades" class="slide level2">
+<h2>Diferentes necesidades</h2>
+<p>En el primer caso, los datos pueden <strong>acumularse antes de ser procesados</strong>.</p>
+<p><img data-src="../imagenes/procesamiento-batch.png"></p>
 </section>
-<section id="datos-semiestructurados" class="slide level2">
-<h2>Datos semiestructurados</h2>
-<p>Los <strong>datos semiestructurados</strong> contienen elementos que permiten organizar e identificar la información, pero no necesariamente siguen una estructura tabular.</p>
-<p>Por ejemplo, JSON utiliza claves y valores:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a></a><span class="fu">{</span></span>
-<span id="cb1-2"><a></a>  <span class="dt">"nombre"</span><span class="fu">:</span> <span class="st">"Ana"</span><span class="fu">,</span></span>
-<span id="cb1-3"><a></a>  <span class="dt">"edad"</span><span class="fu">:</span> <span class="dv">25</span><span class="fu">,</span></span>
-<span id="cb1-4"><a></a>  <span class="dt">"ciudad"</span><span class="fu">:</span> <span class="st">"Juárez"</span><span class="fu">,</span></span>
-<span id="cb1-5"><a></a>  <span class="dt">"telefono"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb1-6"><a></a>    <span class="dt">"fijo"</span><span class="fu">:</span> <span class="st">"656-123-4567"</span><span class="fu">,</span></span>
-<span id="cb1-7"><a></a>    <span class="dt">"movil"</span><span class="fu">:</span> <span class="st">"656-123-0000"</span></span>
-<span id="cb1-8"><a></a>  <span class="fu">}</span></span>
-<span id="cb1-9"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Formatos como JSON y HTML contienen información sobre su propia estructura mediante claves, etiquetas u otros elementos.</p>
+<section id="diferentes-necesidades-1" class="slide level2 unlisted">
+<h2>Diferentes necesidades</h2>
+<p>En el segundo, los datos necesitan ser procesados <strong>conforme se generan</strong>.</p>
+<p><img data-src="../imagenes/procesamiento-streaming.png"></p>
 </section>
-<section id="datos-no-estructurados" class="slide level2">
-<h2>Datos no estructurados</h2>
-<p>Los <strong>datos no estructurados</strong> no siguen necesariamente una organización tabular o un esquema fijo.</p>
-<p>Algunos ejemplos son:</p>
-<ul>
-<li>Documentos de texto</li>
-<li>Archivos PDF</li>
-<li>Imágenes</li>
-<li>Audio</li>
-<li>Video</li>
-</ul>
-<p>Su contenido no sigue un esquema predefinido, por lo que identificar y extraer elementos específicos puede requerir un procesamiento adicional.</p>
-</section>
-<section id="section" class="slide level2 unnumbered">
-<h2></h2>
-<h3 id="cómo-se-almacena-una-imagen">¿Cómo se almacena una imagen?</h3>
-<p>Una imagen digital está formada por una <strong>matriz de píxeles</strong>. Cada píxel contiene valores numéricos que representan su color.</p>
-<p>En una imagen RGB, cada píxel se representa mediante tres valores:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Color</th>
-<th style="text-align: right;">R</th>
-<th style="text-align: right;">G</th>
-<th style="text-align: right;">B</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Rojo</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td>Verde</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td>Azul</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">255</td>
-</tr>
-<tr class="even">
-<td>Blanco</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">255</td>
-</tr>
-<tr class="odd">
-<td>Negro</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="section-1" class="slide level2 unnumbered">
-<h2></h2>
-<h3 id="cómo-se-almacena-una-imagen-1">¿Cómo se almacena una imagen?</h3>
-<p>Dependiendo del tipo de imagen, cada píxel puede contener uno o varios valores.</p>
-<p><strong>Escala de grises:</strong> un valor de intensidad por píxel.</p>
-<p><em>Ejemplo</em>: 1080 x 1920</p>
-<p><strong>RGB</strong>: tres canales de color por píxel: rojo, verde y azul.</p>
-<p><em>Ejemplo</em>: 1080 x 1920 x 3</p>
-<p><strong>RGBA</strong>: cuatro canales por píxel: rojo, verde, azul y transparencia.</p>
-<p><em>Ejemplo</em>: 1080 x 1920 x 4</p>
-<p>Formatos como <strong>JPEG</strong> y <strong>PNG</strong> utilizan diferentes métodos para codificar y comprimir esta información.</p>
-</section>
-<section id="idea-clave-1" class="slide level2">
-<h2>Idea clave</h2>
-<p>Los datos pueden tener diferentes niveles de estructura y no todos se organizan en filas y columnas.</p>
-<p>La estructura determina cómo está organizada la información y qué tan sencillo es identificar sus diferentes elementos.</p>
-</section></section>
-<section>
-<section id="representación-de-la-información" class="title-slide slide level1 center">
-<h1>Representación de la información</h1>
-
-</section>
-<section id="la-misma-información-en-diferentes-formatos" class="slide level2">
-<h2>La misma información en diferentes formatos</h2>
-<p>Una misma información puede representarse de distintas maneras.</p>
-<p>Por ejemplo:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>nombre</th>
-<th style="text-align: right;">edad</th>
-<th>ciudad</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ana</td>
-<td style="text-align: right;">25</td>
-<td>Juárez</td>
-</tr>
-<tr class="even">
-<td>Luis</td>
-<td style="text-align: right;">32</td>
-<td>Chihuahua</td>
-</tr>
-</tbody>
-</table>
-<p>En CSV:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>nombre,edad,ciudad</span>
-<span id="cb2-2"><a></a>Ana,25,Juárez</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>En JSON:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a></a><span class="fu">{</span></span>
-<span id="cb3-2"><a></a>  <span class="dt">"nombre"</span><span class="fu">:</span> <span class="st">"Ana"</span><span class="fu">,</span></span>
-<span id="cb3-3"><a></a>  <span class="dt">"edad"</span><span class="fu">:</span> <span class="dv">25</span><span class="fu">,</span></span>
-<span id="cb3-4"><a></a>  <span class="dt">"ciudad"</span><span class="fu">:</span> <span class="st">"Juárez"</span></span>
-<span id="cb3-5"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>La información es esencialmente la misma, pero su <strong>representación cambia</strong>.</p>
-</section></section>
-<section>
-<section id="elección-del-formato" class="title-slide slide level1 center">
-<h1>Elección del formato</h1>
-
-</section>
-<section id="por-qué-existen-diferentes-formatos" class="slide level2">
-<h2>¿Por qué existen diferentes formatos?</h2>
-<p>No existe un formato adecuado para todas las situaciones.</p>
-<p>La elección depende de factores como:</p>
-<ul>
-<li>La estructura de los datos.</li>
-<li>El tipo de información que queremos almacenar.</li>
-<li>El tamaño de los datos.</li>
-<li>La facilidad para intercambiarlos.</li>
-<li>La compatibilidad con diferentes herramientas.</li>
-<li>La necesidad de conservar la presentación.</li>
-</ul>
-<p>Por ejemplo, una tabla de millones de registros tiene necesidades diferentes a una fotografía o un reporte diseñado para ser leído por una persona.</p>
-</section></section>
-<section id="resumen" class="title-slide slide level1 center">
-<h1>Resumen</h1>
-<ul>
-<li>Un formato de datos define cómo se representa y organiza la información.</li>
-<li>Los datos pueden encontrarse en formatos estructurados, semiestructurados y no estructurados.</li>
-<li>La misma información puede representarse utilizando diferentes formatos.</li>
-<li>La elección del formato depende del propósito y de las características de los datos.</li>
-</ul>
-</section>
-
-<section id="referencias" class="title-slide slide level1 smaller scrollable">
-<h1>Referencias</h1>
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-ibm_unstructured_data" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Jonker y A. Gomstyn, <span>«¿Qué son los datos no estructurados?»</span> Accedido: 8 de agosto de 2026. [En línea]. Disponible en: <a href="https://www.ibm.com/mx-es/think/topics/unstructured-data">https://www.ibm.com/mx-es/think/topics/unstructured-data</a></div>
+<section id="tipos-de-procesamiento" class="slide level2">
+<h2>Tipos de procesamiento</h2>
+<p>Estas diferentes necesidades dan lugar a distintas formas de procesar los datos.</p>
+<p>En esta unidad estudiaremos principalmente:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="procesamiento-por-lotes">Procesamiento por lotes</h3>
+<p>Los datos se acumulan durante un periodo y posteriormente se <strong>procesan como un conjunto</strong>.</p>
+<div style="text-align: center;">
+<p><strong>Batch Processing</strong></p>
 </div>
-<div id="ref-dzoom_formatos_imagenes" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. L. Rodriguez, <span>«Cuáles son los Principales Formatos de Almacenamiento de Fotografías y Cuándo Usarlos»</span>. Accedido: 8 de agosto de 2026. [En línea]. Disponible en: <a href="https://www.dzoom.org.es/formatos-de-almacenamiento-de-las-imagenes-digitales">https://www.dzoom.org.es/formatos-de-almacenamiento-de-las-imagenes-digitales</a></div>
+</div><div class="column" style="width:50%;">
+<h3 id="procesamiento-en-tiempo-real">Procesamiento en tiempo real</h3>
+<p>Los datos se <strong>procesan conforme se generan</strong>, buscando obtener resultados inmediatamente o con muy poca demora.</p>
+<div style="text-align: center;">
+<p><strong>Real-Time Processing</strong></p>
 </div>
-</div>
+</div></div>
 </section>
-
-<section id="preguntas" class="title-slide slide level1 center">
-<h1>Preguntas</h1>
-<p><img data-src="../imagenes/mister.png" style="width:50.0%"></p>
-<!-- ===================================================== -->
-<!-- LABORATORIO -->
-<!-- ===================================================== -->
-</section>
-
-<section id="laboratorio" class="title-slide slide level1 center">
-<h1>Laboratorio</h1>
-<p>En el laboratorio exploraremos diferentes formatos de datos para observar cómo cambia la forma de acceder, modificar y almacenar su contenido.</p>
-<p><a href="https://colab.research.google.com/github/urendacdenisse-hub/ingenieria-de-datos/blob/main/notebooks/unidad-01/notebook-02.ipynb"><strong>Ir al Notebook →</strong></a></p>
+<section id="la-idea-importante" class="slide level2">
+<h2>La idea importante</h2>
+<p>Los datos almacenados contienen <strong>valor potencial</strong>.</p>
+<p>El procesamiento permite transformar esos datos en <strong>información utilizable</strong>.</p>
+<p>Pero la forma adecuada de procesarlos dependerá de:</p>
+<blockquote>
+<p><strong>qué necesitamos obtener y cuándo necesitamos obtenerlo.</strong></p>
+</blockquote>
+<p>A partir de esta diferencia estudiaremos el <strong>procesamiento por lotes</strong> y el <strong>procesamiento en tiempo real</strong>.</p>
 
 
 </section>
@@ -824,7 +682,7 @@ Dra. Denisse Urenda Castañeda
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/urendacdenisse-hub\.github\.io\/ingenieria-de-datos\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

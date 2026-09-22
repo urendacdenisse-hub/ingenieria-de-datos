@@ -625,8 +625,8 @@ Dra. Denisse Urenda Castañeda
 </blockquote>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a></a><span class="kw">FOREIGN</span> <span class="kw">KEY</span> (cliente_id) <span class="kw">REFERENCES</span> Cliente(cliente_id)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="la-idea-importante" class="slide level2">
-<h2>La idea importante</h2>
+<section id="idea-clave" class="slide level2">
+<h2>Idea clave</h2>
 <p>No se trata solamente de crear columnas. Queremos que la propia base de datos ayude a garantizar que la información sea <strong>válida y consistente</strong>.</p>
 <p>Para cada atributo debemos preguntarnos:</p>
 <ol type="1">
@@ -925,7 +925,7 @@ Dra. Denisse Urenda Castañeda
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/urendacdenisse-hub\.github\.io\/ingenieria-de-datos\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
