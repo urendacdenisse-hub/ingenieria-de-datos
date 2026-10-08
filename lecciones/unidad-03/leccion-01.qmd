@@ -101,7 +101,7 @@ Dependiendo del resultado que buscamos, podemos realizar diferentes operaciones.
 
 ::: {.incremental}
 
-- **Clasificación:** ordenar los datos de acuerdo con algún criterio.
+- **Ordenamiento:** ordenar los datos de acuerdo con algún criterio.
 - **Filtrado:** seleccionar solamente los datos que cumplen ciertas condiciones.
 - **Cálculo:** realizar operaciones matemáticas sobre los datos.
 - **Agregación:** resumir información contenida en múltiples registros.
@@ -176,6 +176,77 @@ El procesamiento puede involucrar **varias operaciones consecutivas**.
 
 El resultado de una operación puede convertirse en la **entrada de la siguiente**. No todos los datos requieren las mismas operaciones ni la misma preparación.
 
+## Pipeline de datos
+
+Un **pipeline de datos (Data Pipeline)** es una secuencia organizada de operaciones que permite **mover, procesar y transformar datos** desde una o varias fuentes hasta un destino.
+
+Cada etapa realiza una tarea específica y puede utilizar los **resultados de etapas anteriores**.
+
+Los pipelines permiten organizar el flujo de los datos y **automatizar operaciones que necesitamos ejecutar de manera recurrente**.
+
+## Componentes de un pipeline
+
+Aunque su estructura depende del problema, un pipeline puede incluir:
+
+::: {.incremental}
+
+- **Fuente:** sistema o archivo del que provienen los datos.
+- **Ingestión:** incorporación de los datos al flujo de procesamiento.
+- **Procesamiento:** operaciones como validación, limpieza, cálculo y transformación.
+- **Destino:** sistema donde se almacenan o utilizan los resultados.
+
+:::
+
+::: {.fragment}
+No todos los pipelines tienen las mismas etapas ni requieren las mismas tecnologías.
+:::
+
+## Ejemplo de un pipeline
+
+Consideremos los datos de la **Semana de Ingeniería**.
+
+Para utilizarlos en un sistema de información, podemos organizar las operaciones de la siguiente manera:
+
+```{mermaid}
+flowchart LR
+    A["Excel"] --> B["Lectura"]
+    B --> C["Validación"]
+    C --> D["Limpieza"]
+    D --> E["Transformación"]
+    E --> F["Base de datos"]
+```
+
+Cada etapa cumple una función y el resultado de una operación puede convertirse en la **entrada de la siguiente**.
+
+## ¿Qué ocurre cuando llegan nuevos datos?
+
+Supongamos que recibimos un **nuevo archivo Excel** con información actualizada de las actividades.
+
+¿Tendríamos que repetir manualmente todas las operaciones?
+
+::: {.fragment}
+Un pipeline puede permitir que estas operaciones se **ejecuten automáticamente**, aplicando las mismas reglas a los nuevos datos.
+:::
+
+Esto facilita mantener la información **actualizada y consistente**.
+
+## ¿Por qué utilizar pipelines?
+
+::: {.incremental}
+
+- **Automatización:** reducir tareas manuales y repetitivas.
+- **Reproducibilidad:** aplicar las mismas operaciones bajo las mismas reglas.
+- **Mantenimiento:** identificar y modificar etapas específicas.
+- **Escalabilidad:** adaptar el procesamiento a diferentes volúmenes de datos.
+- **Confiabilidad:** incorporar validaciones y mecanismos para detectar errores.
+
+:::
+
+::: {.fragment}
+Sin embargo, **no todos los pipelines necesitan ejecutarse de la misma manera**.
+:::
+
+<!--
 ## Antes de continuar... {.unlisted}
 
 ::: {.columns style="align-items: center;"}
@@ -191,6 +262,7 @@ Contesta la siguiente encuesta:
 :::
 
 :::
+-->
 
 ## Pero no todos los datos se procesan igual
 
