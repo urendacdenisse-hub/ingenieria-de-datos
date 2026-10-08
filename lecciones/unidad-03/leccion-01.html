@@ -124,6 +124,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -144,7 +147,7 @@ Dra. Denisse Urenda Castañeda
     </div>
 </div>
 
-  <p class="date">septiembre 2026</p>
+  <p class="date">octubre 2026</p>
 </section>
 <section id="datos" class="slide level2">
 <h2>Datos</h2>
@@ -273,7 +276,7 @@ Dra. Denisse Urenda Castañeda
 <h2>Operaciones de procesamiento</h2>
 <p>Dependiendo del resultado que buscamos, podemos realizar diferentes operaciones.</p>
 <ul>
-<li class="fragment"><strong>Clasificación:</strong> ordenar los datos de acuerdo con algún criterio.</li>
+<li class="fragment"><strong>Ordenamiento:</strong> ordenar los datos de acuerdo con algún criterio.</li>
 <li class="fragment"><strong>Filtrado:</strong> seleccionar solamente los datos que cumplen ciertas condiciones.</li>
 <li class="fragment"><strong>Cálculo:</strong> realizar operaciones matemáticas sobre los datos.</li>
 <li class="fragment"><strong>Agregación:</strong> resumir información contenida en múltiples registros.</li>
@@ -328,15 +331,86 @@ Dra. Denisse Urenda Castañeda
 <p><img data-src="../imagenes/flujo-procesamiento.png"></p>
 <p>El resultado de una operación puede convertirse en la <strong>entrada de la siguiente</strong>. No todos los datos requieren las mismas operaciones ni la misma preparación.</p>
 </section>
-<section id="antes-de-continuar" class="slide level2 unlisted">
-<h2>Antes de continuar…</h2>
-<div class="columns" style="align-items: center;">
-<div class="column" style="width:50%;">
-<p><img data-src="../imagenes/miss.png"></p>
-</div><div class="column" style="width:50%;">
-<p>Contesta la siguiente encuesta:</p>
-<p><a href="https://forms.gle/nWyykZBGd1Z28WWb7"><strong>Responder encuesta</strong></a></p>
-</div></div>
+<section id="pipeline-de-datos" class="slide level2">
+<h2>Pipeline de datos</h2>
+<p>Un <strong>pipeline de datos (Data Pipeline)</strong> es una secuencia organizada de operaciones que permite <strong>mover, procesar y transformar datos</strong> desde una o varias fuentes hasta un destino.</p>
+<p>Cada etapa realiza una tarea específica y puede utilizar los <strong>resultados de etapas anteriores</strong>.</p>
+<p>Los pipelines permiten organizar el flujo de los datos y <strong>automatizar operaciones que necesitamos ejecutar de manera recurrente</strong>.</p>
+</section>
+<section id="componentes-de-un-pipeline" class="slide level2">
+<h2>Componentes de un pipeline</h2>
+<p>Aunque su estructura depende del problema, un pipeline puede incluir:</p>
+<ul>
+<li class="fragment"><strong>Fuente:</strong> sistema o archivo del que provienen los datos.</li>
+<li class="fragment"><strong>Ingestión:</strong> incorporación de los datos al flujo de procesamiento.</li>
+<li class="fragment"><strong>Procesamiento:</strong> operaciones como validación, limpieza, cálculo y transformación.</li>
+<li class="fragment"><strong>Destino:</strong> sistema donde se almacenan o utilizan los resultados.</li>
+</ul>
+<div class="fragment">
+<p>No todos los pipelines tienen las mismas etapas ni requieren las mismas tecnologías.</p>
+</div>
+</section>
+<section id="ejemplo-de-un-pipeline" class="slide level2">
+<h2>Ejemplo de un pipeline</h2>
+<p>Consideremos los datos de la <strong>Semana de Ingeniería</strong>.</p>
+<p>Para utilizarlos en un sistema de información, podemos organizar las operaciones de la siguiente manera:</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A["Excel"] --&gt; B["Lectura"]
+    B --&gt; C["Validación"]
+    C --&gt; D["Limpieza"]
+    D --&gt; E["Transformación"]
+    E --&gt; F["Base de datos"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Cada etapa cumple una función y el resultado de una operación puede convertirse en la <strong>entrada de la siguiente</strong>.</p>
+</section>
+<section id="qué-ocurre-cuando-llegan-nuevos-datos" class="slide level2">
+<h2>¿Qué ocurre cuando llegan nuevos datos?</h2>
+<p>Supongamos que recibimos un <strong>nuevo archivo Excel</strong> con información actualizada de las actividades.</p>
+<p>¿Tendríamos que repetir manualmente todas las operaciones?</p>
+<div class="fragment">
+<p>Un pipeline puede permitir que estas operaciones se <strong>ejecuten automáticamente</strong>, aplicando las mismas reglas a los nuevos datos.</p>
+</div>
+<p>Esto facilita mantener la información <strong>actualizada y consistente</strong>.</p>
+</section>
+<section id="por-qué-utilizar-pipelines" class="slide level2">
+<h2>¿Por qué utilizar pipelines?</h2>
+<ul>
+<li class="fragment"><strong>Automatización:</strong> reducir tareas manuales y repetitivas.</li>
+<li class="fragment"><strong>Reproducibilidad:</strong> aplicar las mismas operaciones bajo las mismas reglas.</li>
+<li class="fragment"><strong>Mantenimiento:</strong> identificar y modificar etapas específicas.</li>
+<li class="fragment"><strong>Escalabilidad:</strong> adaptar el procesamiento a diferentes volúmenes de datos.</li>
+<li class="fragment"><strong>Confiabilidad:</strong> incorporar validaciones y mecanismos para detectar errores.</li>
+</ul>
+<div class="fragment">
+<p>Sin embargo, <strong>no todos los pipelines necesitan ejecutarse de la misma manera</strong>.</p>
+</div>
+<!--
+## Antes de continuar... {.unlisted}
+
+::: {.columns style="align-items: center;"}
+
+::: {.column width="50%"}
+![](../imagenes/miss.png)
+:::
+
+::: {.column width="50%"}
+Contesta la siguiente encuesta:
+
+[**Responder encuesta**](https://forms.gle/nWyykZBGd1Z28WWb7)
+:::
+
+:::
+-->
 </section>
 <section id="pero-no-todos-los-datos-se-procesan-igual" class="slide level2">
 <h2>Pero no todos los datos se procesan igual</h2>

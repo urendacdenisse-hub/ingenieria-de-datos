@@ -1761,7 +1761,7 @@
     "href": "lecciones/unidad-03/leccion-01.html#operaciones-de-procesamiento",
     "title": "Procesamiento de Datos",
     "section": "Operaciones de procesamiento",
-    "text": "Operaciones de procesamiento\nDependiendo del resultado que buscamos, podemos realizar diferentes operaciones.\n\nClasificación: ordenar los datos de acuerdo con algún criterio.\nFiltrado: seleccionar solamente los datos que cumplen ciertas condiciones.\nCálculo: realizar operaciones matemáticas sobre los datos.\nAgregación: resumir información contenida en múltiples registros.\n\n\nNo existe una única forma de procesar los datos. Las operaciones dependen del resultado que necesitamos obtener."
+    "text": "Operaciones de procesamiento\nDependiendo del resultado que buscamos, podemos realizar diferentes operaciones.\n\nOrdenamiento: ordenar los datos de acuerdo con algún criterio.\nFiltrado: seleccionar solamente los datos que cumplen ciertas condiciones.\nCálculo: realizar operaciones matemáticas sobre los datos.\nAgregación: resumir información contenida en múltiples registros.\n\n\nNo existe una única forma de procesar los datos. Las operaciones dependen del resultado que necesitamos obtener."
   },
   {
     "objectID": "lecciones/unidad-03/leccion-01.html#procesamiento-de-datos-dentro-del-ciclo",
@@ -1792,11 +1792,39 @@
     "text": "Procesamiento\nEl procesamiento puede involucrar varias operaciones consecutivas.\n\nEl resultado de una operación puede convertirse en la entrada de la siguiente. No todos los datos requieren las mismas operaciones ni la misma preparación."
   },
   {
-    "objectID": "lecciones/unidad-03/leccion-01.html#antes-de-continuar",
-    "href": "lecciones/unidad-03/leccion-01.html#antes-de-continuar",
+    "objectID": "lecciones/unidad-03/leccion-01.html#pipeline-de-datos",
+    "href": "lecciones/unidad-03/leccion-01.html#pipeline-de-datos",
     "title": "Procesamiento de Datos",
-    "section": "Antes de continuar…",
-    "text": "Antes de continuar…\n\n\n\n\nContesta la siguiente encuesta:\nResponder encuesta"
+    "section": "Pipeline de datos",
+    "text": "Pipeline de datos\nUn pipeline de datos (Data Pipeline) es una secuencia organizada de operaciones que permite mover, procesar y transformar datos desde una o varias fuentes hasta un destino.\nCada etapa realiza una tarea específica y puede utilizar los resultados de etapas anteriores.\nLos pipelines permiten organizar el flujo de los datos y automatizar operaciones que necesitamos ejecutar de manera recurrente."
+  },
+  {
+    "objectID": "lecciones/unidad-03/leccion-01.html#componentes-de-un-pipeline",
+    "href": "lecciones/unidad-03/leccion-01.html#componentes-de-un-pipeline",
+    "title": "Procesamiento de Datos",
+    "section": "Componentes de un pipeline",
+    "text": "Componentes de un pipeline\nAunque su estructura depende del problema, un pipeline puede incluir:\n\nFuente: sistema o archivo del que provienen los datos.\nIngestión: incorporación de los datos al flujo de procesamiento.\nProcesamiento: operaciones como validación, limpieza, cálculo y transformación.\nDestino: sistema donde se almacenan o utilizan los resultados.\n\n\nNo todos los pipelines tienen las mismas etapas ni requieren las mismas tecnologías."
+  },
+  {
+    "objectID": "lecciones/unidad-03/leccion-01.html#ejemplo-de-un-pipeline",
+    "href": "lecciones/unidad-03/leccion-01.html#ejemplo-de-un-pipeline",
+    "title": "Procesamiento de Datos",
+    "section": "Ejemplo de un pipeline",
+    "text": "Ejemplo de un pipeline\nConsideremos los datos de la Semana de Ingeniería.\nPara utilizarlos en un sistema de información, podemos organizar las operaciones de la siguiente manera:\n\n\n\n\n\nflowchart LR\n    A[\"Excel\"] --&gt; B[\"Lectura\"]\n    B --&gt; C[\"Validación\"]\n    C --&gt; D[\"Limpieza\"]\n    D --&gt; E[\"Transformación\"]\n    E --&gt; F[\"Base de datos\"]\n\n\n\n\n\n\nCada etapa cumple una función y el resultado de una operación puede convertirse en la entrada de la siguiente."
+  },
+  {
+    "objectID": "lecciones/unidad-03/leccion-01.html#qué-ocurre-cuando-llegan-nuevos-datos",
+    "href": "lecciones/unidad-03/leccion-01.html#qué-ocurre-cuando-llegan-nuevos-datos",
+    "title": "Procesamiento de Datos",
+    "section": "¿Qué ocurre cuando llegan nuevos datos?",
+    "text": "¿Qué ocurre cuando llegan nuevos datos?\nSupongamos que recibimos un nuevo archivo Excel con información actualizada de las actividades.\n¿Tendríamos que repetir manualmente todas las operaciones?\n\nUn pipeline puede permitir que estas operaciones se ejecuten automáticamente, aplicando las mismas reglas a los nuevos datos.\n\nEsto facilita mantener la información actualizada y consistente."
+  },
+  {
+    "objectID": "lecciones/unidad-03/leccion-01.html#por-qué-utilizar-pipelines",
+    "href": "lecciones/unidad-03/leccion-01.html#por-qué-utilizar-pipelines",
+    "title": "Procesamiento de Datos",
+    "section": "¿Por qué utilizar pipelines?",
+    "text": "¿Por qué utilizar pipelines?\n\nAutomatización: reducir tareas manuales y repetitivas.\nReproducibilidad: aplicar las mismas operaciones bajo las mismas reglas.\nMantenimiento: identificar y modificar etapas específicas.\nEscalabilidad: adaptar el procesamiento a diferentes volúmenes de datos.\nConfiabilidad: incorporar validaciones y mecanismos para detectar errores.\n\n\nSin embargo, no todos los pipelines necesitan ejecutarse de la misma manera."
   },
   {
     "objectID": "lecciones/unidad-03/leccion-01.html#pero-no-todos-los-datos-se-procesan-igual",
