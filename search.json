@@ -147,6 +147,125 @@
     "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos"
   },
   {
+    "objectID": "lecciones/unidad-04/leccion-01.html#transformaciones-de-datos",
+    "href": "lecciones/unidad-04/leccion-01.html#transformaciones-de-datos",
+    "title": "Transformación de datos",
+    "section": "Transformaciones de datos",
+    "text": "Transformaciones de datos\nDurante el procesamiento podemos realizar operaciones que modifican la representación, estructura o contenido de los datos.\nEstas operaciones se conocen como transformaciones de datos.\nSu propósito es obtener datos en una forma adecuada para utilizarlos en un proceso posterior."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#tipos-de-transformaciones",
+    "href": "lecciones/unidad-04/leccion-01.html#tipos-de-transformaciones",
+    "title": "Transformación de datos",
+    "section": "Tipos de transformaciones",
+    "text": "Tipos de transformaciones\nLas transformaciones pueden realizar diferentes tareas:\n\nConversión: cambiar el tipo o formato de los datos.\nDerivación: generar nuevas variables a partir de las existentes.\nFiltrado: seleccionar registros de acuerdo con una condición.\nAgregación: resumir múltiples registros.\nCombinación: integrar información de diferentes conjuntos de datos.\nReestructuración: modificar la organización de filas y columnas."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#conversión-de-datos",
+    "href": "lecciones/unidad-04/leccion-01.html#conversión-de-datos",
+    "title": "Transformación de datos",
+    "section": "Conversión de datos",
+    "text": "Conversión de datos\nConsiste en cambiar la representación o el tipo de dato de un valor.\nPor ejemplo, una fecha puede almacenarse como una cadena de texto:\n\n\n\nventa_id\nfecha\n\n\n\n\nV001\n15/10/2026\n\n\nV002\n16/10/2026"
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#conversión-de-datos-1",
+    "href": "lecciones/unidad-04/leccion-01.html#conversión-de-datos-1",
+    "title": "Transformación de datos",
+    "section": "Conversión de datos",
+    "text": "Conversión de datos\nPodemos convertirla a un tipo de dato fecha, utilizando un formato estandarizado:\n\n\n\nventa_id\nfecha\n\n\n\n\nV001\n2026-10-15\n\n\nV002\n2026-10-16\n\n\n\n\nEsta transformación facilita realizar operaciones como ordenar, comparar o calcular diferencias entre fechas."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#derivación-de-variables",
+    "href": "lecciones/unidad-04/leccion-01.html#derivación-de-variables",
+    "title": "Transformación de datos",
+    "section": "Derivación de variables",
+    "text": "Derivación de variables\nConsiste en generar nuevos valores a partir de los datos existentes.\nPor ejemplo, una empresa registra:\n\n\n\nproducto\ncantidad\nprecio\n\n\n\n\nLaptop\n2\n18500\n\n\nMonitor\n3\n4200\n\n\nLaptop\n1\n18500\n\n\n\nPodemos calcular el importe de cada venta:\n\\[\\text{importe}=\\text{cantidad}\\times\\text{precio}\\]"
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#derivación-de-variables-1",
+    "href": "lecciones/unidad-04/leccion-01.html#derivación-de-variables-1",
+    "title": "Transformación de datos",
+    "section": "Derivación de variables",
+    "text": "Derivación de variables\nDespués de aplicar la transformación:\n\n\n\nproducto\ncantidad\nprecio\nimporte\n\n\n\n\nLaptop\n2\n18500\n37000\n\n\nMonitor\n3\n4200\n12600\n\n\nLaptop\n1\n18500\n18500\n\n\n\nLa columna importe no existía originalmente, pero pudo obtenerse utilizando las variables disponibles."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#filtrado-de-datos",
+    "href": "lecciones/unidad-04/leccion-01.html#filtrado-de-datos",
+    "title": "Transformación de datos",
+    "section": "Filtrado de datos",
+    "text": "Filtrado de datos\nPermite conservar únicamente los registros que cumplen una condición.\nSupongamos que queremos analizar las ventas con un importe superior a $15,000.\n\n\n\nproducto\nimporte\n\n\n\n\nLaptop\n37000\n\n\nMonitor\n12600\n\n\nLaptop\n18500\n\n\nTeclado\n4000"
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#filtrado-de-datos-1",
+    "href": "lecciones/unidad-04/leccion-01.html#filtrado-de-datos-1",
+    "title": "Transformación de datos",
+    "section": "Filtrado de datos",
+    "text": "Filtrado de datos\nAplicamos la condición:\n\\[\\text{importe}&gt;15000\\]\n\nResultado:\n\n\n\nproducto\nimporte\n\n\n\n\nLaptop\n37000\n\n\nLaptop\n18500"
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#agregación-de-datos",
+    "href": "lecciones/unidad-04/leccion-01.html#agregación-de-datos",
+    "title": "Transformación de datos",
+    "section": "Agregación de datos",
+    "text": "Agregación de datos\nLa agregación permite resumir múltiples registros mediante operaciones como sumas, promedios o conteos.\nPor ejemplo, podemos agrupar las ventas por producto y calcular su importe total.\n\n\n\nproducto\nimporte\n\n\n\n\nLaptop\n37000\n\n\nMonitor\n12600\n\n\nLaptop\n18500\n\n\nTeclado\n4000"
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#agregación-de-datos-1",
+    "href": "lecciones/unidad-04/leccion-01.html#agregación-de-datos-1",
+    "title": "Transformación de datos",
+    "section": "Agregación de datos",
+    "text": "Agregación de datos\nResultado:\n\n\n\nproducto\nventa_total\n\n\n\n\nLaptop\n55500\n\n\nMonitor\n12600\n\n\nTeclado\n4000"
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#combinación-de-datos",
+    "href": "lecciones/unidad-04/leccion-01.html#combinación-de-datos",
+    "title": "Transformación de datos",
+    "section": "Combinación de datos",
+    "text": "Combinación de datos\nEn muchas situaciones, la información necesaria se encuentra distribuida entre diferentes conjuntos de datos.\nPor ejemplo, tenemos dos tablas:\n\n\nVentas\n\n\n\nventa_id\nproducto_id\ncantidad\n\n\n\n\nV001\nP01\n2\n\n\nV002\nP02\n3\n\n\n\n\nProductos\n\n\n\nproducto_id\nnombre\nprecio\n\n\n\n\nP01\nLaptop\n18500\n\n\nP02\nMonitor\n4200"
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#combinación-de-datos-1",
+    "href": "lecciones/unidad-04/leccion-01.html#combinación-de-datos-1",
+    "title": "Transformación de datos",
+    "section": "Combinación de datos",
+    "text": "Combinación de datos\nPodemos combinar ambas tablas utilizando el campo producto_id.\nResultado:\n\n\n\nventa_id\nproducto_id\nnombre\ncantidad\nprecio\n\n\n\n\nV001\nP01\nLaptop\n2\n18500\n\n\nV002\nP02\nMonitor\n3\n4200\n\n\n\n\nLa combinación permite integrar información relacionada que originalmente se encontraba en diferentes tablas."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#reestructuración-de-datos",
+    "href": "lecciones/unidad-04/leccion-01.html#reestructuración-de-datos",
+    "title": "Transformación de datos",
+    "section": "Reestructuración de datos",
+    "text": "Reestructuración de datos\nConsiste en modificar la organización de los datos, por ejemplo, convirtiendo columnas en filas o viceversa.\nSupongamos que tenemos:\n\n\n\nproducto\nenero\nfebrero\n\n\n\n\nLaptop\n10\n15\n\n\nMonitor\n8\n12"
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#reestructuración-de-datos-1",
+    "href": "lecciones/unidad-04/leccion-01.html#reestructuración-de-datos-1",
+    "title": "Transformación de datos",
+    "section": "Reestructuración de datos",
+    "text": "Reestructuración de datos\nPodemos reorganizar los datos:\n\n\n\nproducto\nmes\nventas\n\n\n\n\nLaptop\nenero\n10\n\n\nLaptop\nfebrero\n15\n\n\nMonitor\nenero\n8\n\n\nMonitor\nfebrero\n12\n\n\n\n\nAmbas representaciones contienen la misma información, pero tienen estructuras diferentes."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#transformaciones-consecutivas",
+    "href": "lecciones/unidad-04/leccion-01.html#transformaciones-consecutivas",
+    "title": "Transformación de datos",
+    "section": "Transformaciones consecutivas",
+    "text": "Transformaciones consecutivas\nEn la práctica, rara vez aplicamos una sola transformación.\nPor ejemplo, para generar un reporte de ventas podemos:\n\nCombinar las ventas con el catálogo de productos.\nCalcular el importe de cada venta.\nFiltrar las ventas del periodo de interés.\nAgrupar los registros por producto.\nCalcular el importe total de cada grupo.\n\n\nCada transformación produce datos que pueden utilizarse como entrada de la siguiente operación."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#dónde-se-realizan-estas-transformaciones",
+    "href": "lecciones/unidad-04/leccion-01.html#dónde-se-realizan-estas-transformaciones",
+    "title": "Transformación de datos",
+    "section": "¿Dónde se realizan estas transformaciones?",
+    "text": "¿Dónde se realizan estas transformaciones?\nLas transformaciones pueden ejecutarse utilizando diferentes herramientas:\n\nSQL: consultas sobre bases de datos.\nPython: procesamiento mediante bibliotecas como pandas.\nPySpark: procesamiento distribuido de grandes volúmenes de datos.\nPower Query: preparación y transformación de datos mediante una interfaz gráfica.\n\n\nLa herramienta depende del volumen de datos, la infraestructura disponible y las necesidades del proceso."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-01.html#pregunta",
+    "href": "lecciones/unidad-04/leccion-01.html#pregunta",
+    "title": "Transformación de datos",
+    "section": "Pregunta",
+    "text": "Pregunta"
+  },
+  {
     "objectID": "lecciones/unidad-02/leccion-04.html#más-allá-de-las-tablas",
     "href": "lecciones/unidad-02/leccion-04.html#más-allá-de-las-tablas",
     "title": "Objetos y Automatización",
@@ -928,7 +1047,7 @@
     "href": "lecciones/index.html",
     "title": "Lecciones",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos"
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos"
   },
   {
     "objectID": "actividades/unidad-01/actividad-04.html",
@@ -1860,6 +1979,69 @@
     "title": "Procesamiento de Datos",
     "section": "La idea importante",
     "text": "La idea importante\nLos datos almacenados contienen valor potencial.\nEl procesamiento permite transformar esos datos en información utilizable.\nPero la forma adecuada de procesarlos dependerá de:\n\nqué necesitamos obtener y cuándo necesitamos obtenerlo.\n\nA partir de esta diferencia estudiaremos el procesamiento por lotes y el procesamiento en tiempo real."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#integración-de-datos",
+    "href": "lecciones/unidad-04/leccion-02.html#integración-de-datos",
+    "title": "Transformación de datos",
+    "section": "Integración de datos",
+    "text": "Integración de datos\nHasta ahora hemos considerado transformaciones sobre conjuntos de datos disponibles.\nSin embargo, una organización puede necesitar información que proviene de múltiples sistemas.\nPor ejemplo:\n\nventas almacenadas en una base de datos;\nproductos registrados en archivos CSV;\nclientes obtenidos mediante una API.\n\n¿Cómo podemos reunir y preparar estos datos para utilizarlos en un mismo sistema?"
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#etl",
+    "href": "lecciones/unidad-04/leccion-02.html#etl",
+    "title": "Transformación de datos",
+    "section": "ETL",
+    "text": "ETL\nETL (Extract, Transform, Load) es un proceso de integración de datos que organiza tres etapas:\n\nExtracción → Transformación → Carga\nExtract → Transform → Load\n\n\nExtract: obtener datos desde una o varias fuentes.\nTransform: preparar y modificar los datos de acuerdo con las necesidades del destino.\nLoad: cargar los resultados en el sistema de destino."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#extracción-extract",
+    "href": "lecciones/unidad-04/leccion-02.html#extracción-extract",
+    "title": "Transformación de datos",
+    "section": "Extracción (Extract)",
+    "text": "Extracción (Extract)\nLa extracción consiste en obtener datos desde sus sistemas de origen.\nLas fuentes pueden incluir:\n\nbases de datos relacionales;\narchivos CSV, Excel o JSON;\nAPIs;\nservicios y aplicaciones;\nsistemas de almacenamiento en la nube.\n\nLos datos extraídos pueden tener estructuras, formatos y características diferentes."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#transformación-transform",
+    "href": "lecciones/unidad-04/leccion-02.html#transformación-transform",
+    "title": "Transformación de datos",
+    "section": "Transformación (Transform)",
+    "text": "Transformación (Transform)\nUna vez extraídos, los datos se someten a las operaciones necesarias para obtener una estructura compatible con el destino.\nEsta etapa puede incluir:\n\nvalidación y limpieza;\nconversión de tipos y formatos;\ncombinación de fuentes;\nderivación de variables;\nfiltrado y agregación;\naplicación de reglas de negocio.\n\n\nLas transformaciones dependen de cómo se utilizarán los datos y qué requisitos debe cumplir el resultado."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#carga-load",
+    "href": "lecciones/unidad-04/leccion-02.html#carga-load",
+    "title": "Transformación de datos",
+    "section": "Carga (Load)",
+    "text": "Carga (Load)\nLa carga consiste en escribir los datos transformados en el sistema de destino.\nEl destino puede ser:\n\nuna base de datos;\nun almacén de datos (Data Warehouse);\nun sistema de análisis;\notro servicio de almacenamiento.\n\nLa carga permite que los datos preparados queden disponibles para su consulta o utilización."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#ejemplo-de-etl",
+    "href": "lecciones/unidad-04/leccion-02.html#ejemplo-de-etl",
+    "title": "Transformación de datos",
+    "section": "Ejemplo de ETL",
+    "text": "Ejemplo de ETL\nUna empresa necesita generar reportes de ventas utilizando información de dos sistemas:\nSistema de ventas\n\n\n\nventa_id\nproducto_id\ncantidad\n\n\n\n\nV001\nP01\n2\n\n\nV002\nP02\n3\n\n\nV003\nP01\n1\n\n\n\nCatálogo de productos\n\n\n\nproducto_id\nnombre\nprecio\n\n\n\n\nP01\nLaptop\n18500\n\n\nP02\nMonitor\n4200\n\n\n\nEl objetivo es construir una tabla con el importe total vendido por producto."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#ejemplo-extracción",
+    "href": "lecciones/unidad-04/leccion-02.html#ejemplo-extracción",
+    "title": "Transformación de datos",
+    "section": "Ejemplo: extracción",
+    "text": "Ejemplo: extracción\nEtapa 1. Extract\nObtenemos los registros de ventas desde la base de datos y el catálogo de productos desde un archivo CSV.\nLos datos se encuentran ahora disponibles para su procesamiento.\n\nEn esta etapa todavía no hemos calculado el importe ni generado el resumen."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#etl-1",
+    "href": "lecciones/unidad-04/leccion-02.html#etl-1",
+    "title": "Transformación de datos",
+    "section": "ETL",
+    "text": "ETL\nExtract → Transform → Load\nLos datos se transforman antes de cargarse en el destino final."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#elt",
+    "href": "lecciones/unidad-04/leccion-02.html#elt",
+    "title": "Transformación de datos",
+    "section": "ELT",
+    "text": "ELT\nExtract → Load → Transform\nLos datos se cargan primero y posteriormente se transforman dentro del entorno de destino."
   },
   {
     "objectID": "notebooks/plantilla.html",
