@@ -1981,67 +1981,88 @@
     "text": "La idea importante\nLos datos almacenados contienen valor potencial.\nEl procesamiento permite transformar esos datos en información utilizable.\nPero la forma adecuada de procesarlos dependerá de:\n\nqué necesitamos obtener y cuándo necesitamos obtenerlo.\n\nA partir de esta diferencia estudiaremos el procesamiento por lotes y el procesamiento en tiempo real."
   },
   {
-    "objectID": "lecciones/unidad-04/leccion-02.html#integración-de-datos",
-    "href": "lecciones/unidad-04/leccion-02.html#integración-de-datos",
-    "title": "Transformación de datos",
-    "section": "Integración de datos",
-    "text": "Integración de datos\nHasta ahora hemos considerado transformaciones sobre conjuntos de datos disponibles.\nSin embargo, una organización puede necesitar información que proviene de múltiples sistemas.\nPor ejemplo:\n\nventas almacenadas en una base de datos;\nproductos registrados en archivos CSV;\nclientes obtenidos mediante una API.\n\n¿Cómo podemos reunir y preparar estos datos para utilizarlos en un mismo sistema?"
+    "objectID": "lecciones/unidad-04/leccion-02.html#etl-y-elt",
+    "href": "lecciones/unidad-04/leccion-02.html#etl-y-elt",
+    "title": "Integración de datos",
+    "section": "ETL y ELT",
+    "text": "ETL y ELT\nETL y ELT son procesos utilizados para integrar datos provenientes de diferentes fuentes y prepararlos para su almacenamiento y análisis.\nAmbos incluyen tres operaciones fundamentales:\n\nExtracción (Extract): obtener datos de una o varias fuentes.\nTransformación (Transform): limpiar, corregir, combinar y estructurar los datos.\nCarga (Load): almacenar los datos en un sistema de destino.\n\n\nLa principal diferencia entre ETL y ELT es el orden en que se realizan estas operaciones."
   },
   {
-    "objectID": "lecciones/unidad-04/leccion-02.html#etl",
-    "href": "lecciones/unidad-04/leccion-02.html#etl",
-    "title": "Transformación de datos",
-    "section": "ETL",
-    "text": "ETL\nETL (Extract, Transform, Load) es un proceso de integración de datos que organiza tres etapas:\n\nExtracción → Transformación → Carga\nExtract → Transform → Load\n\n\nExtract: obtener datos desde una o varias fuentes.\nTransform: preparar y modificar los datos de acuerdo con las necesidades del destino.\nLoad: cargar los resultados en el sistema de destino."
+    "objectID": "lecciones/unidad-04/leccion-02.html#etl-extract-transform-load",
+    "href": "lecciones/unidad-04/leccion-02.html#etl-extract-transform-load",
+    "title": "Integración de datos",
+    "section": "ETL: Extract, Transform, Load",
+    "text": "ETL: Extract, Transform, Load\nEn ETL, los datos se transforman antes de cargarse en el sistema de destino.\nProceso general:\n\nExtraer: obtener información de archivos, bases de datos, APIs o sitios web.\nTransformar: limpiar, validar, combinar y modificar los datos.\nCargar: almacenar los datos preparados en el destino.\n\n\nEjemplo: integrar registros de ventas de diferentes sucursales, estandarizar sus formatos y almacenarlos en una tabla consolidada."
   },
   {
-    "objectID": "lecciones/unidad-04/leccion-02.html#extracción-extract",
-    "href": "lecciones/unidad-04/leccion-02.html#extracción-extract",
-    "title": "Transformación de datos",
-    "section": "Extracción (Extract)",
-    "text": "Extracción (Extract)\nLa extracción consiste en obtener datos desde sus sistemas de origen.\nLas fuentes pueden incluir:\n\nbases de datos relacionales;\narchivos CSV, Excel o JSON;\nAPIs;\nservicios y aplicaciones;\nsistemas de almacenamiento en la nube.\n\nLos datos extraídos pueden tener estructuras, formatos y características diferentes."
+    "objectID": "lecciones/unidad-04/leccion-02.html#elt-extract-load-transform",
+    "href": "lecciones/unidad-04/leccion-02.html#elt-extract-load-transform",
+    "title": "Integración de datos",
+    "section": "ELT: Extract, Load, Transform",
+    "text": "ELT: Extract, Load, Transform\nEn ELT, los datos se cargan primero en el destino y posteriormente se transforman utilizando sus capacidades de procesamiento.\nProceso general:\n\nExtraer: obtener los datos de las fuentes.\nCargar: almacenar los datos originales en el destino.\nTransformar: procesar los datos dentro del sistema de destino.\n\n\nEjemplo: cargar registros de transacciones en un almacén de datos en la nube y utilizar SQL para generar tablas de análisis."
   },
   {
-    "objectID": "lecciones/unidad-04/leccion-02.html#transformación-transform",
-    "href": "lecciones/unidad-04/leccion-02.html#transformación-transform",
-    "title": "Transformación de datos",
-    "section": "Transformación (Transform)",
-    "text": "Transformación (Transform)\nUna vez extraídos, los datos se someten a las operaciones necesarias para obtener una estructura compatible con el destino.\nEsta etapa puede incluir:\n\nvalidación y limpieza;\nconversión de tipos y formatos;\ncombinación de fuentes;\nderivación de variables;\nfiltrado y agregación;\naplicación de reglas de negocio.\n\n\nLas transformaciones dependen de cómo se utilizarán los datos y qué requisitos debe cumplir el resultado."
+    "objectID": "lecciones/unidad-04/leccion-02.html#principales-diferencias",
+    "href": "lecciones/unidad-04/leccion-02.html#principales-diferencias",
+    "title": "Integración de datos",
+    "section": "Principales diferencias",
+    "text": "Principales diferencias\n\n\n\n\n\n\n\n\nCaracterística\nETL\nELT\n\n\n\n\nOrden\nExtraer, transformar, cargar\nExtraer, cargar, transformar\n\n\nTransformación\nAntes de la carga\nDespués de la carga\n\n\nProcesamiento\nFuera del destino\nDentro del destino\n\n\nDatos originales\nNo necesariamente se conservan en el destino\nPueden conservarse\n\n\nUso habitual\nIntegraciones con esquemas definidos\nPlataformas modernas de datos\n\n\n\n\n¿Cuál es mejor? Depende del volumen de datos, la infraestructura disponible y las necesidades del proyecto."
   },
   {
-    "objectID": "lecciones/unidad-04/leccion-02.html#carga-load",
-    "href": "lecciones/unidad-04/leccion-02.html#carga-load",
-    "title": "Transformación de datos",
-    "section": "Carga (Load)",
-    "text": "Carga (Load)\nLa carga consiste en escribir los datos transformados en el sistema de destino.\nEl destino puede ser:\n\nuna base de datos;\nun almacén de datos (Data Warehouse);\nun sistema de análisis;\notro servicio de almacenamiento.\n\nLa carga permite que los datos preparados queden disponibles para su consulta o utilización."
+    "objectID": "lecciones/unidad-04/leccion-02.html#herramientas-para-etl-y-elt",
+    "href": "lecciones/unidad-04/leccion-02.html#herramientas-para-etl-y-elt",
+    "title": "Integración de datos",
+    "section": "Herramientas para ETL y ELT",
+    "text": "Herramientas para ETL y ELT\nExisten diferentes herramientas para desarrollar, automatizar y administrar procesos de integración de datos.\n\n\nProcesamiento y transformación\n\nPython: pipelines personalizados con pandas y otras bibliotecas.\nPower Query: preparación de datos mediante una interfaz gráfica.\ndbt: transformaciones dentro de almacenes de datos.\n\n\nIntegración y orquestación\n\nApache NiFi: automatización de flujos de datos.\nAzure Data Factory: integración y orquestación en la nube.\nApache Airflow: programación y coordinación de pipelines.\n\n\n\nLas herramientas pueden especializarse en diferentes etapas del proceso y utilizarse conjuntamente."
   },
   {
-    "objectID": "lecciones/unidad-04/leccion-02.html#ejemplo-de-etl",
-    "href": "lecciones/unidad-04/leccion-02.html#ejemplo-de-etl",
-    "title": "Transformación de datos",
-    "section": "Ejemplo de ETL",
-    "text": "Ejemplo de ETL\nUna empresa necesita generar reportes de ventas utilizando información de dos sistemas:\nSistema de ventas\n\n\n\nventa_id\nproducto_id\ncantidad\n\n\n\n\nV001\nP01\n2\n\n\nV002\nP02\n3\n\n\nV003\nP01\n1\n\n\n\nCatálogo de productos\n\n\n\nproducto_id\nnombre\nprecio\n\n\n\n\nP01\nLaptop\n18500\n\n\nP02\nMonitor\n4200\n\n\n\nEl objetivo es construir una tabla con el importe total vendido por producto."
+    "objectID": "lecciones/unidad-04/leccion-02.html#qué-es-un-pipeline-de-datos",
+    "href": "lecciones/unidad-04/leccion-02.html#qué-es-un-pipeline-de-datos",
+    "title": "Integración de datos",
+    "section": "¿Qué es un pipeline de datos?",
+    "text": "¿Qué es un pipeline de datos?\nUn pipeline es una secuencia organizada de operaciones que permite mover y procesar datos desde una fuente hasta un destino.\nEn un pipeline ETL podemos realizar:\n\nObtener los datos de una fuente.\nLimpiar registros inconsistentes o incompletos.\nCorregir formatos y tipos de datos.\nTransformar e integrar la información.\nAlmacenar los resultados.\n\n\nCada operación produce datos que pueden utilizarse como entrada de la siguiente etapa."
   },
   {
-    "objectID": "lecciones/unidad-04/leccion-02.html#ejemplo-extracción",
-    "href": "lecciones/unidad-04/leccion-02.html#ejemplo-extracción",
-    "title": "Transformación de datos",
-    "section": "Ejemplo: extracción",
-    "text": "Ejemplo: extracción\nEtapa 1. Extract\nObtenemos los registros de ventas desde la base de datos y el catálogo de productos desde un archivo CSV.\nLos datos se encuentran ahora disponibles para su procesamiento.\n\nEn esta etapa todavía no hemos calculado el importe ni generado el resumen."
+    "objectID": "lecciones/unidad-04/leccion-02.html#pipeline-etl-en-python",
+    "href": "lecciones/unidad-04/leccion-02.html#pipeline-etl-en-python",
+    "title": "Integración de datos",
+    "section": "Pipeline ETL en Python",
+    "text": "Pipeline ETL en Python\nSupongamos que queremos extraer información de una página web, procesarla y generar un archivo para su análisis.\nURL = \"https://ejemplo.com/eventos\"\n\ndef extraer_datos(url):\n    # Obtener el contenido de la página web\n    ...\n\ndef limpiar_datos(datos):\n    # Tratar valores faltantes y duplicados\n    ...\n\ndef corregir_datos(datos):\n    # Corregir tipos y formatos\n    ...\n\ndef transformar_datos(datos):\n    # Calcular variables y estructurar los datos\n    ...\n\ndef cargar_datos(datos, destino):\n    # Guardar los datos procesados\n    ..."
   },
   {
-    "objectID": "lecciones/unidad-04/leccion-02.html#etl-1",
-    "href": "lecciones/unidad-04/leccion-02.html#etl-1",
-    "title": "Transformación de datos",
-    "section": "ETL",
-    "text": "ETL\nExtract → Transform → Load\nLos datos se transforman antes de cargarse en el destino final."
+    "objectID": "lecciones/unidad-04/leccion-02.html#pipeline-etl-en-python-1",
+    "href": "lecciones/unidad-04/leccion-02.html#pipeline-etl-en-python-1",
+    "title": "Integración de datos",
+    "section": "Pipeline ETL en Python",
+    "text": "Pipeline ETL en Python\nPodemos organizar las operaciones anteriores dentro de una función que coordine todo el proceso.\ndef pipeline_etl():\n\n    datos = extraer_datos(URL)\n\n    datos = limpiar_datos(datos)\n\n    datos = corregir_datos(datos)\n\n    datos = transformar_datos(datos)\n\n    cargar_datos(datos, \"eventos.csv\")\n\n\npipeline_etl()\n\nLa función pipeline_etl() define el orden de ejecución, mientras que cada función realiza una operación específica."
   },
   {
-    "objectID": "lecciones/unidad-04/leccion-02.html#elt",
-    "href": "lecciones/unidad-04/leccion-02.html#elt",
-    "title": "Transformación de datos",
-    "section": "ELT",
-    "text": "ELT\nExtract → Load → Transform\nLos datos se cargan primero y posteriormente se transforman dentro del entorno de destino."
+    "objectID": "lecciones/unidad-04/leccion-02.html#cómo-diseñar-un-pipeline-etl",
+    "href": "lecciones/unidad-04/leccion-02.html#cómo-diseñar-un-pipeline-etl",
+    "title": "Integración de datos",
+    "section": "¿Cómo diseñar un pipeline ETL?",
+    "text": "¿Cómo diseñar un pipeline ETL?\nPara diseñar un pipeline ETL debemos identificar las operaciones necesarias para obtener, preparar y almacenar los datos, de acuerdo con el objetivo del análisis.\nEjemplo: Semana de Ingeniería\n\n\n\nEtapa\nOperación\n\n\n\n\nExtracción\nObtener registros de eventos y asistentes\n\n\nLimpieza\nRevisar duplicados y valores faltantes\n\n\nCorrección\nEstandarizar fechas y nombres\n\n\nTransformación\nIntegrar tablas y calcular indicadores\n\n\nCarga\nGuardar datos preparados para Power BI\n\n\n\n\nCada etapa debe tener un propósito definido y producir los datos necesarios para la siguiente operación."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#cómo-diseñar-un-pipeline-elt",
+    "href": "lecciones/unidad-04/leccion-02.html#cómo-diseñar-un-pipeline-elt",
+    "title": "Integración de datos",
+    "section": "¿Cómo diseñar un pipeline ELT?",
+    "text": "¿Cómo diseñar un pipeline ELT?\nPara diseñar un pipeline ELT debemos identificar las fuentes de datos, definir dónde se almacenarán y establecer las transformaciones que se realizarán dentro del sistema de destino.\nEjemplo: Semana de Ingeniería\n\n\n\nEtapa\nOperación\n\n\n\n\nExtracción\nObtener registros de eventos y asistentes\n\n\nCarga\nAlmacenar los datos originales en una base de datos\n\n\nLimpieza\nRevisar duplicados y valores faltantes\n\n\nCorrección\nEstandarizar fechas y nombres\n\n\nTransformación\nIntegrar tablas y calcular indicadores\n\n\n\n\nA diferencia de ETL, las transformaciones se realizan después de cargar los datos, aprovechando las capacidades de procesamiento del sistema de destino."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#actividad-diseñar-un-pipeline-etl",
+    "href": "lecciones/unidad-04/leccion-02.html#actividad-diseñar-un-pipeline-etl",
+    "title": "Integración de datos",
+    "section": "Actividad: diseñar un pipeline ETL",
+    "text": "Actividad: diseñar un pipeline ETL\nCada equipo deberá definir el proceso de preparación de datos para su dashboard de la Semana de Ingeniería.\n\nIdentificar las fuentes de datos disponibles.\nDeterminar qué información necesitan extraer.\nDefinir las operaciones de limpieza y corrección.\nIdentificar las transformaciones necesarias.\nEstablecer el formato y destino de los datos.\nOrganizar las operaciones en un pipeline.\n\nEntregable: diagrama del pipeline ETL y descripción breve de las operaciones que realizará cada etapa."
+  },
+  {
+    "objectID": "lecciones/unidad-04/leccion-02.html#pregunta",
+    "href": "lecciones/unidad-04/leccion-02.html#pregunta",
+    "title": "Integración de datos",
+    "section": "Pregunta",
+    "text": "Pregunta"
   },
   {
     "objectID": "notebooks/plantilla.html",

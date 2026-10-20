@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Dra. Denisse Urenda Castañeda">
-  <title>Ingeniería de Datos – Transformación de datos</title>
+  <title>Ingeniería de Datos – Integración de datos</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-fac4b8287f61b8a19fb8827ea21807e0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -124,17 +190,14 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Transformación de datos</h1>
-  <p class="subtitle">Introducción a la transformación de datos</p>
+  <h1 class="title">Integración de datos</h1>
+  <p class="subtitle">ETL vs ELT</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -148,305 +211,48 @@ Dra. Denisse Urenda Castañeda
 </div>
 
   <p class="date">octubre 2026</p>
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Tabla de contenidos</h2>
-<ul>
-<li><a href="#/ejemplo-transformación" id="/toc-ejemplo-transformación">Ejemplo: transformación</a></li>
-<li><a href="#/ejemplo-carga" id="/toc-ejemplo-carga">Ejemplo: carga</a></li>
-<li><a href="#/etl-como-proceso" id="/toc-etl-como-proceso">ETL como proceso</a></li>
-<li><a href="#/qué-sucede-si-llegan-nuevas-ventas" id="/toc-qué-sucede-si-llegan-nuevas-ventas">¿Qué sucede si llegan nuevas ventas?</a></li>
-<li><a href="#/etl-y-elt" id="/toc-etl-y-elt">ETL y ELT</a></li>
-<li><a href="#/etl-vs.-elt" id="/toc-etl-vs.-elt">ETL vs.&nbsp;ELT</a></li>
-<li><a href="#/etl-y-pipelines-de-datos" id="/toc-etl-y-pipelines-de-datos">ETL y pipelines de datos</a></li>
-<li><a href="#/consideraciones-en-un-proceso-etl" id="/toc-consideraciones-en-un-proceso-etl">Consideraciones en un proceso ETL</a></li>
-<li><a href="#/la-idea-importante" id="/toc-la-idea-importante">La idea importante</a></li>
-<li><a href="#/pregunta" id="/toc-pregunta">Pregunta</a></li>
-</ul>
-</nav>
 </section>
-<section id="integración-de-datos" class="slide level2">
-<h2>Integración de datos</h2>
-<p>Hasta ahora hemos considerado transformaciones sobre conjuntos de datos disponibles.</p>
-<p>Sin embargo, una organización puede necesitar información que proviene de <strong>múltiples sistemas</strong>.</p>
-<p>Por ejemplo:</p>
+<section id="etl-y-elt" class="slide level2">
+<h2>ETL y ELT</h2>
+<p>ETL y ELT son procesos utilizados para <strong>integrar datos provenientes de diferentes fuentes</strong> y prepararlos para su almacenamiento y análisis.</p>
+<p>Ambos incluyen tres operaciones fundamentales:</p>
 <ul>
-<li>ventas almacenadas en una base de datos;</li>
-<li>productos registrados en archivos CSV;</li>
-<li>clientes obtenidos mediante una API.</li>
+<li class="fragment"><strong>Extracción (Extract):</strong> obtener datos de una o varias fuentes.</li>
+<li class="fragment"><strong>Transformación (Transform):</strong> limpiar, corregir, combinar y estructurar los datos.</li>
+<li class="fragment"><strong>Carga (Load):</strong> almacenar los datos en un sistema de destino.</li>
 </ul>
-<p>¿Cómo podemos reunir y preparar estos datos para utilizarlos en un mismo sistema?</p>
-</section>
-<section id="etl" class="slide level2">
-<h2>ETL</h2>
-<p><strong>ETL (Extract, Transform, Load)</strong> es un proceso de integración de datos que organiza tres etapas:</p>
-<div style="text-align: center;">
-<p><strong>Extracción → Transformación → Carga</strong></p>
-<p><em>Extract → Transform → Load</em></p>
+<div class="fragment">
+<p>La principal diferencia entre ETL y ELT es el <strong>orden en que se realizan estas operaciones</strong>.</p>
 </div>
+</section>
+<section id="etl-extract-transform-load" class="slide level2">
+<h2>ETL: Extract, Transform, Load</h2>
+<p>En ETL, los datos se <strong>transforman antes de cargarse</strong> en el sistema de destino.</p>
+<p><strong>Proceso general:</strong></p>
 <ol type="1">
-<li class="fragment"><strong>Extract:</strong> obtener datos desde una o varias fuentes.</li>
-<li class="fragment"><strong>Transform:</strong> preparar y modificar los datos de acuerdo con las necesidades del destino.</li>
-<li class="fragment"><strong>Load:</strong> cargar los resultados en el sistema de destino.</li>
+<li class="fragment"><strong>Extraer:</strong> obtener información de archivos, bases de datos, APIs o sitios web.</li>
+<li class="fragment"><strong>Transformar:</strong> limpiar, validar, combinar y modificar los datos.</li>
+<li class="fragment"><strong>Cargar:</strong> almacenar los datos preparados en el destino.</li>
 </ol>
-</section>
-<section id="extracción-extract" class="slide level2">
-<h2>Extracción (Extract)</h2>
-<p>La extracción consiste en <strong>obtener datos desde sus sistemas de origen</strong>.</p>
-<p>Las fuentes pueden incluir:</p>
-<ul>
-<li class="fragment">bases de datos relacionales;</li>
-<li class="fragment">archivos CSV, Excel o JSON;</li>
-<li class="fragment">APIs;</li>
-<li class="fragment">servicios y aplicaciones;</li>
-<li class="fragment">sistemas de almacenamiento en la nube.</li>
-</ul>
-<p>Los datos extraídos pueden tener <strong>estructuras, formatos y características diferentes</strong>.</p>
-</section>
-<section id="transformación-transform" class="slide level2">
-<h2>Transformación (Transform)</h2>
-<p>Una vez extraídos, los datos se someten a las operaciones necesarias para obtener una <strong>estructura compatible con el destino</strong>.</p>
-<p>Esta etapa puede incluir:</p>
-<ul>
-<li class="fragment">validación y limpieza;</li>
-<li class="fragment">conversión de tipos y formatos;</li>
-<li class="fragment">combinación de fuentes;</li>
-<li class="fragment">derivación de variables;</li>
-<li class="fragment">filtrado y agregación;</li>
-<li class="fragment">aplicación de reglas de negocio.</li>
-</ul>
 <div class="fragment">
-<p>Las transformaciones dependen de <strong>cómo se utilizarán los datos y qué requisitos debe cumplir el resultado</strong>.</p>
+<p><strong>Ejemplo:</strong> integrar registros de ventas de diferentes sucursales, estandarizar sus formatos y almacenarlos en una tabla consolidada.</p>
 </div>
 </section>
-<section id="carga-load" class="slide level2">
-<h2>Carga (Load)</h2>
-<p>La carga consiste en <strong>escribir los datos transformados en el sistema de destino</strong>.</p>
-<p>El destino puede ser:</p>
-<ul>
-<li>una base de datos;</li>
-<li>un almacén de datos (<em>Data Warehouse</em>);</li>
-<li>un sistema de análisis;</li>
-<li>otro servicio de almacenamiento.</li>
-</ul>
-<p>La carga permite que los datos preparados queden <strong>disponibles para su consulta o utilización</strong>.</p>
-</section>
-<section id="ejemplo-de-etl" class="slide level2">
-<h2>Ejemplo de ETL</h2>
-<p>Una empresa necesita generar reportes de ventas utilizando información de dos sistemas:</p>
-<p><strong>Sistema de ventas</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>venta_id</th>
-<th>producto_id</th>
-<th style="text-align: right;">cantidad</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>V001</td>
-<td>P01</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td>V002</td>
-<td>P02</td>
-<td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td>V003</td>
-<td>P01</td>
-<td style="text-align: right;">1</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Catálogo de productos</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>producto_id</th>
-<th>nombre</th>
-<th style="text-align: right;">precio</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>P01</td>
-<td>Laptop</td>
-<td style="text-align: right;">18500</td>
-</tr>
-<tr class="even">
-<td>P02</td>
-<td>Monitor</td>
-<td style="text-align: right;">4200</td>
-</tr>
-</tbody>
-</table>
-<p>El objetivo es construir una tabla con el <strong>importe total vendido por producto</strong>.</p>
-</section>
-<section id="ejemplo-extracción" class="slide level2">
-<h2>Ejemplo: extracción</h2>
-<p><strong>Etapa 1. Extract</strong></p>
-<p>Obtenemos los registros de ventas desde la base de datos y el catálogo de productos desde un archivo CSV.</p>
-<p>Los datos se encuentran ahora disponibles para su procesamiento.</p>
+<section id="elt-extract-load-transform" class="slide level2">
+<h2>ELT: Extract, Load, Transform</h2>
+<p>En ELT, los datos se <strong>cargan primero en el destino</strong> y posteriormente se transforman utilizando sus capacidades de procesamiento.</p>
+<p><strong>Proceso general:</strong></p>
+<ol type="1">
+<li class="fragment"><strong>Extraer:</strong> obtener los datos de las fuentes.</li>
+<li class="fragment"><strong>Cargar:</strong> almacenar los datos originales en el destino.</li>
+<li class="fragment"><strong>Transformar:</strong> procesar los datos dentro del sistema de destino.</li>
+</ol>
 <div class="fragment">
-<p>En esta etapa <strong>todavía no hemos calculado el importe ni generado el resumen</strong>.</p>
+<p><strong>Ejemplo:</strong> cargar registros de transacciones en un almacén de datos en la nube y utilizar SQL para generar tablas de análisis.</p>
 </div>
 </section>
-<section id="ejemplo-transformación" class="title-slide slide level1 center">
-<h1>Ejemplo: transformación</h1>
-<p><strong>Etapa 2. Transform</strong></p>
-<p>Primero combinamos los registros utilizando <code>producto_id</code>.</p>
-<p>Después calculamos el importe:</p>
-<p><span class="math display">\[\text{importe}=\text{cantidad}\times\text{precio}\]</span></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>producto</th>
-<th style="text-align: right;">cantidad</th>
-<th style="text-align: right;">precio</th>
-<th style="text-align: right;">importe</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Laptop</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">18500</td>
-<td style="text-align: right;">37000</td>
-</tr>
-<tr class="even">
-<td>Monitor</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4200</td>
-<td style="text-align: right;">12600</td>
-</tr>
-<tr class="odd">
-<td>Laptop</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">18500</td>
-<td style="text-align: right;">18500</td>
-</tr>
-</tbody>
-</table>
-</section>
-
-<section id="ejemplo-transformación-1" class="title-slide slide level1 unlisted center">
-<h1>Ejemplo: transformación</h1>
-<p>Agrupamos los registros por producto y sumamos los importes.</p>
-<p><strong>Resultado de la transformación:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>producto</th>
-<th style="text-align: right;">venta_total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Laptop</td>
-<td style="text-align: right;">55500</td>
-</tr>
-<tr class="even">
-<td>Monitor</td>
-<td style="text-align: right;">12600</td>
-</tr>
-</tbody>
-</table>
-<p>Este conjunto contiene la información necesaria para el reporte.</p>
-</section>
-
-<section id="ejemplo-carga" class="title-slide slide level1 center">
-<h1>Ejemplo: carga</h1>
-<p><strong>Etapa 3. Load</strong></p>
-<p>Los resultados se almacenan en una tabla de la base de datos de reportes.</p>
-<p><strong>Tabla: resumen_ventas</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>producto</th>
-<th style="text-align: right;">venta_total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Laptop</td>
-<td style="text-align: right;">55500</td>
-</tr>
-<tr class="even">
-<td>Monitor</td>
-<td style="text-align: right;">12600</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p>El sistema de reportes puede consultar directamente estos resultados sin tener que repetir todas las transformaciones en cada consulta.</p>
-</div>
-</section>
-
-<section id="etl-como-proceso" class="title-slide slide level1 center">
-<h1>ETL como proceso</h1>
-<p>El ejemplo anterior puede representarse mediante el siguiente flujo:</p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A["Base de datos&lt;br/&gt;Ventas"] --&gt; C["Extract"]
-    B["CSV&lt;br/&gt;Productos"] --&gt; C
-    C --&gt; D["Transform"]
-    D --&gt; E["Load"]
-    E --&gt; F["Base de datos&lt;br/&gt;Reportes"]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Cada etapa tiene una responsabilidad específica dentro del <strong>proceso de integración de datos</strong>.</p>
-</section>
-
-<section id="qué-sucede-si-llegan-nuevas-ventas" class="title-slide slide level1 center">
-<h1>¿Qué sucede si llegan nuevas ventas?</h1>
-<p>Supongamos que al día siguiente se registran nuevas transacciones.</p>
-<p>Para mantener actualizado el reporte, el proceso ETL puede ejecutarse nuevamente.</p>
-<p>Dependiendo de su implementación, puede:</p>
-<ul>
-<li class="fragment">recuperar únicamente las ventas nuevas;</li>
-<li class="fragment">transformar los registros incorporados;</li>
-<li class="fragment">actualizar los resultados almacenados.</li>
-</ul>
-<div class="fragment">
-<p>Un proceso ETL debe diseñarse considerando <strong>cómo se actualizan los datos y cómo se mantiene la consistencia del destino</strong>.</p>
-</div>
-</section>
-
-<section>
-<section id="etl-y-elt" class="title-slide slide level1 center">
-<h1>ETL y ELT</h1>
-<p>ETL no es la única forma de organizar la integración de datos.</p>
-<p>Otra alternativa es <strong>ELT (Extract, Load, Transform)</strong>.</p>
-<p>La diferencia principal es <strong>cuándo se realizan las transformaciones respecto a la carga</strong>.</p>
-</section>
-<div class="columns">
-<div class="column" style="width:50%;">
-<section id="etl-1" class="slide level2">
-<h2>ETL</h2>
-<p><strong>Extract → Transform → Load</strong></p>
-<p>Los datos se transforman antes de cargarse en el destino final.</p>
-</section>
-</div><div class="column" style="width:50%;">
-<section id="elt" class="slide level2">
-<h2>ELT</h2>
-<p><strong>Extract → Load → Transform</strong></p>
-<p>Los datos se cargan primero y posteriormente se transforman dentro del entorno de destino.</p>
-</section>
-</div>
-</div></section>
-<section id="etl-vs.-elt" class="title-slide slide level1 center">
-<h1>ETL vs.&nbsp;ELT</h1>
+<section id="principales-diferencias" class="slide level2">
+<h2>Principales diferencias</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 33%">
@@ -463,8 +269,8 @@ Dra. Denisse Urenda Castañeda
 <tbody>
 <tr class="odd">
 <td>Orden</td>
-<td>E → T → L</td>
-<td>E → L → T</td>
+<td>Extraer, transformar, cargar</td>
+<td>Extraer, cargar, transformar</td>
 </tr>
 <tr class="even">
 <td>Transformación</td>
@@ -473,60 +279,200 @@ Dra. Denisse Urenda Castañeda
 </tr>
 <tr class="odd">
 <td>Procesamiento</td>
-<td>En un entorno previo al destino</td>
-<td>En el entorno de destino</td>
+<td>Fuera del destino</td>
+<td>Dentro del destino</td>
 </tr>
 <tr class="even">
-<td>Datos cargados inicialmente</td>
-<td>Generalmente preparados</td>
-<td>Pueden conservar su forma original</td>
+<td>Datos originales</td>
+<td>No necesariamente se conservan en el destino</td>
+<td>Pueden conservarse</td>
+</tr>
+<tr class="odd">
+<td>Uso habitual</td>
+<td>Integraciones con esquemas definidos</td>
+<td>Plataformas modernas de datos</td>
 </tr>
 </tbody>
 </table>
 <div class="fragment">
-<p>Ninguno es universalmente mejor. La elección depende de la <strong>arquitectura, las herramientas y los requisitos del sistema</strong>.</p>
+<p><strong>¿Cuál es mejor?</strong> Depende del volumen de datos, la infraestructura disponible y las necesidades del proyecto.</p>
 </div>
 </section>
-
-<section id="etl-y-pipelines-de-datos" class="title-slide slide level1 center">
-<h1>ETL y pipelines de datos</h1>
-<p>Un proceso ETL puede implementarse mediante un <strong>pipeline de datos</strong>.</p>
-<p>El pipeline organiza la ejecución de las operaciones necesarias para:</p>
+<section id="herramientas-para-etl-y-elt" class="slide level2">
+<h2>Herramientas para ETL y ELT</h2>
+<p>Existen diferentes herramientas para desarrollar, automatizar y administrar procesos de integración de datos.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Procesamiento y transformación</strong></p>
 <ul>
-<li>extraer los datos;</li>
-<li>aplicar las transformaciones;</li>
-<li>cargar los resultados.</li>
+<li><strong>Python:</strong> pipelines personalizados con pandas y otras bibliotecas.</li>
+<li><strong>Power Query:</strong> preparación de datos mediante una interfaz gráfica.</li>
+<li><strong>dbt:</strong> transformaciones dentro de almacenes de datos.</li>
 </ul>
-<div class="fragment">
-<p>Sin embargo, <strong>no todos los pipelines son ETL</strong>. Un pipeline puede realizar otras tareas, como transferir datos, ejecutar análisis o alimentar modelos de aprendizaje automático.</p>
-</div>
-</section>
-
-<section id="consideraciones-en-un-proceso-etl" class="title-slide slide level1 center">
-<h1>Consideraciones en un proceso ETL</h1>
-<p>Un proceso ETL debe contemplar algo más que ejecutar las tres etapas.</p>
-<p>Por ejemplo:</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Integración y orquestación</strong></p>
 <ul>
-<li class="fragment"><strong>Calidad:</strong> verificar que los datos cumplan las reglas esperadas.</li>
-<li class="fragment"><strong>Errores:</strong> identificar registros o etapas que fallaron.</li>
-<li class="fragment"><strong>Consistencia:</strong> evitar duplicados o resultados incorrectos.</li>
-<li class="fragment"><strong>Actualización:</strong> determinar cuándo y cómo ejecutar el proceso.</li>
-<li class="fragment"><strong>Monitoreo:</strong> verificar que las ejecuciones terminen correctamente.</li>
+<li><strong>Apache NiFi:</strong> automatización de flujos de datos.</li>
+<li><strong>Azure Data Factory:</strong> integración y orquestación en la nube.</li>
+<li><strong>Apache Airflow:</strong> programación y coordinación de pipelines.</li>
 </ul>
-</section>
-
-<section id="la-idea-importante" class="title-slide slide level1 center">
-<h1>La idea importante</h1>
-<p>Las <strong>transformaciones</strong> permiten modificar los datos para obtener una representación adecuada para un objetivo.</p>
-<p><strong>ETL</strong> organiza la extracción, transformación y carga de datos desde sus fuentes hasta un destino.</p>
-<p><strong>ELT</strong> utiliza las mismas operaciones generales, pero realiza la transformación después de la carga.</p>
+</div></div>
 <div class="fragment">
-<p>Estas estrategias permiten construir procesos de integración que pueden <strong>automatizarse, mantenerse y ejecutarse de manera recurrente</strong>.</p>
+<p>Las herramientas pueden especializarse en <strong>diferentes etapas del proceso</strong> y utilizarse conjuntamente.</p>
 </div>
 </section>
-
-<section id="pregunta" class="title-slide slide level1 center">
-<h1>Pregunta</h1>
+<section id="qué-es-un-pipeline-de-datos" class="slide level2">
+<h2>¿Qué es un pipeline de datos?</h2>
+<p>Un pipeline es una <strong>secuencia organizada de operaciones</strong> que permite mover y procesar datos desde una fuente hasta un destino.</p>
+<p>En un pipeline ETL podemos realizar:</p>
+<ol type="1">
+<li class="fragment">Obtener los datos de una fuente.</li>
+<li class="fragment">Limpiar registros inconsistentes o incompletos.</li>
+<li class="fragment">Corregir formatos y tipos de datos.</li>
+<li class="fragment">Transformar e integrar la información.</li>
+<li class="fragment">Almacenar los resultados.</li>
+</ol>
+<div class="fragment">
+<p>Cada operación produce datos que pueden utilizarse como <strong>entrada de la siguiente etapa</strong>.</p>
+</div>
+</section>
+<section id="pipeline-etl-en-python" class="slide level2">
+<h2>Pipeline ETL en Python</h2>
+<p>Supongamos que queremos <strong>extraer información de una página web</strong>, procesarla y generar un archivo para su análisis.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>URL <span class="op">=</span> <span class="st">"https://ejemplo.com/eventos"</span></span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="kw">def</span> extraer_datos(url):</span>
+<span id="cb1-4"><a></a>    <span class="co"># Obtener el contenido de la página web</span></span>
+<span id="cb1-5"><a></a>    ...</span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="kw">def</span> limpiar_datos(datos):</span>
+<span id="cb1-8"><a></a>    <span class="co"># Tratar valores faltantes y duplicados</span></span>
+<span id="cb1-9"><a></a>    ...</span>
+<span id="cb1-10"><a></a></span>
+<span id="cb1-11"><a></a><span class="kw">def</span> corregir_datos(datos):</span>
+<span id="cb1-12"><a></a>    <span class="co"># Corregir tipos y formatos</span></span>
+<span id="cb1-13"><a></a>    ...</span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a><span class="kw">def</span> transformar_datos(datos):</span>
+<span id="cb1-16"><a></a>    <span class="co"># Calcular variables y estructurar los datos</span></span>
+<span id="cb1-17"><a></a>    ...</span>
+<span id="cb1-18"><a></a></span>
+<span id="cb1-19"><a></a><span class="kw">def</span> cargar_datos(datos, destino):</span>
+<span id="cb1-20"><a></a>    <span class="co"># Guardar los datos procesados</span></span>
+<span id="cb1-21"><a></a>    ...</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pipeline-etl-en-python-1" class="slide level2 unlisted">
+<h2>Pipeline ETL en Python</h2>
+<p>Podemos organizar las operaciones anteriores dentro de una <strong>función que coordine todo el proceso</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> pipeline_etl():</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a>    datos <span class="op">=</span> extraer_datos(URL)</span>
+<span id="cb2-4"><a></a></span>
+<span id="cb2-5"><a></a>    datos <span class="op">=</span> limpiar_datos(datos)</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a>    datos <span class="op">=</span> corregir_datos(datos)</span>
+<span id="cb2-8"><a></a></span>
+<span id="cb2-9"><a></a>    datos <span class="op">=</span> transformar_datos(datos)</span>
+<span id="cb2-10"><a></a></span>
+<span id="cb2-11"><a></a>    cargar_datos(datos, <span class="st">"eventos.csv"</span>)</span>
+<span id="cb2-12"><a></a></span>
+<span id="cb2-13"><a></a></span>
+<span id="cb2-14"><a></a>pipeline_etl()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>La función <code>pipeline_etl()</code> define <strong>el orden de ejecución</strong>, mientras que cada función realiza una operación específica.</p>
+</div>
+</section>
+<section id="cómo-diseñar-un-pipeline-etl" class="slide level2">
+<h2>¿Cómo diseñar un pipeline ETL?</h2>
+<p>Para diseñar un pipeline ETL debemos <strong>identificar las operaciones necesarias para obtener, preparar y almacenar los datos</strong>, de acuerdo con el objetivo del análisis.</p>
+<p><strong>Ejemplo</strong>: Semana de Ingeniería</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Etapa</th>
+<th>Operación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Extracción</td>
+<td>Obtener registros de eventos y asistentes</td>
+</tr>
+<tr class="even">
+<td>Limpieza</td>
+<td>Revisar duplicados y valores faltantes</td>
+</tr>
+<tr class="odd">
+<td>Corrección</td>
+<td>Estandarizar fechas y nombres</td>
+</tr>
+<tr class="even">
+<td>Transformación</td>
+<td>Integrar tablas y calcular indicadores</td>
+</tr>
+<tr class="odd">
+<td>Carga</td>
+<td>Guardar datos preparados para Power BI</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Cada etapa debe tener un <strong>propósito definido</strong> y producir los datos necesarios para la siguiente operación.</p>
+</div>
+</section>
+<section id="cómo-diseñar-un-pipeline-elt" class="slide level2">
+<h2>¿Cómo diseñar un pipeline ELT?</h2>
+<p>Para diseñar un pipeline ELT debemos <strong>identificar las fuentes de datos, definir dónde se almacenarán y establecer las transformaciones que se realizarán dentro del sistema de destino</strong>.</p>
+<p><strong>Ejemplo</strong>: Semana de Ingeniería</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Etapa</th>
+<th>Operación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Extracción</td>
+<td>Obtener registros de eventos y asistentes</td>
+</tr>
+<tr class="even">
+<td>Carga</td>
+<td>Almacenar los datos originales en una base de datos</td>
+</tr>
+<tr class="odd">
+<td>Limpieza</td>
+<td>Revisar duplicados y valores faltantes</td>
+</tr>
+<tr class="even">
+<td>Corrección</td>
+<td>Estandarizar fechas y nombres</td>
+</tr>
+<tr class="odd">
+<td>Transformación</td>
+<td>Integrar tablas y calcular indicadores</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>A diferencia de ETL, las transformaciones se realizan <strong>después de cargar los datos</strong>, aprovechando las capacidades de procesamiento del sistema de destino.</p>
+</div>
+</section>
+<section id="actividad-diseñar-un-pipeline-etl" class="slide level2">
+<h2>Actividad: diseñar un pipeline ETL</h2>
+<p>Cada equipo deberá definir el proceso de preparación de datos para su <strong>dashboard de la Semana de Ingeniería</strong>.</p>
+<ol type="1">
+<li>Identificar las fuentes de datos disponibles.</li>
+<li>Determinar qué información necesitan extraer.</li>
+<li>Definir las operaciones de limpieza y corrección.</li>
+<li>Identificar las transformaciones necesarias.</li>
+<li>Establecer el formato y destino de los datos.</li>
+<li>Organizar las operaciones en un pipeline.</li>
+</ol>
+<p><strong>Entregable:</strong> diagrama del pipeline ETL y descripción breve de las operaciones que realizará cada etapa.</p>
+</section>
+<section id="pregunta" class="slide level2">
+<h2>Pregunta</h2>
 <p><img data-src="../imagenes/mister.png" style="width:50.0%"></p>
 
 
