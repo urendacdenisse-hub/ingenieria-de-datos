@@ -1,0 +1,240 @@
+---
+title: "Transformación de datos"
+subtitle: "Introducción a la transformación de datos"
+format: revealjs
+---
+
+## Transformaciones de datos
+
+Durante el procesamiento podemos realizar operaciones que modifican la **representación, estructura o contenido de los datos**.
+
+Estas operaciones se conocen como **transformaciones de datos**.
+
+Su propósito es obtener datos en una forma adecuada para utilizarlos en un proceso posterior.
+
+## Tipos de transformaciones
+
+Las transformaciones pueden realizar diferentes tareas:
+
+::: incremental
+- **Conversión:** cambiar el tipo o formato de los datos.
+- **Derivación:** generar nuevas variables a partir de las existentes.
+- **Filtrado:** seleccionar registros de acuerdo con una condición.
+- **Agregación:** resumir múltiples registros.
+- **Combinación:** integrar información de diferentes conjuntos de datos.
+- **Reestructuración:** modificar la organización de filas y columnas.
+:::
+
+## Conversión de datos
+
+Consiste en cambiar la **representación o el tipo de dato** de un valor.
+
+Por ejemplo, una fecha puede almacenarse como una cadena de texto:
+
+| venta_id | fecha      |
+|----------|------------|
+| V001     | 15/10/2026 |
+| V002     | 16/10/2026 |
+
+## Conversión de datos {.unlisted}
+
+Podemos convertirla a un tipo de dato fecha, utilizando un formato estandarizado:
+
+| venta_id | fecha      |
+|----------|------------|
+| V001     | 2026-10-15 |
+| V002     | 2026-10-16 |
+
+::: fragment
+Esta transformación facilita realizar operaciones como **ordenar, comparar o calcular diferencias entre fechas**.
+:::
+
+## Derivación de variables
+
+Consiste en **generar nuevos valores** a partir de los datos existentes.
+
+Por ejemplo, una empresa registra:
+
+| producto | cantidad | precio |
+|----------|---------:|-------:|
+| Laptop   |        2 |  18500 |
+| Monitor  |        3 |   4200 |
+| Laptop   |        1 |  18500 |
+
+Podemos calcular el importe de cada venta:
+
+$$\text{importe}=\text{cantidad}\times\text{precio}$$
+
+## Derivación de variables {.unlisted}
+
+Después de aplicar la transformación:
+
+| producto | cantidad | precio | importe |
+|----------|---------:|-------:|--------:|
+| Laptop   |        2 |  18500 |   37000 |
+| Monitor  |        3 |   4200 |   12600 |
+| Laptop   |        1 |  18500 |   18500 |
+
+La columna **importe** no existía originalmente, pero pudo obtenerse utilizando las variables disponibles.
+
+## Filtrado de datos
+
+Permite conservar únicamente los registros que **cumplen una condición**.
+
+Supongamos que queremos analizar las ventas con un importe superior a \$15,000.
+
+| producto | importe |
+|----------|--------:|
+| Laptop   |   37000 |
+| Monitor  |   12600 |
+| Laptop   |   18500 |
+| Teclado  |    4000 |
+
+## Filtrado de datos {.unlisted}
+
+Aplicamos la condición:
+
+$$\text{importe}>15000$$
+
+::: fragment
+**Resultado:**
+
+| producto | importe |
+|----------|--------:|
+| Laptop   |   37000 |
+| Laptop   |   18500 |
+:::
+
+## Agregación de datos
+
+La agregación permite **resumir múltiples registros** mediante operaciones como sumas, promedios o conteos.
+
+Por ejemplo, podemos agrupar las ventas por producto y calcular su importe total.
+
+| producto | importe |
+|----------|--------:|
+| Laptop   |   37000 |
+| Monitor  |   12600 |
+| Laptop   |   18500 |
+| Teclado  |    4000 |
+
+## Agregación de datos {.unlisted}
+
+
+**Resultado:**
+
+| producto | venta_total |
+|----------|------------:|
+| Laptop   |       55500 |
+| Monitor  |       12600 |
+| Teclado  |        4000 |
+
+
+## Combinación de datos
+
+En muchas situaciones, la información necesaria se encuentra **distribuida entre diferentes conjuntos de datos**.
+
+Por ejemplo, tenemos dos tablas:
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+**Ventas**
+
+| venta_id | producto_id | cantidad |
+|----------|-------------|---------:|
+| V001     | P01         |        2 |
+| V002     | P02         |        3 |
+
+:::
+
+::: {.column width="50%"}
+
+**Productos**
+
+| producto_id | nombre  | precio |
+|-------------|---------|-------:|
+| P01         | Laptop  |  18500 |
+| P02         | Monitor |   4200 |
+
+:::
+
+:::
+
+
+## Combinación de datos {.unlisted}
+
+Podemos combinar ambas tablas utilizando el campo **producto_id**.
+
+**Resultado:**
+
+| venta_id | producto_id | nombre  | cantidad | precio |
+|----------|-------------|---------|---------:|-------:|
+| V001     | P01         | Laptop  |        2 |  18500 |
+| V002     | P02         | Monitor |        3 |   4200 |
+
+::: fragment
+La combinación permite **integrar información relacionada** que originalmente se encontraba en diferentes tablas.
+:::
+
+## Reestructuración de datos
+
+Consiste en modificar la **organización de los datos**, por ejemplo, convirtiendo columnas en filas o viceversa.
+
+Supongamos que tenemos:
+
+| producto | enero | febrero |
+|----------|------:|--------:|
+| Laptop   |    10 |      15 |
+| Monitor  |     8 |      12 |
+
+## Reestructuración de datos {.unlisted}
+
+Podemos reorganizar los datos:
+
+| producto | mes     | ventas |
+|----------|---------|-------:|
+| Laptop   | enero   |     10 |
+| Laptop   | febrero |     15 |
+| Monitor  | enero   |      8 |
+| Monitor  | febrero |     12 |
+
+::: fragment
+Ambas representaciones contienen la misma información, pero tienen **estructuras diferentes**.
+:::
+
+## Transformaciones consecutivas
+
+En la práctica, rara vez aplicamos una sola transformación.
+
+Por ejemplo, para generar un reporte de ventas podemos:
+
+1.  Combinar las ventas con el catálogo de productos.
+2.  Calcular el importe de cada venta.
+3.  Filtrar las ventas del periodo de interés.
+4.  Agrupar los registros por producto.
+5.  Calcular el importe total de cada grupo.
+
+::: fragment
+Cada transformación produce datos que pueden utilizarse como **entrada de la siguiente operación**.
+:::
+
+## ¿Dónde se realizan estas transformaciones?
+
+Las transformaciones pueden ejecutarse utilizando diferentes herramientas:
+
+::: incremental
+- **SQL:** consultas sobre bases de datos.
+- **Python:** procesamiento mediante bibliotecas como pandas.
+- **PySpark:** procesamiento distribuido de grandes volúmenes de datos.
+- **Power Query:** preparación y transformación de datos mediante una interfaz gráfica.
+:::
+
+::: fragment
+La herramienta depende del **volumen de datos, la infraestructura disponible y las necesidades del proceso**.
+:::
+
+## Pregunta
+
+![](../imagenes/mister.png){width="50%"}

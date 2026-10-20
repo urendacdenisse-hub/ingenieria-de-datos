@@ -29,13 +29,14 @@ title: "Lecciones"
 - Procesamiento en tiempo real
 - Arquitecturas para el procesamiento de datos
 
-<!--
+
 # Unidad IV. Integración de datos y ETL
-- Introducción a la integración de datos
-- Procesos ETL
+- [Introducción a la integración de datos](unidad-04/leccion-01.qmd)
+- [Procesos ETL y ELT](unidad-04/leccion-02.qmd)
 - Transformación de datos
 - Herramientas de integración de datos
 
+<!--
 # Unidad V. Calidad y gobernanza de datos
 
 - Importancia de la calidad y gobernanza de datos

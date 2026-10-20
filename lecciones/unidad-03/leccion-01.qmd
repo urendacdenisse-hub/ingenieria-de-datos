@@ -38,18 +38,16 @@ El **procesamiento de datos** es una serie de operaciones mediante las cuales lo
 
 ![](../imagenes/procesamiento.png)
 
-
-
 ## Ejemplo
 
 Una empresa registra cada una de sus ventas en una base de datoa:
 
 | venta_id | producto | cantidad | precio |
-|---|---|---:|---:|
-| V001 | Laptop | 2 | 18500 |
-| V002 | Monitor | 3 | 4200 |
-| V003 | Laptop | 1 | 18500 |
-| V004 | Teclado | 5 | 800 |
+|----------|----------|---------:|-------:|
+| V001     | Laptop   |        2 |  18500 |
+| V002     | Monitor  |        3 |   4200 |
+| V003     | Laptop   |        1 |  18500 |
+| V004     | Teclado  |        5 |    800 |
 
 Queremos responder
 
@@ -61,26 +59,23 @@ Queremos responder
 
 Para responder la pregunta podemos realizar diferentes operaciones:
 
-1. **Calcular** el importe de cada venta.
+1.  **Calcular** el importe de cada venta.
 
-$$
-\text{importe} = \text{cantidad} \times \text{precio}
-$$
+$$\text{importe} = \text{cantidad} \times \text{precio}$$
 
-2. **Agrupar** las ventas por producto.
+2.  **Agrupar** las ventas por producto.
 
-3. **Sumar** los importes de cada grupo.
-
+3.  **Sumar** los importes de cada grupo.
 
 ## Ejemplo {.unlisted}
 
 Después del procesamiento obtenemos:
 
 | producto | venta_total |
-|---|---:|
-| Laptop | 55500 |
-| Monitor | 12600 |
-| Teclado | 4000 |
+|----------|------------:|
+| Laptop   |       55500 |
+| Monitor  |       12600 |
+| Teclado  |        4000 |
 
 La información necesaria estaba contenida en los datos originales.
 
@@ -92,23 +87,20 @@ El procesamiento puede involucrar **varias operaciones consecutivas**, donde el 
 
 ![](../imagenes/procesamiento-ejemplo.png)
 
-
 En este caso, los registros individuales se transformaron paso a paso hasta obtener un **resumen de ventas por producto**.
 
 ## Operaciones de procesamiento
 
 Dependiendo del resultado que buscamos, podemos realizar diferentes operaciones.
 
-::: {.incremental}
-
+::: incremental
 - **Ordenamiento:** ordenar los datos de acuerdo con algún criterio.
 - **Filtrado:** seleccionar solamente los datos que cumplen ciertas condiciones.
 - **Cálculo:** realizar operaciones matemáticas sobre los datos.
 - **Agregación:** resumir información contenida en múltiples registros.
-
 :::
 
-::: {.fragment}
+::: fragment
 No existe una única forma de procesar los datos. Las operaciones dependen del **resultado que necesitamos obtener**.
 :::
 
@@ -116,29 +108,23 @@ No existe una única forma de procesar los datos. Las operaciones dependen del *
 
 El procesamiento forma parte de un ciclo más amplio:
 
-::: {.columns style="align-items: center;"}
-
+::::: {.columns style="align-items: center;"}
 ::: {.column width="60%"}
-
 ![](../imagenes/procesamiento-ciclo.png)
-
 :::
 
 ::: {.column width="40%"}
-
 Cada etapa cumple una función diferente dentro del **ciclo de vida de los datos**.
 
 En esta unidad nos enfocaremos en el **procesamiento**, donde los datos son sometidos a diferentes operaciones para transformarlos en **resultados útiles**.
-
 :::
-
-:::
+:::::
 
 ## Procesamiento
 
 Una vez que los datos están disponibles, podemos realizar diferentes operaciones para **transformarlos en un resultado útil**. Sin embargo, antes de realizar el procesamiento principal, los datos pueden necesitar cierta **preparación**.
 
-::: {.incremental}
+::: incremental
 - corregir o eliminar datos inválidos;
 - tratar valores faltantes;
 - eliminar duplicados;
@@ -146,7 +132,7 @@ Una vez que los datos están disponibles, podemos realizar diferentes operacione
 - estandarizar formatos.
 :::
 
-::: {.fragment}
+::: fragment
 El objetivo es asegurar que los datos estén en una forma adecuada para las operaciones que realizaremos.
 :::
 
@@ -156,7 +142,7 @@ Una vez preparados, podemos aplicar las operaciones necesarias para obtener el r
 
 Por ejemplo:
 
-::: {.incremental}
+::: incremental
 - **filtrar:** seleccionar los registros que necesitamos;
 - **ordenar:** organizar los datos de acuerdo con algún criterio;
 - **calcular:** obtener nuevos valores a partir de los existentes;
@@ -164,7 +150,7 @@ Por ejemplo:
 - **agregar:** obtener resúmenes como sumas, promedios o conteos.
 :::
 
-::: {.fragment}
+::: fragment
 Las operaciones utilizadas dependen del **problema que queremos resolver**.
 :::
 
@@ -188,16 +174,14 @@ Los pipelines permiten organizar el flujo de los datos y **automatizar operacion
 
 Aunque su estructura depende del problema, un pipeline puede incluir:
 
-::: {.incremental}
-
+::: incremental
 - **Fuente:** sistema o archivo del que provienen los datos.
 - **Ingestión:** incorporación de los datos al flujo de procesamiento.
 - **Procesamiento:** operaciones como validación, limpieza, cálculo y transformación.
 - **Destino:** sistema donde se almacenan o utilizan los resultados.
-
 :::
 
-::: {.fragment}
+::: fragment
 No todos los pipelines tienen las mismas etapas ni requieren las mismas tecnologías.
 :::
 
@@ -224,7 +208,7 @@ Supongamos que recibimos un **nuevo archivo Excel** con información actualizada
 
 ¿Tendríamos que repetir manualmente todas las operaciones?
 
-::: {.fragment}
+::: fragment
 Un pipeline puede permitir que estas operaciones se **ejecuten automáticamente**, aplicando las mismas reglas a los nuevos datos.
 :::
 
@@ -232,20 +216,19 @@ Esto facilita mantener la información **actualizada y consistente**.
 
 ## ¿Por qué utilizar pipelines?
 
-::: {.incremental}
-
+::: incremental
 - **Automatización:** reducir tareas manuales y repetitivas.
 - **Reproducibilidad:** aplicar las mismas operaciones bajo las mismas reglas.
 - **Mantenimiento:** identificar y modificar etapas específicas.
 - **Escalabilidad:** adaptar el procesamiento a diferentes volúmenes de datos.
 - **Confiabilidad:** incorporar validaciones y mecanismos para detectar errores.
-
 :::
 
-::: {.fragment}
+::: fragment
 Sin embargo, **no todos los pipelines necesitan ejecutarse de la misma manera**.
 :::
 
+```{=html}
 <!--
 ## Antes de continuar... {.unlisted}
 
@@ -263,34 +246,29 @@ Contesta la siguiente encuesta:
 
 :::
 -->
+```
 
 ## Pero no todos los datos se procesan igual
 
 Consideremos dos situaciones.
 
-::: {.columns style="align-items: center;"}
-
+::::: {.columns style="align-items: center;"}
 ::: {.column width="50%"}
-
 ### Situación 1
 
 > Una empresa necesita generar al final del día un reporte con todas sus ventas.
 
 Podemos **acumular las ventas** y procesarlas juntas.
-
 :::
 
 ::: {.column width="50%"}
-
 ### Situación 2
 
 > Un banco necesita determinar si una transacción puede ser fraudulenta.
 
 El resultado debe obtenerse **prácticamente mientras ocurre la transacción**.
-
 :::
-
-:::
+:::::
 
 ## Diferentes necesidades
 
@@ -298,15 +276,11 @@ En el primer caso, los datos pueden **acumularse antes de ser procesados**.
 
 ![](../imagenes/procesamiento-batch.png)
 
-
-
 ## Diferentes necesidades {.unlisted}
 
 En el segundo, los datos necesitan ser procesados **conforme se generan**.
 
 ![](../imagenes/procesamiento-streaming.png)
-
-
 
 ## Tipos de procesamiento
 
@@ -314,10 +288,8 @@ Estas diferentes necesidades dan lugar a distintas formas de procesar los datos.
 
 En esta unidad estudiaremos principalmente:
 
-::: {.columns}
-
-::: {.column width="50%"}
-
+::::::: columns
+:::: {.column width="50%"}
 ### Procesamiento por lotes
 
 Los datos se acumulan durante un periodo y posteriormente se **procesan como un conjunto**.
@@ -325,11 +297,9 @@ Los datos se acumulan durante un periodo y posteriormente se **procesan como un 
 ::: {style="text-align: center;"}
 **Batch Processing**
 :::
+::::
 
-:::
-
-::: {.column width="50%"}
-
+:::: {.column width="50%"}
 ### Procesamiento en tiempo real
 
 Los datos se **procesan conforme se generan**, buscando obtener resultados inmediatamente o con muy poca demora.
@@ -337,10 +307,8 @@ Los datos se **procesan conforme se generan**, buscando obtener resultados inmed
 ::: {style="text-align: center;"}
 **Real-Time Processing**
 :::
-
-:::
-
-:::
+::::
+:::::::
 
 ## La idea importante
 

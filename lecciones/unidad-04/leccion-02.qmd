@@ -1,0 +1,226 @@
+---
+title: "Integración de datos"
+subtitle: "Procesos ETL y ELT"
+format: revealjs
+---
+
+
+
+## ETL y ELT
+
+ETL y ELT son procesos utilizados para **integrar datos provenientes de diferentes fuentes** y prepararlos para su almacenamiento y análisis.
+
+Ambos incluyen tres operaciones fundamentales:
+
+::: incremental
+- **Extracción (Extract):** obtener datos de una o varias fuentes.
+- **Transformación (Transform):** limpiar, corregir, combinar y estructurar los datos.
+- **Carga (Load):** almacenar los datos en un sistema de destino.
+:::
+
+::: fragment
+La principal diferencia entre ETL y ELT es el **orden en que se realizan estas operaciones**.
+:::
+
+## ETL: Extract, Transform, Load
+
+En ETL, los datos se **transforman antes de cargarse** en el sistema de destino.
+
+**Proceso general:**
+
+::: incremental
+1. **Extraer:** obtener información de archivos, bases de datos, APIs o sitios web.
+2. **Transformar:** limpiar, validar, combinar y modificar los datos.
+3. **Cargar:** almacenar los datos preparados en el destino.
+:::
+
+::: fragment
+**Ejemplo:** integrar registros de ventas de diferentes sucursales, estandarizar sus formatos y almacenarlos en una tabla consolidada.
+:::
+
+## ELT: Extract, Load, Transform
+
+En ELT, los datos se **cargan primero en el destino** y posteriormente se transforman utilizando sus capacidades de procesamiento.
+
+**Proceso general:**
+
+::: incremental
+1. **Extraer:** obtener los datos de las fuentes.
+2. **Cargar:** almacenar los datos originales en el destino.
+3. **Transformar:** procesar los datos dentro del sistema de destino.
+:::
+
+::: fragment
+**Ejemplo:** cargar registros de transacciones en un almacén de datos en la nube y utilizar SQL para generar tablas de análisis.
+:::
+
+## Principales diferencias
+
+| Característica | ETL | ELT |
+|---|---|---|
+| Orden | Extraer, transformar, cargar | Extraer, cargar, transformar |
+| Transformación | Antes de la carga | Después de la carga |
+| Procesamiento | Fuera del destino | Dentro del destino |
+| Datos originales | No necesariamente se conservan en el destino | Pueden conservarse |
+| Uso habitual | Integraciones con esquemas definidos | Plataformas modernas de datos |
+
+::: fragment
+**¿Cuál es mejor?** Depende del volumen de datos, la infraestructura disponible y las necesidades del proyecto.
+:::
+
+## Herramientas para ETL y ELT
+
+Existen diferentes herramientas para desarrollar, automatizar y administrar procesos de integración de datos.
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+**Procesamiento y transformación**
+
+- **Python:** pipelines personalizados con pandas y otras bibliotecas.
+- **Power Query:** preparación de datos mediante una interfaz gráfica.
+- **dbt:** transformaciones dentro de almacenes de datos.
+
+:::
+
+::: {.column width="50%"}
+
+**Integración y orquestación**
+
+- **Apache NiFi:** automatización de flujos de datos.
+- **Azure Data Factory:** integración y orquestación en la nube.
+- **Apache Airflow:** programación y coordinación de pipelines.
+
+:::
+
+:::
+
+::: fragment
+Las herramientas pueden especializarse en **diferentes etapas del proceso** y utilizarse conjuntamente.
+:::
+
+## ¿Qué es un pipeline de datos?
+
+Un pipeline es una **secuencia organizada de operaciones** que permite mover y procesar datos desde una fuente hasta un destino.
+
+En un pipeline ETL podemos realizar:
+
+::: incremental
+1. Obtener los datos de una fuente.
+2. Limpiar registros inconsistentes o incompletos.
+3. Corregir formatos y tipos de datos.
+4. Transformar e integrar la información.
+5. Almacenar los resultados.
+:::
+
+::: fragment
+Cada operación produce datos que pueden utilizarse como **entrada de la siguiente etapa**.
+:::
+
+## Pipeline ETL en Python
+
+Supongamos que queremos **extraer información de una página web**, procesarla y generar un archivo para su análisis.
+
+```{.python code-line-numbers="true"}
+URL = "https://ejemplo.com/eventos"
+
+def extraer_datos(url):
+    # Obtener el contenido de la página web
+    ...
+
+def limpiar_datos(datos):
+    # Tratar valores faltantes y duplicados
+    ...
+
+def corregir_datos(datos):
+    # Corregir tipos y formatos
+    ...
+
+def transformar_datos(datos):
+    # Calcular variables y estructurar los datos
+    ...
+
+def cargar_datos(datos, destino):
+    # Guardar los datos procesados
+    ...
+```
+
+## Pipeline ETL en Python {.unlisted}
+
+Podemos organizar las operaciones anteriores dentro de una **función que coordine todo el proceso**.
+
+```{.python code-line-numbers="true"}
+def pipeline_etl():
+
+    datos = extraer_datos(URL)
+
+    datos = limpiar_datos(datos)
+
+    datos = corregir_datos(datos)
+
+    datos = transformar_datos(datos)
+
+    cargar_datos(datos, "eventos.csv")
+
+
+pipeline_etl()
+```
+
+::: fragment
+La función `pipeline_etl()` define **el orden de ejecución**, mientras que cada función realiza una operación específica.
+:::
+
+## ¿Cómo diseñar un pipeline ETL?
+
+Para diseñar un pipeline ETL debemos **identificar las operaciones necesarias para obtener, preparar y almacenar los datos**, de acuerdo con el objetivo del análisis.
+
+**Ejemplo**: Semana de Ingeniería
+
+| Etapa | Operación |
+|---|---|
+| Extracción | Obtener registros de eventos y asistentes |
+| Limpieza | Revisar duplicados y valores faltantes |
+| Corrección | Estandarizar fechas y nombres |
+| Transformación | Integrar tablas y calcular indicadores |
+| Carga | Guardar datos preparados para Power BI |
+
+::: fragment
+Cada etapa debe tener un **propósito definido** y producir los datos necesarios para la siguiente operación.
+:::
+
+## ¿Cómo diseñar un pipeline ELT?
+
+Para diseñar un pipeline ELT debemos **identificar las fuentes de datos, definir dónde se almacenarán y establecer las transformaciones que se realizarán dentro del sistema de destino**.
+
+**Ejemplo**: Semana de Ingeniería
+
+| Etapa | Operación |
+|---|---|
+| Extracción | Obtener registros de eventos y asistentes |
+| Carga | Almacenar los datos originales en una base de datos |
+| Limpieza | Revisar duplicados y valores faltantes |
+| Corrección | Estandarizar fechas y nombres |
+| Transformación | Integrar tablas y calcular indicadores |
+
+::: fragment
+A diferencia de ETL, las transformaciones se realizan **después de cargar los datos**, aprovechando las capacidades de procesamiento del sistema de destino.
+:::
+
+## Actividad: diseñar un pipeline ETL
+
+Cada equipo deberá definir el proceso de preparación de datos para su **dashboard de la Semana de Ingeniería**.
+
+1. Identificar las fuentes de datos disponibles.
+2. Determinar qué información necesitan extraer.
+3. Definir las operaciones de limpieza y corrección.
+4. Identificar las transformaciones necesarias.
+5. Establecer el formato y destino de los datos.
+6. Organizar las operaciones en un pipeline.
+
+
+**Entregable:** diagrama del pipeline ETL y descripción breve de las operaciones que realizará cada etapa.
+
+## Pregunta
+
+![](../imagenes/mister.png){width="50%"}
