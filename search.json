@@ -1047,7 +1047,7 @@
     "href": "lecciones/index.html",
     "title": "Lecciones",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos"
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL y ELT\nTransformación de datos\nHerramientas de integración de datos"
   },
   {
     "objectID": "actividades/unidad-01/actividad-04.html",
@@ -1859,7 +1859,7 @@
     "href": "lecciones/unidad-03/leccion-01.html#ejemplo-1",
     "title": "Procesamiento de Datos",
     "section": "Ejemplo",
-    "text": "Ejemplo\nPara responder la pregunta podemos realizar diferentes operaciones:\n\nCalcular el importe de cada venta.\n\n\\[\n\\text{importe} = \\text{cantidad} \\times \\text{precio}\n\\]\n\nAgrupar las ventas por producto.\nSumar los importes de cada grupo."
+    "text": "Ejemplo\nPara responder la pregunta podemos realizar diferentes operaciones:\n\nCalcular el importe de cada venta.\n\n\\[\\text{importe} = \\text{cantidad} \\times \\text{precio}\\]\n\nAgrupar las ventas por producto.\nSumar los importes de cada grupo."
   },
   {
     "objectID": "lecciones/unidad-03/leccion-01.html#ejemplo-2",
