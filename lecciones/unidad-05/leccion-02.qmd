@@ -1,0 +1,231 @@
+---
+title: "Calidad y gobernanza de datos"
+subtitle: "Calidad de los datos"
+format: revealjs
+---
+
+## Calidad de datos
+
+La **calidad de datos (Data Quality)** se refiere al grado en que los datos cumplen los **requisitos necesarios para su uso**.
+
+Un conjunto de datos puede presentar problemas que afecten los resultados de un análisis.
+
+Para evaluar su calidad podemos considerar diferentes **dimensiones**.
+
+## Dimensiones de la calidad de datos
+
+| Dimensión | Pregunta principal |
+|---|---|
+| **Exactitud** | ¿Los datos representan correctamente la realidad? |
+| **Integridad** | ¿Los datos cumplen las reglas establecidas? |
+| **Consistencia** | ¿Los datos son coherentes entre sí? |
+| **Actualidad** | ¿Los datos están suficientemente actualizados? |
+| **Completitud** | ¿Tenemos toda la información necesaria? |
+
+## Exactitud (Accuracy)
+
+La **exactitud** indica qué tan correctamente los datos representan los **valores reales**.
+
+Por ejemplo, una empresa registra el precio de un producto:
+
+| Producto | Precio real | Precio registrado |
+|---|---:|---:|
+| Monitor | $850 | $580 |
+| Teclado | $400 | $400 |
+| Mouse | $250 | $520 |
+
+
+Aunque todos los valores tienen un formato válido, algunos **no representan correctamente la realidad**.
+
+
+## ¿Cómo evaluar la exactitud?
+
+Para determinar si los datos son exactos, necesitamos **compararlos con una fuente de referencia confiable**.
+
+Por ejemplo:
+
+
+- Comparar precios registrados con el catálogo oficial.
+- Verificar direcciones con información proporcionada por los clientes.
+- Comparar cantidades registradas con inventarios físicos.
+- Contrastar transacciones con comprobantes originales.
+
+Un dato puede cumplir todas las reglas de validación y aun así ser **incorrecto**.
+
+
+## Integridad (Integrity)
+
+La **integridad** se refiere al cumplimiento de las **reglas y restricciones** que deben satisfacer los datos.
+
+Por ejemplo, una base de datos establece que:
+
+- La edad debe ser mayor o igual a cero.
+- El correo electrónico debe ser obligatorio.
+- El identificador de cada cliente debe ser único.
+
+Un registro con `edad = -15` viola una regla de integridad, aunque el campo contenga un número.
+
+## ¿Cómo evaluar la integridad?
+
+Podemos verificar si los registros cumplen las restricciones establecidas.
+
+Por ejemplo, para identificar edades inválidas:
+
+```sql
+SELECT * FROM clientes WHERE edad < 0;
+```
+También podemos utilizar restricciones en la base de datos:
+
+```sql
+CREATE TABLE clientes (
+    id INTEGER PRIMARY KEY,
+    email TEXT NOT NULL UNIQUE,
+    edad INTEGER CHECK (edad >= 0)
+);
+```
+Las restricciones permiten **prevenir ciertos errores desde el momento en que se registran los datos**.
+
+
+## Consistencia (Consistency)
+
+La **consistencia** indica que los datos no presentan **contradicciones entre registros, sistemas o fuentes**.
+
+Por ejemplo:
+
+| Sistema | Cliente | Ciudad |
+|---|---|---|
+| Ventas | C001 | Ciudad Juárez |
+| Facturación | C001 | Monterrey |
+
+
+Si ambos sistemas deben reflejar el mismo domicilio actual, existe una **inconsistencia**.
+
+
+## ¿Cómo evaluar la consistencia?
+
+Podemos comparar registros que deberían contener la misma información.
+
+Por ejemplo, si tenemos dos tablas con información de clientes:
+
+```sql
+SELECT v.cliente_id, v.ciudad, f.ciudad
+FROM ventas_clientes AS v
+JOIN facturacion_clientes AS f ON v.cliente_id = f.cliente_id
+WHERE v.ciudad <> f.ciudad;
+```
+Esta consulta permite identificar clientes con **ciudades diferentes entre ambos sistemas**, cuando deberían coincidir.
+
+## Actualidad (Timeliness)
+
+La **actualidad** indica si los datos están suficientemente actualizados para el propósito en que serán utilizados.
+
+Por ejemplo, una empresa consulta su inventario:
+
+| Concepto | Valor |
+|---|---|
+| Inventario real | 5 unidades |
+| Inventario registrado | 40 unidades |
+| Última actualización | Hace 15 días |
+
+Los datos pueden haber sido correctos anteriormente, pero **ya no reflejan la situación actual**.
+
+## ¿Cómo evaluar la actualidad?
+
+Podemos establecer un **tiempo máximo aceptable desde la última actualización**.
+
+Por ejemplo, una empresa requiere que sus registros de inventario se actualicen al menos una vez cada 24 horas.
+
+```sql
+SELECT * FROM inventario
+WHERE fecha_actualizacion < datetime('now', '-24 hours');
+```
+
+Esta consulta identifica registros cuya última actualización ocurrió hace más de 24 horas.
+
+La frecuencia necesaria de actualización **depende del uso de los datos**.
+
+
+## Completitud (Completeness)
+
+La **completitud** indica si están disponibles todos los datos necesarios para realizar una tarea o análisis.
+
+Por ejemplo:
+
+| Cliente | Nombre | Correo | Teléfono |
+|---|---|---|---|
+| C001 | Ana | ana@mail.com | 6561234567 |
+| C002 | Luis | NULL | 6569876543 |
+| C003 | Sofía | sofia@mail.com | NULL |
+
+La ausencia de información puede limitar ciertos procesos.
+
+Sin embargo, **no todos los campos necesitan estar completos**: depende de los requisitos del problema.
+
+
+## ¿Cómo evaluar la completitud?
+
+Podemos identificar registros con información faltante.
+
+Por ejemplo:
+
+```sql
+SELECT * FROM clientes WHERE email IS NULL;
+```
+
+También podemos calcular el **porcentaje de registros que contienen un valor**:
+
+$$
+\text{Completitud} =
+\frac{\text{Registros con valor}}
+{\text{Total de registros}}
+\times 100
+$$
+
+Si 90 de 100 clientes tienen correo registrado, la **completitud del campo email es del 90%**.
+
+
+## Las dimensiones no son independientes
+
+Un mismo conjunto de datos puede presentar problemas en diferentes dimensiones.
+
+| Problema | Dimensión |
+|---|---|
+| Precio registrado incorrectamente | Exactitud |
+| Edad negativa | Integridad |
+| Domicilios contradictorios | Consistencia |
+| Inventario desactualizado | Actualidad |
+| Correo electrónico faltante | Completitud |
+
+
+**Cumplir una dimensión no garantiza cumplir las demás.**
+
+
+## Actividad: Dimensiones de calidad de datos
+
+En una actividad anterior, analizaron el conjunto de datos de la **Semana de Ingeniería** e identificaron diferentes problemas en los registros.
+
+Ahora, utilizando los resultados de ese análisis:
+
+1. Recuperen los problemas de calidad que identificaron.
+2. Determinen a qué **dimensión de calidad de datos** corresponde cada problema.
+3. Justifiquen brevemente su clasificación.
+
+## Actividad: Dimensiones de calidad de datos {.unlisted}
+
+### Entregable
+
+Presenta tus resultados en una tabla con la siguiente estructura:
+
+| Problema identificado | Dimensión de calidad | Justificación |
+|---|---|---|
+| ... | ... | ... |
+
+**Consideraciones:**
+
+- Un problema puede afectar más de una dimensión.
+- Si no cuentas con información suficiente para evaluar alguna dimensión, indícalo y explica por qué.
+
+
+## ¿Preguntas?
+
+![](../imagenes/mister.png){width="50%"}

@@ -1047,7 +1047,7 @@
     "href": "lecciones/index.html",
     "title": "Lecciones",
     "section": "",
-    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL\nTransformación de datos\nHerramientas de integración de datos"
+    "text": "Unidad I. Introducción a la ingeniería de datos\n\nIntroducción a los datos\nFormatos de datos\nSistemas y fuentes de datos\nCiclo de vida de los datos\nRoles en el ecosistema de datos\n\n\n\nUnidad II. Tecnologías de almacenamiento de datos\n\nIntroducción al almacenamiento de datos\nBases de datos relacionales\n\nDiagrama ER y Modelo Relacional\nImplemenación en SQLite\nManipulación y Consultas\nObjetos y Automatización\n\n\n\n\nUnidad III. Tecnologías de procesamiento de datos\n\nIntroducción al procesamiento de datos\nProcesamiento por lotes\nProcesamiento en tiempo real\nArquitecturas para el procesamiento de datos\n\n\n\nUnidad IV. Integración de datos y ETL\n\nIntroducción a la integración de datos\nProcesos ETL y ELT\nTransformación de datos\nHerramientas de integración de datos"
   },
   {
     "objectID": "actividades/unidad-01/actividad-04.html",
@@ -1859,7 +1859,7 @@
     "href": "lecciones/unidad-03/leccion-01.html#ejemplo-1",
     "title": "Procesamiento de Datos",
     "section": "Ejemplo",
-    "text": "Ejemplo\nPara responder la pregunta podemos realizar diferentes operaciones:\n\nCalcular el importe de cada venta.\n\n\\[\n\\text{importe} = \\text{cantidad} \\times \\text{precio}\n\\]\n\nAgrupar las ventas por producto.\nSumar los importes de cada grupo."
+    "text": "Ejemplo\nPara responder la pregunta podemos realizar diferentes operaciones:\n\nCalcular el importe de cada venta.\n\n\\[\\text{importe} = \\text{cantidad} \\times \\text{precio}\\]\n\nAgrupar las ventas por producto.\nSumar los importes de cada grupo."
   },
   {
     "objectID": "lecciones/unidad-03/leccion-01.html#ejemplo-2",
@@ -2168,5 +2168,194 @@
     "title": "Laboratorio 4. Ciclo de vida de los datos",
     "section": "Ideas clave:",
     "text": "Ideas clave:\n\nEl ciclo de vida de los datos está formado por diferentes etapas, cada una con un propósito específico.\nLos datos se transforman continuamente para responder preguntas o resolver problemas.\nLos resultados de un análisis también son datos que pueden almacenarse, compartirse o eliminarse."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#calidad-de-datos",
+    "href": "lecciones/unidad-05/leccion-02.html#calidad-de-datos",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Calidad de datos",
+    "text": "Calidad de datos\nLa calidad de datos (Data Quality) se refiere al grado en que los datos cumplen los requisitos necesarios para su uso.\nUn conjunto de datos puede presentar problemas que afecten los resultados de un análisis.\nPara evaluar su calidad podemos considerar diferentes dimensiones."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#dimensiones-de-la-calidad-de-datos",
+    "href": "lecciones/unidad-05/leccion-02.html#dimensiones-de-la-calidad-de-datos",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Dimensiones de la calidad de datos",
+    "text": "Dimensiones de la calidad de datos\n\n\n\nDimensión\nPregunta principal\n\n\n\n\nExactitud\n¿Los datos representan correctamente la realidad?\n\n\nIntegridad\n¿Los datos cumplen las reglas establecidas?\n\n\nConsistencia\n¿Los datos son coherentes entre sí?\n\n\nActualidad\n¿Los datos están suficientemente actualizados?\n\n\nCompletitud\n¿Tenemos toda la información necesaria?"
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#exactitud-accuracy",
+    "href": "lecciones/unidad-05/leccion-02.html#exactitud-accuracy",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Exactitud (Accuracy)",
+    "text": "Exactitud (Accuracy)\nLa exactitud indica qué tan correctamente los datos representan los valores reales.\nPor ejemplo, una empresa registra el precio de un producto:\n\n\n\nProducto\nPrecio real\nPrecio registrado\n\n\n\n\nMonitor\n$850\n$580\n\n\nTeclado\n$400\n$400\n\n\nMouse\n$250\n$520\n\n\n\nAunque todos los valores tienen un formato válido, algunos no representan correctamente la realidad."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-exactitud",
+    "href": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-exactitud",
+    "title": "Calidad y gobernanza de datos",
+    "section": "¿Cómo evaluar la exactitud?",
+    "text": "¿Cómo evaluar la exactitud?\nPara determinar si los datos son exactos, necesitamos compararlos con una fuente de referencia confiable.\nPor ejemplo:\n\nComparar precios registrados con el catálogo oficial.\nVerificar direcciones con información proporcionada por los clientes.\nComparar cantidades registradas con inventarios físicos.\nContrastar transacciones con comprobantes originales.\n\nUn dato puede cumplir todas las reglas de validación y aun así ser incorrecto."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#integridad-integrity",
+    "href": "lecciones/unidad-05/leccion-02.html#integridad-integrity",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Integridad (Integrity)",
+    "text": "Integridad (Integrity)\nLa integridad se refiere al cumplimiento de las reglas y restricciones que deben satisfacer los datos.\nPor ejemplo, una base de datos establece que:\n\nLa edad debe ser mayor o igual a cero.\nEl correo electrónico debe ser obligatorio.\nEl identificador de cada cliente debe ser único.\n\nUn registro con edad = -15 viola una regla de integridad, aunque el campo contenga un número."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-integridad",
+    "href": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-integridad",
+    "title": "Calidad y gobernanza de datos",
+    "section": "¿Cómo evaluar la integridad?",
+    "text": "¿Cómo evaluar la integridad?\nPodemos verificar si los registros cumplen las restricciones establecidas.\nPor ejemplo, para identificar edades inválidas:\nSELECT * FROM clientes WHERE edad &lt; 0;\nTambién podemos utilizar restricciones en la base de datos:\nCREATE TABLE clientes (\n    id INTEGER PRIMARY KEY,\n    email TEXT NOT NULL UNIQUE,\n    edad INTEGER CHECK (edad &gt;= 0)\n);\nLas restricciones permiten prevenir ciertos errores desde el momento en que se registran los datos."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#consistencia-consistency",
+    "href": "lecciones/unidad-05/leccion-02.html#consistencia-consistency",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Consistencia (Consistency)",
+    "text": "Consistencia (Consistency)\nLa consistencia indica que los datos no presentan contradicciones entre registros, sistemas o fuentes.\nPor ejemplo:\n\n\n\nSistema\nCliente\nCiudad\n\n\n\n\nVentas\nC001\nCiudad Juárez\n\n\nFacturación\nC001\nMonterrey\n\n\n\nSi ambos sistemas deben reflejar el mismo domicilio actual, existe una inconsistencia."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-consistencia",
+    "href": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-consistencia",
+    "title": "Calidad y gobernanza de datos",
+    "section": "¿Cómo evaluar la consistencia?",
+    "text": "¿Cómo evaluar la consistencia?\nPodemos comparar registros que deberían contener la misma información.\nPor ejemplo, si tenemos dos tablas con información de clientes:\nSELECT v.cliente_id, v.ciudad, f.ciudad\nFROM ventas_clientes AS v\nJOIN facturacion_clientes AS f ON v.cliente_id = f.cliente_id\nWHERE v.ciudad &lt;&gt; f.ciudad;\nEsta consulta permite identificar clientes con ciudades diferentes entre ambos sistemas, cuando deberían coincidir."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#actualidad-timeliness",
+    "href": "lecciones/unidad-05/leccion-02.html#actualidad-timeliness",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Actualidad (Timeliness)",
+    "text": "Actualidad (Timeliness)\nLa actualidad indica si los datos están suficientemente actualizados para el propósito en que serán utilizados.\nPor ejemplo, una empresa consulta su inventario:\n\n\n\nConcepto\nValor\n\n\n\n\nInventario real\n5 unidades\n\n\nInventario registrado\n40 unidades\n\n\nÚltima actualización\nHace 15 días\n\n\n\nLos datos pueden haber sido correctos anteriormente, pero ya no reflejan la situación actual."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-actualidad",
+    "href": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-actualidad",
+    "title": "Calidad y gobernanza de datos",
+    "section": "¿Cómo evaluar la actualidad?",
+    "text": "¿Cómo evaluar la actualidad?\nPodemos establecer un tiempo máximo aceptable desde la última actualización.\nPor ejemplo, una empresa requiere que sus registros de inventario se actualicen al menos una vez cada 24 horas.\nSELECT * FROM inventario\nWHERE fecha_actualizacion &lt; datetime('now', '-24 hours');\nEsta consulta identifica registros cuya última actualización ocurrió hace más de 24 horas.\nLa frecuencia necesaria de actualización depende del uso de los datos."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#completitud-completeness",
+    "href": "lecciones/unidad-05/leccion-02.html#completitud-completeness",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Completitud (Completeness)",
+    "text": "Completitud (Completeness)\nLa completitud indica si están disponibles todos los datos necesarios para realizar una tarea o análisis.\nPor ejemplo:\n\n\n\nCliente\nNombre\nCorreo\nTeléfono\n\n\n\n\nC001\nAna\nana@mail.com\n6561234567\n\n\nC002\nLuis\nNULL\n6569876543\n\n\nC003\nSofía\nsofia@mail.com\nNULL\n\n\n\nLa ausencia de información puede limitar ciertos procesos.\nSin embargo, no todos los campos necesitan estar completos: depende de los requisitos del problema."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-completitud",
+    "href": "lecciones/unidad-05/leccion-02.html#cómo-evaluar-la-completitud",
+    "title": "Calidad y gobernanza de datos",
+    "section": "¿Cómo evaluar la completitud?",
+    "text": "¿Cómo evaluar la completitud?\nPodemos identificar registros con información faltante.\nPor ejemplo:\nSELECT * FROM clientes WHERE email IS NULL;\nTambién podemos calcular el porcentaje de registros que contienen un valor:\n\\[\n\\text{Completitud} =\n\\frac{\\text{Registros con valor}}\n{\\text{Total de registros}}\n\\times 100\n\\]\nSi 90 de 100 clientes tienen correo registrado, la completitud del campo email es del 90%."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#las-dimensiones-no-son-independientes",
+    "href": "lecciones/unidad-05/leccion-02.html#las-dimensiones-no-son-independientes",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Las dimensiones no son independientes",
+    "text": "Las dimensiones no son independientes\nUn mismo conjunto de datos puede presentar problemas en diferentes dimensiones.\nPor ejemplo:\n\n\n\nProblema\nDimensión\n\n\n\n\nPrecio registrado incorrectamente\nExactitud\n\n\nEdad negativa\nIntegridad\n\n\nDomicilios contradictorios\nConsistencia\n\n\nInventario desactualizado\nActualidad\n\n\nCorreo electrónico faltante\nCompletitud\n\n\n\nCumplir una dimensión no garantiza cumplir las demás."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#actividad-dimensiones-de-calidad-de-datos",
+    "href": "lecciones/unidad-05/leccion-02.html#actividad-dimensiones-de-calidad-de-datos",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Actividad: Dimensiones de calidad de datos",
+    "text": "Actividad: Dimensiones de calidad de datos\nEn una actividad anterior, analizaron el conjunto de datos de la Semana de Ingeniería e identificaron diferentes problemas en los registros.\nAhora, utilizando los resultados de ese análisis:\n\nRecuperen los problemas de calidad que identificaron.\nDeterminen a qué dimensión de calidad de datos corresponde cada problema.\nJustifiquen brevemente tu clasificación."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#actividad-dimensiones-de-calidad-de-datos-1",
+    "href": "lecciones/unidad-05/leccion-02.html#actividad-dimensiones-de-calidad-de-datos-1",
+    "title": "Calidad y gobernanza de datos",
+    "section": "Actividad: Dimensiones de calidad de datos",
+    "text": "Actividad: Dimensiones de calidad de datos\nEntregable\nPresenta tus resultados en una tabla con la siguiente estructura:\n\n\n\nProblema identificado\nDimensión de calidad\nJustificación\n\n\n\n\n…\n…\n…\n\n\n\nConsideraciones:\n\nUn problema puede afectar más de una dimensión.\nNo es necesario realizar nuevamente el análisis ni corregir los datos.\nSi no cuentas con información suficiente para evaluar alguna dimensión, indícalo y explica por qué."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-02.html#preguntas",
+    "href": "lecciones/unidad-05/leccion-02.html#preguntas",
+    "title": "Calidad y gobernanza de datos",
+    "section": "¿Preguntas?",
+    "text": "¿Preguntas?"
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#importancia-de-la-calidad-y-gobernanza-de-datos",
+    "href": "lecciones/unidad-05/leccion-01.html#importancia-de-la-calidad-y-gobernanza-de-datos",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "Importancia de la calidad y gobernanza de datos",
+    "text": "Importancia de la calidad y gobernanza de datos\nLas organizaciones utilizan datos para planificar operaciones, evaluar resultados y tomar decisiones.\nSin embargo, estas actividades dependen de que la información sea confiable y esté administrada adecuadamente.\nLa calidad y gobernanza de datos permiten:\n\nReducir errores en los procesos empresariales.\nMejorar la confiabilidad de reportes y análisis.\nEstablecer responsabilidades sobre el manejo de la información.\nFacilitar la toma de decisiones basadas en datos."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#impacto-en-las-operaciones-empresariales",
+    "href": "lecciones/unidad-05/leccion-01.html#impacto-en-las-operaciones-empresariales",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "Impacto en las operaciones empresariales",
+    "text": "Impacto en las operaciones empresariales\nLos problemas de calidad pueden afectar directamente las actividades de una organización.\nPor ejemplo:\n\nInventarios: registros incorrectos pueden provocar compras innecesarias o falta de productos.\nVentas: transacciones duplicadas pueden generar reportes de ingresos incorrectos.\nClientes: información incompleta puede dificultar la comunicación y atención.\n\nEstos problemas pueden generar costos adicionales, retrasos y pérdida de eficiencia."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#el-papel-de-la-gobernanza",
+    "href": "lecciones/unidad-05/leccion-01.html#el-papel-de-la-gobernanza",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "El papel de la gobernanza",
+    "text": "El papel de la gobernanza\nLa calidad de los datos no depende únicamente de corregir errores cuando aparecen.\nTambién es necesario establecer reglas y responsabilidades que permitan prevenirlos y detectarlos.\n\nDefinir reglas: establecer qué información debe registrarse y bajo qué condiciones.\nAsignar responsabilidades: determinar quién administra y valida los datos.\nControlar el acceso: establecer quién puede consultar o modificar la información.\nSupervisar la calidad: identificar errores y verificar el cumplimiento de los requisitos."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#definir-reglas",
+    "href": "lecciones/unidad-05/leccion-01.html#definir-reglas",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "Definir reglas",
+    "text": "Definir reglas\nLas organizaciones establecen reglas para el registro y almacenamiento de los datos.\nPor ejemplo, en una base de datos de clientes podemos establecer que:\n\nEl correo electrónico sea obligatorio.\nCada cliente tenga un identificador único.\nLa edad no pueda ser negativa."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#definir-reglas-1",
+    "href": "lecciones/unidad-05/leccion-01.html#definir-reglas-1",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "Definir reglas",
+    "text": "Definir reglas\nEstas reglas pueden implementarse directamente en la base de datos:\nCREATE TABLE clientes (\n    id INTEGER PRIMARY KEY,\n    email TEXT NOT NULL UNIQUE,\n    edad INTEGER CHECK (edad &gt;= 0)\n);\nDe esta manera, el sistema puede rechazar registros que incumplan las restricciones."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#asignar-responsabilidades",
+    "href": "lecciones/unidad-05/leccion-01.html#asignar-responsabilidades",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "Asignar responsabilidades",
+    "text": "Asignar responsabilidades\nLa gobernanza también establece quién es responsable de administrar, mantener y validar los datos.\nPor ejemplo, en una empresa:\n\n\n\nÁrea\nResponsabilidad\n\n\n\n\nVentas\nRegistrar correctamente los datos de clientes.\n\n\nRecursos Humanos\nMantener actualizada la información de empleados.\n\n\nTI\nAdministrar las bases de datos y sus respaldos.\n\n\nAnalítica\nIdentificar y reportar problemas de calidad.\n\n\n\nAsignar responsabilidades permite identificar quién debe intervenir cuando se detecta un problema."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#controlar-el-acceso",
+    "href": "lecciones/unidad-05/leccion-01.html#controlar-el-acceso",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "Controlar el acceso",
+    "text": "Controlar el acceso\nNo todos los usuarios necesitan consultar o modificar la misma información.\nPor ejemplo, en una base de datos de empleados:\n\n\n\nUsuario\nConsultar\nModificar\n\n\n\n\nRecursos Humanos\nSí\nSí\n\n\nGerencia\nSí\nNo\n\n\nVentas\nNo\nNo\n\n\n\nEstos permisos pueden administrarse mediante roles y privilegios."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#supervisar-la-calidad",
+    "href": "lecciones/unidad-05/leccion-01.html#supervisar-la-calidad",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "Supervisar la calidad",
+    "text": "Supervisar la calidad\nLa gobernanza también requiere establecer mecanismos para detectar problemas de calidad de manera continua.\nPor ejemplo, podemos ejecutar consultas que identifiquen registros que no cumplen ciertos requisitos.\nDetectar correos faltantes:\nSELECT * FROM clientes WHERE email IS NULL;\nDetectar valores fuera de un rango permitido:\nSELECT * FROM productos WHERE precio &lt; 0 OR stock &lt; 0;"
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#supervisar-la-calidad-1",
+    "href": "lecciones/unidad-05/leccion-01.html#supervisar-la-calidad-1",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "Supervisar la calidad",
+    "text": "Supervisar la calidad\nDetectar posibles duplicados:\nSELECT email, COUNT(*) FROM clientes\nGROUP BY email HAVING COUNT(*) &gt; 1;\nEstas validaciones pueden incorporarse en pipelines de datos para ejecutarse automáticamente y generar alertas cuando se detecten problemas."
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#preguntas",
+    "href": "lecciones/unidad-05/leccion-01.html#preguntas",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "¿Preguntas?",
+    "text": "¿Preguntas?"
+  },
+  {
+    "objectID": "lecciones/unidad-05/leccion-01.html#qué-sigue",
+    "href": "lecciones/unidad-05/leccion-01.html#qué-sigue",
+    "title": "Calidad y Gobernanza de Datos",
+    "section": "¿Qué sigue?",
+    "text": "¿Qué sigue?\nLa gobernanza establece las reglas y responsabilidades para administrar los datos. Pero, ¿cómo podemos determinar si nuestros datos son confiables?\nEn la siguiente lección estudiaremos las dimensiones de la calidad de datos y cómo utilizarlas para identificar problemas en la información.\nCalidad de datos"
   }
 ]

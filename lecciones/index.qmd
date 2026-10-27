@@ -36,11 +36,10 @@ title: "Lecciones"
 - Transformación de datos
 - Herramientas de integración de datos
 
-<!--
 # Unidad V. Calidad y gobernanza de datos
 
-- Importancia de la calidad y gobernanza de datos
-- Calidad de los datos
+- [Importancia de la calidad y gobernanza de datos](unidad-05/leccion-01.qmd)
+- [Calidad de los datos](unidad-05/leccion-02.qmd)
 - Gestión de la calidad de datos
 - Gobernanza de datos
 

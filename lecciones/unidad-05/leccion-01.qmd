@@ -1,0 +1,152 @@
+---
+title: "Calidad y Gobernanza de Datos"
+subtitle: "Importancia de la calidad y gobernanza de datos"
+format: revealjs
+---
+
+## Importancia de la calidad y gobernanza de datos
+
+Las organizaciones utilizan datos para **planificar operaciones, evaluar resultados y tomar decisiones**.
+
+Sin embargo, estas actividades dependen de que la información sea confiable y esté administrada adecuadamente.
+
+La calidad y gobernanza de datos permiten:
+
+::: incremental
+
+- **Reducir errores** en los procesos empresariales.
+- **Mejorar la confiabilidad** de reportes y análisis.
+- **Establecer responsabilidades** sobre el manejo de la información.
+- **Facilitar la toma de decisiones** basadas en datos.
+
+:::
+
+## Impacto en las operaciones empresariales
+
+Los problemas de calidad pueden afectar directamente las actividades de una organización.
+
+Por ejemplo:
+
+- **Inventarios:** registros incorrectos pueden provocar compras innecesarias o falta de productos.
+- **Ventas:** transacciones duplicadas pueden generar reportes de ingresos incorrectos.
+- **Clientes:** información incompleta puede dificultar la comunicación y atención.
+
+Estos problemas pueden generar **costos adicionales, retrasos y pérdida de eficiencia**.
+
+
+## El papel de la gobernanza
+
+La calidad de los datos no depende únicamente de corregir errores cuando aparecen.
+
+También es necesario establecer **reglas y responsabilidades** que permitan prevenirlos y detectarlos.
+
+::: incremental
+
+- **Definir reglas:** establecer qué información debe registrarse y bajo qué condiciones.
+- **Asignar responsabilidades:** determinar quién administra y valida los datos.
+- **Controlar el acceso:** establecer quién puede consultar o modificar la información.
+- **Supervisar la calidad:** identificar errores y verificar el cumplimiento de los requisitos.
+
+:::
+
+
+
+## Definir reglas
+
+Las organizaciones establecen **reglas para el registro y almacenamiento de los datos**.
+
+Por ejemplo, en una base de datos de clientes podemos establecer que:
+
+- El correo electrónico sea obligatorio.
+- Cada cliente tenga un identificador único.
+- La edad no pueda ser negativa.
+
+## Definir reglas {.unlisted}
+
+Estas reglas pueden implementarse directamente en la base de datos:
+
+```sql
+CREATE TABLE clientes (
+    id INTEGER PRIMARY KEY,
+    email TEXT NOT NULL UNIQUE,
+    edad INTEGER CHECK (edad >= 0)
+);
+```
+
+De esta manera, el sistema puede **rechazar registros que incumplan las restricciones**.
+
+## Asignar responsabilidades
+
+La gobernanza también establece **quién es responsable de administrar, mantener y validar los datos**.
+
+Por ejemplo, en una empresa:
+
+| Área | Responsabilidad |
+|---|---|
+| Ventas | Registrar correctamente los datos de clientes. |
+| Recursos Humanos | Mantener actualizada la información de empleados. |
+| TI | Administrar las bases de datos y sus respaldos. |
+| Analítica | Identificar y reportar problemas de calidad. |
+
+
+Asignar responsabilidades permite **identificar quién debe intervenir cuando se detecta un problema**.
+
+
+
+## Controlar el acceso
+
+No todos los usuarios necesitan **consultar o modificar la misma información**.
+
+Por ejemplo, en una base de datos de empleados:
+
+| Usuario | Consultar | Modificar |
+|---|---|---|
+| Recursos Humanos | Sí | Sí |
+| Gerencia | Sí | No |
+| Ventas | No | No |
+
+Estos permisos pueden administrarse mediante **roles y privilegios**.
+
+
+## Supervisar la calidad
+
+La gobernanza también requiere establecer mecanismos para **detectar problemas de calidad de manera continua**.
+
+Por ejemplo, podemos ejecutar consultas que identifiquen registros que no cumplen ciertos requisitos.
+
+**Detectar correos faltantes:**
+
+```sql
+SELECT * FROM clientes WHERE email IS NULL;
+```
+
+**Detectar valores fuera de un rango permitido:**
+
+```sql
+SELECT * FROM productos WHERE precio < 0 OR stock < 0;
+```
+
+## Supervisar la calidad {.unlisted}
+
+**Detectar posibles duplicados:**
+
+```sql
+SELECT email, COUNT(*) FROM clientes
+GROUP BY email HAVING COUNT(*) > 1;
+```
+
+Estas validaciones pueden incorporarse en **pipelines de datos** para ejecutarse automáticamente y generar alertas cuando se detecten problemas.
+
+## ¿Preguntas?
+
+![](../imagenes/mister.png){width="50%"}
+
+
+
+## ¿Qué sigue?
+
+La gobernanza establece las reglas y responsabilidades para administrar los datos. Pero, **¿cómo podemos determinar si nuestros datos son confiables?**
+
+En la siguiente lección estudiaremos las **dimensiones de la calidad de datos** y cómo utilizarlas para identificar problemas en la información.
+
+[**Calidad de datos**](leccion-02.qmd)

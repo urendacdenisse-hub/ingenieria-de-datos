@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Unidad IV. Integración de datos y ETL</h1>
 <ul>
 <li><a href="../lecciones/unidad-04/leccion-01.html">Introducción a la integración de datos</a></li>
-<li>Procesos ETL</li>
+<li><a href="../lecciones/unidad-04/leccion-02.html">Procesos ETL y ELT</a></li>
 <li>Transformación de datos</li>
 <li>Herramientas de integración de datos</li>
 </ul>
@@ -291,7 +291,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/urendacdenisse-hub\.github\.io\/ingenieria-de-datos\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
