@@ -447,7 +447,6 @@ Dra. Denisse Urenda Castañeda
 <section id="las-dimensiones-no-son-independientes" class="slide level2">
 <h2>Las dimensiones no son independientes</h2>
 <p>Un mismo conjunto de datos puede presentar problemas en diferentes dimensiones.</p>
-<p>Por ejemplo:</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -487,7 +486,7 @@ Dra. Denisse Urenda Castañeda
 <ol type="1">
 <li>Recuperen los problemas de calidad que identificaron.</li>
 <li>Determinen a qué <strong>dimensión de calidad de datos</strong> corresponde cada problema.</li>
-<li>Justifiquen brevemente tu clasificación.</li>
+<li>Justifiquen brevemente su clasificación.</li>
 </ol>
 </section>
 <section id="actividad-dimensiones-de-calidad-de-datos-1" class="slide level2 unlisted">
@@ -513,7 +512,6 @@ Dra. Denisse Urenda Castañeda
 <p><strong>Consideraciones:</strong></p>
 <ul>
 <li>Un problema puede afectar más de una dimensión.</li>
-<li>No es necesario realizar nuevamente el análisis ni corregir los datos.</li>
 <li>Si no cuentas con información suficiente para evaluar alguna dimensión, indícalo y explica por qué.</li>
 </ul>
 </section>
@@ -808,7 +806,7 @@ Dra. Denisse Urenda Castañeda
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/urendacdenisse-hub\.github\.io\/ingenieria-de-datos\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

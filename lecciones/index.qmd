@@ -33,8 +33,7 @@ title: "Lecciones"
 # Unidad IV. Integración de datos y ETL
 - [Introducción a la integración de datos](unidad-04/leccion-01.qmd)
 - [Procesos ETL y ELT](unidad-04/leccion-02.qmd)
-- Transformación de datos
-- Herramientas de integración de datos
+- 🆕[Herramientas de integración de datos](unidad-04/leccion-03.qmd)
 
 # Unidad V. Calidad y gobernanza de datos
 
@@ -43,6 +42,7 @@ title: "Lecciones"
 - Gestión de la calidad de datos
 - Gobernanza de datos
 
+<!--
 # Unidad VI. Seguridad en ingeniería de datos
 
 - Importancia de la seguridad de los datos
